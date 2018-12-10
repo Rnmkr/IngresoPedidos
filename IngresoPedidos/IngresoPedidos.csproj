@@ -82,7 +82,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DataAccessLayer\DataBaseContext.cs" />
+    <Compile Include="DataAccessLayer\DbContext.cs" />
     <Compile Include="DataAccessLayer\Modelos.cs" />
     <Compile Include="DataAccessLayer\Pedidos.cs" />
     <Compile Include="DataAccessLayer\PedidosView.cs" />
@@ -93,6 +93,7 @@
     <Compile Include="Helpers\LogWriter.cs" />
     <Compile Include="Helpers\PasswordHasher.cs" />
     <Compile Include="Helpers\RelayCommand.cs" />
+    <Compile Include="Helpers\ViewModelBase.cs" />
     <Compile Include="Helpers\WaitCursor.cs" />
     <Compile Include="Helpers\WaitProgressBar.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />

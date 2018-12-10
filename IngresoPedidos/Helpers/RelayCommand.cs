@@ -5,42 +5,40 @@ namespace IngresoPedidos.Helpers
 {
     public class RelayCommand : ICommand
     {
-        public event EventHandler CanExecuteChanged
+        private readonly Action _handler;
+        private bool _isEnabled;
+
+        public RelayCommand(Action handler)
         {
-            add { CommandManager.RequerySuggested += value; }
-            remove { CommandManager.RequerySuggested -= value; }
+            _handler = handler;
         }
 
-        private Action methodToExecute;
-        private Func<bool> canExecuteEvaluator;
-
-        public RelayCommand(Action methodToExecute, Func<bool> canExecuteEvaluator)
+        public bool IsEnabled
         {
-            this.methodToExecute = methodToExecute;
-            this.canExecuteEvaluator = canExecuteEvaluator;
-        }
-
-        public RelayCommand(Action methodToExecute)
-            : this(methodToExecute, null)
-        {
+            get { return _isEnabled; }
+            set
+            {
+                if (value != _isEnabled)
+                {
+                    _isEnabled = value;
+                    if (CanExecuteChanged != null)
+                    {
+                        CanExecuteChanged(this, EventArgs.Empty);
+                    }
+                }
+            }
         }
 
         public bool CanExecute(object parameter)
         {
-            if (this.canExecuteEvaluator == null)
-            {
-                return true;
-            }
-            else
-            {
-                bool result = this.canExecuteEvaluator.Invoke();
-                return result;
-            }
+            return IsEnabled;
         }
+
+        public event EventHandler CanExecuteChanged;
 
         public void Execute(object parameter)
         {
-            this.methodToExecute.Invoke();
+            _handler();
         }
     }
 }

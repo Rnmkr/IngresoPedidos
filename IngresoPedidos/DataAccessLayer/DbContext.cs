@@ -1,13 +1,10 @@
 namespace IngresoPedidos.DataAccessLayer
 {
-    using System;
     using System.Data.Entity;
-    using System.ComponentModel.DataAnnotations.Schema;
-    using System.Linq;
 
-    public partial class DataBaseContext : DbContext
+    public partial class DbContext : System.Data.Entity.DbContext
     {
-        public DataBaseContext()
+        public DbContext()
             : base("data source=VM-FORREST;initial catalog=PRODUCCION;persist security info=True;user id=FORREST;password=12345678;MultipleActiveResultSets=True;App=EntityFramework")
         {
         }

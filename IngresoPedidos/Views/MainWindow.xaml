@@ -6,11 +6,11 @@
         xmlns:vm="clr-namespace:IngresoPedidos.ViewModels"
         mc:Ignorable="d"
         Title="Ingreso de Pedidos" Height="640" Width="800" WindowStartupLocation="CenterScreen" WindowState="Maximized">
-    <Window.DataContext>
-        <vm:MainViewModel />
-    </Window.DataContext>
-    
-    <Grid Name="myGrid">
+    <!--<Window.DataContext>
+        <vm:MainViewModel/>
+    </Window.DataContext>-->
+
+    <Grid>
         <Button Content="-712- SCHNEIDER NICOLAS" Margin="10,10,0,0" VerticalAlignment="Top" Padding="5,0,5,1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="22" BorderBrush="#FF707070" BorderThickness="1" FontSize="10" Background="#FFDDDDDD" Foreground="Black" HorizontalAlignment="Left" Width="244">
             <Button.ContextMenu>
                 <ContextMenu >

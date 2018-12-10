@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.ComponentModel;
+using System.Windows;
 
 namespace IngresoPedidos
 {
@@ -10,6 +11,8 @@ namespace IngresoPedidos
         public MainWindow()
         {
             InitializeComponent();
+            if (DesignerProperties.GetIsInDesignMode(new DependencyObject()))
+                return;
         }
     }
 }

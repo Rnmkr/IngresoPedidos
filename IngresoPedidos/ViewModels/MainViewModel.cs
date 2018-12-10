@@ -1,22 +1,64 @@
-﻿using IngresoPedidos.Models;
-using System.Windows.Input;
+﻿using IngresoPedidos.DataAccessLayer;
+using IngresoPedidos.Helpers;
+using IngresoPedidos.Models;
+using System.Collections.Generic;
 
 namespace IngresoPedidos.ViewModels
 {
-    class MainViewModel
+    class MainViewModel : ViewModelBase
     {
-        public PedidoCollection ListaPedidos { get; set; } = new PedidoCollection();
-        public Pedido SelectedPedido { get; set; }
+        private List<PedidosView> _pedidosViewList;
+        private PedidoView _currentPedidoView;
+        private PedidosViewRepository _repository;
 
-        private ICommand _menu;
-        private ICommand _guardar;
-        private ICommand _buscar;
-        private ICommand _nuevo;
-        private ICommand _filtrar;
-        private ICommand _seleccion;
+        public MainViewModel()
+        {
+            _repository = new PedidosViewRepository();
+            _pedidosViewList = _repository.GetPedidosView();
 
-        public ICommand CargarPedidos { get; set; }
+            WireCommands();
+        }
 
+        private void WireCommands()
+        {
+            UpdateCustomerCommand = new RelayCommand(UpdateCustomer);
+        }
 
+        public RelayCommand UpdateCustomerCommand
+        {
+            get;
+            private set;
+        }
+
+        public List<PedidosView> PedidosViewList
+        {
+            get { return _pedidosViewList; }
+            set { _pedidosViewList = value; }
+        }
+
+        public PedidosView CurrentPedido
+        {
+            get
+            {
+                return null;
+                //return _currentPedidoView;
+            }
+
+            set
+            {
+                //if (_currentPedidoView != value)
+                //{
+                //    _currentPedidoView = value;
+                //    OnPropertyChanged("CurrentCustomer");
+                //    UpdateCustomerCommand.IsEnabled = true;
+            }
+        }
+
+        public void UpdateCustomer()
+        {
+            //_repository.UpdateCustomer(CurrentCustomer);
+        }
     }
 }
+
+

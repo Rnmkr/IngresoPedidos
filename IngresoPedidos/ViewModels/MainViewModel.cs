@@ -3,6 +3,7 @@ using IngresoPedidos.Models;
 using System.Collections.Generic;
 using System.Windows;
 using IngresoPedidos.DataAccessLayer;
+using System;
 
 namespace IngresoPedidos.ViewModels
 {
@@ -11,11 +12,8 @@ namespace IngresoPedidos.ViewModels
         private PedidosView _currentPedidosView;
 
 
-        public RelayCommand ShowUserMenuCommand
-        {
-            get;
-            private set;
-        }
+        public RelayCommand ShowUserMenuCommand { get; private set; }
+        public RelayCommand CurrentPedidoCommand { get; private set; }
 
         public MainViewModel()
         {
@@ -32,6 +30,10 @@ namespace IngresoPedidos.ViewModels
             ShowUserMenuCommand.IsEnabled = true;
         }
 
+        private void CurrentPedidoChanged()
+        {
+            MessageBox.Show("Cambio el pedido y ahora?");
+        }
 
         public List<PedidosView> PedidosViewList { get; set; }
 

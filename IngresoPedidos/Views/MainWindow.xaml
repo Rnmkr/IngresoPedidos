@@ -11,30 +11,6 @@
     </Window.Resources>
 
     <Grid DataContext="{Binding Source={StaticResource ViewModel}}">
-        <Button Content="-712- SCHNEIDER NICOLAS" Margin="10,10,0,0" Command="{Binding ShowUserMenuCommand}" VerticalAlignment="Top" Padding="5,0,5,1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="22" BorderBrush="#FF707070" BorderThickness="1" FontSize="10" Background="#FFDDDDDD" Foreground="Black" HorizontalAlignment="Left" Width="244">
-            <Button.ContextMenu>
-                <ContextMenu >
-                    <MenuItem Header="Cambiar contraseña">
-                        <MenuItem.Icon>
-                            <Image>
-                                <Image.Source>
-                                    <BitmapImage UriSource="/IngresoPedidos;component/Resources/newpassword.ico" />
-                                </Image.Source>
-                            </Image>
-                        </MenuItem.Icon>
-                    </MenuItem>
-                    <MenuItem Header="Salir">
-                        <MenuItem.Icon>
-                            <Image>
-                                <Image.Source>
-                                    <BitmapImage UriSource="/IngresoPedidos;component/Resources/exit.ico" />
-                                </Image.Source>
-                            </Image>
-                        </MenuItem.Icon>
-                    </MenuItem>
-                </ContextMenu>
-            </Button.ContextMenu>
-        </Button>
         <!---->
         <Label Content="Pedido" HorizontalAlignment="Left" Margin="10,37,0,0" VerticalAlignment="Top" Height="23" Width="94" Padding="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="109,37,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontWeight="Bold" TabIndex="1" FontSize="14"/>
@@ -54,8 +30,8 @@
         <CheckBox Content="Agregar comentario a la accion" HorizontalAlignment="Left" Margin="10,263,0,0" VerticalAlignment="Top" TabIndex="9"/>
         <TextBox HorizontalAlignment="Left" Height="72" Margin="10,283,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="244" MaxLength="120" MaxLines="2" TabIndex="10" IsEnabled="False"/>
         <!---->
-        <Label Content="PEDIDOS INGRESADOS EL ULTIMO MES" Margin="259,10,160,0" VerticalAlignment="Top" Padding="5,0,5,1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="22" BorderBrush="#FF707070" BorderThickness="1" FontSize="10" Background="{DynamicResource {x:Static SystemColors.GradientInactiveCaptionBrushKey}}"/>
-        <DataGrid Name="DataGridPedidos" ItemsSource="{Binding PedidosViewList}"  EnableColumnVirtualization="True" CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserSortColumns="False" Margin="259,37,10,10" ColumnWidth="*" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Single" EnableRowVirtualization="True" FontFamily="Consolas" FontWeight="Bold" FontSize="14">
+        <Label Content="-425- SCHNEIDER NICOLAS" Margin="259,10,160,0" VerticalAlignment="Top" Padding="5,0,5,1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="22" BorderBrush="#FF707070" BorderThickness="1" FontSize="10" Background="{DynamicResource {x:Static SystemColors.GradientInactiveCaptionBrushKey}}"/>
+        <DataGrid Name="DataGridPedidos" ItemsSource="{Binding PedidosViewList}" SelectedItem="{Binding CurrentPedido}" EnableColumnVirtualization="True" CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserSortColumns="False" Margin="259,37,10,10" ColumnWidth="*" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Single" EnableRowVirtualization="True" FontFamily="Consolas" FontWeight="Bold" FontSize="14">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Pedido" Binding="{Binding NumeroPedido}" />
                 <DataGridTextColumn Header="Modelo" Binding="{Binding NombreModelo}"/>
@@ -80,8 +56,22 @@
         <ComboBox Margin="0,10,10,0" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Padding="6,3,5,3" HorizontalAlignment="Right" Width="145" TabIndex="14"/>
         <!---->
         <Button Content="GUARDAR" HorizontalAlignment="Left" Margin="10,360,0,0" Width="244" Height="22" VerticalAlignment="Top" TabIndex="11"/>
-        <Button Content="BUSCAR" HorizontalAlignment="Left" Margin="10,387,0,0" Width="244" Height="22" VerticalAlignment="Top" TabIndex="12"/>
-        <Button Content="SEGUIMIENTO / DETALLES" HorizontalAlignment="Left" Margin="10,414,0,0" Width="244" Height="22" VerticalAlignment="Top" TabIndex="13"/>
-        <Button Content="NUEVO" HorizontalAlignment="Left" Margin="10,441,0,0" Width="244" Height="22" VerticalAlignment="Top" TabIndex="13"/>
+        <Button Content="NUEVO" HorizontalAlignment="Left" Margin="10,387,0,0" Width="244" Height="22" VerticalAlignment="Top" TabIndex="11"/>
+    <DockPanel Height="22" VerticalAlignment="Top" HorizontalAlignment="Left" Width="244" Margin="10,10,0,0">
+        <Menu DockPanel.Dock="Top" BorderBrush="#FF707070" BorderThickness="1">
+            <MenuItem Header="Acciones">
+                <MenuItem Header="Nuevo" />
+                <MenuItem Header="Guardar" />
+                <MenuItem Header="Buscar" />
+                <MenuItem Header="Detalles" />
+                <Separator />
+                <MenuItem Header="Salir" />
+            </MenuItem>
+            <MenuItem Header="Usuario">
+                <MenuItem Header="Cerrar Sesion" />
+                <MenuItem Header="Cambiar Contraseña" />
+            </MenuItem>
+        </Menu>
+    </DockPanel>
     </Grid>
 </Window>

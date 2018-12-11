@@ -62,7 +62,7 @@
                 <DataGridTextColumn Header="Producto" Binding="{Binding NombreProducto}"/>
                 <DataGridTextColumn Header="Articulo" Binding="{Binding Articulo}"/>
                 <DataGridTextColumn Header="Cantidad" Binding="{Binding CantidadEquipos}"/>
-                <DataGridTextColumn Header="Ingreso" Binding="{Binding FechaIngreso}"/>
+                <DataGridTextColumn Header="Ingreso a Sistema" Binding="{Binding FechaIngreso}"/>
                 <DataGridTextColumn Header="Estado" Binding="{Binding EstadoPedido}"/>
                 <DataGridTextColumn Header="Fecha Estado" Binding="{Binding FechaEstado}"/>
                 <DataGridTextColumn Header="Reproceso" Binding="{Binding NumeroReproceso}"/>

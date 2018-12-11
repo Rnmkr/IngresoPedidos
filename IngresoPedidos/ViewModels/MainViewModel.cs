@@ -12,25 +12,28 @@ namespace IngresoPedidos.ViewModels
         //private List<PedidosView> _pedidosViewList;
         //private PedidoView _currentPedidoView;
         //private PedidosViewRepository _repository;
+        public RelayCommand ShowUserMenuCommand
+        {
+            get;
+            private set;
+        }
 
         public MainViewModel()
         {
             //_repository = new PedidosViewRepository();
             //_pedidosViewList = _repository.GetPedidosView();
 
-            WireCommands();
-        }
-
-        private void WireCommands()
-        {
+            //WireCommands();
             ShowUserMenuCommand = new RelayCommand(ShowUserMenu);
+            ShowUserMenuCommand.IsEnabled = true;
         }
 
-        public RelayCommand ShowUserMenuCommand
-        {
-            get;
-            private set;
-        }
+
+        //private void WireCommands()
+        //{
+        //ShowUserMenuCommand = new RelayCommand(ShowUserMenu);
+        //}
+
 
         //public List<PedidosView> PedidosViewList
         //{

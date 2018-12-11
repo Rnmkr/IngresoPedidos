@@ -2,10 +2,10 @@ namespace IngresoPedidos.DataAccessLayer
 {
     using System.Data.Entity;
 
-    public partial class DbContext : System.Data.Entity.DbContext
+    public partial class DataBaseContext : System.Data.Entity.DbContext
     {
-        public DbContext()
-            : base("data source=VM-FORREST;initial catalog=PRODUCCION;persist security info=True;user id=FORREST;password=12345678;MultipleActiveResultSets=True;App=EntityFramework")
+        public DataBaseContext()
+            : base("data source=DESKTOP;initial catalog=PRODUCCION;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework")
         {
         }
 

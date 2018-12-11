@@ -22,39 +22,38 @@ namespace IngresoPedidos.Models
 
         }
 
-        public PedidoView(string pedido, string modelo, string producto, string articulo, int cantidad, DateTime fechaIngreso, string estado, DateTime? fechaEstado, string numeroReproceso)
-        {
-            NumeroPedido = pedido;
-            NombreModelo = modelo;
-            NombreProducto = producto;
-            Articulo = articulo;
-            CantidadEquipos = cantidad;
-            FechaIngreso = fechaIngreso;
-            EstadoPedido = estado;
-            FechaEstado = fechaEstado;
-            NumeroReproceso = numeroReproceso;
-        }
+        //public PedidoView(string pedido, string modelo, string producto, string articulo, int cantidad, DateTime fechaIngreso, string estado, DateTime? fechaEstado, string numeroReproceso)
+        //{
+        //    NumeroPedido = pedido;
+        //    NombreModelo = modelo;
+        //    NombreProducto = producto;
+        //    Articulo = articulo;
+        //    CantidadEquipos = cantidad;
+        //    FechaIngreso = fechaIngreso;
+        //    EstadoPedido = estado;
+        //    FechaEstado = fechaEstado;
+        //    NumeroReproceso = numeroReproceso;
+        //}
     }
 
     public class PedidosViewRepository
     {
-        private List<PedidosView> _pedidosView;
 
         public PedidosViewRepository()
         {
-             DbContext db = new DbContext();
-            _pedidosView = db.PedidosView.Select(s => s).ToList();
+
         }
 
-        public List<PedidosView> GetPedidosView()
+
+        private List<PedidosView> _pedidosViewList;
+        public List<PedidosView> GetPedidosViewRepository()
         {
-            return _pedidosView;
+
+            DataBaseContext db = new DataBaseContext();
+            _pedidosViewList = db.PedidosView.Select(s => s).ToList();
+
+            return _pedidosViewList;
         }
 
-        public void UpdatePedidoView(PedidosView SelectedCustomer)
-        {
-            //PedidoView customerToChange = .Single(s => s.CustomerID == SelectedCustomer.CustomerID);
-            //customerToChange = SelectedCustomer;
-        }
     }
 }

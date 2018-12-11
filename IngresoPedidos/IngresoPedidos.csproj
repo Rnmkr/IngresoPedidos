@@ -110,7 +110,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Pedido.cs" />
     <Compile Include="Views\NewPasswordWindow.xaml.cs">
       <DependentUpon>NewPasswordWindow.xaml</DependentUpon>
     </Compile>

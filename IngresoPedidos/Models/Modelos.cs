@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.Spatial;
+using System.Linq;
 
 namespace IngresoPedidos.Models
 {
@@ -29,4 +30,23 @@ namespace IngresoPedidos.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Pedidos> Pedidos { get; set; }
     }
+
+    public class ModelosRepository
+    {
+
+        public ModelosRepository()
+        {
+
+        }
+
+        private List<string> _modelosList;
+        public List<string> GetModelos()
+        {
+            DataBaseContext db = new DataBaseContext();
+            _modelosList = db.Modelos.Select(s => s.NombreModelo).ToList();
+            return _modelosList;
+        }
+
+    }
+
 }

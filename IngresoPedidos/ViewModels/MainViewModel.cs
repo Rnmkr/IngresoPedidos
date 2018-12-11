@@ -10,20 +10,82 @@ namespace IngresoPedidos.ViewModels
 {
     class MainViewModel : ViewModelBase
     {
-        public List<PedidosView> PedidosViewList { get; set; }
-        public PedidosView CurrentPedidosView { get; set; }
+        private PedidosView _selectedPedidoView;
+        private PedidosViewRepository _pedidosViewRepository = new PedidosViewRepository();
+        private ModelosRepository _modelosRepository = new ModelosRepository();
+        private ProductosRepository _productosRepository = new ProductosRepository();
 
         public MainViewModel()
         {
-            DataBaseContext dbc = new DataBaseContext();
-            PedidosViewList = dbc.PedidosView.Select(s => s).ToList();
-
+            PedidosViewList = _pedidosViewRepository.GetPedidosView();
+            ModelosList = _modelosRepository.GetModelos();
+            LoadProductos();
             WireCommands();
+        }
+
+        private void LoadProductos()
+        {
+            if (SelectedPedidoView != null)
+            {
+                ProductosList = _productosRepository.GetProductos(SelectedPedidoView.NombreModelo);
+            }
         }
 
         private void WireCommands()
         {
-           // throw new NotImplementedException();
+            RefreshDataCommand = new RelayCommand(RefreshData);
+            RefreshDataCommand.IsEnabled = true;
+        }
+
+        public List<PedidosView> PedidosViewList { get; set; }
+        public List<string> ModelosList { get; set; }
+        public List<string> ProductosList { get; set; }
+        List<string> _estadosList = new List<string> { "DISPONIBLE", "CANCELADO", "INGRESADO", "PAUSADO", "PRODUCCION", "FALTANTES" };
+        public List<string> EstadosList
+        {
+            get
+            {
+                return _estadosList;
+            }
+
+            set
+            {
+                if (_estadosList != value)
+                {
+                    _estadosList = value;
+                    LoadProductos();
+                    OnPropertyChanged("EstadosList");
+                }
+            }
+        }
+
+        public PedidosView SelectedPedidoView
+        {
+            get
+            {
+                return _selectedPedidoView;
+            }
+
+            set
+            {
+                if (_selectedPedidoView != value)
+                {
+                    _selectedPedidoView = value;
+                    LoadProductos();
+                    OnPropertyChanged("SelectedPedidoView");
+                }
+            }
+        }
+
+
+
+        public RelayCommand RefreshDataCommand { get; private set; }
+
+        public void RefreshData()
+        {
+            PedidosViewList = null;
+            PedidosViewList = _pedidosViewRepository.GetPedidosView();
+            MessageBox.Show("Refrescado perro!");
         }
     }
 }

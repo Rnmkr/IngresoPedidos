@@ -17,15 +17,15 @@
         <Label Content="Articulo" HorizontalAlignment="Left" Margin="10,65,0,0" VerticalAlignment="Top" Height="23" Width="105" Padding="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <TextBox HorizontalAlignment="Left" Text="{Binding SelectedPedidoView.Articulo}" Height="23" Margin="120,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" TabIndex="2"/>
         <Label Content="Modelo" HorizontalAlignment="Left" Margin="10,94,0,0" VerticalAlignment="Top" Height="22" Width="105" Padding="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <ComboBox HorizontalAlignment="Left" ItemsSource="{Binding ModelosList}" SelectedItem="{Binding SelectedPedidoView.NombreModelo}" Margin="120,94,0,0" VerticalAlignment="Top" Width="145" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Padding="6,3,5,3" TabIndex="3"/>
+        <ComboBox HorizontalAlignment="Left" ItemsSource="{Binding ModelosList}" SelectedItem="{Binding SelectedPedidoView.NombreModelo, Mode=OneWay}" Margin="120,94,0,0" VerticalAlignment="Top" Width="145" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Padding="6,3,5,3" TabIndex="3"/>
         <Label Content="Producto" HorizontalAlignment="Left" Margin="10,121,0,0" VerticalAlignment="Top" Height="22" Width="105" Padding="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <ComboBox HorizontalAlignment="Left" ItemsSource="{Binding ProductosList}" SelectedItem="{Binding SelectedPedidoView.NombreProducto}" Margin="120,121,0,0" VerticalAlignment="Top" Width="145" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Padding="6,3,5,3" TabIndex="4"/>
+        <ComboBox HorizontalAlignment="Left" ItemsSource="{Binding ProductosList}" SelectedItem="{Binding SelectedPedidoView.NombreProducto, Mode=OneWay}" Margin="120,121,0,0" VerticalAlignment="Top" Width="145" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Padding="6,3,5,3" TabIndex="4"/>
         <Label Content="Cantidad" HorizontalAlignment="Left" Margin="10,149,0,0" VerticalAlignment="Top" Height="23" Width="105" Padding="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <TextBox HorizontalAlignment="Left" Text="{Binding SelectedPedidoView.CantidadEquipos}" Height="23" Margin="120,148,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" TabIndex="5"/>
         <Label Content="Numero Original" HorizontalAlignment="Left" Margin="10,177,0,0" VerticalAlignment="Top" Height="23" Padding="0" HorizontalContentAlignment="Center" Width="105" VerticalContentAlignment="Center"/>
         <TextBox HorizontalAlignment="Left" Text="{Binding SelectedPedidoView.NumeroReproceso}" Height="23" Margin="120,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" TabIndex="6"/>
         <Label Content="Estado" HorizontalAlignment="Left" Margin="10,205,0,0" VerticalAlignment="Top" Height="22" Width="105" Padding="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <ComboBox HorizontalAlignment="Left" ItemsSource="{Binding EstadosList}" SelectedItem="{Binding SelectedPedidoView.EstadoPedido}" Margin="120,204,0,0" VerticalAlignment="Top" Width="145" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Padding="6,3,5,3" TabIndex="7"/>
+        <ComboBox HorizontalAlignment="Left" ItemsSource="{Binding EstadosList}" SelectedItem="{Binding SelectedPedidoView.EstadoPedido, Mode=OneWay}" Margin="120,204,0,0" VerticalAlignment="Top" Width="145" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Padding="6,3,5,3" TabIndex="7"/>
         <CheckBox Content="Agregar comentario a la accion" HorizontalAlignment="Left" Margin="10,242,0,0" VerticalAlignment="Top" TabIndex="9"/>
         <TextBox HorizontalAlignment="Left" Height="72" Margin="10,262,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="244" MaxLength="120" MaxLines="2" TabIndex="10" IsEnabled="False"/>
         <!---->
@@ -43,7 +43,7 @@
                 <DataGridTextColumn Header="Reproceso" Binding="{Binding NumeroReproceso}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <ComboBox Margin="0,10,10,0" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Padding="6,3,5,3" HorizontalAlignment="Right" Width="145" TabIndex="14"/>
+        <ComboBox Margin="0,10,10,0" ItemsSource="{Binding FiltrosList}" SelectedItem="{Binding SelectedFiltro}" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Padding="6,3,5,3" HorizontalAlignment="Right" Width="145" TabIndex="14"/>
         <!---->
         <Button Content="GUARDAR" HorizontalAlignment="Left" Margin="10,339,0,0" Width="244" Height="22" VerticalAlignment="Top" TabIndex="11"/>
         <Button Content="NUEVO" Command="{Binding RefreshDataCommand}" HorizontalAlignment="Left" Margin="10,366,0,0" Width="244" Height="22" VerticalAlignment="Top" TabIndex="11"/>

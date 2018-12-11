@@ -19,16 +19,8 @@ namespace IngresoPedidos.ViewModels
         {
             PedidosViewList = _pedidosViewRepository.GetPedidosView();
             ModelosList = _modelosRepository.GetModelos();
-            LoadProductos();
+            ProductosList = _productosRepository.GetProductos();
             WireCommands();
-        }
-
-        private void LoadProductos()
-        {
-            if (SelectedPedidoView != null)
-            {
-                ProductosList = _productosRepository.GetProductos(SelectedPedidoView.NombreModelo);
-            }
         }
 
         private void WireCommands()
@@ -40,24 +32,8 @@ namespace IngresoPedidos.ViewModels
         public List<PedidosView> PedidosViewList { get; set; }
         public List<string> ModelosList { get; set; }
         public List<string> ProductosList { get; set; }
-        List<string> _estadosList = new List<string> { "DESPACHADO", "CANCELADO", "INGRESADO", "PAUSADO", "PRODUCCION", "INCOMPLETO", "AUTORIZADO", "CONTROLADO" };
-        public List<string> EstadosList
-        {
-            get
-            {
-                return _estadosList;
-            }
-
-            set
-            {
-                if (_estadosList != value)
-                {
-                    _estadosList = value;
-                    LoadProductos();
-                    OnPropertyChanged("EstadosList");
-                }
-            }
-        }
+        public List<string> EstadosList { get; } = new List<string> { "DESPACHADO", "CANCELADO", "INGRESADO", "PAUSADO", "PRODUCCION", "INCOMPLETO", "AUTORIZADO", "CONTROLADO" };
+        public List<string> FiltrosList { get; } = new List<string> { "TODOS", "CANCELADOS", "INGRESADOS", "PAUSADOS", "PRODUCCION", "INCOMPLETOS", "AUTORIZADOS", "CONTROLADOS" };
 
         public PedidosView SelectedPedidoView
         {
@@ -71,7 +47,6 @@ namespace IngresoPedidos.ViewModels
                 if (_selectedPedidoView != value)
                 {
                     _selectedPedidoView = value;
-                    LoadProductos();
                     OnPropertyChanged("SelectedPedidoView");
                 }
             }

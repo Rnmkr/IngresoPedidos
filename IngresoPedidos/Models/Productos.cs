@@ -35,10 +35,10 @@ namespace IngresoPedidos.Models
         }
 
         private List<string> _productosList;
-        public List<string> GetProductos(string m)
+        public List<string> GetProductos()
         {
             DataBaseContext db = new DataBaseContext();
-            _productosList = db.Productos.Where(w => w.NombreProducto == m).Select(s => s.NombreProducto).ToList();
+            _productosList = db.Productos.Select(s => s.NombreProducto).ToList();
             return _productosList;
         }
 

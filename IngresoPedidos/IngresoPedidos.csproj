@@ -82,12 +82,12 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DataAccessLayer\DataBaseContext.cs" />
-    <Compile Include="DataAccessLayer\Modelos.cs" />
-    <Compile Include="DataAccessLayer\Pedidos.cs" />
-    <Compile Include="DataAccessLayer\PedidosView.cs" />
-    <Compile Include="DataAccessLayer\Productos.cs" />
-    <Compile Include="DataAccessLayer\Usuarios.cs" />
+    <Compile Include="Models\DataBaseContext.cs" />
+    <Compile Include="Models\Modelos.cs" />
+    <Compile Include="Models\Pedidos.cs" />
+    <Compile Include="Models\PedidosView.cs" />
+    <Compile Include="Models\Productos.cs" />
+    <Compile Include="Models\Usuarios.cs" />
     <Compile Include="Helpers\ConnectionCheck.cs" />
     <Compile Include="Helpers\DataValidation.cs" />
     <Compile Include="Helpers\LogWriter.cs" />

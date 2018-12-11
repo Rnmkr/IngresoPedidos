@@ -2,64 +2,29 @@
 using IngresoPedidos.Models;
 using System.Collections.Generic;
 using System.Windows;
-using IngresoPedidos.DataAccessLayer;
+using System.Windows.Controls;
+using System.Linq;
 using System;
 
 namespace IngresoPedidos.ViewModels
 {
     class MainViewModel : ViewModelBase
     {
-        private PedidosView _currentPedidosView;
-
-
-        public RelayCommand ShowUserMenuCommand { get; private set; }
-        public RelayCommand CurrentPedidoCommand { get; private set; }
+        public List<PedidosView> PedidosViewList { get; set; }
+        public PedidosView CurrentPedidosView { get; set; }
 
         public MainViewModel()
         {
-            PedidosViewRepository _repository = new PedidosViewRepository();
-            PedidosViewList = _repository.GetPedidosViewRepository();
+            DataBaseContext dbc = new DataBaseContext();
+            PedidosViewList = dbc.PedidosView.Select(s => s).ToList();
 
             WireCommands();
         }
 
-
         private void WireCommands()
         {
-            ShowUserMenuCommand = new RelayCommand(ShowUserMenu);
-            ShowUserMenuCommand.IsEnabled = true;
-        }
-
-        private void CurrentPedidoChanged()
-        {
-            MessageBox.Show("Cambio el pedido y ahora?");
-        }
-
-        public List<PedidosView> PedidosViewList { get; set; }
-
-        public PedidosView CurrentPedido
-        {
-            get
-            {
-                return _currentPedidosView;
-            }
-
-            set
-            {
-                if (_currentPedidosView != value)
-                {
-                    _currentPedidosView = value;
-                    OnPropertyChanged("CurrentPedido");
-                    //UpdateCustomerCommand.IsEnabled = true;
-                }
-            }
-        }
-
-        private void ShowUserMenu()
-        {
-            MessageBox.Show("PUTAMADREEEE!!!");
+           // throw new NotImplementedException();
         }
     }
 }
-
 

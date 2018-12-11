@@ -1,6 +1,7 @@
-namespace IngresoPedidos.DataAccessLayer
+using System.Data.Entity;
+
+namespace IngresoPedidos.Models
 {
-    using System.Data.Entity;
 
     public partial class DataBaseContext : System.Data.Entity.DbContext
     {

@@ -40,7 +40,7 @@ namespace IngresoPedidos.ViewModels
         public List<PedidosView> PedidosViewList { get; set; }
         public List<string> ModelosList { get; set; }
         public List<string> ProductosList { get; set; }
-        List<string> _estadosList = new List<string> { "DISPONIBLE", "CANCELADO", "INGRESADO", "PAUSADO", "PRODUCCION", "FALTANTES" };
+        List<string> _estadosList = new List<string> { "DESPACHADO", "CANCELADO", "INGRESADO", "PAUSADO", "PRODUCCION", "INCOMPLETO", "AUTORIZADO", "CONTROLADO" };
         public List<string> EstadosList
         {
             get

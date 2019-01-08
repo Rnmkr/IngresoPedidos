@@ -82,13 +82,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Models\DataBaseContext.cs" />
-    <Compile Include="Models\Modelos.cs" />
-    <Compile Include="Models\Pedidos.cs" />
-    <Compile Include="Models\PedidosView.cs" />
-    <Compile Include="Models\Productos.cs" />
-    <Compile Include="Models\Usuarios.cs" />
     <Compile Include="Helpers\ConnectionCheck.cs" />
+    <Compile Include="Helpers\AutoScrollBehavior.cs" />
     <Compile Include="Helpers\DataValidation.cs" />
     <Compile Include="Helpers\LogWriter.cs" />
     <Compile Include="Helpers\PasswordHasher.cs" />
@@ -96,6 +91,13 @@
     <Compile Include="Helpers\ViewModelBase.cs" />
     <Compile Include="Helpers\WaitCursor.cs" />
     <Compile Include="Helpers\WaitProgressBar.cs" />
+    <Compile Include="Models\DataBaseContext.cs" />
+    <Compile Include="Models\Modelos.cs" />
+    <Compile Include="Models\Pedidos.cs" />
+    <Compile Include="Models\PedidosView.cs" />
+    <Compile Include="Models\PedidosViewDisplay.cs" />
+    <Compile Include="Models\Productos.cs" />
+    <Compile Include="Models\Usuarios.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="Views\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>

@@ -1,9 +1,11 @@
-using System.Data.Entity;
-
 namespace IngresoPedidos.Models
 {
+    using System;
+    using System.Data.Entity;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Linq;
 
-    public partial class DataBaseContext : System.Data.Entity.DbContext
+    public partial class DataBaseContext : DbContext
     {
         public DataBaseContext()
             : base("data source=VM-FORREST; initial catalog=PRODUCCION; persist security info=True;user id=FORREST; password=12345678;MultipleActiveResultSets=True;App=EntityFramework")
@@ -17,6 +19,7 @@ namespace IngresoPedidos.Models
         public virtual DbSet<Productos> Productos { get; set; }
         public virtual DbSet<Usuarios> Usuarios { get; set; }
         public virtual DbSet<PedidosView> PedidosView { get; set; }
+        public virtual DbSet<PedidosViewDisplay> PedidosViewDisplay { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -94,6 +97,22 @@ namespace IngresoPedidos.Models
 
             modelBuilder.Entity<PedidosView>()
                 .Property(e => e.NumeroReproceso)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<PedidosView>()
+                .Property(e => e.NumeroOriginal)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<PedidosViewDisplay>()
+                .Property(e => e.Pedido)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<PedidosViewDisplay>()
+                .Property(e => e.Modelo)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<PedidosViewDisplay>()
+                .Property(e => e.Estado)
                 .IsUnicode(false);
         }
     }

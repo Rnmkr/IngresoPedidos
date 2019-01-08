@@ -1,12 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Data.Entity.Spatial;
-using System.Linq;
-
 namespace IngresoPedidos.Models
 {
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Data.Entity.Spatial;
+    using System.Linq;
 
     [Table("PedidosView")]
     public partial class PedidosView
@@ -42,7 +41,7 @@ namespace IngresoPedidos.Models
 
         [Key]
         [Column(Order = 6)]
-        [StringLength(10)]
+        [StringLength(11)]
         public string EstadoPedido { get; set; }
 
         [Column(TypeName = "smalldatetime")]
@@ -50,6 +49,9 @@ namespace IngresoPedidos.Models
 
         [StringLength(12)]
         public string NumeroReproceso { get; set; }
+
+        [StringLength(12)]
+        public string NumeroOriginal { get; set; }
     }
 
     public class PedidosViewRepository

@@ -1,11 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Data.Entity.Spatial;
-
 namespace IngresoPedidos.Models
 {
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Data.Entity.Spatial;
 
     public partial class Pedidos
     {
@@ -28,13 +27,15 @@ namespace IngresoPedidos.Models
         public DateTime FechaIngreso { get; set; }
 
         [Required]
-        [StringLength(10)]
+        [StringLength(11)]
         public string EstadoPedido { get; set; }
 
         [Column(TypeName = "smalldatetime")]
         public DateTime? FechaEstado { get; set; }
 
-        public int? FK_IDPedido { get; set; }
+        public int? FK_IDPedidoReproceso { get; set; }
+
+        public int? FK_IDPedidoOriginal { get; set; }
 
         public virtual Modelos Modelos { get; set; }
     }

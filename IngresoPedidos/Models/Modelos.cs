@@ -1,12 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Data.Entity.Spatial;
-using System.Linq;
-
 namespace IngresoPedidos.Models
 {
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Data.Entity.Spatial;
+    using System.Linq;
 
     public partial class Modelos
     {
@@ -31,6 +30,7 @@ namespace IngresoPedidos.Models
         public virtual ICollection<Pedidos> Pedidos { get; set; }
     }
 
+
     public class ModelosRepository
     {
 
@@ -48,5 +48,6 @@ namespace IngresoPedidos.Models
         }
 
     }
+
 
 }

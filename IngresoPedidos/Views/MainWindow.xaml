@@ -4,7 +4,6 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:viewModels="clr-namespace:IngresoPedidos.ViewModels"
-        xmlns:autoScroll="clr-namespace:AutoScrollBehavior"
         mc:Ignorable="d"
         Title="Ingreso de Pedidos" Height="640" Width="800" WindowStartupLocation="CenterScreen" WindowState="Maximized">
     <Window.Resources>
@@ -72,7 +71,7 @@
         <ComboBox Margin="0,10,10,0" ItemsSource="{Binding FiltrosList}" SelectedIndex="0" SelectedItem="{Binding SelectedFiltro}" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Padding="6,3,5,3" TabIndex="14" FontFamily="Consolas" Height="22" HorizontalAlignment="Right" Width="130"/>
         <!---->
         <Button Content="GUARDAR" HorizontalAlignment="Left" Margin="10,340,0,0" Width="255" Height="22" VerticalAlignment="Top" TabIndex="11" FontFamily="Consolas"/>
-        <Button Content="NUEVO" Command="{Binding RefreshDataCommand}" HorizontalAlignment="Left" Margin="10,367,0,0" Width="255" Height="22" VerticalAlignment="Top" TabIndex="11" FontFamily="Consolas"/>
+        <Button Content="NUEVO" Command="{Binding CancelBusyIndicatorCommand}" HorizontalAlignment="Left" Margin="10,367,0,0" Width="255" Height="22" VerticalAlignment="Top" TabIndex="11" FontFamily="Consolas"/>
     <DockPanel Height="22" VerticalAlignment="Top" HorizontalAlignment="Left" Width="255" Margin="10,10,0,0">
         <Menu DockPanel.Dock="Top" BorderBrush="#FF707070" BorderThickness="1" FontFamily="Consolas" Padding="2,2,0,0">
             <MenuItem Header="Pedido" FontFamily="Consolas" >

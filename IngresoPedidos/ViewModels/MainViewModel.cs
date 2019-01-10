@@ -5,6 +5,8 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Linq;
 using System;
+using System.Threading.Tasks;
+using System.Threading;
 
 namespace IngresoPedidos.ViewModels
 {
@@ -67,18 +69,21 @@ namespace IngresoPedidos.ViewModels
             }
         }
 
+        public RelayCommand CancelBusyIndicatorCommand { get; private set; }
         public RelayCommand RefreshDataCommand { get; private set; }
         public RelayCommand SelectReprocesoCommand { get; private set; }
         public RelayCommand SelectOriginalCommand { get; private set; }
 
         private void WireCommands()
         {
-            RefreshDataCommand = new RelayCommand(RefreshData);
+            RefreshDataCommand = new RelayCommand(RefreshDataAsync);
             SelectReprocesoCommand = new RelayCommand(SelectReproceso);
             SelectOriginalCommand = new RelayCommand(SelectOriginal);
             RefreshDataCommand.IsEnabled = true;
             SelectOriginalCommand.IsEnabled = true;
             SelectReprocesoCommand.IsEnabled = true;
+            //CancelBusyIndicatorCommand.IsEnabled = true;
+            CancelBusyIndicatorCommand = new RelayCommand(CancelBusyIndicator);
         }
 
         public void SelectReproceso()
@@ -95,15 +100,43 @@ namespace IngresoPedidos.ViewModels
             SelectedPedidoView = PedidosViewList.LastOrDefault();
         }
 
-        public void RefreshData()
+        async void RefreshDataAsync()
         {
-            PedidosViewList = null;
-            //SelectedPedidoView = null;
-            PedidosViewList = _pedidosViewRepository.GetPedidosView();
-            DataGridSelectedIndex = -1;
-            //PedidosView pv = SelectedPedidoView;
-            //MessageBox.Show(pv.NumeroReproceso);
+
+            ProcessingDialog pd = new ProcessingDialog();
+            Task loaddata = GetInvoices(pd);
+            pd.ShowDialog();
+            await loaddata;
         }
+
+        async Task GetInvoices(ProcessingDialog pd)
+        {
+            await Task.Delay(500);
+            PedidosViewList = null;
+            var lis = _pedidosViewRepository.GetPedidosView();
+            DataGridSelectedIndex = -1;
+            pd.Close();
+        }
+
+        private bool isBusy;
+        public bool IsBusy
+        {
+            get { return isBusy; }
+            set
+            {
+                isBusy = value;
+                OnPropertyChanged("IsBusy");
+            }
+        }
+
+        private void CancelBusyIndicator()
+        {
+            isBusy = false;
+            ProcessingDialog pd = new ProcessingDialog();
+            Task loaddata = GetInvoices(pd);
+            pd.ShowDialog();
+        }
+
     }
 }
 

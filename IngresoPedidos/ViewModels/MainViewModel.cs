@@ -17,6 +17,7 @@ namespace IngresoPedidos.ViewModels
         private ModelosRepository _modelosRepository = new ModelosRepository();
         private ProductosRepository _productosRepository = new ProductosRepository();
         private int _dataGridSelectedIndex;
+        private string _activeUser;
 
         public MainViewModel()
         {
@@ -84,6 +85,7 @@ namespace IngresoPedidos.ViewModels
             SelectReprocesoCommand.IsEnabled = true;
             //CancelBusyIndicatorCommand.IsEnabled = true;
             CancelBusyIndicatorCommand = new RelayCommand(CancelBusyIndicator);
+            ActiveUser = "-" + "425" + "-" + " " + "SCHNEIDER NICOLAS";
         }
 
         public void SelectReproceso()
@@ -128,6 +130,8 @@ namespace IngresoPedidos.ViewModels
                 OnPropertyChanged("IsBusy");
             }
         }
+
+        public string ActiveUser { get => _activeUser; set => _activeUser = value; }
 
         private void CancelBusyIndicator()
         {

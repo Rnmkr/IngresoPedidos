@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:viewModels="clr-namespace:IngresoPedidos.ViewModels"
         mc:Ignorable="d"
-        Title="Ingreso de Pedidos" Height="640" Width="800" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+        Title="EXO: Ingreso de Pedidos" Height="640" Width="800" WindowStartupLocation="CenterScreen" WindowState="Maximized">
     <Window.Resources>
         <viewModels:MainViewModel x:Key="ViewModel" />
     </Window.Resources>
@@ -30,7 +30,6 @@
         <CheckBox Content="Agregar comentario" HorizontalAlignment="Left" Margin="10,243,0,0" VerticalAlignment="Top" TabIndex="9" FontFamily="Consolas"/>
         <TextBox HorizontalAlignment="Left" Height="72" Margin="10,263,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="255" MaxLength="120" MaxLines="2" TabIndex="10" IsEnabled="False" FontFamily="Consolas"/>
         <!---->
-        <Label Content="-425- SCHNEIDER NICOLAS" Margin="270,10,145,0" Padding="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="#FF707070" BorderThickness="1" Background="{DynamicResource {x:Static SystemColors.GradientInactiveCaptionBrushKey}}" FontFamily="Consolas" Height="22" VerticalAlignment="Top"/>
         <DataGrid Name="DataGridPedidos" SelectedIndex="{Binding DataGridSelectedIndex}" SelectionChanged="DataGridPedidos_SelectionChanged" ItemsSource="{Binding PedidosViewList}" SelectedItem="{Binding SelectedPedidoView, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" IsSynchronizedWithCurrentItem="True" EnableColumnVirtualization="True" CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserSortColumns="False" Margin="270,38,10,10" ColumnWidth="*" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Single" EnableRowVirtualization="True" FontFamily="Consolas" FontWeight="Bold" FontSize="14">
             <!--<DataGrid Name="DataGridPedidos" autoScroll:AutoScrollBehavior.AutoScroll="True" ItemsSource="{Binding PedidosViewList}" SelectedItem="{Binding SelectedPedidoView, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" IsSynchronizedWithCurrentItem="True" SelectionChanged="DataGridPedidos_SelectionChanged" EnableColumnVirtualization="True" CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserSortColumns="False" Margin="270,37,10,10" ColumnWidth="*" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Single" EnableRowVirtualization="True" FontFamily="Consolas" FontWeight="Bold" FontSize="14">-->
 
@@ -68,22 +67,47 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        <ComboBox Margin="0,10,10,0" ItemsSource="{Binding FiltrosList}" SelectedIndex="0" SelectedItem="{Binding SelectedFiltro}" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Padding="6,3,5,3" TabIndex="14" FontFamily="Consolas" Height="22" HorizontalAlignment="Right" Width="130"/>
+        <!--<ComboBox Margin="0,10,10,0" ItemsSource="{Binding FiltrosList}" SelectedIndex="0" SelectedItem="{Binding SelectedFiltro}" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Padding="6,3,5,3" TabIndex="14" FontFamily="Consolas" Height="22" HorizontalAlignment="Right" Width="130"/>-->
         <!---->
         <Button Content="GUARDAR" HorizontalAlignment="Left" Margin="10,340,0,0" Width="255" Height="22" VerticalAlignment="Top" TabIndex="11" FontFamily="Consolas"/>
         <Button Content="NUEVO" Command="{Binding CancelBusyIndicatorCommand}" HorizontalAlignment="Left" Margin="10,367,0,0" Width="255" Height="22" VerticalAlignment="Top" TabIndex="11" FontFamily="Consolas"/>
-    <DockPanel Height="22" VerticalAlignment="Top" HorizontalAlignment="Left" Width="255" Margin="10,10,0,0">
-        <Menu DockPanel.Dock="Top" BorderBrush="#FF707070" BorderThickness="1" FontFamily="Consolas" Padding="2,2,0,0">
-            <MenuItem Header="Pedido" FontFamily="Consolas" >
+        <Menu Height="22" Background="#FFA9D1F4" VerticalAlignment="Top" Margin="10,10,10,0">
+    <Menu.ItemsPanel>
+        <ItemsPanelTemplate>
+            <DockPanel HorizontalAlignment="Stretch"/>
+        </ItemsPanelTemplate>
+    </Menu.ItemsPanel>
+                <MenuItem Header="Pedido" FontFamily="Consolas" >
                 <MenuItem Header="Buscar" />
                 <MenuItem Header="Ver Movimientos" />
                 <MenuItem Header="Generar Recibo" />
             </MenuItem>
-            <MenuItem Header="Usuario" FontFamily="Consolas">
+            <MenuItem Header="Lista" FontFamily="Consolas" >
+                <MenuItem Header="Todos" IsCheckable="True"/>
+                <MenuItem Header="Despachado" IsCheckable="True" />
+                <MenuItem Header="Cancelado" IsCheckable="True" />
+                <MenuItem Header="Ingresado" IsCheckable="True" />
+                <MenuItem Header="Pausado" IsCheckable="True" />
+                <MenuItem Header="Produccion" IsCheckable="True" />
+                <MenuItem Header="Incompleto" IsCheckable="True" />
+                <MenuItem Header="Autorizado" IsCheckable="True" />
+                <MenuItem Header="Controlado" IsCheckable="True" />
+                <MenuItem Header="Reprocesado" IsCheckable="True" />
+            </MenuItem>
+            <MenuItem Header="Display" FontFamily="Consolas">
+                <MenuItem Header="Actualizar" />
+                <Separator></Separator>
+                <MenuItem Header="Pantalla 0" IsCheckable="True" />
+                <MenuItem Header="Pantalla 1" IsCheckable="True" />
+                <MenuItem Header="Pantalla 2" IsCheckable="True" />
+                <MenuItem Header="Pantalla 3" IsCheckable="True" />
+            </MenuItem>
+            <MenuItem Header="{Binding ActiveUser}" FontFamily="Consolas"  HorizontalAlignment="Right">
                 <MenuItem Header="Cerrar Sesion" />
                 <MenuItem Header="Cambiar Contraseña" />
             </MenuItem>
-        </Menu>
-    </DockPanel>
+</Menu>
+       
+
     </Grid>
 </Window>

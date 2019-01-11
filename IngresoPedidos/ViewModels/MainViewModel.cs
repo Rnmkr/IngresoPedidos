@@ -22,10 +22,10 @@ namespace IngresoPedidos.ViewModels
         public MainViewModel()
         {
             PedidosViewList = _pedidosViewRepository.GetPedidosView();
-            //SelectLast();
-            ModelosList = _modelosRepository.GetModelos();
-            ProductosList = _productosRepository.GetProductos();
             DataGridSelectedIndex = -1;
+            ModelosList = _modelosRepository.GetModelos();
+                ProductosList = _productosRepository.GetProductos();
+
             WireCommands();
         }
 

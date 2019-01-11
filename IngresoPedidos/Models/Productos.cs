@@ -35,6 +35,15 @@ namespace IngresoPedidos.Models
         }
 
         private List<string> _productosList;
+
+        internal List<string> GetProductos(string sm)
+        {
+            DataBaseContext db = new DataBaseContext();
+            int idp = db.Modelos.Where(w => w.NombreModelo == sm).Select(s => s.FK_IDProducto).SingleOrDefault();
+            _productosList = db.Productos.Where(w=>w.IDProducto == idp).Select(s => s.NombreProducto).ToList();
+            return _productosList;
+        }
+
         public List<string> GetProductos()
         {
             DataBaseContext db = new DataBaseContext();

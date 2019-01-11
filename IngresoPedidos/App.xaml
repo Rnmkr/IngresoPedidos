@@ -12,5 +12,64 @@
                 </DataTrigger>
             </Style.Triggers>
         </Style>
+        
+        
+        <Style x:Key="RowStyleWithAlternation" TargetType="DataGridRow">
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+            <Setter Property="Background" Value="GhostWhite"/>
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="ContextMenu" Value="{x:Null}"/>
+            <Style.Triggers>
+                <Trigger Property="AlternationIndex" Value="1">
+                    <Setter Property="Background" Value="#FFE6E6E6"/>
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#F9F99F"/>
+                </Trigger>
+                <Trigger Property="IsSelected" Value="True">
+                    <Setter Property="Background" Value="#F9F99F" />
+                </Trigger>
+                <Trigger Property="Validation.HasError" Value="True" >
+                    <!--<Setter Property="Effect">
+                        <Setter.Value>
+                            <DropShadowEffect Color="Red" ShadowDepth="0" BlurRadius="20" />
+                        </Setter.Value>
+                    </Setter>-->
+                    <Setter Property="BorderThickness" Value="2" />
+                    <Setter Property="BorderBrush" Value="#FFA9D1F4" />
+                    <Setter Property="Foreground" Value="Blue" />
+                    <Setter Property="FontSize" Value="12" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="ColumnHeaderStyle" TargetType="DataGridColumnHeader">
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+            <Setter Property="Background" Value="#FFA9D1F4"/>
+            <Setter Property="FontWeight" Value="Medium"/>
+            <Setter Property="ContextMenu" Value="{x:Null}"/>
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="BorderBrush" Value="#FFE6E6E6" />
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="Padding" Value="5,0,0,0"/>
+        </Style>
+
+
+
+        <Style x:Key="DataGridContentCellCentering" TargetType="{x:Type DataGridCell}">
+            <Setter Property="TextBlock.TextAlignment" Value="Center" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type DataGridCell}">
+                        <Grid Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,0,0" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+
     </Application.Resources>
 </Application>

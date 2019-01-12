@@ -42,7 +42,7 @@
                             <DropShadowEffect Color="Red" ShadowDepth="0" BlurRadius="20" />
                         </Setter.Value>
                     </Setter>
-                    <Setter Property="BorderThickness" Value="2" />
+                    <Setter Property="BorderThickness" Value="1" />
                     <Setter Property="BorderBrush" Value="#FFA9D1F4" />
                     <Setter Property="Foreground" Value="Blue" />
                     <Setter Property="FontSize" Value="12" />

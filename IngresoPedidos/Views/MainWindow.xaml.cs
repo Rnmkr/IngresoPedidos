@@ -58,5 +58,11 @@ namespace IngresoPedidos
             TextBoxComment.Focus();
 
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Views.GridPagingWindow gpw = new Views.GridPagingWindow();
+            gpw.Show();
+        }
     }
 }

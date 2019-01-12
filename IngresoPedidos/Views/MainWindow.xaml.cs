@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using IngresoPedidos.Helpers;
 
 namespace IngresoPedidos
@@ -44,9 +45,18 @@ namespace IngresoPedidos
             }
         }
 
-        private void CheckBox_IsEnabledChanged(object sender, DependencyPropertyChangedEventArgs e)
+        //private void CheckBox_IsEnabledChanged(object sender, DependencyPropertyChangedEventArgs e)
+        //{
+        //    if (TextBoxComment.IsFocused)
+        //    {
+
+        //    }
+        //}
+
+        private void CheckBoxComment_Checked(object sender, RoutedEventArgs e)
         {
-            TextBoxComment.IsEnabled = CheckBoxAddComment.IsEnabled;
+            TextBoxComment.Focus();
+
         }
     }
 }

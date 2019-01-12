@@ -6,7 +6,7 @@
         xmlns:viewModels="clr-namespace:IngresoPedidos.ViewModels"
         xmlns:helpers="clr-namespace:IngresoPedidos.Helpers"
         mc:Ignorable="d"
-        Title="EXO: Ingreso de Pedidos" Height="640" Width="1920" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+        Title="EXO: Ingreso de Pedidos" Height="640" Width="800" WindowStartupLocation="CenterScreen" WindowState="Maximized">
     <Window.Resources>
         <viewModels:MainViewModel x:Key="ViewModel" />
     </Window.Resources>
@@ -18,35 +18,44 @@
        
 
         <!---->
-        <Label Content="Pedido" Background="{x:Null}" HorizontalAlignment="Left" Margin="10,43,0,0" VerticalAlignment="Top" Height="33" Width="105" Padding="0,0,5,0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" FontFamily="Consolas"/>
-        <TextBox HorizontalAlignment="Left" BorderBrush="#FFABADB3" BorderThickness="1" Text="{Binding SelectedPedidoView.NumeroPedido}" Height="33" Margin="120,43,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" VerticalContentAlignment="Center" FontWeight="Bold" TabIndex="1" FontSize="16" FontFamily="Consolas"/>
-        <Label Content="Articulo" Background="{x:Null}" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" Height="22" Width="105" Padding="0,0,5,0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" FontFamily="Consolas"/>
-        <TextBox HorizontalAlignment="Left" BorderBrush="#FFABADB3" BorderThickness="1" Text="{Binding SelectedPedidoView.Articulo}" Height="22" Margin="120,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" VerticalContentAlignment="Center" TabIndex="2" FontFamily="Consolas" FontSize="14"/>
-        <Label Content="Modelo" Background="{x:Null}" HorizontalAlignment="Left" Margin="10,105,0,0" VerticalAlignment="Top" Height="22" Width="105" Padding="0,0,5,0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" FontFamily="Consolas"/>
-        <ComboBox HorizontalAlignment="Left" ItemsSource="{Binding ModelosList}" SelectedItem="{Binding SelectedPedidoView.NombreModelo, Mode=OneWay}" Margin="120,104,0,0" VerticalAlignment="Top" Width="145" VerticalContentAlignment="Center" Padding="6,3,5,3" TabIndex="3" FontFamily="Consolas" Height="22" FontSize="14"/>
-        <Label Content="Producto" Background="{x:Null}" HorizontalAlignment="Left" Margin="10,131,0,0" VerticalAlignment="Top" Height="22" Width="105" Padding="0,0,5,0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" FontFamily="Consolas"/>
-        <ComboBox HorizontalAlignment="Left" ItemsSource="{Binding ProductosList}" SelectedItem="{Binding SelectedPedidoView.NombreProducto, Mode=OneWay}" Margin="120,130,0,0" VerticalAlignment="Top" Width="145" VerticalContentAlignment="Center" Padding="6,3,5,3" TabIndex="4" FontFamily="Consolas" Height="22" FontSize="14"/>
-        <Label Content="Cantidad" Background="{x:Null}" HorizontalAlignment="Left" Margin="10,157,0,0" VerticalAlignment="Top" Height="21" Width="105" Padding="0,0,5,0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" FontFamily="Consolas"/>
-        <TextBox HorizontalAlignment="Left" BorderBrush="#FFABADB3" BorderThickness="1" Text="{Binding SelectedPedidoView.CantidadEquipos}" Height="22" Margin="120,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" VerticalContentAlignment="Center" TabIndex="5" FontFamily="Consolas" FontSize="14"/>
-        <Label Content="Anterior" Background="{x:Null}" HorizontalAlignment="Left" Margin="10,182,0,0" VerticalAlignment="Top" Height="22" Padding="0,0,5,0" HorizontalContentAlignment="Right" Width="105" VerticalContentAlignment="Center" FontFamily="Consolas"/>
-        <TextBox HorizontalAlignment="Left" BorderBrush="#FFABADB3" BorderThickness="1" Text="{Binding SelectedPedidoView.NumeroReproceso}" Height="22" Margin="120,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" VerticalContentAlignment="Center" TabIndex="6" FontFamily="Consolas" FontSize="14"/>
-        <Label Content="Estado" Background="{x:Null}" HorizontalAlignment="Left" Margin="10,208,0,0" VerticalAlignment="Top" Height="22" Width="105" Padding="0,0,5,0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" FontFamily="Consolas"/>
-        <ComboBox HorizontalAlignment="Left" ItemsSource="{Binding EstadosList}" SelectedItem="{Binding SelectedPedidoView.EstadoPedido, Mode=OneWay}" Margin="120,208,0,0" VerticalAlignment="Top" Width="145" VerticalContentAlignment="Center" Padding="6,3,5,3" TabIndex="7" FontFamily="Consolas" Height="22" FontSize="14"/>
-        <TextBox Name="TextBoxComment" HorizontalAlignment="Left" BorderBrush="#FFABADB3" BorderThickness="1" Height="72" Margin="10,263,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="255" MaxLength="120" MaxLines="2" TabIndex="10" FontFamily="Consolas"/>
-        <!---->
-        <DataGrid BorderBrush="#FFA9D1F4" BorderThickness="3" HorizontalGridLinesBrush="#FFA9D1F4" x:Name="DataGridPedidos" RowHeaderWidth="0" MinRowHeight="26" GridLinesVisibility="Horizontal" AlternationCount="2" ColumnHeaderHeight="30" ColumnHeaderStyle="{StaticResource ColumnHeaderStyle}" CellStyle="{StaticResource DataGridContentCellCentering}" RowStyle="{StaticResource RowStyleWithAlternation}" SelectedIndex="{Binding DataGridSelectedIndex}" SelectionChanged="DataGridPedidos_SelectionChanged" ItemsSource="{Binding PedidosViewList}" SelectedItem="{Binding SelectedPedidoView, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsSynchronizedWithCurrentItem="True" EnableColumnVirtualization="True" CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserSortColumns="False" Margin="270,43,10,10" ColumnWidth="*" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Single" EnableRowVirtualization="True" FontFamily="Consolas" FontWeight="Bold" FontSize="14" Foreground="Black" Background="#FFF0F0F0">
+        <Border BorderBrush="#FFA9D1F4" BorderThickness="3" HorizontalAlignment="Left" Margin="10,43,0,10" Width="258" Background="#FFF0F0F0"/>
 
+
+
+        <!---->
+        <Label Content="Pedido" HorizontalAlignment="Left" Margin="14,47,0,0" VerticalAlignment="Top" Height="28" Width="105" Padding="0,0,5,0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" FontFamily="Consolas" Background="#FFA9D1F4"/>
+        <Label Content="Articulo" HorizontalAlignment="Left" Margin="14,76,0,0" VerticalAlignment="Top" Height="25" Width="105" Padding="0,0,5,0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" FontFamily="Consolas" Background="#FFA9D1F4"/>
+        <Label Content="Modelo" HorizontalAlignment="Left" Margin="14,102,0,0" VerticalAlignment="Top" Height="25" Width="105" Padding="0,0,5,0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" FontFamily="Consolas" Background="#FFA9D1F4"/>
+        <Label Content="Producto" HorizontalAlignment="Left" Margin="14,128,0,0" VerticalAlignment="Top" Height="25" Width="105" Padding="0,0,5,0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" FontFamily="Consolas" Background="#FFA9D1F4"/>
+        <Label Content="Cantidad" HorizontalAlignment="Left" Margin="14,154,0,0" VerticalAlignment="Top" Height="25" Width="105" Padding="0,0,5,0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" FontFamily="Consolas" Background="#FFA9D1F4"/>
+        <Label Content="Anterior" HorizontalAlignment="Left" Margin="14,180,0,0" VerticalAlignment="Top" Height="25" Padding="0,0,5,0" HorizontalContentAlignment="Right" Width="105" VerticalContentAlignment="Center" FontFamily="Consolas" Background="#FFA9D1F4"/>
+        <Label Content="Estado" HorizontalAlignment="Left" Margin="14,206,0,0" VerticalAlignment="Top" Height="25" Width="105" Padding="0,0,5,0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" FontFamily="Consolas" Background="#FFA9D1F4"/>
+        <!---->
+        <DataGrid BorderBrush="#FFA9D1F4" BorderThickness="3" HorizontalGridLinesBrush="#FFA9D1F4" x:Name="DataGridPedidos" RowHeaderWidth="0" MinRowHeight="26" GridLinesVisibility="Horizontal" AlternationCount="2" ColumnHeaderHeight="28" SelectedIndex="{Binding DataGridSelectedIndex}" SelectionChanged="DataGridPedidos_SelectionChanged" ItemsSource="{Binding PedidosViewList}" SelectedItem="{Binding SelectedPedidoView, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsSynchronizedWithCurrentItem="True" EnableColumnVirtualization="True" CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserSortColumns="False" Margin="270,43,10,10" ColumnWidth="*" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Single" EnableRowVirtualization="True" FontFamily="Consolas" FontWeight="Bold" FontSize="14" Foreground="Black" Background="#FFF0F0F0">
+            <DataGrid.Resources>
+                <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Color="DarkGray"/>
+            </DataGrid.Resources>
+
+            <DataGrid.ColumnHeaderStyle>
+                <StaticResource ResourceKey="ColumnHeaderStyle"/>
+            </DataGrid.ColumnHeaderStyle>
+            <DataGrid.CellStyle>
+                <StaticResource ResourceKey="DataGridContentCellCentering"/>
+            </DataGrid.CellStyle>
+            <DataGrid.RowStyle>
+                <StaticResource ResourceKey="RowStyleWithAlternation"/>
+            </DataGrid.RowStyle>
 
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Pedido" Binding="{Binding NumeroPedido}" MaxWidth="110"  />
-                <DataGridTextColumn Header="Modelo" Binding="{Binding NombreModelo}"/>
-                <DataGridTextColumn Header="Producto" Binding="{Binding NombreProducto}"/>
-                <DataGridTextColumn Header="Articulo" Binding="{Binding Articulo}"/>
-                <DataGridTextColumn Header="Cantidad" Binding="{Binding CantidadEquipos}"/>
-                <DataGridTextColumn Header="Ingreso a Sistema" Binding="{Binding FechaIngreso}" MinWidth="196"/>
-                <DataGridTextColumn Header="Estado Actual" Binding="{Binding EstadoPedido}"/>
-                <DataGridTextColumn Header="Fecha Estado" Binding="{Binding FechaEstado}" MinWidth="196"/>
-                <DataGridTemplateColumn Header="Sucesor" MaxWidth="110">
+                <DataGridTextColumn Header="PEDIDO" Binding="{Binding NumeroPedido}" MaxWidth="110"  />
+                <DataGridTextColumn Header="MODELO" Binding="{Binding NombreModelo}"/>
+                <DataGridTextColumn Header="PRODUCTO" Binding="{Binding NombreProducto}"/>
+                <DataGridTextColumn Header="ARTICULO" Binding="{Binding Articulo}"/>
+                <DataGridTextColumn Header="CANTIDAD" Binding="{Binding CantidadEquipos}"/>
+                <DataGridTextColumn Header="INGRESO A SISTEMA" Binding="{Binding FechaIngreso}" MinWidth="196"/>
+                <DataGridTextColumn Header="ESTADO" Binding="{Binding EstadoPedido}"/>
+                <DataGridTextColumn Header="FECHA ESTADO" Binding="{Binding FechaEstado}" MinWidth="196"/>
+                <DataGridTemplateColumn Header="SUCESOR" MaxWidth="110">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock><Hyperlink Style="{StaticResource FieldHyperlink}" Command="{Binding SelectReprocesoCommand, Source={StaticResource ViewModel}}" CommandParameter="{Binding NumeroReproceso}"><InlineUIContainer>
@@ -55,7 +64,7 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="Anterior" MaxWidth="110">
+                <DataGridTemplateColumn Header="ANTERIOR" MaxWidth="110">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock><Hyperlink Style="{StaticResource FieldHyperlink}" Command="{Binding SelectOriginalCommand, Source={StaticResource ViewModel}}" CommandParameter="{Binding NumeroOriginal}"><InlineUIContainer>
@@ -68,12 +77,12 @@
         </DataGrid>
 
         <!---->
-        <Button Content="GUARDAR" HorizontalAlignment="Left" Margin="10,340,0,0" Width="255" Height="22" VerticalAlignment="Top" TabIndex="11" FontFamily="Consolas"/>
-        <Button Content="NUEVO" Command="{Binding CancelBusyIndicatorCommand}" HorizontalAlignment="Left" Margin="10,367,0,0" Width="255" Height="22" VerticalAlignment="Top" TabIndex="11" FontFamily="Consolas"/>
-        <Menu Height="28" Background="{x:Null}" VerticalAlignment="Top" Margin="10,10,10,0" BorderThickness="1" BorderBrush="#FFF0F0F0">
+        <Button Content="GUARDAR" HorizontalAlignment="Left" Margin="14,336,0,0" Width="250" Height="25" VerticalAlignment="Top" TabIndex="11" FontFamily="Consolas"/>
+        <Button Content="NUEVO" Command="{Binding CancelBusyIndicatorCommand}" HorizontalAlignment="Left" Margin="14,362,0,0" Width="250" Height="25" VerticalAlignment="Top" TabIndex="11" FontFamily="Consolas"/>
+        <Menu Height="30" VerticalAlignment="Top" Margin="10,10,10,0" BorderThickness="2" BorderBrush="#FFA9D1F4">
             <Menu.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <DockPanel HorizontalAlignment="Stretch"/>
+                    <DockPanel HorizontalAlignment="Stretch" Background="#FFF0F0F0"/>
                 </ItemsPanelTemplate>
             </Menu.ItemsPanel>
             <MenuItem Header="Pedido" FontFamily="Consolas" >
@@ -110,9 +119,17 @@
                 <MenuItem Header="Cerrar Sesion" />
             </MenuItem>
         </Menu>
-        <Border BorderThickness="1" HorizontalAlignment="Left" Height="24" Margin="10,234,0,0" VerticalAlignment="Top" Width="255" BorderBrush="#FFABADB3">
-            <CheckBox Name="CheckBoxAddComment" Content="Agregar comentario" IsEnabledChanged="CheckBox_IsEnabledChanged" HorizontalAlignment="Left" Margin="3" VerticalAlignment="Center" TabIndex="9" FontFamily="Consolas" Width="245" Padding="5,0,0,0"/>
+        <TextBox HorizontalAlignment="Left" BorderBrush="#FFABADB3" BorderThickness="1" Text="{Binding SelectedPedidoView.NumeroPedido}" Height="28" Margin="120,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" VerticalContentAlignment="Center" TabIndex="1" FontSize="16" FontFamily="Consolas" FontWeight="Medium"/>
+        <TextBox HorizontalAlignment="Left" BorderBrush="#FFABADB3" BorderThickness="1" Text="{Binding SelectedPedidoView.Articulo}" Height="25" Margin="120,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" VerticalContentAlignment="Center" TabIndex="2" FontFamily="Consolas" FontWeight="Medium" FontSize="16"/>
+        <ComboBox HorizontalAlignment="Left" ItemsSource="{Binding ModelosList}" SelectedItem="{Binding SelectedPedidoView.NombreModelo, Mode=OneWay}" Margin="120,102,0,0" VerticalAlignment="Top" Width="144" VerticalContentAlignment="Center" Padding="6,3,5,3" TabIndex="3" FontFamily="Consolas" Height="25" FontWeight="Medium" FontSize="16"/>
+        <ComboBox HorizontalAlignment="Left" ItemsSource="{Binding ProductosList}" SelectedItem="{Binding SelectedPedidoView.NombreProducto, Mode=OneWay}" Margin="120,128,0,0" VerticalAlignment="Top" Width="144" VerticalContentAlignment="Center" Padding="6,3,5,3" TabIndex="4" FontFamily="Consolas" Height="25" FontWeight="Medium" FontSize="16"/>
+        <TextBox HorizontalAlignment="Left" BorderBrush="#FFABADB3" BorderThickness="1" Text="{Binding SelectedPedidoView.CantidadEquipos}" Height="25" Margin="120,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" VerticalContentAlignment="Center" TabIndex="5" FontFamily="Consolas" FontWeight="Medium" FontSize="16"/>
+        <TextBox HorizontalAlignment="Left" BorderBrush="#FFABADB3" BorderThickness="1" Text="{Binding SelectedPedidoView.NumeroReproceso}" Height="25" Margin="120,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" VerticalContentAlignment="Center" TabIndex="6" FontFamily="Consolas" FontWeight="Medium" FontSize="16"/>
+        <ComboBox HorizontalAlignment="Left" ItemsSource="{Binding EstadosList}" SelectedItem="{Binding SelectedPedidoView.EstadoPedido, Mode=OneWay}" Margin="120,206,0,0" VerticalAlignment="Top" Width="144" VerticalContentAlignment="Center" Padding="6,3,5,3" TabIndex="7" FontFamily="Consolas" Height="25" FontWeight="Medium" FontSize="16"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="25" Margin="14,232,0,0" VerticalAlignment="Top" Width="250" BorderBrush="#FFABADB3">
+            <CheckBox x:Name="CheckBoxComment" Checked="CheckBoxComment_Checked"  Content="Comentario" Margin="0" TabIndex="9" FontFamily="Consolas" Padding="3,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Center" BorderBrush="#FFACACAC"/>
         </Border>
+        <TextBox x:Name="TextBoxComment" HorizontalAlignment="Left" BorderBrush="#FFABADB3" IsEnabled="{Binding ElementName=CheckBoxComment, Path=IsChecked}" BorderThickness="1" Height="77" Margin="14,258,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" MaxLength="120" MaxLines="2" TabIndex="10" FontFamily="Consolas" Padding="3,0,0,0"/>
 
 
     </Grid>

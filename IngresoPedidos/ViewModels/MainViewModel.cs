@@ -12,22 +12,27 @@ namespace IngresoPedidos.ViewModels
 {
     class MainViewModel : ViewModelBase
     {
+
         private PedidosView _selectedPedidoView;
         private PedidosViewRepository _pedidosViewRepository = new PedidosViewRepository();
         private ModelosRepository _modelosRepository = new ModelosRepository();
         private ProductosRepository _productosRepository = new ProductosRepository();
         private int _dataGridSelectedIndex;
         private string _activeUser;
+        private string _selectedFilter;
 
         public MainViewModel()
         {
-            PedidosViewList = _pedidosViewRepository.GetPedidosView();
+            PedidosViewList = _pedidosViewRepository.GetPedidosView(SelectedFilter).OrderBy(o => o.FechaIngreso).ToList();
             DataGridSelectedIndex = -1;
             ModelosList = _modelosRepository.GetModelos();
-                ProductosList = _productosRepository.GetProductos();
+            ProductosList = _productosRepository.GetProductos();
 
             WireCommands();
         }
+
+
+
 
 
         public List<PedidosView> PedidosViewList { get; set; }
@@ -53,6 +58,23 @@ namespace IngresoPedidos.ViewModels
             }
         }
 
+        public string SelectedFilter
+        {
+            get
+            {
+                return _selectedFilter;
+            }
+
+            set
+            {
+                if (_selectedFilter != value)
+                {
+                    _selectedFilter = value;
+                    OnPropertyChanged("SelectedFilter");
+                }
+            }
+        }
+
         public int DataGridSelectedIndex
         {
             get
@@ -74,18 +96,45 @@ namespace IngresoPedidos.ViewModels
         public RelayCommand RefreshDataCommand { get; private set; }
         public RelayCommand SelectReprocesoCommand { get; private set; }
         public RelayCommand SelectOriginalCommand { get; private set; }
+        public RelayCommand FilterSelectionChangedCommand { get; private set; }
+        public RelayCommand LoadListCommand { get; private set; }
 
         private void WireCommands()
         {
+
+
             RefreshDataCommand = new RelayCommand(RefreshDataAsync);
             SelectReprocesoCommand = new RelayCommand(SelectReproceso);
             SelectOriginalCommand = new RelayCommand(SelectOriginal);
+            LoadListCommand = new RelayCommand(LoadList);
             RefreshDataCommand.IsEnabled = true;
             SelectOriginalCommand.IsEnabled = true;
             SelectReprocesoCommand.IsEnabled = true;
             //CancelBusyIndicatorCommand.IsEnabled = true;
             CancelBusyIndicatorCommand = new RelayCommand(CancelBusyIndicator);
             ActiveUser = "-" + "425" + "-" + " " + "SCHNEIDER NICOLAS";
+            
+        }
+
+        private RelayCommand _loadList;
+
+        public RelayCommand LoadList
+        {
+            get
+            {
+                return _loadList
+                  ?? (_loadList = new RelayCommand(
+                    async () =>
+                    {
+                        await FilterSelectionChanged();
+                    }));
+            }
+        }
+
+        private async Task FilterSelectionChanged()
+        {
+            _pedidosViewRepository.GetPedidosView(SelectedFilter);
+            await Task.Delay(500);
         }
 
         public void SelectReproceso()
@@ -115,7 +164,7 @@ namespace IngresoPedidos.ViewModels
         {
             await Task.Delay(500);
             PedidosViewList = null;
-            var lis = _pedidosViewRepository.GetPedidosView();
+            var lis = _pedidosViewRepository.GetPedidosView(SelectedFilter);
             DataGridSelectedIndex = -1;
             pd.Close();
         }

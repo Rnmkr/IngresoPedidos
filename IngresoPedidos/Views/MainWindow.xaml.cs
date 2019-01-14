@@ -2,6 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media;
 using IngresoPedidos.Helpers;
 
 namespace IngresoPedidos
@@ -14,15 +15,17 @@ namespace IngresoPedidos
         public MainWindow()
         {
             InitializeComponent();
+            cbFiltros.SelectedIndex = 2;
+            LabelPages.Text = DataGridPedidos.Items.Count.ToString();
         }
 
         private void DataGridPedidos_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (DataGridPedidos.SelectedIndex == -1)
+            if (DataGridPedidos.SelectedIndex > 0)
             {
-                DataGridPedidos.SelectedIndex = -1;
-                DataGridPedidos.ScrollIntoView(DataGridPedidos.Items[DataGridPedidos.Items.Count - 1]);
-                DataGridPedidos.SelectedIndex = 3;
+                //DataGridPedidos.ScrollIntoView(DataGridPedidos.Items[DataGridPedidos.Items.Count - 1]); //scroll to last
+                //DataGridPedidos.UpdateLayout();
+                DataGridPedidos.ScrollIntoView(DataGridPedidos.SelectedItem);
             }
         }
 
@@ -63,6 +66,26 @@ namespace IngresoPedidos
         {
             Views.GridPagingWindow gpw = new Views.GridPagingWindow();
             gpw.Show();
+        }
+
+        private void DataGridPedidos_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (DataGridPedidos.Items.Count > 0)
+            {
+                var border = VisualTreeHelper.GetChild(DataGridPedidos, 0) as Decorator;
+                if (border != null)
+                {
+                    var scroll = border.Child as ScrollViewer;
+                    if (scroll != null) scroll.ScrollToEnd();
+                }
+                DataGridPedidos.SelectedIndex = -1;
+                DataGridPedidos.SelectedItem = null;
+            }
+        }
+
+        private void CbFiltros_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
         }
     }
 }

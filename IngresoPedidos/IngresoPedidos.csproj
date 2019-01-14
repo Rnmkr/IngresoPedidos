@@ -165,5 +165,8 @@
   <ItemGroup>
     <Resource Include="orderadd.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NOT1422EXO.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

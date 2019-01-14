@@ -7,10 +7,16 @@ namespace IngresoPedidos.Helpers
     {
         private readonly Action _handler;
         private bool _isEnabled;
+        private RelayCommand loadList;
 
         public RelayCommand(Action handler)
         {
             _handler = handler;
+        }
+
+        public RelayCommand(RelayCommand loadList)
+        {
+            this.loadList = loadList;
         }
 
         public bool IsEnabled

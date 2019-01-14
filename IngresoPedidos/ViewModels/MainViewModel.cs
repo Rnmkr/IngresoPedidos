@@ -69,8 +69,12 @@ namespace IngresoPedidos.ViewModels
             {
                 if (_selectedFilter != value)
                 {
+
                     _selectedFilter = value;
                     OnPropertyChanged("SelectedFilter");
+                    SelectedPedidoView = null;
+                    _pedidosViewRepository.GetPedidosView(value);
+
                 }
             }
         }
@@ -106,35 +110,18 @@ namespace IngresoPedidos.ViewModels
             RefreshDataCommand = new RelayCommand(RefreshDataAsync);
             SelectReprocesoCommand = new RelayCommand(SelectReproceso);
             SelectOriginalCommand = new RelayCommand(SelectOriginal);
-            LoadListCommand = new RelayCommand(LoadList);
             RefreshDataCommand.IsEnabled = true;
             SelectOriginalCommand.IsEnabled = true;
             SelectReprocesoCommand.IsEnabled = true;
             //CancelBusyIndicatorCommand.IsEnabled = true;
             CancelBusyIndicatorCommand = new RelayCommand(CancelBusyIndicator);
-            ActiveUser = "-" + "425" + "-" + " " + "SCHNEIDER NICOLAS";
+            ActiveUser = "{ " + "425" + " }" + " " + "SCHNEIDER NICOLAS";
             
         }
 
-        private RelayCommand _loadList;
-
-        public RelayCommand LoadList
+        private void FilterSelectionChanged(string s)
         {
-            get
-            {
-                return _loadList
-                  ?? (_loadList = new RelayCommand(
-                    async () =>
-                    {
-                        await FilterSelectionChanged();
-                    }));
-            }
-        }
-
-        private async Task FilterSelectionChanged()
-        {
-            _pedidosViewRepository.GetPedidosView(SelectedFilter);
-            await Task.Delay(500);
+            
         }
 
         public void SelectReproceso()

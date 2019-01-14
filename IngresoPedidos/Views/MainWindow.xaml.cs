@@ -4,7 +4,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using IngresoPedidos.Helpers;
-
+using IngresoPedidos.Models;
 namespace IngresoPedidos
 {
     /// <summary>
@@ -16,7 +16,7 @@ namespace IngresoPedidos
         {
             InitializeComponent();
             cbFiltros.SelectedIndex = 2;
-            LabelPages.Text = DataGridPedidos.Items.Count.ToString();
+            //LabelPages.Text = DataGridPedidos.Items.Count.ToString();
         }
 
         private void DataGridPedidos_SelectionChanged(object sender, SelectionChangedEventArgs e)

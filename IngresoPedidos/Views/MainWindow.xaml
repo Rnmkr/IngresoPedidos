@@ -135,36 +135,11 @@
             <CheckBox x:Name="CheckBoxComment" Checked="CheckBoxComment_Checked"  Content="Comentario" Margin="0" TabIndex="9" FontFamily="Consolas" Padding="3,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Center" BorderBrush="#FFACACAC"/>
         </Border>
         <TextBox x:Name="TextBoxComment" HorizontalAlignment="Left" BorderBrush="#FFABADB3" IsEnabled="{Binding ElementName=CheckBoxComment, Path=IsChecked}" BorderThickness="1" Height="77" Margin="14,258,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" MaxLength="120" MaxLines="2" TabIndex="10" FontFamily="Consolas" Padding="3"/>
-        <ComboBox Margin="0,10,10,0" FontFamily="Consolas" FontWeight="Medium" FontSize="12" VerticalAlignment="Top" Height="30" HorizontalAlignment="Right" Width="96" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
-            <ComboBoxItem>1</ComboBoxItem>
-            <ComboBoxItem>2</ComboBoxItem>
-            <ComboBoxItem>3</ComboBoxItem>
-            <ComboBoxItem>4</ComboBoxItem>
-            <ComboBoxItem>5</ComboBoxItem>
-            <ComboBoxItem>6</ComboBoxItem>
-            <ComboBoxItem>7</ComboBoxItem>
-            <ComboBoxItem>8</ComboBoxItem>
-            <ComboBoxItem>9</ComboBoxItem>
-            <ComboBoxItem>10</ComboBoxItem>
-            <ComboBoxItem>11</ComboBoxItem>
-            <ComboBoxItem>12</ComboBoxItem>
-            <ComboBoxItem>13</ComboBoxItem>
-            <ComboBoxItem>14</ComboBoxItem>
-            <ComboBoxItem>15</ComboBoxItem>
+        <ComboBox Margin="0,10,10,0" FontFamily="Consolas" FontWeight="Medium" FontSize="12" VerticalAlignment="Top" Height="30" HorizontalAlignment="Right" Width="96" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <ComboBox Name="cbFiltros" Margin="0,10,107,0" FontFamily="Consolas" ItemsSource="{Binding FiltrosList}" SelectedItem="{Binding  SelectedFilter, Mode=TwoWay}" FontWeight="Medium" FontSize="12" VerticalAlignment="Top" Height="30" HorizontalAlignment="Right" Width="128" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
         </ComboBox>
-        <ComboBox Name="cbFiltros" Margin="0,10,107,0" FontFamily="Consolas" SelectedItem="{Binding SelectedFilter, Mode=TwoWay}" SelectionChanged="{Binding }FontWeight="Medium" FontSize="12" VerticalAlignment="Top" Height="30" HorizontalAlignment="Right" Width="128" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
-            <ComboBoxItem>TODOS</ComboBoxItem>
-            <ComboBoxItem>DESPACHADOS</ComboBoxItem>
-            <ComboBoxItem>INGRESADOS</ComboBoxItem>
-            <ComboBoxItem>CANCELADOS</ComboBoxItem>
-            <ComboBoxItem>PRODUCCION</ComboBoxItem>
-            <ComboBoxItem>PAUSADOS</ComboBoxItem>
-            <ComboBoxItem>INCOMPLETO</ComboBoxItem>
-            <ComboBoxItem>COMPLETO</ComboBoxItem>
-            <ComboBoxItem>AUTORIZADO</ComboBoxItem>
-            <ComboBoxItem>REPROCESADO</ComboBoxItem>
-        </ComboBox>
-        <TextBlock x:Name="LabelPages"  VerticalAlignment="Top" FontFamily="Consolas" FontWeight="Bold" FontSize="16" Margin="0,17,0,0" HorizontalAlignment="Center"><Hyperlink NavigateUri="http://www.google.com"><Run Text="|&lt; &lt;&lt; 1 2 3 ... 19 &gt;&gt; &gt;|"/></Hyperlink></TextBlock>
+        <Label Content="{Binding SelectedFilter}" HorizontalAlignment="Left" Height="42" Margin="14,644,0,0" VerticalAlignment="Top" Width="250"/>
+        <!--<TextBlock x:Name="LabelPages"  VerticalAlignment="Top" FontFamily="Consolas" FontWeight="Bold" FontSize="16" Margin="0,17,0,0" HorizontalAlignment="Center"><Hyperlink NavigateUri="http://www.google.com"><Run Text="|&lt; &lt;&lt; 1 2 3 ... 19 &gt;&gt; &gt;|"/></Hyperlink></TextBlock>-->
 
 
     </Grid>

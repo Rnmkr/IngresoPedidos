@@ -102,13 +102,13 @@ namespace IngresoPedidos.Models
                     _pedidosViewList = db.PedidosView.Where(W => W.EstadoPedido == "REPROCESADO").Select(s => s).ToList();
                     break;
 
-                case "TODOS":
-                    _pedidosViewList = db.PedidosView.Where(W => W.EstadoPedido == "TODOS").Select(s => s).ToList();
+                case "CANCELADO":
+                    _pedidosViewList = db.PedidosView.Where(W => W.EstadoPedido == "CANCELADO").Select(s => s).ToList();
                     break;
 
 
                 default:
-                    _pedidosViewList = db.PedidosView.Where(W => W.EstadoPedido == "INGRESADO").Select(s => s).ToList();
+                    _pedidosViewList = db.PedidosView.Select(s => s).ToList();
                     break;
             }
             return _pedidosViewList;

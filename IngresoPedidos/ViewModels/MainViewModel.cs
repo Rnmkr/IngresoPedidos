@@ -20,6 +20,7 @@ namespace IngresoPedidos.ViewModels
         private int _dataGridSelectedIndex;
         private string _activeUser;
         private string _selectedFilter;
+        private List<PedidosView> _pedidosViewList;
 
         public MainViewModel()
         {
@@ -35,11 +36,33 @@ namespace IngresoPedidos.ViewModels
 
 
 
-        public List<PedidosView> PedidosViewList { get; set; }
+        //public List<PedidosView> PedidosViewList { get; set; }
         public List<string> ModelosList { get; set; }
         public List<string> ProductosList { get; set; }
         public List<string> EstadosList { get; } = new List<string> { "DESPACHADO", "CANCELADO", "INGRESADO", "PAUSADO", "PRODUCCION", "INCOMPLETO", "AUTORIZADO", "CONTROLADO", "REPROCESADO" };
-        public List<string> FiltrosList { get; } = new List<string> { "TODOS", "CANCELADOS", "INGRESADOS", "PAUSADOS", "PRODUCCION", "INCOMPLETOS", "AUTORIZADOS", "CONTROLADOS", "REPROCESADOS" };
+        public List<string> FiltrosList { get; } = new List<string> { "ULTIMOS 15000", "CANCELADOS", "INGRESADOS", "PAUSADOS", "PRODUCCION", "INCOMPLETOS", "AUTORIZADOS", "CONTROLADOS", "REPROCESADOS" };
+
+
+        public List<PedidosView> PedidosViewList
+        {
+            get
+            {
+                return _pedidosViewList;
+            }
+
+            set
+            {
+                if (_pedidosViewList != value)
+                {
+                    _pedidosViewList = value;
+                    _pedidosViewList.OrderByDescending(o => o.FechaIngreso);
+                    OnPropertyChanged("PedidosViewList");
+                }
+            }
+        }
+
+
+
 
         public PedidosView SelectedPedidoView
         {
@@ -73,8 +96,8 @@ namespace IngresoPedidos.ViewModels
                     _selectedFilter = value;
                     OnPropertyChanged("SelectedFilter");
                     SelectedPedidoView = null;
-                    _pedidosViewRepository.GetPedidosView(value);
-
+                    //PedidosViewList = null;
+                    PedidosViewList = _pedidosViewRepository.GetPedidosView(value);
                 }
             }
         }
@@ -116,21 +139,26 @@ namespace IngresoPedidos.ViewModels
             //CancelBusyIndicatorCommand.IsEnabled = true;
             CancelBusyIndicatorCommand = new RelayCommand(CancelBusyIndicator);
             ActiveUser = "{ " + "425" + " }" + " " + "SCHNEIDER NICOLAS";
-            
+
         }
 
-        private void FilterSelectionChanged(string s)
-        {
-            
-        }
 
         public void SelectReproceso()
         {
-            SelectedPedidoView = PedidosViewList.Where(w => w.NumeroPedido == SelectedPedidoView.NumeroReproceso).SingleOrDefault();
+            DataBaseContext dbc = new DataBaseContext();
+            PedidosView pv = dbc.PedidosView.Where(w => w.NumeroPedido == SelectedPedidoView.NumeroReproceso).SingleOrDefault();
+            PedidosViewList = _pedidosViewRepository.GetPedidosView(pv.EstadoPedido);
+            SelectedFilter = pv.EstadoPedido;
+            SelectedPedidoView = pv;
         }
+
         public void SelectOriginal()
         {
-            SelectedPedidoView = PedidosViewList.Where(w => w.NumeroPedido == SelectedPedidoView.NumeroOriginal).SingleOrDefault();
+            DataBaseContext dbc = new DataBaseContext();
+            PedidosView pv = dbc.PedidosView.Where(w => w.NumeroPedido == SelectedPedidoView.NumeroOriginal).SingleOrDefault();
+            PedidosViewList = _pedidosViewRepository.GetPedidosView(pv.EstadoPedido);
+            SelectedFilter = pv.EstadoPedido;
+            SelectedPedidoView = pv;
         }
 
         public void SelectLast()

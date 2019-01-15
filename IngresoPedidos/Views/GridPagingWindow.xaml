@@ -19,14 +19,23 @@
                     </Binding>
                 </Label.Content>
             </Label>
-            <Button Content="Next" Click="OnNextClicked" Margin="2"/>
             <Button Content="Previous" Click="OnPreviousClicked" Margin="2"/>
+            <Button Content="Next" Click="OnNextClicked" Margin="2"/>
         </StackPanel>
         <DataGrid ItemsSource="{Binding}" Grid.Row="1">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Animal" Width="*" Binding="{Binding Animal}"/>
-                <DataGridTextColumn Header="Eats" Width="*" Binding="{Binding Eats}"/>
+                <DataGridTextColumn Header="Pedido" Width="*" Binding="{Binding NumeroPedido}"/>
+                <DataGridTextColumn Header="Modelo" Width="*" Binding="{Binding NombreModelo}"/>
+                <DataGridTextColumn Header="Producto" Width="*" Binding="{Binding NombreProducto}"/>
+                <DataGridTextColumn Header="Articulo" Width="*" Binding="{Binding Articulo}"/>
+                <DataGridTextColumn Header="Cantidad" Width="*" Binding="{Binding CantidadEquipos}"/>
+                <DataGridTextColumn Header="Ingreso Sistema" Width="*" Binding="{Binding FechaIngreso}"/>
+                <DataGridTextColumn Header="Estado" Width="*" Binding="{Binding EstadoPedido}"/>
+                <DataGridTextColumn Header="Fecha Estado" Width="*" Binding="{Binding FechaEstado}"/>
+                <DataGridTextColumn Header="Sucesor" Width="*" Binding="{Binding NumeroReproceso}"/>
+                <DataGridTextColumn Header="Anterior" Width="*" Binding="{Binding NumeroOriginal}"/>
             </DataGrid.Columns>
         </DataGrid>
+        
     </Grid>
 </Window>

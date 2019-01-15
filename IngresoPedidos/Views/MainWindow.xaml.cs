@@ -83,9 +83,5 @@ namespace IngresoPedidos
             }
         }
 
-        private void CbFiltros_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            
-        }
     }
 }

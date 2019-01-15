@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using System.Windows;
 using System.Windows.Data;
+using IngresoPedidos.Models;
 
 namespace IngresoPedidos.Views
 {
@@ -13,103 +15,8 @@ namespace IngresoPedidos.Views
         public GridPagingWindow()
         {
             InitializeComponent();
-            this._cview = new PagingCollectionView(
-                new List<object>
-                {
-                    new { Animal = "Lion", Eats = "Tiger" },
-                    new { Animal = "Tiger", Eats =  "Bear" },
-                    new { Animal = "Bear", Eats = "Oh my" },
-                    new { Animal = "Wait", Eats = "Oh my isn't an animal" },
-                    new { Animal = "Oh well", Eats = "Who is counting anyway" },
-                    new { Animal = "Need better content", Eats = "For posting on stackoverflow" },
-                                        new { Animal = "Tiger", Eats =  "Bear" },
-                    new { Animal = "Bear", Eats = "Oh my" },
-                    new { Animal = "Wait", Eats = "Oh my isn't an animal" },
-                    new { Animal = "Oh well", Eats = "Who is counting anyway" },
-                                        new { Animal = "Tiger", Eats =  "Bear" },
-                    new { Animal = "Bear", Eats = "Oh my" },
-                    new { Animal = "Wait", Eats = "Oh my isn't an animal" },
-                    new { Animal = "Oh well", Eats = "Who is counting anyway" },
-                                        new { Animal = "Tiger", Eats =  "Bear" },
-                    new { Animal = "Bear", Eats = "Oh my" },
-                    new { Animal = "Wait", Eats = "Oh my isn't an animal" },
-                    new { Animal = "Oh well", Eats = "Who is counting anyway" },
-                                        new { Animal = "Tiger", Eats =  "Bear" },
-                    new { Animal = "Bear", Eats = "Oh my" },
-                    new { Animal = "Wait", Eats = "Oh my isn't an animal" },
-                    new { Animal = "Oh well", Eats = "Who is counting anyway" },
-                                        new { Animal = "Tiger", Eats =  "Bear" },
-                    new { Animal = "Bear", Eats = "Oh my" },
-                    new { Animal = "Wait", Eats = "Oh my isn't an animal" },
-                    new { Animal = "Oh well", Eats = "Who is counting anyway" },
-                                        new { Animal = "Tiger", Eats =  "Bear" },
-                    new { Animal = "Bear", Eats = "Oh my" },
-                    new { Animal = "Wait", Eats = "Oh my isn't an animal" },
-                    new { Animal = "Oh well", Eats = "Who is counting anyway" },
-                                        new { Animal = "Tiger", Eats =  "Bear" },
-                    new { Animal = "Bear", Eats = "Oh my" },
-                    new { Animal = "Wait", Eats = "Oh my isn't an animal" },
-                    new { Animal = "Oh well", Eats = "Who is counting anyway" },
-                                        new { Animal = "Tiger", Eats =  "Bear" },
-                    new { Animal = "Bear", Eats = "Oh my" },
-                    new { Animal = "Wait", Eats = "Oh my isn't an animal" },
-                    new { Animal = "Oh well", Eats = "Who is counting anyway" },
-                                        new { Animal = "Tiger", Eats =  "Bear" },
-                    new { Animal = "Bear", Eats = "Oh my" },
-                    new { Animal = "Wait", Eats = "Oh my isn't an animal" },
-                    new { Animal = "Oh well", Eats = "Who is counting anyway" },
-                                        new { Animal = "Tiger", Eats =  "Bear" },
-                    new { Animal = "Bear", Eats = "Oh my" },
-                    new { Animal = "Wait", Eats = "Oh my isn't an animal" },
-                    new { Animal = "Oh well", Eats = "Who is counting anyway" },
-                                        new { Animal = "Tiger", Eats =  "Bear" },
-                    new { Animal = "Bear", Eats = "Oh my" },
-                    new { Animal = "Wait", Eats = "Oh my isn't an animal" },
-                    new { Animal = "Oh well", Eats = "Who is counting anyway" },
-                                        new { Animal = "Tiger", Eats =  "Bear" },
-                    new { Animal = "Bear", Eats = "Oh my" },
-                    new { Animal = "Wait", Eats = "Oh my isn't an animal" },
-                    new { Animal = "Oh well", Eats = "Who is counting anyway" },
-                                        new { Animal = "Tiger", Eats =  "Bear" },
-                    new { Animal = "Bear", Eats = "Oh my" },
-                    new { Animal = "Wait", Eats = "Oh my isn't an animal" },
-                    new { Animal = "Oh well", Eats = "Who is counting anyway" },
-                                        new { Animal = "Tiger", Eats =  "Bear" },
-                    new { Animal = "Bear", Eats = "Oh my" },
-                    new { Animal = "Wait", Eats = "Oh my isn't an animal" },
-                    new { Animal = "Oh well", Eats = "Who is counting anyway" },
-                                        new { Animal = "Tiger", Eats =  "Bear" },
-                    new { Animal = "Bear", Eats = "Oh my" },
-                    new { Animal = "Wait", Eats = "Oh my isn't an animal" },
-                    new { Animal = "Oh well", Eats = "Who is counting anyway" },
-                                        new { Animal = "Tiger", Eats =  "Bear" },
-                    new { Animal = "Bear", Eats = "Oh my" },
-                    new { Animal = "Wait", Eats = "Oh my isn't an animal" },
-                    new { Animal = "Oh well", Eats = "Who is counting anyway" },
-                                        new { Animal = "Tiger", Eats =  "Bear" },
-                    new { Animal = "Bear", Eats = "Oh my" },
-                    new { Animal = "Wait", Eats = "Oh my isn't an animal" },
-                    new { Animal = "Oh well", Eats = "Who is counting anyway" },
-                                        new { Animal = "Tiger", Eats =  "Bear" },
-                    new { Animal = "Bear", Eats = "Oh my" },
-                    new { Animal = "Wait", Eats = "Oh my isn't an animal" },
-                    new { Animal = "Oh well", Eats = "Who is counting anyway" },
-                                        new { Animal = "Tiger", Eats =  "Bear" },
-                    new { Animal = "Bear", Eats = "Oh my" },
-                    new { Animal = "Wait", Eats = "Oh my isn't an animal" },
-                    new { Animal = "Oh well", Eats = "Who is counting anyway" },
-                                        new { Animal = "Tiger", Eats =  "Bear" },
-                    new { Animal = "Bear", Eats = "Oh my" },
-                    new { Animal = "Wait", Eats = "Oh my isn't an animal" },
-                    new { Animal = "Oh well", Eats = "Who is counting anyway" },
-                                        new { Animal = "Tiger", Eats =  "Bear" },
-                    new { Animal = "Bear", Eats = "Oh my" },
-                    new { Animal = "Wait", Eats = "Oh my isn't an animal" },
-                    new { Animal = "Oh well", Eats = "Who is counting anyway" }
-
-                },
-                30
-            );
+            DataBaseContext db = new DataBaseContext();
+            this._cview = new PagingCollectionView(db.PedidosView.Select(s => s).ToList(), 10000);
             this.DataContext = this._cview;
         }
 

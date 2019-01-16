@@ -1,243 +1,158 @@
 ﻿using IngresoPedidos.Helpers;
 using IngresoPedidos.Models;
 using System.Collections.Generic;
-using System.Windows;
-using System.Windows.Controls;
 using System.Linq;
-using System;
 using System.Threading.Tasks;
-using System.Threading;
 
 namespace IngresoPedidos.ViewModels
 {
     class MainViewModel : ViewModelBase
     {
 
-        private PedidosView _selectedPedidoView;
+        private Usuarios _usuario;
+        private List<PedidosView> _listaPedidos;
+        private List<Modelos> _listaModelos;
+        private List<Productos> _listaProductos;
+        private PedidosView _pedidoSeleccionado;
+        private Modelos _modeloSeleccionado;
+        private Productos _productoSeleccionado;
+        public string FiltroSeleccionado { get; set; }
+        public List<string> _listaEstados { get; } = new List<string> { "INGRESADO", "COMPLETO", "INCOMPLETO", "AUTORIZADO", "PRODUCCION", "PAUSADO", "CANCELADO", "REPROCESADO", "DESPACHADOS" };
+        public List<string> _listaFiltros { get; } = new List<string> { "INGRESADO", "COMPLETO", "INCOMPLETO", "AUTORIZADO", "PRODUCCION", "PAUSADO", "CANCELADO", "REPROCESADO", "DESPACHADOS", "ULTIMOS" };
+        public string UsuarioActivo { get; set; } = "pepe";
+        private UsuariosRepository _usuariosRepository = new UsuariosRepository();
         private PedidosViewRepository _pedidosViewRepository = new PedidosViewRepository();
         private ModelosRepository _modelosRepository = new ModelosRepository();
         private ProductosRepository _productosRepository = new ProductosRepository();
-        private int _dataGridSelectedIndex;
-        private string _activeUser;
-        private string _selectedFilter;
-        private List<PedidosView> _pedidosViewList;
-        private List<Modelos> _modelosList;
-        private Modelos _selectedModelo;
+
 
         public MainViewModel()
         {
-            PedidosViewList = _pedidosViewRepository.GetPedidosView(SelectedFilter).OrderBy(o => o.FechaIngreso).ToList();
-            DataGridSelectedIndex = -1;
-            ModelosList = _modelosRepository.GetModelos();
-            WireCommands();
+
         }
 
-
-
-
-
-        public List<string> ModelosStringList { get; set; }
-        public List<string> ProductosStringList { get; set; }
-        public List<Productos> ProductosList { get; set; }
-        public List<string> EstadosList { get; } = new List<string> { "INGRESADO", "COMPLETO", "INCOMPLETO", "AUTORIZADO", "PRODUCCION", "PAUSADO", "CANCELADO", "REPROCESADO", "DESPACHADOS" };
-        public List<string> FiltrosList { get; } = new List<string> { "INGRESADOS", "COMPLETOS", "INCOMPLETOS", "AUTORIZADOS", "PRODUCCION", "PAUSADOS", "CANCELADOS", "REPROCESADOS", "DESPACHADOS", "ULTIMOS" };
-
-
-        public List<PedidosView> PedidosViewList
+        public Usuarios Usuario
         {
             get
             {
-                return _pedidosViewList;
+
+                return _usuario = _usuariosRepository.GetUsuario("925");
             }
 
             set
             {
-                if (_pedidosViewList != value)
+                if (_usuario != value)
                 {
-                    _pedidosViewList = value;
-                    OnPropertyChanged("PedidosViewList");
+                    _usuario = value;
+                    OnPropertyChanged("Usuario");
                 }
             }
         }
 
-        public List<Modelos> ModelosList
+        public List<PedidosView> ListaPedidos
         {
             get
             {
-                return _modelosList;
+
+                return _listaPedidos = _pedidosViewRepository.GetPedidosView(null);
             }
 
             set
             {
-                if (_modelosList != value)
+                if (_listaPedidos != value)
                 {
-                    _modelosList = value;
-                    OnPropertyChanged("ModelosList");
+                    _listaPedidos = value;
+                    OnPropertyChanged("ListaPedidos");
                 }
             }
         }
 
-
-
-
-        public Modelos SelectedModelo
+        public List<Modelos> ListaModelos
         {
             get
             {
-                return _selectedModelo;
+                return _listaModelos;
             }
 
             set
             {
-                if (_selectedModelo != value)
+                if (_listaModelos != value)
                 {
-                    _selectedModelo = value;
-                    _productosRepository.GetProductos(_selectedModelo.FK_IDProducto);
-                    OnPropertyChanged("SelectedModelo");
+                    _listaModelos = value;
+                    OnPropertyChanged("ListaModelos");
                 }
             }
         }
 
-        public PedidosView SelectedPedidoView
+        public List<Productos> ListaProductos
         {
             get
             {
-                return _selectedPedidoView;
+                return _listaProductos;
             }
 
             set
             {
-                if (_selectedPedidoView != value)
+                if (_listaProductos != value)
                 {
-                    _selectedPedidoView = value;
-                    OnPropertyChanged("SelectedPedidoView");
+                    _listaProductos = value;
+                    OnPropertyChanged("ListaProductos");
                 }
             }
         }
 
-        public string SelectedFilter
+        public PedidosView PedidoSeleccionado
         {
             get
             {
-                return _selectedFilter;
+                return _pedidoSeleccionado;
             }
 
             set
             {
-                if (_selectedFilter != value)
+                if (_pedidoSeleccionado != value)
                 {
-
-                    _selectedFilter = value;
-                    OnPropertyChanged("SelectedFilter");
-                    SelectedPedidoView = null;
-                    PedidosViewList = _pedidosViewRepository.GetPedidosView(value).OrderBy(o => o.FechaIngreso).ToList();
+                    _pedidoSeleccionado = value;
+                    OnPropertyChanged("PedidoSeleccionado");
                 }
             }
         }
 
-        public int DataGridSelectedIndex
+        public Modelos ModeloSeleccionado
         {
             get
             {
-                return _dataGridSelectedIndex;
+                return _modeloSeleccionado;
             }
 
             set
             {
-                if (_dataGridSelectedIndex != value)
+                if (_modeloSeleccionado != value)
                 {
-                    _dataGridSelectedIndex = value;
-                    OnPropertyChanged("DataGridSelectedIndex");
+                    _modeloSeleccionado = value;
+                    OnPropertyChanged("ModeloSeleccionado");
                 }
             }
         }
 
-        public RelayCommand CancelBusyIndicatorCommand { get; private set; }
-        public RelayCommand RefreshDataCommand { get; private set; }
-        public RelayCommand SelectReprocesoCommand { get; private set; }
-        public RelayCommand SelectOriginalCommand { get; private set; }
-        public RelayCommand FilterSelectionChangedCommand { get; private set; }
-        public RelayCommand LoadListCommand { get; private set; }
-
-        private void WireCommands()
+        public Productos ProductoSeleccionado
         {
+            get
+            {
+                return _productoSeleccionado;
+            }
 
-
-            RefreshDataCommand = new RelayCommand(RefreshDataAsync);
-            SelectReprocesoCommand = new RelayCommand(SelectReproceso);
-            SelectOriginalCommand = new RelayCommand(SelectOriginal);
-            RefreshDataCommand.IsEnabled = true;
-            SelectOriginalCommand.IsEnabled = true;
-            SelectReprocesoCommand.IsEnabled = true;
-            //CancelBusyIndicatorCommand.IsEnabled = true;
-            CancelBusyIndicatorCommand = new RelayCommand(CancelBusyIndicator);
-            ActiveUser = "{ " + "425" + " }" + " " + "SCHNEIDER NICOLAS";
-
-        }
-
-
-        public void SelectReproceso()
-        {
-            DataBaseContext dbc = new DataBaseContext();
-            PedidosView pv = dbc.PedidosView.Where(w => w.NumeroPedido == SelectedPedidoView.NumeroReproceso).SingleOrDefault();
-            PedidosViewList = _pedidosViewRepository.GetPedidosView(pv.EstadoPedido);
-            SelectedFilter = pv.EstadoPedido;
-            SelectedPedidoView = pv;
-        }
-
-        public void SelectOriginal()
-        {
-            DataBaseContext dbc = new DataBaseContext();
-            PedidosView pv = dbc.PedidosView.Where(w => w.NumeroPedido == SelectedPedidoView.NumeroOriginal).SingleOrDefault();
-            PedidosViewList = _pedidosViewRepository.GetPedidosView(pv.EstadoPedido);
-            SelectedFilter = pv.EstadoPedido;
-            SelectedPedidoView = pv;
-        }
-
-        public void SelectLast()
-        {
-            SelectedPedidoView = PedidosViewList.LastOrDefault();
-        }
-
-        async void RefreshDataAsync()
-        {
-
-            ProcessingDialog pd = new ProcessingDialog();
-            Task loaddata = GetInvoices(pd);
-            pd.ShowDialog();
-            await loaddata;
-        }
-
-        async Task GetInvoices(ProcessingDialog pd)
-        {
-            await Task.Delay(500);
-            PedidosViewList = null;
-            var lis = _pedidosViewRepository.GetPedidosView(SelectedFilter);
-            DataGridSelectedIndex = -1;
-            pd.Close();
-        }
-
-        private bool isBusy;
-        public bool IsBusy
-        {
-            get { return isBusy; }
             set
             {
-                isBusy = value;
-                OnPropertyChanged("IsBusy");
+                if (_productoSeleccionado != value)
+                {
+                    _productoSeleccionado = value;
+                    OnPropertyChanged("ProductoSeleccionado");
+                }
             }
         }
 
-        public string ActiveUser { get => _activeUser; set => _activeUser = value; }
-
-        private void CancelBusyIndicator()
-        {
-            isBusy = false;
-            ProcessingDialog pd = new ProcessingDialog();
-            Task loaddata = GetInvoices(pd);
-            pd.ShowDialog();
-        }
-
+        
     }
 }
 

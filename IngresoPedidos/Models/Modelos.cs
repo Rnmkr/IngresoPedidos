@@ -23,10 +23,9 @@ namespace IngresoPedidos.Models
 
     public class ModelosRepository
     {
-        private List<Modelos> _modelosList;
-
         public ModelosRepository()
         {
+
         }
 
         public List<Modelos> GetModelos()

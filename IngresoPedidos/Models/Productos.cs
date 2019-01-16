@@ -28,10 +28,9 @@ namespace IngresoPedidos.Models
 
     public class ProductosRepository
     {
-        private List<Productos> _productosList;
-
         public ProductosRepository()
         {
+
         }
 
         public List<Productos> GetProductos(int modelo)

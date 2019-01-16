@@ -35,7 +35,7 @@
         <Label Content="Anterior" HorizontalAlignment="Left" Margin="14,180,0,0" VerticalAlignment="Top" Height="25" Padding="0,0,5,0" HorizontalContentAlignment="Right" Width="105" VerticalContentAlignment="Center" FontFamily="Consolas" Background="#FFA9D1F4"/>
         <Label Content="Estado" HorizontalAlignment="Left" Margin="14,206,0,0" VerticalAlignment="Top" Height="25" Width="105" Padding="0,0,5,0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" FontFamily="Consolas" Background="#FFA9D1F4"/>
         <!---->
-        <DataGrid BorderBrush="#FFA9D1F4" BorderThickness="3" Height="auto" HorizontalGridLinesBrush="#FFA9D1F4" x:Name="DataGridPedidos" RowHeaderWidth="0" MinRowHeight="26" GridLinesVisibility="Horizontal" AlternationCount="2" ColumnHeaderHeight="28" SelectedIndex="{Binding DataGridSelectedIndex}" Loaded="DataGridPedidos_Loaded" SelectionChanged="DataGridPedidos_SelectionChanged" ItemsSource="{Binding PedidosViewList, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedPedidoView, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsSynchronizedWithCurrentItem="False" EnableColumnVirtualization="True" CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserSortColumns="False" Margin="270,43,10,10" ColumnWidth="*" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Single" EnableRowVirtualization="True" FontFamily="Consolas" FontWeight="Bold" FontSize="14" Foreground="Black" Background="#FFF0F0F0">
+        <DataGrid BorderBrush="#FFA9D1F4" BorderThickness="3" Height="auto" HorizontalGridLinesBrush="#FFA9D1F4" x:Name="DataGridPedidos" RowHeaderWidth="0" MinRowHeight="26" GridLinesVisibility="Horizontal" AlternationCount="2" ColumnHeaderHeight="28" SelectionChanged="DataGridPedidos_SelectionChanged" ItemsSource="{Binding ListaPedidos, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding PedidoSeleccionado, UpdateSourceTrigger=PropertyChanged}" IsSynchronizedWithCurrentItem="False" EnableColumnVirtualization="True" CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserSortColumns="False" Margin="270,43,10,10" ColumnWidth="*" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Single" EnableRowVirtualization="True" FontFamily="Consolas" FontWeight="Bold" FontSize="14" Foreground="Black" Background="#FFF0F0F0">
             <DataGrid.Resources>
                 <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Color="DarkGray"/>
             </DataGrid.Resources>
@@ -82,7 +82,7 @@
 
         <!---->
         <Button Content="GUARDAR" HorizontalAlignment="Left" Margin="14,336,0,0" Width="250" Height="25" VerticalAlignment="Top" TabIndex="11" FontFamily="Consolas" Click="Button_Click"/>
-        <Button Content="NUEVO" Command="{Binding CancelBusyIndicatorCommand}" HorizontalAlignment="Left" Margin="14,362,0,0" Width="250" Height="25" VerticalAlignment="Top" TabIndex="11" FontFamily="Consolas"/>
+        <Button Content="NUEVO" HorizontalAlignment="Left" Margin="14,362,0,0" Width="250" Height="25" VerticalAlignment="Top" TabIndex="11" FontFamily="Consolas"/>
         <Menu Height="30" VerticalAlignment="Top" Margin="10,10,143,0" BorderThickness="2" BorderBrush="#FFA9D1F4">
             <Menu.ItemsPanel>
                 <ItemsPanelTemplate>
@@ -95,20 +95,6 @@
                 <MenuItem Header="Actualizar Imagen" />
                 <MenuItem Header="Generar Recibo" />
             </MenuItem>
-            <!--<MenuItem Header="Lista" FontFamily="Consolas" >
-                <MenuItem Header="Todos" IsCheckable="True" helpers:MenuItemExtensions.GroupName="grupoEstados" Click="MenuItemClicked" />
-                <MenuItem Header="Despachado" IsCheckable="True" helpers:MenuItemExtensions.GroupName="grupoEstados" Click="MenuItemClicked" />
-                <MenuItem Header="Cancelado" IsCheckable="True" helpers:MenuItemExtensions.GroupName="grupoEstados" Click="MenuItemClicked"  />
-                <MenuItem Header="Ingresado" IsCheckable="True" helpers:MenuItemExtensions.GroupName="grupoEstados" Click="MenuItemClicked"  />
-                <MenuItem Header="Pausado" IsCheckable="True" helpers:MenuItemExtensions.GroupName="grupoEstados" Click="MenuItemClicked"  />
-                <MenuItem Header="Produccion" IsCheckable="True" helpers:MenuItemExtensions.GroupName="grupoEstados" Click="MenuItemClicked"  />
-                <MenuItem Header="Incompleto" IsCheckable="True" helpers:MenuItemExtensions.GroupName="grupoEstados" Click="MenuItemClicked"  />
-                <MenuItem Header="Autorizado" IsCheckable="True" helpers:MenuItemExtensions.GroupName="grupoEstados" Click="MenuItemClicked"  />
-                <MenuItem Header="Controlado" IsCheckable="True" helpers:MenuItemExtensions.GroupName="grupoEstados" Click="MenuItemClicked"  />
-                <MenuItem Header="Reprocesado" IsCheckable="True" helpers:MenuItemExtensions.GroupName="grupoEstados" Click="MenuItemClicked"  />
-                <Separator/>
-                <MenuItem Header="Actualizar" />
-            </MenuItem>-->
         <MenuItem Header="Display" FontFamily="Consolas">
             <MenuItem Header="Activar" IsCheckable="True" />
             <Separator/>
@@ -119,27 +105,23 @@
             <Separator/>
             <MenuItem Header="Actualizar" />
         </MenuItem>
-        <MenuItem Header="{Binding ActiveUser}" FontFamily="Consolas"  HorizontalAlignment="Right">
+        <MenuItem Header="{Binding Usuario}" FontFamily="Consolas" HorizontalAlignment="Right">
             <MenuItem Header="Cambiar Contraseña" />
             <MenuItem Header="Cerrar Sesion" />
         </MenuItem>
         </Menu>
-        <TextBox HorizontalAlignment="Left" BorderBrush="#FFABADB3" BorderThickness="1" Text="{Binding SelectedPedidoView.NumeroPedido}" Height="28" Margin="120,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" VerticalContentAlignment="Center" TabIndex="1" FontSize="16" FontFamily="Consolas" FontWeight="Medium"/>
-        <TextBox HorizontalAlignment="Left" BorderBrush="#FFABADB3" BorderThickness="1" Text="{Binding SelectedPedidoView.Articulo}" Height="25" Margin="120,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" VerticalContentAlignment="Center" TabIndex="2" FontFamily="Consolas" FontWeight="Medium" FontSize="16"/>
-        <ComboBox HorizontalAlignment="Left" ItemsSource="{Binding ModelosList}" SelectedItem="{Binding SelectedPedidoView.NombreModelo, Mode=TwoWay}" Margin="120,102,0,0" VerticalAlignment="Top" Width="144" VerticalContentAlignment="Center" Padding="6,3,5,3" TabIndex="3" FontFamily="Consolas" Height="25" FontWeight="Medium" FontSize="16"/>
-        <ComboBox HorizontalAlignment="Left" ItemsSource="{Binding ProductosList}" SelectedItem="{Binding SelectedPedidoView.NombreProducto, Mode=OneWay}" Margin="120,128,0,0" VerticalAlignment="Top" Width="144" VerticalContentAlignment="Center" Padding="6,3,5,3" TabIndex="4" FontFamily="Consolas" Height="25" FontWeight="Medium" FontSize="16"/>
-        <TextBox HorizontalAlignment="Left" BorderBrush="#FFABADB3" BorderThickness="1" Text="{Binding SelectedPedidoView.CantidadEquipos}" Height="25" Margin="120,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" VerticalContentAlignment="Center" TabIndex="5" FontFamily="Consolas" FontWeight="Medium" FontSize="16"/>
-        <TextBox HorizontalAlignment="Left" BorderBrush="#FFABADB3" BorderThickness="1" Text="{Binding SelectedPedidoView.NumeroOriginal}" Height="25" Margin="120,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" VerticalContentAlignment="Center" TabIndex="6" FontFamily="Consolas" FontWeight="Medium" FontSize="16"/>
-        <ComboBox HorizontalAlignment="Left" ItemsSource="{Binding EstadosList}" SelectedItem="{Binding SelectedPedidoView.EstadoPedido, Mode=OneWay}" Margin="120,206,0,0" VerticalAlignment="Top" Width="144" VerticalContentAlignment="Center" Padding="6,3,5,3" TabIndex="7" FontFamily="Consolas" Height="25" FontWeight="Medium" FontSize="16"/>
+        <TextBox HorizontalAlignment="Left" BorderBrush="#FFABADB3" BorderThickness="1" Text="{Binding PedidoSeleccionado.NumeroPedido}" Height="28" Margin="120,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" VerticalContentAlignment="Center" TabIndex="1" FontSize="16" FontFamily="Consolas" FontWeight="Medium"/>
+        <TextBox HorizontalAlignment="Left" BorderBrush="#FFABADB3" BorderThickness="1" Text="{Binding PedidoSeleccionado.Articulo}" Height="25" Margin="120,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" VerticalContentAlignment="Center" TabIndex="2" FontFamily="Consolas" FontWeight="Medium" FontSize="16"/>
+        <ComboBox HorizontalAlignment="Left" ItemsSource="{Binding ListaModelos, XPath=NombreModelo}" SelectedItem="{Binding PedidoSeleccionado.NombreModelo}" Margin="120,102,0,0" VerticalAlignment="Top" Width="144" VerticalContentAlignment="Center" Padding="6,3,5,3" TabIndex="3" FontFamily="Consolas" Height="25" FontWeight="Medium" FontSize="16"/>
+        <ComboBox HorizontalAlignment="Left" ItemsSource="{Binding ListaProductos, XPath=NombreProducto}" SelectedItem="{Binding PedidoSeleccionado.NombreProducto}" Margin="120,128,0,0" VerticalAlignment="Top" Width="144" VerticalContentAlignment="Center" Padding="6,3,5,3" TabIndex="4" FontFamily="Consolas" Height="25" FontWeight="Medium" FontSize="16"/>
+        <TextBox HorizontalAlignment="Left" BorderBrush="#FFABADB3" BorderThickness="1" Text="{Binding PedidoSeleccionado.CantidadEquipos}" Height="25" Margin="120,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" VerticalContentAlignment="Center" TabIndex="5" FontFamily="Consolas" FontWeight="Medium" FontSize="16"/>
+        <TextBox HorizontalAlignment="Left" BorderBrush="#FFABADB3" BorderThickness="1" Text="{Binding PedidoSeleccionado.NumeroOriginal}" Height="25" Margin="120,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" VerticalContentAlignment="Center" TabIndex="6" FontFamily="Consolas" FontWeight="Medium" FontSize="16"/>
+        <ComboBox HorizontalAlignment="Left" ItemsSource="{Binding ListaEstados}" SelectedItem="{Binding PedidoSeleccionado.EstadoPedido}" Margin="120,206,0,0" VerticalAlignment="Top" Width="144" VerticalContentAlignment="Center" Padding="6,3,5,3" TabIndex="7" FontFamily="Consolas" Height="25" FontWeight="Medium" FontSize="16"/>
         <Border BorderThickness="1" HorizontalAlignment="Left" Height="25" Margin="14,232,0,0" VerticalAlignment="Top" Width="250" BorderBrush="#FFABADB3">
             <CheckBox x:Name="CheckBoxComment" Checked="CheckBoxComment_Checked"  Content="Comentario" Margin="0" TabIndex="9" FontFamily="Consolas" Padding="3,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Center" BorderBrush="#FFACACAC"/>
         </Border>
         <TextBox x:Name="TextBoxComment" HorizontalAlignment="Left" BorderBrush="#FFABADB3" IsEnabled="{Binding ElementName=CheckBoxComment, Path=IsChecked}" BorderThickness="1" Height="77" Margin="14,258,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" MaxLength="120" MaxLines="2" TabIndex="10" FontFamily="Consolas" Padding="3"/>
-        <ComboBox Name="cbFiltros" Margin="0,10,10,0" FontFamily="Consolas" ItemsSource="{Binding FiltrosList}" SelectedItem="{Binding SelectedFilter}" FontWeight="Medium" FontSize="12" VerticalAlignment="Top" Height="30" HorizontalAlignment="Right" Width="128" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+        <ComboBox Name="cbFiltros" Margin="0,10,10,0" FontFamily="Consolas" ItemsSource="{Binding ListaFiltros}" SelectedItem="{Binding FiltroSeleccionado}" FontWeight="Medium" FontSize="12" VerticalAlignment="Top" Height="30" HorizontalAlignment="Right" Width="128" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
         </ComboBox>
-        <Label Content="{Binding SelectedFilter}" HorizontalAlignment="Left" Height="42" Margin="14,644,0,0" VerticalAlignment="Top" Width="250"/>
-        <!--<TextBlock x:Name="LabelPages"  VerticalAlignment="Top" FontFamily="Consolas" FontWeight="Bold" FontSize="16" Margin="0,17,0,0" HorizontalAlignment="Center"><Hyperlink NavigateUri="http://www.google.com"><Run Text="|&lt; &lt;&lt; 1 2 3 ... 19 &gt;&gt; &gt;|"/></Hyperlink></TextBlock>-->
-
-
     </Grid>
 </Window>

@@ -28,27 +28,16 @@ namespace IngresoPedidos.Models
 
     public class ProductosRepository
     {
+        private List<Productos> _productosList;
 
         public ProductosRepository()
         {
-
         }
 
-        private List<string> _productosList;
-
-        internal List<string> GetProductos(string sm)
+        public List<Productos> GetProductos(int modelo)
         {
             DataBaseContext db = new DataBaseContext();
-            int idp = db.Modelos.Where(w => w.NombreModelo == sm).Select(s => s.FK_IDProducto).SingleOrDefault();
-            _productosList = db.Productos.Where(w=>w.IDProducto == idp).Select(s => s.NombreProducto).ToList();
-            return _productosList;
-        }
-
-        public List<string> GetProductos()
-        {
-            DataBaseContext db = new DataBaseContext();
-            _productosList = db.Productos.Select(s => s.NombreProducto).ToList();
-            return _productosList;
+            return db.Productos.Where(w => w.IDProducto == modelo).Select(s => s).ToList();
         }
 
     }

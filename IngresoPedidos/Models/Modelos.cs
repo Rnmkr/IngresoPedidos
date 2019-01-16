@@ -9,12 +9,6 @@ namespace IngresoPedidos.Models
 
     public partial class Modelos
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Modelos()
-        {
-            Pedidos = new HashSet<Pedidos>();
-        }
-
         [Key]
         public int IDModelo { get; set; }
 
@@ -25,29 +19,20 @@ namespace IngresoPedidos.Models
         public string NombreModelo { get; set; }
 
         public virtual Productos Productos { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Pedidos> Pedidos { get; set; }
     }
-
 
     public class ModelosRepository
     {
+        private List<Modelos> _modelosList;
 
         public ModelosRepository()
         {
-
         }
 
-        private List<string> _modelosList;
-        public List<string> GetModelos()
+        public List<Modelos> GetModelos()
         {
             DataBaseContext db = new DataBaseContext();
-            _modelosList = db.Modelos.Select(s => s.NombreModelo).ToList();
-            return _modelosList;
+            return db.Modelos.Select(s => s).ToList();
         }
-
     }
-
-
 }

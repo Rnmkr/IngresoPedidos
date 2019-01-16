@@ -101,9 +101,7 @@
     <Compile Include="Helpers\WaitProgressBar.cs" />
     <Compile Include="Models\DataBaseContext.cs" />
     <Compile Include="Models\Modelos.cs" />
-    <Compile Include="Models\Pedidos.cs" />
     <Compile Include="Models\PedidosView.cs" />
-    <Compile Include="Models\PedidosViewDisplay.cs" />
     <Compile Include="Models\Productos.cs" />
     <Compile Include="Models\Usuarios.cs" />
     <Compile Include="ProcessingDialog.xaml.cs">

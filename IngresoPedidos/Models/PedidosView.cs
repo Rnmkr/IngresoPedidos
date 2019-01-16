@@ -12,35 +12,40 @@ namespace IngresoPedidos.Models
     {
         [Key]
         [Column(Order = 0)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int IDPedido { get; set; }
+
+        [Key]
+        [Column(Order = 1)]
         [StringLength(12)]
         public string NumeroPedido { get; set; }
 
         [Key]
-        [Column(Order = 1)]
+        [Column(Order = 2)]
         [StringLength(25)]
         public string NombreModelo { get; set; }
 
         [Key]
-        [Column(Order = 2)]
+        [Column(Order = 3)]
         [StringLength(25)]
         public string NombreProducto { get; set; }
 
         [Key]
-        [Column(Order = 3)]
+        [Column(Order = 4)]
         [StringLength(10)]
         public string Articulo { get; set; }
 
         [Key]
-        [Column(Order = 4)]
+        [Column(Order = 5)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int CantidadEquipos { get; set; }
 
         [Key]
-        [Column(Order = 5, TypeName = "smalldatetime")]
+        [Column(Order = 6, TypeName = "smalldatetime")]
         public DateTime FechaIngreso { get; set; }
 
         [Key]
-        [Column(Order = 6)]
+        [Column(Order = 7)]
         [StringLength(11)]
         public string EstadoPedido { get; set; }
 
@@ -70,49 +75,45 @@ namespace IngresoPedidos.Models
 
             switch (filter)
             {
-                case "ULTIMOS 15000":
-                    _pedidosViewList = db.PedidosView.OrderBy(o => o.FechaIngreso).Take(15000).ToList();
+
+                case "INGRESADOS":
+                    _pedidosViewList = db.PedidosView.Where(w => w.EstadoPedido == "INGRESADO").Select(s => s).ToList();
                     break;
 
-                case "DESPACHADOS":
-                    _pedidosViewList = db.PedidosView.Where(W => W.EstadoPedido == "DESPACHADO").Select(s => s).ToList();
-                    break;
-
-                case "DISPONIBLES":
-                    _pedidosViewList = db.PedidosView.Where(W => W.EstadoPedido == "DISPONIBLE").Select(s => s).ToList();
-                    break;
-
-                case "PAUSADOS":
-                    _pedidosViewList = db.PedidosView.Where(W => W.EstadoPedido == "PAUSADO").Select(s => s).ToList();
-                    break;
-
-                case "AUTORIZADOS":
-                    _pedidosViewList = db.PedidosView.Where(W => W.EstadoPedido == "AUTORIZADO").Select(s => s).ToList();
+                case "COMPLETOS":
+                    _pedidosViewList = db.PedidosView.Where(w => w.EstadoPedido == "COMPLETO").Select(s => s).ToList();
                     break;
 
                 case "INCOMPLETOS":
                     _pedidosViewList = db.PedidosView.Where(W => W.EstadoPedido == "INCOMPLETO").Select(s => s).ToList();
                     break;
 
-                case "COMPLETOS":
-                    _pedidosViewList = db.PedidosView.Where(W => W.EstadoPedido == "COMPLETO").Select(s => s).ToList();
+                case "AUTORIZADOS":
+                    _pedidosViewList = db.PedidosView.Where(W => W.EstadoPedido == "AUTORIZADO").Select(s => s).ToList();
                     break;
 
-                case "REPROCESADOS":
-                    _pedidosViewList = db.PedidosView.Where(W => W.EstadoPedido == "REPROCESADO").Select(s => s).ToList();
+                case "PRODUCCION":
+                    _pedidosViewList = db.PedidosView.Where(W => W.EstadoPedido == "PRODUCCION").Select(s => s).ToList();
+                    break;
+
+                case "PAUSADOS":
+                    _pedidosViewList = db.PedidosView.Where(W => W.EstadoPedido == "PAUSADO").Select(s => s).ToList();
                     break;
 
                 case "CANCELADOS":
                     _pedidosViewList = db.PedidosView.Where(W => W.EstadoPedido == "CANCELADO").Select(s => s).ToList();
                     break;
 
-                case "CONTROLADOS":
-                    _pedidosViewList = db.PedidosView.Where(W => W.EstadoPedido == "CONTROLADO").Select(s => s).ToList();
+                case "REPROCESADOS":
+                    _pedidosViewList = db.PedidosView.Where(W => W.EstadoPedido == "REPROCESADO").Select(s => s).ToList();
                     break;
 
+                case "DESPACHADOS":
+                    _pedidosViewList = db.PedidosView.Where(W => W.EstadoPedido == "DESPACHADO").OrderByDescending(o => o.FechaIngreso).Take(10000).ToList();
+                    break;
 
                 default:
-                    _pedidosViewList = db.PedidosView.Where(W => W.EstadoPedido == "INGRESADO").Select(s => s).ToList();
+                    _pedidosViewList = db.PedidosView.OrderByDescending(o => o.FechaIngreso).Take(20000).ToList();
                     break;
             }
             return _pedidosViewList;

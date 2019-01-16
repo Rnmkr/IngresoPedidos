@@ -21,14 +21,14 @@ namespace IngresoPedidos.ViewModels
         private string _activeUser;
         private string _selectedFilter;
         private List<PedidosView> _pedidosViewList;
+        private List<Modelos> _modelosList;
+        private Modelos _selectedModelo;
 
         public MainViewModel()
         {
             PedidosViewList = _pedidosViewRepository.GetPedidosView(SelectedFilter).OrderBy(o => o.FechaIngreso).ToList();
             DataGridSelectedIndex = -1;
             ModelosList = _modelosRepository.GetModelos();
-            ProductosList = _productosRepository.GetProductos();
-
             WireCommands();
         }
 
@@ -36,11 +36,11 @@ namespace IngresoPedidos.ViewModels
 
 
 
-        //public List<PedidosView> PedidosViewList { get; set; }
-        public List<string> ModelosList { get; set; }
-        public List<string> ProductosList { get; set; }
-        public List<string> EstadosList { get; } = new List<string> { "DESPACHADO", "CANCELADO", "INGRESADO", "PAUSADO", "PRODUCCION", "INCOMPLETO", "AUTORIZADO", "CONTROLADO", "REPROCESADO" };
-        public List<string> FiltrosList { get; } = new List<string> { "ULTIMOS 15000", "CANCELADOS", "INGRESADOS", "PAUSADOS", "PRODUCCION", "INCOMPLETOS", "AUTORIZADOS", "CONTROLADOS", "REPROCESADOS" };
+        public List<string> ModelosStringList { get; set; }
+        public List<string> ProductosStringList { get; set; }
+        public List<Productos> ProductosList { get; set; }
+        public List<string> EstadosList { get; } = new List<string> { "INGRESADO", "COMPLETO", "INCOMPLETO", "AUTORIZADO", "PRODUCCION", "PAUSADO", "CANCELADO", "REPROCESADO", "DESPACHADOS" };
+        public List<string> FiltrosList { get; } = new List<string> { "INGRESADOS", "COMPLETOS", "INCOMPLETOS", "AUTORIZADOS", "PRODUCCION", "PAUSADOS", "CANCELADOS", "REPROCESADOS", "DESPACHADOS", "ULTIMOS" };
 
 
         public List<PedidosView> PedidosViewList
@@ -55,14 +55,48 @@ namespace IngresoPedidos.ViewModels
                 if (_pedidosViewList != value)
                 {
                     _pedidosViewList = value;
-                    _pedidosViewList.OrderByDescending(o => o.FechaIngreso);
                     OnPropertyChanged("PedidosViewList");
+                }
+            }
+        }
+
+        public List<Modelos> ModelosList
+        {
+            get
+            {
+                return _modelosList;
+            }
+
+            set
+            {
+                if (_modelosList != value)
+                {
+                    _modelosList = value;
+                    OnPropertyChanged("ModelosList");
                 }
             }
         }
 
 
 
+
+        public Modelos SelectedModelo
+        {
+            get
+            {
+                return _selectedModelo;
+            }
+
+            set
+            {
+                if (_selectedModelo != value)
+                {
+                    _selectedModelo = value;
+                    _productosRepository.GetProductos(_selectedModelo.FK_IDProducto);
+                    OnPropertyChanged("SelectedModelo");
+                }
+            }
+        }
 
         public PedidosView SelectedPedidoView
         {
@@ -96,8 +130,7 @@ namespace IngresoPedidos.ViewModels
                     _selectedFilter = value;
                     OnPropertyChanged("SelectedFilter");
                     SelectedPedidoView = null;
-                    //PedidosViewList = null;
-                    PedidosViewList = _pedidosViewRepository.GetPedidosView(value);
+                    PedidosViewList = _pedidosViewRepository.GetPedidosView(value).OrderBy(o => o.FechaIngreso).ToList();
                 }
             }
         }

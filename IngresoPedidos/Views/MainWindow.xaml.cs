@@ -15,7 +15,7 @@ namespace IngresoPedidos
         public MainWindow()
         {
             InitializeComponent();
-            cbFiltros.SelectedIndex = 2;
+            cbFiltros.SelectedIndex = 0;
             //LabelPages.Text = DataGridPedidos.Items.Count.ToString();
         }
 

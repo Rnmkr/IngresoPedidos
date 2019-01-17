@@ -196,5 +196,20 @@
   <ItemGroup>
     <Resource Include="Resources\paste.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\128.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\128 %281%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\128 %282%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\256.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\256 %281%29.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

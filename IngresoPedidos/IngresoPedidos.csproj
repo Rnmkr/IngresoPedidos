@@ -149,12 +149,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\newpassword.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\exit.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <SplashScreen Include="SplashScreen.png" />
   </ItemGroup>
   <ItemGroup>
@@ -165,6 +159,42 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\NOT1422EXO.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\add.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\display.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\exit.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\refresh.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\registros.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\search.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\save.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\newpassword.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\delete.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\copy.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cut.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\paste.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

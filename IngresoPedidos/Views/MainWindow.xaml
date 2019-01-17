@@ -10,6 +10,11 @@
     <Window.Resources>
         <viewModels:MainViewModel x:Key="ViewModel" />
     </Window.Resources>
+    <!--<Window.CommandBindings>
+        <CommandBinding Command="New" CanExecute="CommonCommandBinding_CanExecute" />
+        <CommandBinding Command="Open" CanExecute="CommonCommandBinding_CanExecute" />
+        <CommandBinding Command="Save" CanExecute="CommonCommandBinding_CanExecute" />
+    </Window.CommandBindings>-->
 
 
     <Grid DataContext="{Binding Source={StaticResource ViewModel}}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
@@ -18,24 +23,24 @@
        
 
         <!---->
-        <Border BorderBrush="#FFA9D1F4" BorderThickness="3" HorizontalAlignment="Left" Margin="10,43,0,10" Width="258" Background="#FFF0F0F0"/>
+        <Border BorderBrush="#FFA9D1F4" BorderThickness="3" HorizontalAlignment="Left" Margin="10,88,0,10" Width="258" Background="#FFF0F0F0"/>
 
 
-        <Border BorderBrush="#FFABADB3" BorderThickness="1" HorizontalAlignment="Left" Margin="14,389,0,0" Width="250" Background="#FFF0F0F0" Height="250" VerticalAlignment="Top">
+        <Border BorderBrush="#FFABADB3" BorderThickness="1" HorizontalAlignment="Left" Margin="14,384,0,0" Width="250" Background="#FFF0F0F0" Height="250" VerticalAlignment="Top">
             <Image Margin="0" Source="/IngresoPedidos;component/Resources/NOT1422EXO.jpg"/>
         </Border>
 
 
         <!---->
-        <Label Content="Pedido" HorizontalAlignment="Left" Margin="14,47,0,0" VerticalAlignment="Top" Height="28" Width="105" Padding="0,0,5,0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" FontFamily="Consolas" Background="#FFA9D1F4"/>
-        <Label Content="Articulo" HorizontalAlignment="Left" Margin="14,76,0,0" VerticalAlignment="Top" Height="25" Width="105" Padding="0,0,5,0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" FontFamily="Consolas" Background="#FFA9D1F4"/>
-        <Label Content="Modelo" HorizontalAlignment="Left" Margin="14,102,0,0" VerticalAlignment="Top" Height="25" Width="105" Padding="0,0,5,0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" FontFamily="Consolas" Background="#FFA9D1F4"/>
-        <Label Content="Producto" HorizontalAlignment="Left" Margin="14,128,0,0" VerticalAlignment="Top" Height="25" Width="105" Padding="0,0,5,0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" FontFamily="Consolas" Background="#FFA9D1F4"/>
-        <Label Content="Cantidad" HorizontalAlignment="Left" Margin="14,154,0,0" VerticalAlignment="Top" Height="25" Width="105" Padding="0,0,5,0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" FontFamily="Consolas" Background="#FFA9D1F4"/>
-        <Label Content="Anterior" HorizontalAlignment="Left" Margin="14,180,0,0" VerticalAlignment="Top" Height="25" Padding="0,0,5,0" HorizontalContentAlignment="Right" Width="105" VerticalContentAlignment="Center" FontFamily="Consolas" Background="#FFA9D1F4"/>
-        <Label Content="Estado" HorizontalAlignment="Left" Margin="14,206,0,0" VerticalAlignment="Top" Height="25" Width="105" Padding="0,0,5,0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" FontFamily="Consolas" Background="#FFA9D1F4"/>
+        <Label Content="Pedido" HorizontalAlignment="Left" Margin="14,95,0,0" VerticalAlignment="Top" Height="28" Width="105" Padding="0,0,5,0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Background="#FFA9D1F4"/>
+        <Label Content="Articulo" HorizontalAlignment="Left" Margin="14,124,0,0" VerticalAlignment="Top" Height="25" Width="105" Padding="0,0,5,0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Background="#FFA9D1F4"/>
+        <Label Content="Modelo" HorizontalAlignment="Left" Margin="14,150,0,0" VerticalAlignment="Top" Height="25" Width="105" Padding="0,0,5,0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Background="#FFA9D1F4"/>
+        <Label Content="Producto" HorizontalAlignment="Left" Margin="14,176,0,0" VerticalAlignment="Top" Height="25" Width="105" Padding="0,0,5,0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Background="#FFA9D1F4"/>
+        <Label Content="Cantidad" HorizontalAlignment="Left" Margin="14,202,0,0" VerticalAlignment="Top" Height="25" Width="105" Padding="0,0,5,0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Background="#FFA9D1F4"/>
+        <Label Content="Anterior" HorizontalAlignment="Left" Margin="14,228,0,0" VerticalAlignment="Top" Height="25" Padding="0,0,5,0" HorizontalContentAlignment="Right" Width="105" VerticalContentAlignment="Center" Background="#FFA9D1F4"/>
+        <Label Content="Estado" HorizontalAlignment="Left" Margin="14,254,0,0" VerticalAlignment="Top" Height="25" Width="105" Padding="0,0,5,0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Background="#FFA9D1F4"/>
         <!---->
-        <DataGrid BorderBrush="#FFA9D1F4" BorderThickness="3" Height="auto" HorizontalGridLinesBrush="#FFA9D1F4" x:Name="DataGridPedidos" RowHeaderWidth="0" MinRowHeight="26" GridLinesVisibility="Horizontal" AlternationCount="2" ColumnHeaderHeight="28" SelectionChanged="DataGridPedidos_SelectionChanged" ItemsSource="{Binding ListaPedidos, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding PedidoSeleccionado, UpdateSourceTrigger=PropertyChanged}" IsSynchronizedWithCurrentItem="False" EnableColumnVirtualization="True" CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserSortColumns="False" Margin="270,43,10,10" ColumnWidth="*" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Single" EnableRowVirtualization="True" FontFamily="Consolas" FontWeight="Bold" FontSize="14" Foreground="Black" Background="#FFF0F0F0">
+        <DataGrid BorderBrush="#FFA9D1F4" BorderThickness="3" Height="auto" HorizontalGridLinesBrush="#FFA9D1F4" x:Name="DataGridPedidos" RowHeaderWidth="0" MinRowHeight="26" GridLinesVisibility="Horizontal" AlternationCount="2" ColumnHeaderHeight="28" SelectionChanged="DataGridPedidos_SelectionChanged" ItemsSource="{Binding ListaPedidos, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding PedidoSeleccionado, UpdateSourceTrigger=PropertyChanged}" IsSynchronizedWithCurrentItem="False" EnableColumnVirtualization="True" CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserSortColumns="False" Margin="270,88,10,10" ColumnWidth="*" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Single" EnableRowVirtualization="True" FontFamily="Consolas" FontWeight="Bold" FontSize="14" Foreground="Black" Background="#FFF0F0F0">
             <DataGrid.Resources>
                 <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Color="DarkGray"/>
             </DataGrid.Resources>
@@ -81,16 +86,18 @@
         </DataGrid>
 
         <!---->
-        <Button Content="GUARDAR" HorizontalAlignment="Left" Margin="14,336,0,0" Width="250" Height="25" VerticalAlignment="Top" TabIndex="11" FontFamily="Consolas" Click="Button_Click"/>
-        <Button Content="NUEVO" HorizontalAlignment="Left" Margin="14,362,0,0" Width="250" Height="25" VerticalAlignment="Top" TabIndex="11" FontFamily="Consolas"/>
-        <Menu Height="30" VerticalAlignment="Top" Margin="10,10,143,0" BorderThickness="2" BorderBrush="#FFA9D1F4">
+
+        <!--<Menu Height="30" VerticalAlignment="Top" Margin="10,10,143,0" BorderThickness="2" BorderBrush="#FFA9D1F4">
             <Menu.ItemsPanel>
                 <ItemsPanelTemplate>
                     <DockPanel HorizontalAlignment="Stretch" Background="#FFF0F0F0"/>
                 </ItemsPanelTemplate>
             </Menu.ItemsPanel>
             <MenuItem Header="Pedido" FontFamily="Consolas" >
-                <MenuItem Header="Buscar" />
+               
+                <MenuItem Header="Buscar" >
+                    <MenuItem.Icon><Image Source="/IngresoPedidos;component/Resources/exit.ico"/></MenuItem.Icon>
+                    </MenuItem>
                 <MenuItem Header="Ver Movimientos" />
                 <MenuItem Header="Actualizar Imagen" />
                 <MenuItem Header="Generar Recibo" />
@@ -105,23 +112,132 @@
             <Separator/>
             <MenuItem Header="Actualizar" />
         </MenuItem>
-        <MenuItem Header="{Binding Usuario}" FontFamily="Consolas" HorizontalAlignment="Right">
+        <MenuItem Header="{Binding UsuarioActivo}" FontFamily="Consolas" HorizontalAlignment="Right">
             <MenuItem Header="Cambiar Contraseña" />
             <MenuItem Header="Cerrar Sesion" />
         </MenuItem>
-        </Menu>
-        <TextBox HorizontalAlignment="Left" BorderBrush="#FFABADB3" BorderThickness="1" Text="{Binding PedidoSeleccionado.NumeroPedido}" Height="28" Margin="120,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" VerticalContentAlignment="Center" TabIndex="1" FontSize="16" FontFamily="Consolas" FontWeight="Medium"/>
-        <TextBox HorizontalAlignment="Left" BorderBrush="#FFABADB3" BorderThickness="1" Text="{Binding PedidoSeleccionado.Articulo}" Height="25" Margin="120,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" VerticalContentAlignment="Center" TabIndex="2" FontFamily="Consolas" FontWeight="Medium" FontSize="16"/>
-        <ComboBox HorizontalAlignment="Left" ItemsSource="{Binding ListaModelos, XPath=NombreModelo}" SelectedItem="{Binding PedidoSeleccionado.NombreModelo}" Margin="120,102,0,0" VerticalAlignment="Top" Width="144" VerticalContentAlignment="Center" Padding="6,3,5,3" TabIndex="3" FontFamily="Consolas" Height="25" FontWeight="Medium" FontSize="16"/>
-        <ComboBox HorizontalAlignment="Left" ItemsSource="{Binding ListaProductos, XPath=NombreProducto}" SelectedItem="{Binding PedidoSeleccionado.NombreProducto}" Margin="120,128,0,0" VerticalAlignment="Top" Width="144" VerticalContentAlignment="Center" Padding="6,3,5,3" TabIndex="4" FontFamily="Consolas" Height="25" FontWeight="Medium" FontSize="16"/>
-        <TextBox HorizontalAlignment="Left" BorderBrush="#FFABADB3" BorderThickness="1" Text="{Binding PedidoSeleccionado.CantidadEquipos}" Height="25" Margin="120,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" VerticalContentAlignment="Center" TabIndex="5" FontFamily="Consolas" FontWeight="Medium" FontSize="16"/>
-        <TextBox HorizontalAlignment="Left" BorderBrush="#FFABADB3" BorderThickness="1" Text="{Binding PedidoSeleccionado.NumeroOriginal}" Height="25" Margin="120,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" VerticalContentAlignment="Center" TabIndex="6" FontFamily="Consolas" FontWeight="Medium" FontSize="16"/>
-        <ComboBox HorizontalAlignment="Left" ItemsSource="{Binding ListaEstados}" SelectedItem="{Binding PedidoSeleccionado.EstadoPedido}" Margin="120,206,0,0" VerticalAlignment="Top" Width="144" VerticalContentAlignment="Center" Padding="6,3,5,3" TabIndex="7" FontFamily="Consolas" Height="25" FontWeight="Medium" FontSize="16"/>
-        <Border BorderThickness="1" HorizontalAlignment="Left" Height="25" Margin="14,232,0,0" VerticalAlignment="Top" Width="250" BorderBrush="#FFABADB3">
-            <CheckBox x:Name="CheckBoxComment" Checked="CheckBoxComment_Checked"  Content="Comentario" Margin="0" TabIndex="9" FontFamily="Consolas" Padding="3,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Center" BorderBrush="#FFACACAC"/>
+        </Menu>-->
+
+        <DockPanel HorizontalAlignment="Left" VerticalAlignment="Top" Width="1906" Height="66" Margin="0,10,0,0">
+            <ToolBarTray>
+                <ToolBar VerticalContentAlignment="Center" Margin="0,0,0,-10" VerticalAlignment="Center" HorizontalContentAlignment="Center" Width="1434">
+
+                    <Button Command="Cut" ToolTip="Cut selection to Windows Clipboard.">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/IngresoPedidos;component/Resources/add.ico" Width="48" Height="48" />
+                            <!--<TextBlock Margin="3,0,0,0">Buscar</TextBlock>-->
+                        </StackPanel>
+                    </Button>
+
+                    <Button Command="Paste" ToolTip="Paste from Windows Clipboard.">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/IngresoPedidos;component/Resources/save.ico" Width="48" Height="48" />
+                            <!--<TextBlock Margin="3,0,0,0">Cerrar Sesion</TextBlock>-->
+                        </StackPanel>
+                    </Button>
+
+                    <Button Command="Copy" ToolTip="Copy selection to Windows Clipboard.">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/IngresoPedidos;component/Resources/delete.ico" Width="48" Height="48" />
+                            <!--<TextBlock Margin="3,0,0,0">Eliminar</TextBlock>-->
+                        </StackPanel>
+                    </Button>
+
+                    <Separator></Separator>
+
+                    <Button Command="Paste" ToolTip="Paste from Windows Clipboard.">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/IngresoPedidos;component/Resources/copy.ico" Width="48" Height="48" />
+                            <!--<TextBlock Margin="3,0,0,0">Recibo</TextBlock>-->
+                        </StackPanel>
+                    </Button>
+
+                    <Button Command="Paste" ToolTip="Paste from Windows Clipboard.">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/IngresoPedidos;component/Resources/cut.ico" Width="48" Height="48" />
+                            <!--<TextBlock Margin="3,0,0,0">Recibo</TextBlock>-->
+                        </StackPanel>
+                    </Button>
+
+                    <Button Command="Paste" ToolTip="Paste from Windows Clipboard.">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/IngresoPedidos;component/Resources/paste.ico" Width="48" Height="48" />
+                            <!--<TextBlock Margin="3,0,0,0">Recibo</TextBlock>-->
+                        </StackPanel>
+                    </Button>
+
+                    <Separator></Separator>
+
+                    <Button Command="Paste" ToolTip="Paste from Windows Clipboard.">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/IngresoPedidos;component/Resources/refresh.ico" Width="48" Height="48" />
+                            <!--<TextBlock Margin="3,0,0,0">Recibo</TextBlock>-->
+                        </StackPanel>
+                    </Button>
+
+                    <Button Command="Paste" ToolTip="Paste from Windows Clipboard.">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/IngresoPedidos;component/Resources/search.ico" Width="48" Height="48" />
+                            <!--<TextBlock Margin="3,0,0,0">Movimientos</TextBlock>-->
+                        </StackPanel>
+                    </Button>
+
+                    <Button Command="Paste" ToolTip="Paste from Windows Clipboard.">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/IngresoPedidos;component/Resources/registros.ico" Width="48" Height="48" />
+                            <!--<TextBlock Margin="3,0,0,0">Cambiar Contraseña</TextBlock>-->
+                        </StackPanel>
+                    </Button>
+
+                    <Button Command="Paste" ToolTip="Paste from Windows Clipboard.">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/IngresoPedidos;component/Resources/display.ico" Width="48" Height="48" />
+                            <!--<TextBlock Margin="3,0,0,0">Cerrar Sesion</TextBlock>-->
+                        </StackPanel>
+                    </Button>
+
+                </ToolBar>
+            </ToolBarTray>
+
+            <ToolBarTray HorizontalAlignment="Right">
+                <ToolBar VerticalContentAlignment="Center" HorizontalContentAlignment="Center">
+
+                    <Label HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,0" BorderThickness="2" BorderBrush="#FFA9D1F4">{425} Schneider Nicolás</Label>
+
+                    <Button Command="Paste" ToolTip="Paste from Windows Clipboard." Margin="5,0">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/IngresoPedidos;component/Resources/newpassword.ico" Width="48" Height="48" />
+                            <!--<TextBlock Margin="3,0,0,0">Cerrar Sesion</TextBlock>-->
+                        </StackPanel>
+                    </Button>
+
+                    <Button Command="Paste" ToolTip="Paste from Windows Clipboard.">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/IngresoPedidos;component/Resources/exit.ico" Width="48" Height="48" Margin="5,0" />
+                            <!--<TextBlock Margin="3,0,0,0">Display</TextBlock>-->
+                        </StackPanel>
+                    </Button>
+
+                    <ComboBox Name="cbFiltros" Margin="10,0,0,0" FontFamily="Consolas" ItemsSource="{Binding _listaFiltros}" SelectedItem="{Binding FiltroSeleccionado}" FontWeight="Medium" FontSize="12" VerticalAlignment="Center" Height="30" HorizontalAlignment="Center" Width="160" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="#FFA9D1F4"/>
+                </ToolBar>
+            </ToolBarTray>
+        </DockPanel>
+
+
+
+
+        <TextBox HorizontalAlignment="Left" BorderBrush="#FFABADB3" BorderThickness="1" Text="{Binding PedidoSeleccionado.NumeroPedido}" Height="28" Margin="120,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" VerticalContentAlignment="Center" TabIndex="1" FontSize="16" FontFamily="Consolas" FontWeight="Medium"/>
+        <TextBox HorizontalAlignment="Left" BorderBrush="#FFABADB3" BorderThickness="1" Text="{Binding PedidoSeleccionado.Articulo}" Height="25" Margin="120,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" VerticalContentAlignment="Center" TabIndex="2" FontFamily="Consolas" FontWeight="Medium" FontSize="16"/>
+        <ComboBox HorizontalAlignment="Left" ItemsSource="{Binding ListaModelos}" SelectedItem="{Binding PedidoSeleccionado.NombreModelo}" Margin="120,150,0,0" VerticalAlignment="Top" Width="144" VerticalContentAlignment="Center" Padding="6,3,5,3" TabIndex="3" FontFamily="Consolas" Height="25" FontWeight="Medium" FontSize="16"/>
+        <ComboBox HorizontalAlignment="Left" ItemsSource="{Binding ListaProductos}" SelectedItem="{Binding PedidoSeleccionado.NombreProducto}" Margin="120,176,0,0" VerticalAlignment="Top" Width="144" VerticalContentAlignment="Center" Padding="6,3,5,3" TabIndex="4" FontFamily="Consolas" Height="25" FontWeight="Medium" FontSize="16"/>
+        <TextBox HorizontalAlignment="Left" BorderBrush="#FFABADB3" BorderThickness="1" Text="{Binding PedidoSeleccionado.CantidadEquipos}" Height="25" Margin="120,202,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" VerticalContentAlignment="Center" TabIndex="5" FontFamily="Consolas" FontWeight="Medium" FontSize="16"/>
+        <TextBox HorizontalAlignment="Left" BorderBrush="#FFABADB3" BorderThickness="1" Text="{Binding PedidoSeleccionado.NumeroOriginal}" Height="25" Margin="120,228,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" VerticalContentAlignment="Center" TabIndex="6" FontFamily="Consolas" FontWeight="Medium" FontSize="16"/>
+        <ComboBox HorizontalAlignment="Left" ItemsSource="{Binding _listaEstados}" SelectedItem="{Binding PedidoSeleccionado.EstadoPedido, Mode=OneWay}" Margin="120,254,0,0" VerticalAlignment="Top" Width="144" VerticalContentAlignment="Center" Padding="6,3,5,3" TabIndex="7" FontFamily="Consolas" Height="25" FontWeight="Medium" FontSize="16"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="25" Margin="14,280,0,0" VerticalAlignment="Top" Width="250" BorderBrush="#FFABADB3">
+            <CheckBox x:Name="CheckBoxComment" Checked="CheckBoxComment_Checked"  Content="Comentario" Margin="0" TabIndex="9" Padding="3,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Center" BorderBrush="#FFACACAC"/>
         </Border>
-        <TextBox x:Name="TextBoxComment" HorizontalAlignment="Left" BorderBrush="#FFABADB3" IsEnabled="{Binding ElementName=CheckBoxComment, Path=IsChecked}" BorderThickness="1" Height="77" Margin="14,258,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" MaxLength="120" MaxLines="2" TabIndex="10" FontFamily="Consolas" Padding="3"/>
-        <ComboBox Name="cbFiltros" Margin="0,10,10,0" FontFamily="Consolas" ItemsSource="{Binding ListaFiltros}" SelectedItem="{Binding FiltroSeleccionado}" FontWeight="Medium" FontSize="12" VerticalAlignment="Top" Height="30" HorizontalAlignment="Right" Width="128" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
-        </ComboBox>
+        <TextBox x:Name="TextBoxComment" HorizontalAlignment="Left" BorderBrush="#FFABADB3" IsEnabled="{Binding ElementName=CheckBoxComment, Path=IsChecked}" BorderThickness="1" Height="77" Margin="14,306,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" MaxLength="120" MaxLines="2" TabIndex="10" FontFamily="Consolas" Padding="3"/>
+
+
     </Grid>
 </Window>

@@ -56,11 +56,11 @@ namespace IngresoPedidos
         //    }
         //}
 
-        private void CheckBoxComment_Checked(object sender, RoutedEventArgs e)
-        {
-            TextBoxComment.Focus();
+        //private void CheckBoxComment_Checked(object sender, RoutedEventArgs e)
+        //{
+        //    //TextBoxComment.Focus();
 
-        }
+        //}
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {

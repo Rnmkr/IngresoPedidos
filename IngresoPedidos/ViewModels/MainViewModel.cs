@@ -18,7 +18,7 @@ namespace IngresoPedidos.ViewModels
         private Productos _productoSeleccionado;
         public string FiltroSeleccionado { get; set; }
         public List<string> _listaEstados { get; } = new List<string> { "INGRESADO", "COMPLETO", "INCOMPLETO", "AUTORIZADO", "PRODUCCION", "PAUSADO", "CANCELADO", "REPROCESADO", "DESPACHADOS" };
-        public List<string> _listaFiltros { get; } = new List<string> { "INGRESADOS", "COMPLETOS", "INCOMPLETOS", "AUTORIZADOS", "PRODUCCIONS", "PAUSADOS", "CANCELADOS", "REPROCESADOS", "DESPACHADOS", "ULTIMOS" };
+        public List<string> _listaFiltros { get; } = new List<string> { "INGRESADOS", "COMPLETOS", "INCOMPLETOS", "AUTORIZADOS", "PRODUCCION", "PAUSADOS", "CANCELADOS", "REPROCESADOS", "DESPACHADOS", "ULTIMOS", "PERSONALIZADA" };
         public string UsuarioActivo { get; set; } = "pepe";
         private UsuariosRepository _usuariosRepository = new UsuariosRepository();
         private PedidosViewRepository _pedidosViewRepository = new PedidosViewRepository();

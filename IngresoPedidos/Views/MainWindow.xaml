@@ -17,19 +17,13 @@
     </Window.CommandBindings>-->
 
 
-    <Grid DataContext="{Binding Source={StaticResource ViewModel}}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
+    <Grid DataContext="{Binding Source={StaticResource ViewModel}}" HorizontalAlignment="Right" VerticalAlignment="Top">
         <!---->
         
        
 
         <!---->
-        <Border BorderBrush="#FFA9D1F4" BorderThickness="3" HorizontalAlignment="Left" Margin="10,64,0,10" Width="258" Background="#FFF0F0F0"/>
+        <!--<Border BorderBrush="#FFA9D1F4" BorderThickness="3" HorizontalAlignment="Left" Margin="10,64,0,10" Width="258" Background="#FFF0F0F0"/>
 
 
         <Border BorderBrush="#FFABADB3" BorderThickness="1" HorizontalAlignment="Left" Margin="14,0,0,14" Width="250" Background="#FFF0F0F0" Height="250" VerticalAlignment="Bottom">
@@ -37,16 +31,22 @@
         </Border>
 
 
-        <!---->
+        -->
+        <!----><!--
         <Label Content="Pedido" HorizontalAlignment="Left" Margin="14,69,0,0" VerticalAlignment="Top" Height="28" Width="105" Padding="0,0,5,0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Background="#FFA9D1F4"/>
         <Label Content="Articulo" HorizontalAlignment="Left" Margin="14,98,0,0" VerticalAlignment="Top" Height="25" Width="105" Padding="0,0,5,0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Background="#FFA9D1F4"/>
         <Label Content="Modelo" HorizontalAlignment="Left" Margin="14,124,0,0" VerticalAlignment="Top" Height="25" Width="105" Padding="0,0,5,0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Background="#FFA9D1F4"/>
         <Label Content="Producto" HorizontalAlignment="Left" Margin="14,150,0,0" VerticalAlignment="Top" Height="25" Width="105" Padding="0,0,5,0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Background="#FFA9D1F4"/>
         <Label Content="Cantidad" HorizontalAlignment="Left" Margin="14,176,0,0" VerticalAlignment="Top" Height="25" Width="105" Padding="0,0,5,0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Background="#FFA9D1F4"/>
         <Label Content="Anterior" HorizontalAlignment="Left" Margin="14,202,0,0" VerticalAlignment="Top" Height="25" Padding="0,0,5,0" HorizontalContentAlignment="Right" Width="105" VerticalContentAlignment="Center" Background="#FFA9D1F4"/>
-        <Label Content="Estado" HorizontalAlignment="Left" Margin="14,228,0,0" VerticalAlignment="Top" Height="25" Width="105" Padding="0,0,5,0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Background="#FFA9D1F4"/>
+        <Label Content="Estado" HorizontalAlignment="Left" Margin="14,228,0,0" VerticalAlignment="Top" Height="25" Width="105" Padding="0,0,5,0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Background="#FFA9D1F4"/>-->
         <!---->
-        <DataGrid BorderBrush="#FFA9D1F4" BorderThickness="3" Height="auto" SelectionUnit="CellOrRowHeader" HorizontalGridLinesBrush="#FFA9D1F4" x:Name="DataGridPedidos" RowHeaderWidth="32" MinRowHeight="26" GridLinesVisibility="Horizontal" AlternationCount="2" ColumnHeaderHeight="28" SelectionChanged="DataGridPedidos_SelectionChanged" ItemsSource="{Binding ListaPedidos, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding PedidoSeleccionado, UpdateSourceTrigger=PropertyChanged}" IsSynchronizedWithCurrentItem="False" EnableColumnVirtualization="True" CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserSortColumns="False" Margin="270,64,10,10" ColumnWidth="*" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Extended" EnableRowVirtualization="True" FontFamily="Consolas" FontWeight="Bold" FontSize="14" Foreground="Black" Background="#FFF0F0F0">
+        <Grid VerticalAlignment="Top" Background="#FFA9D1F4" HorizontalAlignment="Right" Margin="0,1,10,0" Width="1894" Height="57">
+            <Label VerticalAlignment="Center" Margin="0,4,160,5" BorderThickness="1" VerticalContentAlignment="Center" FontSize="16" TextOptions.TextFormattingMode="Display" Padding="5" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Content="425 / SCHNEIDER NICOLAS" Background="{x:Null}" FontFamily="Consolas" Height="32"/>
+            <ComboBox x:Name="cbFiltros" Margin="5,0" FontFamily="Consolas"  ItemsSource="{Binding _listaFiltros}" SelectedItem="{Binding FiltroSeleccionado}" FontWeight="Medium" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Right" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="{x:Null}" Width="150" Height="32" Padding="0" Background="{x:Null}"/>
+        </Grid>
+        <!---->
+        <DataGrid BorderBrush="#FFA9D1F4" BorderThickness="3" Height="auto" SelectionUnit="FullRow" HorizontalGridLinesBrush="#FFA9D1F4" x:Name="DataGridPedidos" RowHeaderWidth="0" MinRowHeight="26" GridLinesVisibility="Horizontal" AlternationCount="2" ColumnHeaderHeight="28" SelectionChanged="DataGridPedidos_SelectionChanged" ItemsSource="{Binding ListaPedidos, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding PedidoSeleccionado, UpdateSourceTrigger=PropertyChanged}" IsSynchronizedWithCurrentItem="False" EnableColumnVirtualization="True" CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserSortColumns="False" Margin="10,64,10,10" ColumnWidth="*" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Extended" EnableRowVirtualization="True" FontFamily="Consolas" FontWeight="Bold" FontSize="14" Foreground="Black" Background="#FFF0F0F0">
             <DataGrid.Resources>
                 <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Color="DarkGray"/>
             </DataGrid.Resources>
@@ -62,6 +62,7 @@
             </DataGrid.RowStyle>
 
             <DataGrid.Columns>
+
                 <DataGridTextColumn Header="PEDIDO" Binding="{Binding NumeroPedido}" MaxWidth="110"  />
                 <DataGridTextColumn Header="MODELO" Binding="{Binding NombreModelo}"/>
                 <DataGridTextColumn Header="PRODUCTO" Binding="{Binding NombreProducto}"/>
@@ -79,6 +80,9 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
+
+
+
                 <DataGridTemplateColumn Header="ANTERIOR" MaxWidth="110">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -88,173 +92,181 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
+
+                <!--<DataGridTemplateColumn Header="" MaxWidth="64">
+            <DataGridTemplateColumn.CellTemplate>
+                <DataTemplate>
+                    <DockPanel>
+                    <Button Command="Paste" ToolTip="Ver movimientos del registro seleccionado" VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/IngresoPedidos;component/Resources/256 (1).ico" HorizontalAlignment="Center" VerticalAlignment="Center" Width="24" Height="24" />
+                        </StackPanel>
+                    </Button>
+                        
+                     <Button Command="Paste" ToolTip="Ver movimientos del registro seleccionado" VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/IngresoPedidos;component/Resources/128 (2).ico" HorizontalAlignment="Center" VerticalAlignment="Center" Width="24" Height="24" />
+                        </StackPanel>
+                    </Button>
+                        </DockPanel>
+                </DataTemplate>
+                
+            </DataGridTemplateColumn.CellTemplate>
+        </DataGridTemplateColumn>-->
+
             </DataGrid.Columns>
         </DataGrid>
 
-        <!---->
+        <ToolBar VerticalAlignment="Top" ToolBarTray.IsLocked="False" Background="#FFA9D1F4" Margin="7,0,0,0" VerticalContentAlignment="Center" HorizontalAlignment="Left">
+            <!--<ToolBar VerticalContentAlignment="Center" Margin="0,0,0,-10" VerticalAlignment="Center" HorizontalContentAlignment="Center" Width="1434">-->
 
-        <!--<Menu Height="30" VerticalAlignment="Top" Margin="10,10,143,0" BorderThickness="2" BorderBrush="#FFA9D1F4">
-            <Menu.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <DockPanel HorizontalAlignment="Stretch" Background="#FFF0F0F0"/>
-                </ItemsPanelTemplate>
-            </Menu.ItemsPanel>
-            <MenuItem Header="Pedido" FontFamily="Consolas" >
-               
-                <MenuItem Header="Buscar" >
-                    <MenuItem.Icon><Image Source="/IngresoPedidos;component/Resources/exit.ico"/></MenuItem.Icon>
-                    </MenuItem>
-                <MenuItem Header="Ver Movimientos" />
-                <MenuItem Header="Actualizar Imagen" />
-                <MenuItem Header="Generar Recibo" />
-            </MenuItem>
-        <MenuItem Header="Display" FontFamily="Consolas">
-            <MenuItem Header="Activar" IsCheckable="True" />
-            <Separator/>
-            <MenuItem Header="Pantalla 0" IsCheckable="True" helpers:MenuItemExtensions.GroupName="grupoPantallas" Click="MenuItemClicked" />
-            <MenuItem Header="Pantalla 1" IsCheckable="True" helpers:MenuItemExtensions.GroupName="grupoPantallas" Click="MenuItemClicked"  />
-            <MenuItem Header="Pantalla 2" IsCheckable="True" helpers:MenuItemExtensions.GroupName="grupoPantallas" Click="MenuItemClicked"  />
-            <MenuItem Header="Pantalla 3" IsCheckable="True" helpers:MenuItemExtensions.GroupName="grupoPantallas" Click="MenuItemClicked"  />
-            <Separator/>
-            <MenuItem Header="Actualizar" />
-        </MenuItem>
-        <MenuItem Header="{Binding UsuarioActivo}" FontFamily="Consolas" HorizontalAlignment="Right">
-            <MenuItem Header="Cambiar Contraseña" />
-            <MenuItem Header="Cerrar Sesion" />
-        </MenuItem>
-        </Menu>-->
+            <Button Command="Copy" ToolTip="Ingresar un nuevo pedido" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/IngresoPedidos;component/Resources/add.ico" Width="48" Height="48" />
+                    <!--<TextBlock Margin="3,0,0,0">Buscar</TextBlock>-->
+                </StackPanel>
+            </Button>
 
-        <!--<DockPanel Margin="0" VerticalAlignment="Top">-->
-        <DockPanel VerticalAlignment="Top" Margin="10,0">
-            <ToolBar VerticalAlignment="Top" Height="59" Background="#FFA9D1F4" Margin="0" Width="1366" VerticalContentAlignment="Center">
-                <!--<ToolBar VerticalContentAlignment="Center" Margin="0,0,0,-10" VerticalAlignment="Center" HorizontalContentAlignment="Center" Width="1434">-->
-
-                <Button Command="Cut" ToolTip="Ingresar un nuevo Pedido" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0">
-                    <StackPanel Orientation="Horizontal">
-                        <Image Source="/IngresoPedidos;component/Resources/add.ico" Width="48" Height="48" />
-                        <!--<TextBlock Margin="3,0,0,0">Buscar</TextBlock>-->
-                    </StackPanel>
-                </Button>
-
-                <Button Command="Paste" ToolTip="Guardar cambios">
+            <!--<Button Command="Paste" ToolTip="Guardar cambios">
                     <StackPanel Orientation="Horizontal">
                         <Image Source="/IngresoPedidos;component/Resources/save.ico" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48" />
-                        <!--<TextBlock Margin="3,0,0,0">Cerrar Sesion</TextBlock>-->
+                        -->
+            <!--<TextBlock Margin="3,0,0,0">Cerrar Sesion</TextBlock>-->
+            <!--
                     </StackPanel>
-                </Button>
+                </Button>-->
 
-                <Button Command="Copy" ToolTip="Eliminar registro">
+            <!--<Button Command="Copy" ToolTip="Eliminar registro">
                     <StackPanel Orientation="Horizontal">
                         <Image Source="/IngresoPedidos;component/Resources/delete.ico" Width="48" Height="48" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                        <!--<TextBlock Margin="3,0,0,0">Eliminar</TextBlock>-->
+                        -->
+            <!--<TextBlock Margin="3,0,0,0">Eliminar</TextBlock>-->
+            <!--
                     </StackPanel>
-                </Button>
+                </Button>-->
 
-                <Button Command="Copy" ToolTip="Generar Recibo de Entrega">
+            <Button Command="Copy" ToolTip="Editar registro seleccionado">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/IngresoPedidos;component/Resources/48.ico" Width="48" Height="48" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    <!--<TextBlock Margin="3,0,0,0">Eliminar</TextBlock>-->
+                </StackPanel>
+            </Button>
+
+            <Button Command="Copy" ToolTip="Buscar un registro específico">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/IngresoPedidos;component/Resources/search.ico" Width="48" Height="48" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    <!--<TextBlock Margin="3,0,0,0">Movimientos</TextBlock>-->
+                </StackPanel>
+            </Button>
+
+            <Separator Margin="10,2"/>
+
+            <!--<Button Command="Copy" ToolTip="Copiar selección al Portapapeles">
                     <StackPanel Orientation="Horizontal">
-                        <Image Source="/IngresoPedidos;component/Resources/128 (2).ico" Width="48" Height="48" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                        <!--<TextBlock Margin="3,0,0,0">Eliminar</TextBlock>-->
-                    </StackPanel>
-                </Button>
-
-                <Separator></Separator>
-
-                <Button Command="Copy" ToolTip="Copiar selección al Portapapeles">
-                    <StackPanel Orientation="Horizontal">
-                        <Image Source="/IngresoPedidos;component/Resources/copy.ico" Width="48" Height="48" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                        <!--<TextBlock Margin="3,0,0,0">Recibo</TextBlock>-->
+                        <Image Source="/IngresoPedidos;component/Resources/copy.ico" Width="48" Height="48" HorizontalAlignment="Center" VerticalAlignment="Center" />-->
+            <!--<TextBlock Margin="3,0,0,0">Recibo</TextBlock>-->
+            <!--
                     </StackPanel>
                 </Button>
 
                 <Button Command="Cut" ToolTip="Cortar selección al Portapapeles">
                     <StackPanel Orientation="Horizontal">
                         <Image Source="/IngresoPedidos;component/Resources/cut.ico" Width="48" Height="48" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                        <!--<TextBlock Margin="3,0,0,0">Recibo</TextBlock>-->
+                        -->
+            <!--<TextBlock Margin="3,0,0,0">Recibo</TextBlock>-->
+            <!--
                     </StackPanel>
                 </Button>
 
                 <Button Command="Paste" ToolTip="Pegar desde el Portapapeles">
                     <StackPanel Orientation="Horizontal">
                         <Image Source="/IngresoPedidos;component/Resources/paste.ico" Width="48" Height="48" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                        <!--<TextBlock Margin="3,0,0,0">Recibo</TextBlock>-->
+                        -->
+            <!--<TextBlock Margin="3,0,0,0">Recibo</TextBlock>-->
+            <!--
                     </StackPanel>
-                </Button>
+                </Button>-->
 
-                <Separator></Separator>
+            <!--<Separator></Separator>-->
 
-                <Button Command="Paste" ToolTip="Actualizar elementos">
+            <!--<Button Command="Paste" ToolTip="Actualizar elementos">
                     <StackPanel Orientation="Horizontal">
                         <Image Source="/IngresoPedidos;component/Resources/refresh.ico" Width="48" Height="48" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                        <!--<TextBlock Margin="3,0,0,0">Recibo</TextBlock>-->
+                        -->
+            <!--<TextBlock Margin="3,0,0,0">Recibo</TextBlock>-->
+            <!--
                     </StackPanel>
-                </Button>
+                </Button>-->
 
-                <Button Command="Paste" ToolTip="Buscar un registro">
-                    <StackPanel Orientation="Horizontal">
-                        <Image Source="/IngresoPedidos;component/Resources/search.ico" Width="48" Height="48" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                        <!--<TextBlock Margin="3,0,0,0">Movimientos</TextBlock>-->
-                    </StackPanel>
-                </Button>
 
-                <Button Command="Paste" ToolTip="Generar Planilla desde selección">
-                    <StackPanel Orientation="Horizontal">
-                        <Image Source="/IngresoPedidos;component/Resources/256.ico" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48" />
-                        <!--<TextBlock Margin="3,0,0,0">Cambiar Contraseña</TextBlock>-->
-                    </StackPanel>
-                </Button>
-                
-                <Button Command="Paste" ToolTip="Ver movimientos del registro seleccionado">
-                    <StackPanel Orientation="Horizontal">
-                        <Image Source="/IngresoPedidos;component/Resources/256 (1).ico" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48" />
-                        <!--<TextBlock Margin="3,0,0,0">Cambiar Contraseña</TextBlock>-->
-                    </StackPanel>
-                </Button>
 
-                <Separator></Separator>
-                
-                <Button Command="Paste" ToolTip="Activar/Desactivar Display de Pedidos">
-                    <StackPanel Orientation="Horizontal">
-                        <Image Source="/IngresoPedidos;component/Resources/display.ico" Width="48" Height="48" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                        <!--<TextBlock Margin="3,0,0,0">Cerrar Sesion</TextBlock>-->
-                    </StackPanel>
-                </Button>
+            <Button Command="Copy" ToolTip="Generar recibo de entrega">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/IngresoPedidos;component/Resources/rubberstamp256.png" Width="48" Height="48" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    <!--<TextBlock Margin="3,0,0,0">Eliminar</TextBlock>-->
+                </StackPanel>
+            </Button>
 
-                <!--</ToolBar>-->
-            </ToolBar>
+            <Button Command="Copy" ToolTip="Exportar selección a planilla">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/IngresoPedidos;component/Resources/128 (8).ico" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48" />
+                    <!--<TextBlock Margin="3,0,0,0">Cambiar Contraseña</TextBlock>-->
+                </StackPanel>
+            </Button>
 
-            <!--<ToolBarTray HorizontalAlignment="Right" Margin="0,0,0,10">-->
-            <ToolBar VerticalContentAlignment="Center" HorizontalContentAlignment="Right" VerticalAlignment="Top" Margin="0" Padding="2,0,0,0" Background="#FFA9D1F4" HorizontalAlignment="Right" DockPanel.Dock="Right" Height="59" Width="531">
+            <Button Command="Copy" ToolTip="Ver imágen del modelo seleccionado">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/IngresoPedidos;component/Resources/48 (5).ico" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48" />
+                    <!--<TextBlock Margin="3,0,0,0">Cambiar Contraseña</TextBlock>-->
+                </StackPanel>
+            </Button>
 
-                <Label VerticalAlignment="Center" Margin="5,0" BorderThickness="2" BorderBrush="#FFA9D1F4" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Right">{425} SCHNEIDEDFGDFGDFGDGDFR NICOLAS</Label>
+            <Button Command="Copy" ToolTip="Ver movimientos del registro seleccionado">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/IngresoPedidos;component/Resources/128.ico" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48" />
+                    <!--<TextBlock Margin="3,0,0,0">Cambiar Contraseña</TextBlock>-->
+                </StackPanel>
+            </Button>
 
-                <Button Command="Paste" ToolTip="Cambiar contraseña" Margin="5,0">
-                    <StackPanel Orientation="Horizontal">
-                        <Image Source="/IngresoPedidos;component/Resources/newpassword.ico" Width="30" Height="30" />
-                        <!--<TextBlock Margin="3,0,0,0">Cerrar Sesion</TextBlock>-->
-                    </StackPanel>
-                </Button>
 
-                <Button Command="Cut" ToolTip="Cerrar sesion">
-                    <StackPanel Orientation="Horizontal">
-                        <Image Source="/IngresoPedidos;component/Resources/exit.ico" Width="30" Height="30" Margin="5,0" />
-                        <!--<TextBlock Margin="3,0,0,0">Display</TextBlock>-->
-                    </StackPanel>
-                </Button>
+            <Separator Margin="5,2"/>
 
-                <Separator></Separator>
+            <Button Command="SelectAll" ToolTip="Activar/Desactivar display de pedidos" IsEnabled="True">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/IngresoPedidos;component/Resources/display.ico" Width="48" Height="48" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    <!--<TextBlock Margin="3,0,0,0">Cerrar Sesion</TextBlock>-->
+                </StackPanel>
+            </Button>
 
-                <DockPanel>
-                    <ComboBox Name="cbFiltros" Margin="10,12,0,12" FontFamily="Consolas"  ItemsSource="{Binding _listaFiltros}" SelectedItem="{Binding FiltroSeleccionado}" FontWeight="Medium" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="#FFA9D1F4" Width="125" Height="30"/>
-                </DockPanel>
-            </ToolBar>
-        </DockPanel>
+            <Separator Margin="5,2"/>
+
+            <Button Command="Copy" ToolTip="Cambiar contraseña" Margin="5,0">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/IngresoPedidos;component/Resources/48 (4).ico" Width="48" Height="48" />
+                    <!--<TextBlock Margin="3,0,0,0">Cerrar Sesion</TextBlock>-->
+                </StackPanel>
+            </Button>
+
+            <Button Command="Copy" ToolTip="Cerrar sesion">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/IngresoPedidos;component/Resources/48 (3).ico" Width="48" Height="48" Margin="5,0" />
+                    <!--<TextBlock Margin="3,0,0,0">Display</TextBlock>-->
+                </StackPanel>
+            </Button>
+
+
+
+            <!--</ToolBar>-->
+        </ToolBar>
+        <!--<ToolBarTray HorizontalAlignment="Right" Margin="0,0,0,10">-->
+
         <!--</ToolBarTray>-->
         <!--</DockPanel>-->
 
 
 
 
-        <TextBox HorizontalAlignment="Left" BorderBrush="#FFABADB3" BorderThickness="1" Text="{Binding PedidoSeleccionado.NumeroPedido}" Height="28" Margin="120,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" VerticalContentAlignment="Center" TabIndex="1" FontSize="16" FontFamily="Consolas" FontWeight="Medium"/>
+        <!--<TextBox HorizontalAlignment="Left" BorderBrush="#FFABADB3" BorderThickness="1" Text="{Binding PedidoSeleccionado.NumeroPedido}" Height="28" Margin="120,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" VerticalContentAlignment="Center" TabIndex="1" FontSize="16" FontFamily="Consolas" FontWeight="Medium"/>
         <TextBox HorizontalAlignment="Left" BorderBrush="#FFABADB3" BorderThickness="1" Text="{Binding PedidoSeleccionado.Articulo}" Height="25" Margin="120,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" VerticalContentAlignment="Center" TabIndex="2" FontFamily="Consolas" FontWeight="Medium" FontSize="16"/>
         <ComboBox HorizontalAlignment="Left" ItemsSource="{Binding ListaModelos}" SelectedItem="{Binding PedidoSeleccionado.NombreModelo}" Margin="120,124,0,0" VerticalAlignment="Top" Width="144" VerticalContentAlignment="Center" Padding="6,3,5,3" TabIndex="3" FontFamily="Consolas" Height="25" FontWeight="Medium" FontSize="16"/>
         <ComboBox HorizontalAlignment="Left" ItemsSource="{Binding ListaProductos}" SelectedItem="{Binding PedidoSeleccionado.NombreProducto}" Margin="120,150,0,0" VerticalAlignment="Top" Width="144" VerticalContentAlignment="Center" Padding="6,3,5,3" TabIndex="4" FontFamily="Consolas" Height="25" FontWeight="Medium" FontSize="16"/>
@@ -264,7 +276,7 @@
         <Border BorderThickness="1" HorizontalAlignment="Left" Height="25" Margin="14,254,0,0" VerticalAlignment="Top" Width="250" BorderBrush="#FFABADB3">
             <CheckBox x:Name="CheckBoxComment" Checked="CheckBoxComment_Checked"  Content="Comentario" Margin="0" TabIndex="9" Padding="3,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Center" BorderBrush="#FFACACAC"/>
         </Border>
-        <TextBox x:Name="TextBoxComment" HorizontalAlignment="Left" BorderBrush="#FFABADB3" IsEnabled="{Binding ElementName=CheckBoxComment, Path=IsChecked}" BorderThickness="1" Height="77" Margin="14,280,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" MaxLength="120" MaxLines="2" TabIndex="10" FontFamily="Consolas" Padding="3"/>
+        <TextBox x:Name="TextBoxComment" HorizontalAlignment="Left" BorderBrush="#FFABADB3" IsEnabled="{Binding ElementName=CheckBoxComment, Path=IsChecked}" BorderThickness="1" Height="77" Margin="14,280,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" MaxLength="120" MaxLines="2" TabIndex="10" FontFamily="Consolas" Padding="3"/>-->
 
 
     </Grid>

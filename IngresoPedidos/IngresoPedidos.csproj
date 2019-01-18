@@ -211,5 +211,59 @@
   <ItemGroup>
     <Resource Include="Resources\256 %281%29.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\64.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\128 %284%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\128 %285%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\128 %286%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\128 %287%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\128 %288%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\128 %289%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\48.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\48 %281%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\48 %282%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\128 %2810%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\128 %2811%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\48 %283%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\48 %284%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\48 %285%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\sello-entregado-2-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\rubberstamp256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\rubberstampwithinkpad256.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

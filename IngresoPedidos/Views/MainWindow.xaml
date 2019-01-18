@@ -6,7 +6,7 @@
         xmlns:helpers="clr-namespace:IngresoPedidos.Helpers"
         xmlns:viewModels="clr-namespace:IngresoPedidos.ViewModels"
         mc:Ignorable="d"
-        Title="EXO: Ingreso de Pedidos" Height="768" Width="1924" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+        Title="EXO: PRODUCCION: INGRESO DE PEDIDOS" Height="768" Width="1366" WindowStartupLocation="CenterScreen" WindowState="Maximized">
     <Window.Resources>
         <viewModels:MainViewModel x:Key="ViewModel" />
     </Window.Resources>
@@ -42,8 +42,8 @@
         <Label Content="Estado" HorizontalAlignment="Left" Margin="14,228,0,0" VerticalAlignment="Top" Height="25" Width="105" Padding="0,0,5,0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Background="#FFA9D1F4"/>-->
         <!---->
         <Grid VerticalAlignment="Top" Background="#FFA9D1F4" HorizontalAlignment="Right" Margin="0,1,10,0" Width="1894" Height="57">
-            <Label VerticalAlignment="Center" Margin="0,4,160,5" BorderThickness="1" VerticalContentAlignment="Center" FontSize="16" TextOptions.TextFormattingMode="Display" Padding="5" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Content="425 / SCHNEIDER NICOLAS" Background="{x:Null}" FontFamily="Consolas" Height="32"/>
-            <ComboBox x:Name="cbFiltros" Margin="5,0" FontFamily="Consolas"  ItemsSource="{Binding _listaFiltros}" SelectedItem="{Binding FiltroSeleccionado}" FontWeight="Medium" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Right" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="{x:Null}" Width="150" Height="32" Padding="0" Background="{x:Null}"/>
+            <Label VerticalAlignment="Top" Margin="0,0,5,5" BorderThickness="1" VerticalContentAlignment="Center" TextOptions.TextFormattingMode="Display" Padding="5" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Content="425 / SCHNEIDER NICOLAS" Background="{x:Null}" FontFamily="Consolas" Height="24"/>
+            <ComboBox x:Name="cbFiltros" Margin="0,0,5,5" FontFamily="Consolas" SelectedIndex="10" ItemsSource="{Binding _listaFiltros}" SelectedItem="{Binding FiltroSeleccionado}" FontWeight="Medium" FontSize="16" VerticalAlignment="Bottom" HorizontalAlignment="Right" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="{x:Null}" Padding="0" Background="{x:Null}" Width="148" Height="24"/>
         </Grid>
         <!---->
         <DataGrid BorderBrush="#FFA9D1F4" BorderThickness="3" Height="auto" SelectionUnit="FullRow" HorizontalGridLinesBrush="#FFA9D1F4" x:Name="DataGridPedidos" RowHeaderWidth="0" MinRowHeight="26" GridLinesVisibility="Horizontal" AlternationCount="2" ColumnHeaderHeight="28" SelectionChanged="DataGridPedidos_SelectionChanged" ItemsSource="{Binding ListaPedidos, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding PedidoSeleccionado, UpdateSourceTrigger=PropertyChanged}" IsSynchronizedWithCurrentItem="False" EnableColumnVirtualization="True" CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserSortColumns="False" Margin="10,64,10,10" ColumnWidth="*" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Extended" EnableRowVirtualization="True" FontFamily="Consolas" FontWeight="Bold" FontSize="14" Foreground="Black" Background="#FFF0F0F0">

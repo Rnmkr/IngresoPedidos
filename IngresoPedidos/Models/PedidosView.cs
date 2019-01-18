@@ -98,10 +98,10 @@ namespace IngresoPedidos.Models
                     return db.PedidosView.Where(W => W.EstadoPedido == "REPROCESADO").Select(s => s).ToList();
 
                 case "DESPACHADOS":
-                    return db.PedidosView.Where(W => W.EstadoPedido == "DESPACHADO").OrderByDescending(o => o.FechaIngreso).Take(10000).ToList();
+                    return db.PedidosView.Where(W => W.EstadoPedido == "DESPACHADO").OrderByDescending(o => o.FechaIngreso).Take(20000).ToList();
 
                 default:
-                    return db.PedidosView.OrderByDescending(o => o.FechaIngreso).Take(20000).ToList();
+                    return db.PedidosView.OrderByDescending(o => o.FechaIngreso).Take(35).ToList();
             }
         }
     }

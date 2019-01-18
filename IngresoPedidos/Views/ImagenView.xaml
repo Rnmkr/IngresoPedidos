@@ -5,9 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IngresoPedidos.Views"
         mc:Ignorable="d"
-        Title="INGRESO DE PEDIDOS: IMAGEN NOTEBOOK EF21" Height="480" Width="720" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="/IngresoPedidos;component/Resources/orderadd.ico">
+        Title="NOTEBOOK EF21" Height="480" Width="720" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="/IngresoPedidos;component/Resources/orderadd.ico">
     <Grid>
+        <Border BorderThickness="2" BorderBrush="#FFA9D1F4" Margin="10">
         <Image Source="/IngresoPedidos;component/Resources/NOT1422EXO.jpg"/>
-
+        </Border>
     </Grid>
 </Window>

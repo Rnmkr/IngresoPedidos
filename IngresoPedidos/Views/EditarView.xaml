@@ -7,6 +7,32 @@
         mc:Ignorable="d"
         Title="INGRESO DE PEDIDOS: EDITAR REGISTRO" Height="320" Width="720" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
+        <!---->
+        
+       
+
+        <!---->
+        <!--<Border BorderBrush="#FFA9D1F4" BorderThickness="3" HorizontalAlignment="Left" Margin="10,64,0,10" Width="258" Background="#FFF0F0F0"/>
+
+
+        <Border BorderBrush="#FFABADB3" BorderThickness="1" HorizontalAlignment="Left" Margin="14,0,0,14" Width="250" Background="#FFF0F0F0" Height="250" VerticalAlignment="Bottom">
+            <Image Margin="0" Source="/IngresoPedidos;component/Resources/NOT1422EXO.jpg"/>
+        </Border>
+
+
+        -->
+        <!----><!--
+        <Label Content="Pedido" HorizontalAlignment="Left" Margin="14,69,0,0" VerticalAlignment="Top" Height="28" Width="105" Padding="0,0,5,0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Background="#FFA9D1F4"/>
+        <Label Content="Articulo" HorizontalAlignment="Left" Margin="14,98,0,0" VerticalAlignment="Top" Height="25" Width="105" Padding="0,0,5,0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Background="#FFA9D1F4"/>
+        <Label Content="Modelo" HorizontalAlignment="Left" Margin="14,124,0,0" VerticalAlignment="Top" Height="25" Width="105" Padding="0,0,5,0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Background="#FFA9D1F4"/>
+        <Label Content="Producto" HorizontalAlignment="Left" Margin="14,150,0,0" VerticalAlignment="Top" Height="25" Width="105" Padding="0,0,5,0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Background="#FFA9D1F4"/>
+        <Label Content="Cantidad" HorizontalAlignment="Left" Margin="14,176,0,0" VerticalAlignment="Top" Height="25" Width="105" Padding="0,0,5,0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Background="#FFA9D1F4"/>
+        <Label Content="Anterior" HorizontalAlignment="Left" Margin="14,202,0,0" VerticalAlignment="Top" Height="25" Padding="0,0,5,0" HorizontalContentAlignment="Right" Width="105" VerticalContentAlignment="Center" Background="#FFA9D1F4"/>
+        <Label Content="Estado" HorizontalAlignment="Left" Margin="14,228,0,0" VerticalAlignment="Top" Height="25" Width="105" Padding="0,0,5,0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Background="#FFA9D1F4"/>-->
+        <!---->
+        
+        
+        
         <ToolBar Margin="10,0" VerticalAlignment="Top">
 
             <Button Command="Cut" ToolTip="Cortar selección al Portapapeles">
@@ -46,7 +72,6 @@
             <Separator></Separator>
 
         </ToolBar>
-        <DataGrid HorizontalAlignment="Center" Height="52" Margin="10,76,10,163" VerticalAlignment="Center" Width="694"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="38,152,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="82"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="375,154,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="57"/>
         <ComboBox HorizontalAlignment="Left" Margin="125,153,0,0" VerticalAlignment="Top" Width="120"/>

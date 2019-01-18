@@ -16,7 +16,7 @@ namespace IngresoPedidos.ViewModels
         private PedidosView _pedidoSeleccionado;
         private Modelos _modeloSeleccionado;
         private Productos _productoSeleccionado;
-        public string FiltroSeleccionado { get; set; }
+        private string _filtroSeleccionado;
         public List<string> _listaEstados { get; } = new List<string> { "INGRESADO", "COMPLETO", "INCOMPLETO", "AUTORIZADO", "PRODUCCION", "PAUSADO", "CANCELADO", "REPROCESADO", "DESPACHADOS" };
         public List<string> _listaFiltros { get; } = new List<string> { "INGRESADOS", "COMPLETOS", "INCOMPLETOS", "AUTORIZADOS", "PRODUCCION", "PAUSADOS", "CANCELADOS", "REPROCESADOS", "DESPACHADOS", "ULTIMOS", "PERSONALIZADA" };
         public string UsuarioActivo { get; set; } = "pepe";
@@ -24,7 +24,6 @@ namespace IngresoPedidos.ViewModels
         private PedidosViewRepository _pedidosViewRepository = new PedidosViewRepository();
         private ModelosRepository _modelosRepository = new ModelosRepository();
         private ProductosRepository _productosRepository = new ProductosRepository();
-
 
         public MainViewModel()
         {
@@ -152,7 +151,19 @@ namespace IngresoPedidos.ViewModels
             }
         }
 
-        
+        public string FiltroSeleccionado
+        {
+            get
+            {
+                return _filtroSeleccionado;
+            }
+            set
+            {
+                _filtroSeleccionado = value;
+                OnPropertyChanged("FiltroSeleccionado");
+                ListaPedidos = _pedidosViewRepository.GetPedidosView(value);
+            }
+        }
     }
 }
 

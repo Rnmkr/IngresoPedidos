@@ -73,11 +73,26 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Views\NuevoView.xaml.cs">
+      <DependentUpon>NuevoView.xaml</DependentUpon>
+    </Compile>
     <Page Include="ProcessingDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\BusquedaView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EditarView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\GridPagingWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ImagenView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -108,19 +123,39 @@
       <DependentUpon>ProcessingDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="Views\BusquedaView.xaml.cs">
+      <DependentUpon>BusquedaView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EditarView.xaml.cs">
+      <DependentUpon>EditarView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\GridPagingWindow.xaml.cs">
       <DependentUpon>GridPagingWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ImagenView.xaml.cs">
+      <DependentUpon>ImagenView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\MovimientosView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\NewPasswordWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NuevoView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Views\MovimientosView.xaml.cs">
+      <DependentUpon>MovimientosView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\NewPasswordWindow.xaml.cs">
       <DependentUpon>NewPasswordWindow.xaml</DependentUpon>
     </Compile>
@@ -264,6 +299,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\rubberstampwithinkpad256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\20055.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

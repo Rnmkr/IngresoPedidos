@@ -5,6 +5,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using IngresoPedidos.Helpers;
 using IngresoPedidos.Models;
+using IngresoPedidos.Views;
+
 namespace IngresoPedidos
 {
     /// <summary>
@@ -83,5 +85,34 @@ namespace IngresoPedidos
             }
         }
 
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            ImagenView iv = new ImagenView();
+            iv.ShowDialog();
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            BusquedaView bv = new BusquedaView();
+            bv.ShowDialog();
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            MovimientosView mv = new MovimientosView();
+            mv.ShowDialog();
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            NuevoView nv = new NuevoView();
+            nv.ShowDialog();
+        }
+
+        private void Button_Click_5(object sender, RoutedEventArgs e)
+        {
+            EditarView ev = new EditarView();
+            ev.ShowDialog();
+        }
     }
 }

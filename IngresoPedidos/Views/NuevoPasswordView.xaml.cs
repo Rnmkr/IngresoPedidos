@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace IngresoPedidos.Views
 {
     /// <summary>
-    /// Interaction logic for NuevoView.xaml
+    /// Interaction logic for NuevoPasswordView.xaml
     /// </summary>
-    public partial class NuevoView : Window
+    public partial class NuevoPasswordView : Window
     {
-        public NuevoView()
+        public NuevoPasswordView()
         {
             InitializeComponent();
         }

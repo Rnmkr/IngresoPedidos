@@ -73,8 +73,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Views\NuevoView.xaml.cs">
-      <DependentUpon>NuevoView.xaml</DependentUpon>
+    <Compile Include="Views\NuevoPasswordView.xaml.cs">
+      <DependentUpon>NuevoPasswordView.xaml</DependentUpon>
     </Compile>
     <Page Include="ProcessingDialog.xaml">
       <SubType>Designer</SubType>
@@ -143,11 +143,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\NewPasswordWindow.xaml">
+    <Page Include="Views\CambiarPasswordView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\NuevoView.xaml">
+    <Page Include="Views\NuevoPasswordView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -156,8 +156,8 @@
     <Compile Include="Views\MovimientosView.xaml.cs">
       <DependentUpon>MovimientosView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\NewPasswordWindow.xaml.cs">
-      <DependentUpon>NewPasswordWindow.xaml</DependentUpon>
+    <Compile Include="Views\CambiarPasswordView.xaml.cs">
+      <DependentUpon>CambiarPasswordView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

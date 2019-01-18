@@ -5,14 +5,64 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IngresoPedidos.Views"
         mc:Ignorable="d"
-        Title="INGRESO DE PEDIDOS: EDITAR REGISTRO" Height="320" Width="720" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="EDITAR REGISTRO 1234567A-00" Height="320" Width="720" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
-        <!---->
-        
-       
+        <ToolBar Margin="7,0,10,0" VerticalAlignment="Top" Padding="0">
+            <Button Command="Cut" ToolTip="Cortar selección al Portapapeles">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/IngresoPedidos;component/Resources/save.ico" Width="48" Height="48" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                </StackPanel>
+            </Button>
+            <Button Command="Paste" ToolTip="Pegar desde el Portapapeles">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/IngresoPedidos;component/Resources/delete.ico" Width="48" Height="48" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                </StackPanel>
+            </Button>
+            <Separator/>
+            <Button Command="Copy" ToolTip="Copiar selección al Portapapeles">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/IngresoPedidos;component/Resources/copy.ico" Width="48" Height="48" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                </StackPanel>
+            </Button>
+            <Button Command="Cut" ToolTip="Corta la selección al Portapapeles">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/IngresoPedidos;component/Resources/cut.ico" Width="48" Height="48" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                </StackPanel>
+            </Button>
+            <Button Command="Paste" ToolTip="Pegar desde el Portapapeles">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/IngresoPedidos;component/Resources/paste.ico" Width="48" Height="48" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                </StackPanel>
+            </Button>
+            <Separator/>
+            <Button Command="Paste" ToolTip="Agregar a lista personalizada">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/IngresoPedidos;component/Resources/add.ico" Width="48" Height="48" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                </StackPanel>
+            </Button>
+        </ToolBar>
 
-        <!---->
-        <!--<Border BorderBrush="#FFA9D1F4" BorderThickness="3" HorizontalAlignment="Left" Margin="10,64,0,10" Width="258" Background="#FFF0F0F0"/>
+        <Grid Background="#FFA9D1F4" Height="61" Margin="10,64,10,0" VerticalAlignment="Top">
+            <Label Content="PEDIDO" HorizontalAlignment="Left" Margin="4,0,0,38" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="10" FontWeight="Bold" Padding="1" Width="100" Height="15" VerticalAlignment="Bottom"/>
+            <Label Content="ARTICULO" HorizontalAlignment="Left" Margin="105,0,0,38" VerticalAlignment="Bottom" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="10" FontWeight="Bold" Padding="1" Width="63"/>
+            <Label Content="MODELO" HorizontalAlignment="Left" Margin="173,0,0,38" VerticalAlignment="Bottom" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="10" FontWeight="Bold" Padding="1" Width="115"/>
+            <Label Content="PRODUCTO" HorizontalAlignment="Left" Margin="293,0,0,38" VerticalAlignment="Bottom" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="10" FontWeight="Bold" Padding="1" Width="115"/>
+            <Label Content="CANTIDAD" HorizontalAlignment="Left" Margin="413,0,0,38" VerticalAlignment="Bottom" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="10" FontWeight="Bold" Padding="1" Width="54"/>
+            <Label Content="ORIGINAL" HorizontalAlignment="Left" Margin="474,0,0,38" VerticalAlignment="Bottom" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="10" FontWeight="Bold" Padding="1" Width="96"/>
+            <Label Content="ESTADO" Margin="0,0,4,38" VerticalAlignment="Bottom" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="10" FontWeight="Bold" Padding="1" HorizontalAlignment="Right" Width="110"/>
+            <TextBox HorizontalAlignment="Left" Height="26" TextWrapping="Wrap" Text="1234567A-00" VerticalAlignment="Bottom" Width="96" Margin="4,8,0,7" FontFamily="Consolas" FontSize="14" FontWeight="Bold" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <TextBox HorizontalAlignment="Left" Height="26" Margin="105,0,0,7" TextWrapping="Wrap" Text="4885" VerticalAlignment="Bottom" Width="63" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Consolas" FontSize="14"/>
+            <ComboBox HorizontalAlignment="Left" Margin="173,0,0,7" VerticalAlignment="Bottom" Width="115" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14" FontFamily="Consolas" Height="26"/>
+            <ComboBox HorizontalAlignment="Left" Margin="293,0,0,7" VerticalAlignment="Bottom" Width="115" Height="26" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14" FontFamily="Consolas"/>
+            <TextBox Height="26" Margin="413,0,0,7" TextWrapping="Wrap" Text="1000" VerticalAlignment="Bottom" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14" FontFamily="Consolas" HorizontalAlignment="Left" Width="54"/>
+            <TextBox Height="26" Margin="472,0,119,7" TextWrapping="Wrap" Text="1234568A-00" VerticalAlignment="Bottom" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14" FontFamily="Consolas"/>
+            <ComboBox Margin="0,0,4,7" VerticalAlignment="Bottom" Height="26" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14" FontFamily="Consolas" HorizontalAlignment="Right" Width="110"/>
+        </Grid>
+        <TextBox BorderThickness="2" BorderBrush="#FFA9D1F4" Height="74" Margin="10,127,10,0" TextWrapping="Wrap" Text="Comentario jeje de x cantidad de caracteres." VerticalAlignment="Top" Padding="3" FontFamily="Consolas" FontSize="14"/>
+    </Grid>
+</Window>
+
+<!--<Border BorderBrush="#FFA9D1F4" BorderThickness="3" HorizontalAlignment="Left" Margin="10,64,0,10" Width="258" Background="#FFF0F0F0"/>
 
 
         <Border BorderBrush="#FFABADB3" BorderThickness="1" HorizontalAlignment="Left" Margin="14,0,0,14" Width="250" Background="#FFF0F0F0" Height="250" VerticalAlignment="Bottom">
@@ -21,7 +71,7 @@
 
 
         -->
-        <!----><!--
+<!----><!--
         <Label Content="Pedido" HorizontalAlignment="Left" Margin="14,69,0,0" VerticalAlignment="Top" Height="28" Width="105" Padding="0,0,5,0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Background="#FFA9D1F4"/>
         <Label Content="Articulo" HorizontalAlignment="Left" Margin="14,98,0,0" VerticalAlignment="Top" Height="25" Width="105" Padding="0,0,5,0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Background="#FFA9D1F4"/>
         <Label Content="Modelo" HorizontalAlignment="Left" Margin="14,124,0,0" VerticalAlignment="Top" Height="25" Width="105" Padding="0,0,5,0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Background="#FFA9D1F4"/>
@@ -29,56 +79,9 @@
         <Label Content="Cantidad" HorizontalAlignment="Left" Margin="14,176,0,0" VerticalAlignment="Top" Height="25" Width="105" Padding="0,0,5,0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Background="#FFA9D1F4"/>
         <Label Content="Anterior" HorizontalAlignment="Left" Margin="14,202,0,0" VerticalAlignment="Top" Height="25" Padding="0,0,5,0" HorizontalContentAlignment="Right" Width="105" VerticalContentAlignment="Center" Background="#FFA9D1F4"/>
         <Label Content="Estado" HorizontalAlignment="Left" Margin="14,228,0,0" VerticalAlignment="Top" Height="25" Width="105" Padding="0,0,5,0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Background="#FFA9D1F4"/>-->
-        <!---->
+<!---->
         
         
         
-        <ToolBar Margin="10,0" VerticalAlignment="Top">
 
-            <Button Command="Cut" ToolTip="Cortar selección al Portapapeles">
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="/IngresoPedidos;component/Resources/save.ico" Width="48" Height="48" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                </StackPanel>
-            </Button>
 
-            <Button Command="Paste" ToolTip="Pegar desde el Portapapeles">
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="/IngresoPedidos;component/Resources/delete.ico" Width="48" Height="48" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                </StackPanel>
-            </Button>
-            <Separator></Separator>
-
-            <Separator></Separator>
-
-            <Button Command="Copy" ToolTip="Copiar selección al Portapapeles">
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="/IngresoPedidos;component/Resources/copy.ico" Width="48" Height="48" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                </StackPanel>
-            </Button>
-
-            <Button Command="Paste" ToolTip="Pegar desde el Portapapeles">
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="/IngresoPedidos;component/Resources/paste.ico" Width="48" Height="48" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                </StackPanel>
-            </Button>
-
-            <Separator></Separator>
-
-            <Button Command="Paste" ToolTip="Agregar a lista personalizada">
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="/IngresoPedidos;component/Resources/20055.png" Width="48" Height="48" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                </StackPanel>
-            </Button>
-            <Separator></Separator>
-
-        </ToolBar>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="38,152,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="82"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="375,154,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="57"/>
-        <ComboBox HorizontalAlignment="Left" Margin="125,153,0,0" VerticalAlignment="Top" Width="120"/>
-        <ComboBox HorizontalAlignment="Left" Margin="250,153,0,0" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="437,154,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="57"/>
-        <ComboBox HorizontalAlignment="Left" Margin="499,155,0,0" VerticalAlignment="Top" Width="90"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="594,154,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="65"/>
-        <TextBox HorizontalAlignment="Left" Height="60" Margin="0,204,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="694"/>
-    </Grid>
-</Window>

@@ -47,12 +47,6 @@ namespace IngresoPedidos
             mv.ShowDialog();
         }
 
-        private void Button_Click_4(object sender, RoutedEventArgs e)
-        {
-            NuevoView nv = new NuevoView();
-            nv.ShowDialog();
-        }
-
         private void Button_Click_5(object sender, RoutedEventArgs e)
         {
             EditarView ev = new EditarView();

@@ -5,12 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:viewModels="clr-namespace:IngresoPedidos.ViewModels"
         mc:Ignorable="d"
-        Title="INGRESO DE PEDIDOS: PRODUCCION EXO" Height="768" Width="1366" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+        Title="ALTA DE PEDIDOS: PRODUCCION EXO" Height="768" Width="1366" WindowStartupLocation="CenterScreen" WindowState="Maximized">
     <Window.Resources>
         <viewModels:MainViewModel x:Key="ViewModel" />
     </Window.Resources>
     <Grid DataContext="{Binding Source={StaticResource ViewModel}}">
-        <Grid VerticalAlignment="Top" Background="#FFA9D1F4" Margin="539,1,10,0" Height="57">
+        <Grid VerticalAlignment="Top" Background="#FFA9D1F4" Margin="20,1,10,0" Height="57">
             <Border BorderThickness="0" CornerRadius="10" Background="#FF0078D7" HorizontalAlignment="Right" Margin="0,5,5,0" VerticalAlignment="Top">
                 <Label Margin="0" Foreground="GhostWhite" VerticalContentAlignment="Center" TextOptions.TextFormattingMode="Display" Padding="5" HorizontalContentAlignment="Right" Content="SCHNEIDERSCHOVSKINSKY NICOLAS" Background="{x:Null}" FontFamily="Consolas" Height="24"/>
             </Border>
@@ -71,12 +71,12 @@
                     <Image Source="/IngresoPedidos;component/Resources/48.ico" Width="48" Height="48" HorizontalAlignment="Center" VerticalAlignment="Center" />
                 </StackPanel>
             </Button>
-            <Separator Margin="5,2"/>
             <Button Command="Copy" Click="Button_Click_2" ToolTip="Buscar un registro específico">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/IngresoPedidos;component/Resources/search.ico" Width="48" Height="48" HorizontalAlignment="Center" VerticalAlignment="Center" />
                 </StackPanel>
             </Button>
+            <Separator Margin="5,2"/>
             <Button Command="Copy" ToolTip="Copia los registros seleccionados">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/IngresoPedidos;component/Resources/copy.ico" Width="48" Height="48" HorizontalAlignment="Center" VerticalAlignment="Center" />
@@ -84,7 +84,7 @@
             </Button>
             <Button Command="Copy" ToolTip="Generar recibo de entrega">
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="/IngresoPedidos;component/Resources/rubberstamp256.png" Width="48" Height="48" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    <Image Source="/IngresoPedidos;component/Resources/128 (16).ico" Width="48" Height="48" HorizontalAlignment="Center" VerticalAlignment="Center" />
                 </StackPanel>
             </Button>
             <Button Command="Copy" ToolTip="Exportar selección a planilla">
@@ -92,22 +92,22 @@
                     <Image Source="/IngresoPedidos;component/Resources/128 (8).ico" Width="48" Height="48" HorizontalAlignment="Center" VerticalAlignment="Center" />
                 </StackPanel>
             </Button>
-            <Button Click="Button_Click_1" ToolTip="Ver imágen del modelo seleccionado">
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="/IngresoPedidos;component/Resources/48 (5).ico" Width="48" Height="48" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                </StackPanel>
-            </Button>
             <Button Command="Copy" Click="Button_Click_3" ToolTip="Ver movimientos del registro seleccionado">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/IngresoPedidos;component/Resources/128.ico" Width="48" Height="48" HorizontalAlignment="Center" VerticalAlignment="Center" />
                 </StackPanel>
             </Button>
-            <Separator Margin="5,2"/>
+            <Button Click="Button_Click_1" ToolTip="Ver imágen del modelo seleccionado">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/IngresoPedidos;component/Resources/48 (5).ico" Width="48" Height="48" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                </StackPanel>
+            </Button>
+            <!--<Separator Margin="5,2"/>
             <Button Command="SelectAll" ToolTip="Activar/Desactivar display de pedidos" IsEnabled="True">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/IngresoPedidos;component/Resources/display.ico" Width="48" Height="48" HorizontalAlignment="Center" VerticalAlignment="Center" />
                 </StackPanel>
-            </Button>
+            </Button>-->
             <!--<Separator Margin="5,2"/>
             <Button Command="Copy" ToolTip="Cambiar contraseña">
                 <StackPanel Orientation="Horizontal">

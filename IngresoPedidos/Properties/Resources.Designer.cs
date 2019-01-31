@@ -103,6 +103,66 @@ namespace IngresoPedidos.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
+        internal static System.Drawing.Icon _128__12_ {
+            get {
+                object obj = ResourceManager.GetObject("_128__12_", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon _128__13_ {
+            get {
+                object obj = ResourceManager.GetObject("_128__13_", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon _128__14_ {
+            get {
+                object obj = ResourceManager.GetObject("_128__14_", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon _128__15_ {
+            get {
+                object obj = ResourceManager.GetObject("_128__15_", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon _128__16_ {
+            get {
+                object obj = ResourceManager.GetObject("_128__16_", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon _128__17_ {
+            get {
+                object obj = ResourceManager.GetObject("_128__17_", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
         internal static System.Drawing.Icon _128__2_ {
             get {
                 object obj = ResourceManager.GetObject("_128__2_", resourceCulture);
@@ -266,6 +326,26 @@ namespace IngresoPedidos.Properties {
         internal static System.Drawing.Icon _64 {
             get {
                 object obj = ResourceManager.GetObject("_64", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon _80 {
+            get {
+                object obj = ResourceManager.GetObject("_80", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon _80__1_ {
+            get {
+                object obj = ResourceManager.GetObject("_80__1_", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }

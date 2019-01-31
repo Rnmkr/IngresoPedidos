@@ -13,31 +13,31 @@
                     <Image Source="/IngresoPedidos;component/Resources/save.ico" Width="48" Height="48" HorizontalAlignment="Center" VerticalAlignment="Center" />
                 </StackPanel>
             </Button>
-            <Button Command="Paste" ToolTip="Pegar desde el Portapapeles">
+            <!--<Button Command="Paste" ToolTip="Pegar desde el Portapapeles">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/IngresoPedidos;component/Resources/delete.ico" Width="48" Height="48" HorizontalAlignment="Center" VerticalAlignment="Center" />
                 </StackPanel>
-            </Button>
-            <Separator/>
+            </Button>-->
+            <!--<Separator/>-->
             <Button Command="Copy" ToolTip="Copiar selección al Portapapeles">
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="/IngresoPedidos;component/Resources/copy.ico" Width="48" Height="48" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    <Image Source="/IngresoPedidos;component/Resources/rubberstamp256.png" Width="48" Height="48" HorizontalAlignment="Center" VerticalAlignment="Center" />
                 </StackPanel>
             </Button>
-            <Button Command="Cut" ToolTip="Corta la selección al Portapapeles">
+            <!--<Button Command="Cut" ToolTip="Corta la selección al Portapapeles">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/IngresoPedidos;component/Resources/cut.ico" Width="48" Height="48" HorizontalAlignment="Center" VerticalAlignment="Center" />
                 </StackPanel>
-            </Button>
-            <Button Command="Paste" ToolTip="Pegar desde el Portapapeles">
+            </Button>-->
+            <!--<Button Command="Paste" ToolTip="Pegar desde el Portapapeles">
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="/IngresoPedidos;component/Resources/paste.ico" Width="48" Height="48" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    <Image Source="/IngresoPedidos;component/Resources/128 (12).ico" Width="48" Height="48" HorizontalAlignment="Center" VerticalAlignment="Center" />
                 </StackPanel>
-            </Button>
-            <Separator/>
+            </Button>-->
+            <!--<Separator/>-->
             <Button Command="Paste" ToolTip="Agregar a lista personalizada">
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="/IngresoPedidos;component/Resources/add.ico" Width="48" Height="48" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    <Image Source="/IngresoPedidos;component/Resources/128 (16).ico" Width="48" Height="48" HorizontalAlignment="Center" VerticalAlignment="Center" />
                 </StackPanel>
             </Button>
         </ToolBar>
@@ -58,7 +58,7 @@
             <TextBox Height="26" Margin="472,0,119,7" TextWrapping="Wrap" Text="1234568A-00" VerticalAlignment="Bottom" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14" FontFamily="Consolas"/>
             <ComboBox Margin="0,0,4,7" VerticalAlignment="Bottom" Height="26" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14" FontFamily="Consolas" HorizontalAlignment="Right" Width="110"/>
         </Grid>
-        <TextBox BorderThickness="2" BorderBrush="#FFA9D1F4" Height="74" Margin="10,127,10,0" TextWrapping="Wrap" Text="Comentario jeje de x cantidad de caracteres." VerticalAlignment="Top" Padding="3" FontFamily="Consolas" FontSize="14"/>
+        <TextBox BorderThickness="2" BorderBrush="#FFA9D1F4" Height="74" Margin="10,127,10,0" TextWrapping="Wrap" Text="EL BOTON DE PIN APARECE SEGUN SI SE ABRIO DESDE LA LISTA PERSONALIZADA O NO. PARA PIN/UNPIN" VerticalAlignment="Top" Padding="3" FontFamily="Consolas" FontSize="14"/>
     </Grid>
 </Window>
 

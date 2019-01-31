@@ -303,5 +303,29 @@
   <ItemGroup>
     <Resource Include="Resources\20055.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\80 %281%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\80.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\128 %2812%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\128 %2813%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\128 %2814%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\128 %2815%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\128 %2816%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\128 %2817%29.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

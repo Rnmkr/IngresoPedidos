@@ -10,52 +10,54 @@
         <viewModels:MainViewModel x:Key="ViewModel" />
     </Window.Resources>
     <Grid DataContext="{Binding Source={StaticResource ViewModel}}">
-        <Grid VerticalAlignment="Top" Background="#FFA9D1F4" Margin="644,1,10,0" Height="57">
-            <Label VerticalAlignment="Top" Margin="0,0,5,5" BorderThickness="1" VerticalContentAlignment="Center" TextOptions.TextFormattingMode="Display" Padding="5" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Content="425 / SCHNEIDER NICOLAS" Background="{x:Null}" FontFamily="Consolas" Height="24"/>
-            <ComboBox x:Name="cbFiltros" Margin="0,0,5,5" FontFamily="Consolas" SelectedIndex="11" ItemsSource="{Binding _listaFiltros}" SelectedItem="{Binding FiltroSeleccionado}" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="110" Height="24"/>
+        <Grid VerticalAlignment="Top" Background="#FFA9D1F4" Margin="539,1,10,0" Height="57">
+            <Border BorderThickness="0" CornerRadius="10" Background="#FF0078D7" HorizontalAlignment="Right" Margin="0,5,5,0" VerticalAlignment="Top">
+                <Label Margin="0" Foreground="GhostWhite" VerticalContentAlignment="Center" TextOptions.TextFormattingMode="Display" Padding="5" HorizontalContentAlignment="Right" Content="SCHNEIDERSCHOVSKINSKY NICOLAS" Background="{x:Null}" FontFamily="Consolas" Height="24"/>
+            </Border>
+            <ComboBox x:Name="cbFiltros" Margin="0,0,5,5" FontFamily="Consolas" SelectedIndex="11" ItemsSource="{Binding _listaFiltros}" SelectedItem="{Binding FiltroSeleccionado}" VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
         </Grid>
         <DataGrid ItemsSource="{Binding ListaPedidos, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" SelectedItem="{Binding PedidoSeleccionado, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" ColumnWidth="*">
             <DataGrid.Resources>
                 <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Color="DarkGray"/>
             </DataGrid.Resources>
-                <DataGrid.ColumnHeaderStyle>
-                    <StaticResource ResourceKey="ColumnHeaderStyle"/>
-                </DataGrid.ColumnHeaderStyle>
-                <DataGrid.CellStyle>
-                    <StaticResource ResourceKey="DataGridCellCentrada"/>
-                </DataGrid.CellStyle>
-                <DataGrid.RowStyle>
-                    <StaticResource ResourceKey="DataGridRowZebra"/>
-                </DataGrid.RowStyle>
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="PEDIDO" Binding="{Binding NumeroPedido}" MaxWidth="110"  />
-                    <DataGridTextColumn Header="MODELO" Binding="{Binding NombreModelo}"/>
-                    <DataGridTextColumn Header="PRODUCTO" Binding="{Binding NombreProducto}"/>
-                    <DataGridTextColumn Header="ARTICULO" Binding="{Binding Articulo}"/>
-                    <DataGridTextColumn Header="CANTIDAD" Binding="{Binding CantidadEquipos}"/>
-                    <DataGridTextColumn Header="INGRESO A SISTEMA" Binding="{Binding FechaIngreso}" MinWidth="196"/>
-                    <DataGridTextColumn Header="ESTADO" Binding="{Binding EstadoPedido}" MaxWidth="96"/>
-                    <DataGridTextColumn Header="CAMBIO DE ESTADO" Binding="{Binding FechaEstado}" MinWidth="196"/>
-                    <DataGridTemplateColumn Header="SUCESOR" MaxWidth="110">
-                        <DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock><Hyperlink Command="{Binding SelectReprocesoCommand, Source={StaticResource ViewModel}}" CommandParameter="{Binding NumeroReproceso}">
+            <DataGrid.ColumnHeaderStyle>
+                <StaticResource ResourceKey="ColumnHeaderStyle"/>
+            </DataGrid.ColumnHeaderStyle>
+            <DataGrid.CellStyle>
+                <StaticResource ResourceKey="DataGridCellCentrada"/>
+            </DataGrid.CellStyle>
+            <DataGrid.RowStyle>
+                <StaticResource ResourceKey="DataGridRowZebra"/>
+            </DataGrid.RowStyle>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="PEDIDO" Binding="{Binding NumeroPedido}" MaxWidth="110"  />
+                <DataGridTextColumn Header="MODELO" Binding="{Binding NombreModelo}"/>
+                <DataGridTextColumn Header="PRODUCTO" Binding="{Binding NombreProducto}"/>
+                <DataGridTextColumn Header="ARTICULO" Binding="{Binding Articulo}"/>
+                <DataGridTextColumn Header="CANTIDAD" Binding="{Binding CantidadEquipos}"/>
+                <DataGridTextColumn Header="INGRESO A SISTEMA" Binding="{Binding FechaIngreso}" MinWidth="196"/>
+                <DataGridTextColumn Header="ESTADO" Binding="{Binding EstadoPedido}" MaxWidth="96"/>
+                <DataGridTextColumn Header="CAMBIO DE ESTADO" Binding="{Binding FechaEstado}" MinWidth="196"/>
+                <DataGridTemplateColumn Header="SUCESOR" MaxWidth="110">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock><Hyperlink Command="{Binding SelectReprocesoCommand, Source={StaticResource ViewModel}}" CommandParameter="{Binding NumeroReproceso}">
                                     <InlineUIContainer>
                                         <TextBlock Text="{Binding NumeroReproceso}" />
                                     </InlineUIContainer></Hyperlink></TextBlock>
-                            </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
-                    <DataGridTemplateColumn Header="ANTERIOR" MaxWidth="110">
-                        <DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock><Hyperlink Command="{Binding SelectOriginalCommand, Source={StaticResource ViewModel}}" CommandParameter="{Binding NumeroOriginal}">
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="ANTERIOR" MaxWidth="110">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock><Hyperlink Command="{Binding SelectOriginalCommand, Source={StaticResource ViewModel}}" CommandParameter="{Binding NumeroOriginal}">
                                     <InlineUIContainer>
                                         <TextBlock Text="{Binding NumeroOriginal}"/>
                                 </InlineUIContainer></Hyperlink></TextBlock>
-                            </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
         <ToolBar VerticalAlignment="Top" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="7,0,0,0">
@@ -106,7 +108,7 @@
                     <Image Source="/IngresoPedidos;component/Resources/display.ico" Width="48" Height="48" HorizontalAlignment="Center" VerticalAlignment="Center" />
                 </StackPanel>
             </Button>
-            <Separator Margin="5,2"/>
+            <!--<Separator Margin="5,2"/>
             <Button Command="Copy" ToolTip="Cambiar contraseña">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/IngresoPedidos;component/Resources/48 (4).ico" Width="48" Height="48" HorizontalAlignment="Center" VerticalAlignment="Center" />
@@ -116,7 +118,7 @@
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/IngresoPedidos;component/Resources/48 (3).ico" Width="48" Height="48" HorizontalAlignment="Center" VerticalAlignment="Center" />
                 </StackPanel>
-            </Button>
+            </Button>-->
         </ToolBar>
     </Grid>
 </Window>

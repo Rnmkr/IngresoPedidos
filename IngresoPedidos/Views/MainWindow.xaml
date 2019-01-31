@@ -12,7 +12,7 @@
     <Grid DataContext="{Binding Source={StaticResource ViewModel}}">
         <Grid VerticalAlignment="Top" Background="#FFA9D1F4" Margin="644,1,10,0" Height="57">
             <Label VerticalAlignment="Top" Margin="0,0,5,5" BorderThickness="1" VerticalContentAlignment="Center" TextOptions.TextFormattingMode="Display" Padding="5" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Content="425 / SCHNEIDER NICOLAS" Background="{x:Null}" FontFamily="Consolas" Height="24"/>
-            <ComboBox x:Name="cbFiltros" Margin="0,0,5,5" FontFamily="Consolas" SelectedIndex="10" ItemsSource="{Binding _listaFiltros}" SelectedItem="{Binding FiltroSeleccionado}" FontWeight="Medium" FontSize="16" VerticalAlignment="Bottom" HorizontalAlignment="Right" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="150" Height="24"/>
+            <ComboBox x:Name="cbFiltros" Margin="0,0,5,5" FontFamily="Consolas" SelectedIndex="11" ItemsSource="{Binding _listaFiltros}" SelectedItem="{Binding FiltroSeleccionado}" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="110" Height="24"/>
         </Grid>
         <DataGrid ItemsSource="{Binding ListaPedidos, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" SelectedItem="{Binding PedidoSeleccionado, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" ColumnWidth="*">
             <DataGrid.Resources>

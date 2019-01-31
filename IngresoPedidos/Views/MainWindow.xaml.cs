@@ -49,6 +49,18 @@ namespace IngresoPedidos
 
         private void Button_Click_5(object sender, RoutedEventArgs e)
         {
+            NuevoPedido np = new NuevoPedido();
+            np.ShowDialog();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ObservacionView ov = new ObservacionView();
+            ov.ShowDialog();
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
             EditarView ev = new EditarView();
             ev.ShowDialog();
         }

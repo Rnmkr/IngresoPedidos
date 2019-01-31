@@ -76,6 +76,12 @@
     <Compile Include="Views\NuevoPasswordView.xaml.cs">
       <DependentUpon>NuevoPasswordView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\NuevoPedido.xaml.cs">
+      <DependentUpon>NuevoPedido.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ObservacionView.xaml.cs">
+      <DependentUpon>ObservacionView.xaml</DependentUpon>
+    </Compile>
     <Page Include="ProcessingDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -148,6 +154,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\NuevoPasswordView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NuevoPedido.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ObservacionView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -238,9 +252,6 @@
     <Resource Include="Resources\128 %281%29.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\128 %282%29.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\256.ico" />
   </ItemGroup>
   <ItemGroup>
@@ -326,6 +337,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\128 %2817%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\128 %282%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\128 %28511%29.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

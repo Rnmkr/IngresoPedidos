@@ -24,5 +24,10 @@ namespace IngresoPedidos.Views
 
             lbMovimientos.ItemsSource = ListaMovimientos;
         }
+
+        private void LbMovimientos_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            //lbMovimientos.SelectedValue = null;
+        }
     }
 }

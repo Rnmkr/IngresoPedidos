@@ -6,17 +6,64 @@
         xmlns:viewModels="clr-namespace:IngresoPedidos.ViewModels"
         mc:Ignorable="d"
         Title="ALTA DE PEDIDOS: PRODUCCION EXO" Height="768" Width="1366" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+    
     <Window.Resources>
         <viewModels:MainViewModel x:Key="ViewModel" />
     </Window.Resources>
+    
     <Grid DataContext="{Binding Source={StaticResource ViewModel}}">
-        <Grid VerticalAlignment="Top" Background="#FFA9D1F4" Margin="20,1,10,0" Height="57">
-            <Border BorderThickness="0" CornerRadius="10" Background="#FF0078D7" HorizontalAlignment="Right" Margin="0,5,5,0" VerticalAlignment="Top">
-                <Label Margin="0" Foreground="GhostWhite" VerticalContentAlignment="Center" TextOptions.TextFormattingMode="Display" Padding="5" HorizontalContentAlignment="Right" Content="SCHNEIDERSCHOVSKINSKY NICOLAS" Background="{x:Null}" FontFamily="Consolas" Height="24"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="72"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <Grid Background="#FFA9D1F4" Grid.Row="0">
+            
+            <Button ToolTip="Ingresar un nuevo pedido a la base de datos" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" Margin="5,0,0,0">
+                <Image Source="/IngresoPedidos;component/Resources/add.ico" Width="48" Height="48" HorizontalAlignment="Left" VerticalAlignment="Center" />
+            </Button>
+            
+            <Button Click="Button_Click_4" ToolTip="Editar pedido seleccionado" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="62,0,0,0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}">
+                <Image Source="/IngresoPedidos;component/Resources/48.ico" Width="48" Height="48" HorizontalAlignment="Left" VerticalAlignment="Center" />
+            </Button>
+            
+            <Button  Click="Button_Click_2" ToolTip="Buscar un registro específico en la base de datos" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="119,0,0,0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}">
+                <Image Source="/IngresoPedidos;component/Resources/search.ico" Width="48" Height="48" HorizontalAlignment="Left" VerticalAlignment="Center" />
+            </Button>
+            
+            <Button Click="Button_Click" ToolTip="Agregar una observación al registro del pedido seleccionado" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="176,0,0,0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}">
+                <Image Source="/IngresoPedidos;component/Resources/128 (511).ico" Width="48" Height="48" HorizontalAlignment="Left" VerticalAlignment="Center" />
+            </Button>
+            
+            <Button  ToolTip="Añadir a lista Personalizada" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="233,0,0,0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}">
+                <Image Source="/IngresoPedidos;component/Resources/128 (16).ico" Width="48" Height="48" HorizontalAlignment="Left" VerticalAlignment="Center" />
+            </Button>
+            
+            <Button ToolTip="Generar Planilla Ingreso/Egreso de mercadería" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="290,0,0,0" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}">
+                <Image Source="/IngresoPedidos;component/Resources/rubberstamp256.png" Width="48" Height="48" HorizontalAlignment="Left" VerticalAlignment="Center" />
+            </Button>
+            
+            <Button ToolTip="Exportar lista a planilla de cálculos" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="347,0,0,0" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}">
+                <Image Source="/IngresoPedidos;component/Resources/128 (8).ico" Width="48" Height="48" HorizontalAlignment="Left" VerticalAlignment="Center" />
+            </Button>
+            
+            <Button Click="Button_Click_3" ToolTip="Ver registro de movimientos del pedido seleccionado" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="404,0,0,0" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}">
+                <Image Source="/IngresoPedidos;component/Resources/128.ico" Width="48" Height="48" HorizontalAlignment="Left" VerticalAlignment="Center" />
+            </Button>
+            
+            <Button Click="Button_Click_1" ToolTip="Ver imágen del modelo seleccionado" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="456,0,0,0" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}">
+                <Image Source="/IngresoPedidos;component/Resources/48 (5).ico" Width="48" Height="48" HorizontalAlignment="Left" VerticalAlignment="Center" />
+            </Button>
+
+            <Border BorderThickness="0" CornerRadius="12" Background="#FFEEF5FD" HorizontalAlignment="Right" Margin="0,10,10,0" VerticalAlignment="Top">
+                <Label Margin="0" Foreground="Black" VerticalContentAlignment="Center" TextOptions.TextFormattingMode="Display" Padding="5,0" HorizontalContentAlignment="Center" Content="SCHNEIDER NICOLAS" Background="{x:Null}" FontFamily="Consolas" Height="24" FontWeight="Bold" FontSize="14"/>
             </Border>
-            <ComboBox x:Name="cbFiltros" Margin="0,0,5,5" FontFamily="Consolas" SelectedIndex="11" ItemsSource="{Binding _listaFiltros}" SelectedItem="{Binding FiltroSeleccionado}" VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
+
+            <ComboBox x:Name="cbFiltros" Margin="0,0,10,5" FontFamily="Consolas" SelectedIndex="11" ItemsSource="{Binding _listaFiltros}" SelectedItem="{Binding FiltroSeleccionado}" VerticalAlignment="Bottom" HorizontalAlignment="Right" FontSize="14" FontWeight="Bold"/>
+
         </Grid>
-        <DataGrid ItemsSource="{Binding ListaPedidos, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" SelectedItem="{Binding PedidoSeleccionado, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" ColumnWidth="*">
+
+        <DataGrid Grid.Row="1" ItemsSource="{Binding ListaPedidos, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" SelectedItem="{Binding PedidoSeleccionado, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" ColumnWidth="*" Margin="0,5,0,0">
             <DataGrid.Resources>
                 <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Color="DarkGray"/>
             </DataGrid.Resources>
@@ -60,65 +107,7 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <ToolBar VerticalAlignment="Top" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="7,0,0,0">
-            <Button Command="Copy" Click="Button_Click_5" ToolTip="Ingresar un nuevo pedido">
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="/IngresoPedidos;component/Resources/add.ico" Width="48" Height="48" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                </StackPanel>
-            </Button>
-            <Button Command="Copy" Click="Button_Click_5" ToolTip="Editar registro seleccionado">
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="/IngresoPedidos;component/Resources/48.ico" Width="48" Height="48" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                </StackPanel>
-            </Button>
-            <Button Command="Copy" Click="Button_Click_2" ToolTip="Buscar un registro específico">
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="/IngresoPedidos;component/Resources/search.ico" Width="48" Height="48" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                </StackPanel>
-            </Button>
-            <Separator Margin="5,2"/>
-            <Button Command="Copy" ToolTip="Copia los registros seleccionados">
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="/IngresoPedidos;component/Resources/copy.ico" Width="48" Height="48" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                </StackPanel>
-            </Button>
-            <Button Command="Copy" ToolTip="Generar recibo de entrega">
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="/IngresoPedidos;component/Resources/128 (16).ico" Width="48" Height="48" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                </StackPanel>
-            </Button>
-            <Button Command="Copy" ToolTip="Exportar selección a planilla">
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="/IngresoPedidos;component/Resources/128 (8).ico" Width="48" Height="48" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                </StackPanel>
-            </Button>
-            <Button Command="Copy" Click="Button_Click_3" ToolTip="Ver movimientos del registro seleccionado">
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="/IngresoPedidos;component/Resources/128.ico" Width="48" Height="48" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                </StackPanel>
-            </Button>
-            <Button Click="Button_Click_1" ToolTip="Ver imágen del modelo seleccionado">
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="/IngresoPedidos;component/Resources/48 (5).ico" Width="48" Height="48" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                </StackPanel>
-            </Button>
-            <!--<Separator Margin="5,2"/>
-            <Button Command="SelectAll" ToolTip="Activar/Desactivar display de pedidos" IsEnabled="True">
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="/IngresoPedidos;component/Resources/display.ico" Width="48" Height="48" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                </StackPanel>
-            </Button>-->
-            <!--<Separator Margin="5,2"/>
-            <Button Command="Copy" ToolTip="Cambiar contraseña">
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="/IngresoPedidos;component/Resources/48 (4).ico" Width="48" Height="48" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                </StackPanel>
-            </Button>
-            <Button Command="Copy" ToolTip="Cerrar sesion">
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="/IngresoPedidos;component/Resources/48 (3).ico" Width="48" Height="48" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                </StackPanel>
-            </Button>-->
-        </ToolBar>
+        
     </Grid>
+    
 </Window>

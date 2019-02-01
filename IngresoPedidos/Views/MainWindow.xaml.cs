@@ -11,7 +11,7 @@ namespace IngresoPedidos
         public MainWindow()
         {
             InitializeComponent();
-            cbFiltros.SelectedIndex = 0;
+            //cbFiltros.SelectedIndex = 6;
         }
 
         //private void DataGridPedidos_Loaded(object sender, RoutedEventArgs e)

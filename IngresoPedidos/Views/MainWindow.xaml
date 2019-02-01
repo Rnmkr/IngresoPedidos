@@ -18,8 +18,8 @@
         </Grid.RowDefinitions>
         
         <Grid Background="#FFA9D1F4" Grid.Row="0">
-            
-            <Button ToolTip="Ingresar un nuevo pedido a la base de datos" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" Margin="5,0,0,0">
+
+            <Button  Click="Button_Click_5" ToolTip="Ingresar un nuevo pedido a la base de datos" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" Margin="5,0,0,0">
                 <Image Source="/IngresoPedidos;component/Resources/add.ico" Width="48" Height="48" HorizontalAlignment="Left" VerticalAlignment="Center" />
             </Button>
             
@@ -59,7 +59,7 @@
                 <Label Margin="0" Foreground="Black" VerticalContentAlignment="Center" TextOptions.TextFormattingMode="Display" Padding="5,0" HorizontalContentAlignment="Center" Content="SCHNEIDER NICOLAS" Background="{x:Null}" FontFamily="Consolas" Height="24" FontWeight="Bold" FontSize="14"/>
             </Border>
 
-            <ComboBox x:Name="cbFiltros" Margin="0,0,10,5" FontFamily="Consolas" SelectedIndex="11" ItemsSource="{Binding _listaFiltros}" SelectedItem="{Binding FiltroSeleccionado}" VerticalAlignment="Bottom" HorizontalAlignment="Right" FontSize="14" FontWeight="Bold"/>
+            <ComboBox x:Name="cbFiltros" Margin="0,0,10,5" SelectedValue="INGRESADOS" FontFamily="Consolas" ItemsSource="{Binding _listaFiltros}" SelectedItem="{Binding FiltroSeleccionado}" VerticalAlignment="Bottom" HorizontalAlignment="Right" FontSize="14" FontWeight="Bold"/>
 
         </Grid>
 

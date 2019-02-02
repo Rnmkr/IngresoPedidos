@@ -49,7 +49,7 @@ namespace IngresoPedidos
 
         private void Button_Click_5(object sender, RoutedEventArgs e)
         {
-            NuevoPedido np = new NuevoPedido();
+            FormularioPedidoView np = new FormularioPedidoView();
             np.ShowDialog();
         }
 
@@ -61,7 +61,7 @@ namespace IngresoPedidos
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
-            EditarView ev = new EditarView();
+            FormularioPedidoView ev = new FormularioPedidoView();
             ev.ShowDialog();
         }
     }

@@ -5,12 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IngresoPedidos.Views"
         mc:Ignorable="d"
-        Title="AGREGAR OBSERVACION AL PEDIDO 1234567A-00" Height="190" Width="720" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="AGREGAR OBSERVACION AL PEDIDO 1234567A-00" Height="257.658" Width="269.871" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid Margin="0">
-        <TextBox BorderThickness="2" BorderBrush="#FFA9D1F4" Height="65" MaxLength="240" Margin="10,10,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Padding="3" FontFamily="Consolas" FontSize="14"/>
-            <Button ToolTip="Guardar observación" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,10,10" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}">
+        <TextBox Text="12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789A" BorderThickness="2" BorderBrush="#FFA9D1F4" Height="120" MaxLength="240" Margin="10,10,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Padding="3" FontFamily="Consolas"/>
+            <Button ToolTip="Guardar observación" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,10" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}">
                 <Image Source="/IngresoPedidos;component/Resources/save.ico" Width="48" Height="48"  />
             </Button>
-        <TextBlock HorizontalAlignment="Left" Margin="10,80,0,0" TextWrapping="Wrap" Text="240 CARACTERES" VerticalAlignment="Top" FontSize="10"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,0,0,66" TextWrapping="Wrap" Text="240 CARACTERES" VerticalAlignment="Bottom" FontSize="10"/>
     </Grid>
 </Window>

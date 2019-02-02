@@ -1,11 +1,11 @@
-﻿<Window x:Class="IngresoPedidos.Views.NuevoPedido"
+﻿<Window x:Class="IngresoPedidos.Views.FormularioPedidoView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IngresoPedidos.Views"
         mc:Ignorable="d"
-        Title="ALTA DE NUEVO PEDIDO" Height="455.266" Width="269.871" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="ALTA DE NUEVO PEDIDO" Height="507.266" Width="269.871" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
 
     <Grid Margin="10">
         <Label Content="PEDIDO" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalContentAlignment="Center" FontSize="10" FontWeight="Bold" Padding="1" Height="26" VerticalAlignment="Top" HorizontalContentAlignment="Center" Width="67" Background="#FFA9D1F4"/>
@@ -26,7 +26,7 @@
         <ComboBox Style="{x:Null}" Margin="72,72,0,0" VerticalAlignment="Top" Height="26" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14" FontFamily="Consolas" Width="160" HorizontalAlignment="Left"/>
         <TextBox Height="26" Margin="72,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14" FontFamily="Consolas" HorizontalAlignment="Left" Width="160"/>
 
-        <TextBox Text="12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789A" Margin="0,258,0,0" TextWrapping="Wrap" MaxLength="240" MaxLines="3" Padding="3" FontFamily="Consolas" Height="79" VerticalAlignment="Top" HorizontalAlignment="Left" Width="232" FontSize="10"/>
+        <TextBox Text="12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789A" Margin="0,258,0,0" TextWrapping="Wrap" MaxLength="240" MaxLines="3" Padding="3" FontFamily="Consolas" Height="120" VerticalAlignment="Top" HorizontalAlignment="Left" Width="232"/>
 
         <Button ToolTip="Cortar selección al Portapapeles" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}">
             <Image Source="/IngresoPedidos;component/Resources/save.ico" Width="48" Height="48"  />

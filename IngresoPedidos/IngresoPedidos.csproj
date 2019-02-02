@@ -76,8 +76,8 @@
     <Compile Include="Views\NuevoPasswordView.xaml.cs">
       <DependentUpon>NuevoPasswordView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\NuevoPedido.xaml.cs">
-      <DependentUpon>NuevoPedido.xaml</DependentUpon>
+    <Compile Include="Views\FormularioPedidoView.xaml.cs">
+      <DependentUpon>FormularioPedidoView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ObservacionView.xaml.cs">
       <DependentUpon>ObservacionView.xaml</DependentUpon>
@@ -87,10 +87,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\BusquedaView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\EditarView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -132,9 +128,6 @@
     <Compile Include="Views\BusquedaView.xaml.cs">
       <DependentUpon>BusquedaView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\EditarView.xaml.cs">
-      <DependentUpon>EditarView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\GridPagingWindow.xaml.cs">
       <DependentUpon>GridPagingWindow.xaml</DependentUpon>
     </Compile>
@@ -157,7 +150,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\NuevoPedido.xaml">
+    <Page Include="Views\FormularioPedidoView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

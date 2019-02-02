@@ -7,11 +7,11 @@ namespace IngresoPedidos.Models
 
     public partial class DataBaseContext : DbContext
     {
-        //private static string casa = "data source=DESKTOP;initial catalog=PRODUCCION;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework";
+        private static string casa = "data source=DESKTOP;initial catalog=PRODUCCION;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework";
         private static string exo = "data source=VM-FORREST;initial catalog=PRODUCCION;persist security info=True;user id=FORREST;password=12345678;MultipleActiveResultSets=True;App=EntityFramework";
 
         public DataBaseContext()
-            : base(exo)
+            : base(casa)
         {
         }
 

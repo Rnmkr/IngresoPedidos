@@ -5,52 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IngresoPedidos.Views"
         mc:Ignorable="d"
-        Title="ALTA DE NUEVO PEDIDO" Height="230" Width="785" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="ALTA DE NUEVO PEDIDO" Height="455.266" Width="269.871" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
 
     <Grid Margin="10">
-        <Label Content="PEDIDO" HorizontalAlignment="Left" Margin="0,5,0,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="10" FontWeight="Bold" Padding="1" Width="120" Height="15" VerticalAlignment="Top"/>
-        <Label Content="ARTICULO" HorizontalAlignment="Left" Margin="375,5,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="10" FontWeight="Bold" Padding="1" Width="65"/>
-        <Label Content="MODELO" HorizontalAlignment="Left" Margin="125,5,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="10" FontWeight="Bold" Padding="1" Width="120"/>
-        <Label Content="PRODUCTO" HorizontalAlignment="Left" Margin="250,5,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="10" FontWeight="Bold" Padding="1" Width="120" Height="15"/>
-        <Label Content="CANTIDAD" HorizontalAlignment="Left" Margin="445,5,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="10" FontWeight="Bold" Padding="1" Width="65"/>
-        <Label Content="ORIGINAL" HorizontalAlignment="Left" Margin="640,5,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="10" FontWeight="Bold" Padding="1" Width="119"/>
-        <Label Content="ESTADO" Margin="0,5,124,0" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="10" FontWeight="Bold" Padding="1" HorizontalAlignment="Right" Width="120"/>
-        <TextBox Height="26" TextWrapping="Wrap" VerticalAlignment="Top" Margin="0,25,639,0" FontFamily="Consolas" FontSize="14" FontWeight="Bold" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-        <ComboBox Style="{x:Null}" Margin="125,25,514,0" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14" FontFamily="Consolas" Height="26"/>
-        <ComboBox Style="{x:Null}" Margin="250,25,389,0" VerticalAlignment="Top" Height="26" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14" FontFamily="Consolas"/>
-        <TextBox Height="26" Margin="375,25,319,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Consolas" FontSize="14"/>
-        <TextBox Height="26" Margin="445,25,249,0" TextWrapping="Wrap" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14" FontFamily="Consolas"/>
-        <ComboBox Style="{x:Null}" Margin="515,25,124,0" VerticalAlignment="Top" Height="26" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14" FontFamily="Consolas"/>
-        <TextBox Height="26" Margin="640,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14" FontFamily="Consolas"/>
+        <Label Content="PEDIDO" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalContentAlignment="Center" FontSize="10" FontWeight="Bold" Padding="1" Height="26" VerticalAlignment="Top" HorizontalContentAlignment="Center" Width="67" Background="#FFA9D1F4"/>
+        <Label Content="MODELO" HorizontalAlignment="Left" Margin="0,41,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" FontSize="10" FontWeight="Bold" Padding="1" RenderTransformOrigin="0.292,0.533" Height="26" HorizontalContentAlignment="Center" Width="67" Background="#FFA9D1F4"/>
+        <Label Content="ARTICULO" HorizontalAlignment="Left" Margin="0,103,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" FontSize="10" FontWeight="Bold" Padding="1" Height="26" HorizontalContentAlignment="Center" Width="67" Background="#FFA9D1F4"/>
+        <Label Content="PRODUCTO" HorizontalAlignment="Left" Margin="0,72,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" FontSize="10" FontWeight="Bold" Padding="1" Height="26" HorizontalContentAlignment="Center" Background="#FFA9D1F4" Width="66"/>
+        <Label Content="CANTIDAD" HorizontalAlignment="Left" Margin="0,134,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" FontSize="10" FontWeight="Bold" Padding="1" Height="26" HorizontalContentAlignment="Center" Width="67" Background="#FFA9D1F4"/>
+        <Label Content="ORIGINAL" HorizontalAlignment="Left" Margin="0,196,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" FontSize="10" FontWeight="Bold" Padding="1" Height="26" HorizontalContentAlignment="Center" Width="67" Background="#FFA9D1F4"/>
+        <Label Content="OBSERVACIONES" HorizontalAlignment="Left" Margin="0,227,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="10" FontWeight="Bold" Padding="1" Width="232" Height="26" Background="#FFA9D1F4"/>
+        <Label Content="ESTADO" Margin="0,165,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" FontSize="10" FontWeight="Bold" Padding="1" HorizontalAlignment="Left" RenderTransformOrigin="-0.775,4.333" Height="26" HorizontalContentAlignment="Center" Width="67" Background="#FFA9D1F4"/>
+        <TextBox Height="26" TextWrapping="Wrap" VerticalAlignment="Top" Margin="72,103,0,0" FontFamily="Consolas" FontSize="14" FontWeight="Bold" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="160" HorizontalAlignment="Left"/>
+        <ComboBox Style="{x:Null}" Margin="72,41,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14" FontFamily="Consolas" Height="26" Width="160" RenderTransformOrigin="0.515,-1.115" HorizontalAlignment="Left"/>
+        <ComboBox Style="{x:Null}" IsEnabled="False" SelectedIndex="0" Margin="72,165,0,0" VerticalAlignment="Top" Height="26" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14" FontFamily="Consolas" Width="160" HorizontalAlignment="Left">
+            <ComboBoxItem>INGRESADO</ComboBoxItem>
+        </ComboBox>
+        <TextBox Height="26" Margin="72,196,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Consolas" FontSize="14" HorizontalAlignment="Left" Width="160"/>
+        <TextBox Height="26" Margin="72,134,0,0" TextWrapping="Wrap" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14" FontFamily="Consolas" HorizontalAlignment="Left" Width="160"/>
+        <ComboBox Style="{x:Null}" Margin="72,72,0,0" VerticalAlignment="Top" Height="26" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14" FontFamily="Consolas" Width="160" HorizontalAlignment="Left"/>
+        <TextBox Height="26" Margin="72,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14" FontFamily="Consolas" HorizontalAlignment="Left" Width="160"/>
 
-        <TextBox Margin="0,56,0,0" TextWrapping="Wrap" MaxLength="240" MaxLines="3" Padding="3" FontFamily="Consolas" FontSize="14" Height="65" VerticalAlignment="Top"/>
+        <TextBox Text="12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789A" Margin="0,258,0,0" TextWrapping="Wrap" MaxLength="240" MaxLines="3" Padding="3" FontFamily="Consolas" Height="79" VerticalAlignment="Top" HorizontalAlignment="Left" Width="232" FontSize="10"/>
 
-        <Button ToolTip="Cortar selección al Portapapeles" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}">
+        <Button ToolTip="Cortar selección al Portapapeles" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}">
             <Image Source="/IngresoPedidos;component/Resources/save.ico" Width="48" Height="48"  />
         </Button>
     </Grid>
 </Window>
-
-<!--<Border BorderBrush="#FFA9D1F4" BorderThickness="3" HorizontalAlignment="Left" Margin="10,64,0,10" Width="258" Background="#FFF0F0F0"/>
-
-
-        <Border BorderBrush="#FFABADB3" BorderThickness="1" HorizontalAlignment="Left" Margin="14,0,0,14" Width="250" Background="#FFF0F0F0" Height="250" VerticalAlignment="Bottom">
-            <Image Margin="0" Source="/IngresoPedidos;component/Resources/NOT1422EXO.jpg"/>
-        </Border>
-
-
-        -->
-<!----><!--
-        <Label Content="Pedido" HorizontalAlignment="Left" Margin="14,69,0,0" VerticalAlignment="Top" Height="28" Width="105" Padding="0,0,5,0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Background="#FFA9D1F4"/>
-        <Label Content="Articulo" HorizontalAlignment="Left" Margin="14,98,0,0" VerticalAlignment="Top" Height="25" Width="105" Padding="0,0,5,0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Background="#FFA9D1F4"/>
-        <Label Content="Modelo" HorizontalAlignment="Left" Margin="14,124,0,0" VerticalAlignment="Top" Height="25" Width="105" Padding="0,0,5,0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Background="#FFA9D1F4"/>
-        <Label Content="Producto" HorizontalAlignment="Left" Margin="14,150,0,0" VerticalAlignment="Top" Height="25" Width="105" Padding="0,0,5,0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Background="#FFA9D1F4"/>
-        <Label Content="Cantidad" HorizontalAlignment="Left" Margin="14,176,0,0" VerticalAlignment="Top" Height="25" Width="105" Padding="0,0,5,0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Background="#FFA9D1F4"/>
-        <Label Content="Anterior" HorizontalAlignment="Left" Margin="14,202,0,0" VerticalAlignment="Top" Height="25" Padding="0,0,5,0" HorizontalContentAlignment="Right" Width="105" VerticalContentAlignment="Center" Background="#FFA9D1F4"/>
-        <Label Content="Estado" HorizontalAlignment="Left" Margin="14,228,0,0" VerticalAlignment="Top" Height="25" Width="105" Padding="0,0,5,0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Background="#FFA9D1F4"/>-->
-<!---->
-        
-        
-        
-
-

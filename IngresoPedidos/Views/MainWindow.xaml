@@ -55,8 +55,8 @@
                 <Image Source="/IngresoPedidos;component/Resources/48 (5).ico" Width="48" Height="48" HorizontalAlignment="Left" VerticalAlignment="Center" />
             </Button>
 
-            <Border BorderThickness="0" CornerRadius="12" Background="#FFEEF5FD" HorizontalAlignment="Right" Margin="0,10,10,0" VerticalAlignment="Top">
-                <Label Margin="0" Foreground="Black" VerticalContentAlignment="Center" TextOptions.TextFormattingMode="Display" Padding="5,0" HorizontalContentAlignment="Center" Content="SCHNEIDER NICOLAS" Background="{x:Null}" FontFamily="Consolas" Height="24" FontWeight="Bold" FontSize="14"/>
+            <Border BorderThickness="0" CornerRadius="12" Background="#FF74B0E3" HorizontalAlignment="Right" Margin="0,10,10,0" VerticalAlignment="Top">
+                <Button Margin="0" Foreground="Black" VerticalContentAlignment="Center" TextOptions.TextFormattingMode="Display" Padding="5,0" HorizontalContentAlignment="Center" Content="SCHNEIDER NICOLAS" Background="{x:Null}" FontFamily="Consolas" Height="24" FontWeight="Bold" FontSize="14" BorderBrush="{x:Null}"/>
             </Border>
 
             <ComboBox x:Name="cbFiltros" Margin="0,0,10,5" SelectedValue="INGRESADOS" FontFamily="Consolas" ItemsSource="{Binding _listaFiltros}" SelectedItem="{Binding FiltroSeleccionado}" VerticalAlignment="Bottom" HorizontalAlignment="Right" FontSize="14" FontWeight="Bold"/>

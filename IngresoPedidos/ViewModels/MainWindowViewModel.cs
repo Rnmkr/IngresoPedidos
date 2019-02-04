@@ -30,7 +30,7 @@ namespace IngresoPedidos.ViewModels
         {
             App.splashScreen.AddMessage("Contactando al servidor...");
             Thread.Sleep(5000);
-            App.splashScreen.AddMessage("Cargando listas...");
+            App.splashScreen.AddMessage("Cargando...");
             ListaPedidos = _pedidosViewRepository.GetPedidosView("INGRESADO");
             UsuarioActivo = null;
             //This will probably never actually get seen

@@ -56,6 +56,8 @@ namespace IngresoPedidos
         {
             LoginView ev = new LoginView();
             ev.Owner = this;
+            dgPedidos.ItemsSource = null;
+            
             ev.ShowDialog();
         }
 

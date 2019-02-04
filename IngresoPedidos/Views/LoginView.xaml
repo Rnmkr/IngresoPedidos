@@ -11,8 +11,8 @@
         <Label Content="LEGAJO" HorizontalAlignment="Left" Margin="10,12,0,0" VerticalContentAlignment="Center" FontWeight="Bold" Padding="1" HorizontalContentAlignment="Center" Background="#FFA9D1F4" FontFamily="Consolas" Height="26" VerticalAlignment="Top" Width="81"/>
         <TextBox Name="tbLegajo" Margin="96,12,78,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14" FontFamily="Consolas" TabIndex="1" Height="26" VerticalAlignment="Top"/>
         <PasswordBox Name="pbContraseña" Margin="96,45,78,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Consolas" FontSize="14" TabIndex="2" Height="26" VerticalAlignment="Top"/>
-        <Button ToolTip="Ingresar" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="251,12,10,18" TabIndex="3">
-            <Image Source="/IngresoPedidos;component/Resources/LOGIN.ico" Width="48" Height="48"  />
+        <Button ToolTip="Ingresar" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="0,12,10,0" TabIndex="3" Height="59" VerticalAlignment="Top" HorizontalAlignment="Right" Width="63">
+            <Image Source="/IngresoPedidos;component/Resources/LOGIN.ico"  />
         </Button>
     </Grid>
 </Window>

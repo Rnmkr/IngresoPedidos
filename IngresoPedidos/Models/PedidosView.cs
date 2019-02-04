@@ -6,6 +6,7 @@ namespace IngresoPedidos.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
     using System.Linq;
+    using System.Windows;
 
     [Table("PedidosView")]
     public partial class PedidosView
@@ -81,8 +82,11 @@ namespace IngresoPedidos.Models
                     catch (Exception)
                     {
 
-                        throw;
+                        MessageBox.Show("AH AH AAAH");
+                        Application.Current.Shutdown();
+
                     }
+                    return null;
 
 
                 case "COMPLETO":

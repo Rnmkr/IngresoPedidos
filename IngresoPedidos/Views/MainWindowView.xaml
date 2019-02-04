@@ -1,4 +1,4 @@
-﻿<Window x:Class="IngresoPedidos.MainWindow"
+﻿<Window x:Class="IngresoPedidos.MainWindowView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -8,9 +8,9 @@
         Title="ALTA DE PEDIDOS: PRODUCCION EXO" Height="768" Width="1366" WindowStartupLocation="CenterScreen" WindowState="Maximized">
     
     <Window.Resources>
-        <viewModels:MainViewModel x:Key="ViewModel" />
+        <viewModels:MainWindowViewModel x:Key="ViewModel" />
     </Window.Resources>
-    
+
     <Grid DataContext="{Binding Source={StaticResource ViewModel}}">
         <Grid.RowDefinitions>
             <RowDefinition Height="72"/>
@@ -19,40 +19,46 @@
         
         <Grid Background="#FFA9D1F4" Grid.Row="0">
 
-            <Button  Click="Button_Click_5" ToolTip="Ingresar un nuevo pedido a la base de datos" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" Margin="5,0,0,0">
+            <Button  Click="Button_Click_5" ToolTip="Ingresar un nuevo pedido a la Base de Datos" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" Margin="5,0,0,0">
                 <Image Source="/IngresoPedidos;component/Resources/add.ico" Width="48" Height="48" HorizontalAlignment="Left" VerticalAlignment="Center" />
             </Button>
             
-            <Button Click="Button_Click_4" ToolTip="Editar pedido seleccionado" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="62,0,0,0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}">
-                <Image Source="/IngresoPedidos;component/Resources/48.ico" Width="48" Height="48" HorizontalAlignment="Left" VerticalAlignment="Center" />
-            </Button>
-            
-            <Button  Click="Button_Click_2" ToolTip="Buscar un registro específico en la base de datos" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="119,0,0,0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}">
+            <Button Click="Button_Click_2" ToolTip="Buscar un pedido en la Base de Datos" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="62,0,0,0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}">
                 <Image Source="/IngresoPedidos;component/Resources/search.ico" Width="48" Height="48" HorizontalAlignment="Left" VerticalAlignment="Center" />
             </Button>
-            
 
-            
-            <Button ToolTip="Exportar lista a planilla de cálculos" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="176,10,0,10" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}">
+            <Button Click="Button_Click" ToolTip="Exportar lista a planilla de cálculos" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="119,0,0,0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}">
                 <Image Source="/IngresoPedidos;component/Resources/128 (8).ico" Width="48" Height="48" HorizontalAlignment="Left" VerticalAlignment="Center" />
             </Button>
-            
-            <Button Click="Button_Click_1" ToolTip="Ver imágen del modelo seleccionado" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="233,10,0,10" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}">
-                <Image Source="/IngresoPedidos;component/Resources/48 (5).ico" Width="48" Height="48" HorizontalAlignment="Left" VerticalAlignment="Center" />
+
+            <Button Click="Button_Click_4" ToolTip="Cambiar contraseña" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,10,41,0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" Width="26" Height="26">
+                <Image Source="/IngresoPedidos;component/Resources/configuration.ico" Height="24" />
             </Button>
 
-            <Border BorderThickness="0" CornerRadius="12" Background="#FF74B0E3" HorizontalAlignment="Right" Margin="0,10,10,0" VerticalAlignment="Top">
-                <Button Margin="0" Foreground="Black" VerticalContentAlignment="Center" TextOptions.TextFormattingMode="Display" Padding="5,0" HorizontalContentAlignment="Center" Content="SCHNEIDER NICOLAS" Background="{x:Null}" FontFamily="Consolas" Height="24" FontWeight="Bold" FontSize="14" BorderBrush="{x:Null}"/>
+            <Button Click="Button_Click_6" ToolTip="Cerrar sesión" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,10,10,0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" Width="26" Height="26">
+                <Image Source="/IngresoPedidos;component/Resources/exit.ico" Height="24" />
+            </Button>
+
+            <Border BorderThickness="0"  CornerRadius="12" Background="#FF74B0E3" HorizontalAlignment="Right" Margin="0,10,72,0" VerticalAlignment="Top" Height="26">
+                <Label Margin="0" Foreground="Black" VerticalContentAlignment="Center" TextOptions.TextFormattingMode="Display" Padding="5,0" HorizontalContentAlignment="Center" Content="SCHNEIDER NICOLAS" Background="{x:Null}" FontFamily="Consolas" Height="24" FontWeight="Bold" FontSize="14" BorderBrush="{x:Null}"/>
             </Border>
 
-            <ComboBox x:Name="cbFiltros" Margin="0,0,10,5" SelectedValue="INGRESADOS" FontFamily="Consolas" ItemsSource="{Binding _listaFiltros}" SelectedItem="{Binding FiltroSeleccionado}" VerticalAlignment="Bottom" HorizontalAlignment="Right" FontSize="14" FontWeight="Bold"/>
+            <ComboBox x:Name="cbFiltros" Margin="0,0,10,5" SelectedValue="INGRESADO" FontFamily="Consolas" ItemsSource="{Binding _listaFiltros}" SelectedItem="{Binding FiltroSeleccionado}" VerticalAlignment="Bottom" HorizontalAlignment="Right" FontSize="14" FontWeight="Bold"/>
 
         </Grid>
 
         <DataGrid Grid.Row="1" ItemsSource="{Binding ListaPedidos, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" SelectedItem="{Binding PedidoSeleccionado, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" ColumnWidth="*" Margin="0,5,0,0">
             <DataGrid.ContextMenu>
                 <ContextMenu>
-                    <MenuItem Command="Copy" />
+                    <MenuItem Header="Editar registro" Click="Button_Click_5"/>
+                    <MenuItem Command="Copy" Header="Copiar Selección"/>
+                    <MenuItem Header="Añadir a lista personalizada"/>
+
+                    <MenuItem Header="Quitar de lista personalizada"/>
+
+                    <MenuItem Header="Generar planilla egreso / ingreso"/>
+                    <MenuItem Header="Ver registro de eventos" Click="Button_Click_3"/>
+                    <MenuItem Header="Ver imagen del modelo"  Click="Button_Click_1"/>
                 </ContextMenu>
             </DataGrid.ContextMenu>
             <DataGrid.Resources>

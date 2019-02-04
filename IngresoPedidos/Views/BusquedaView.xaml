@@ -3,46 +3,35 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+
         xmlns:local="clr-namespace:IngresoPedidos.Views"
         mc:Ignorable="d"
-        Title="INGRESO DE PEDIDOS: BUSQUEDA DE REGISTRO" Height="360" Width="720" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
-    <Grid>
-        <ToolBar Margin="10,0" VerticalAlignment="Top">
+        Title="BUSQUEDA" Height="270" Width="246.472" ResizeMode="NoResize" WindowStartupLocation="CenterOwner">
+    <!--xmlns:sys="clr-namespace:System;assembly=mscorlib"-->
+    <!--<DatePicker Margin="81,107,9,0" SelectedDate="{x:Static sys:DateTime.Now}" VerticalAlignment="Top" FontFamily="Consolas"/>-->
+    <Grid FocusManager.FocusedElement="{Binding ElementName=tbKeyword}">
+        <Label Content="KEYWORD" Background="#FFA9D1F4" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,177" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="24" FontFamily="Consolas" Width="66" FontWeight="Bold"/>
+        <Label Content="CAMPO" Background="#FFA9D1F4" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,39,0,148" Width="66" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="24" FontFamily="Consolas" FontWeight="Bold"/>
+        <Label Content="DESDE" Background="#FFA9D1F4" Margin="10,107,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="66" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="24" FontFamily="Consolas" FontWeight="Bold"/>
+        <Label Content="HASTA" Background="#FFA9D1F4" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,136,0,0" Width="66" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="24" FontFamily="Consolas" FontWeight="Bold"/>
+        <Label Content="BUSCAR ENTRE RANGO DE FECHAS" Background="#FFA9D1F4" Margin="10,78,9,0" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="24" FontFamily="Consolas" FontWeight="Bold"/>
 
-            <Button Command="Copy" ToolTip="Copiar selección al Portapapeles">
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="/IngresoPedidos;component/Resources/copy.ico" Width="48" Height="48" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                </StackPanel>
-            </Button>
-
-            <Button Command="Cut" ToolTip="Cortar selección al Portapapeles">
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="/IngresoPedidos;component/Resources/cut.ico" Width="48" Height="48" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                </StackPanel>
-            </Button>
-
-            <Button Command="Paste" ToolTip="Pegar desde el Portapapeles">
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="/IngresoPedidos;component/Resources/paste.ico" Width="48" Height="48" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                </StackPanel>
-            </Button>
-            <Separator></Separator>
-
-            <Button Command="Paste" ToolTip="Agregar a lista personalizada">
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="/IngresoPedidos;component/Resources/add.ico" Width="48" Height="48" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                </StackPanel>
-            </Button>
-            <Separator></Separator>
-
-            <Button Command="Paste" ToolTip="Pegar desde el Portapapeles">
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="/IngresoPedidos;component/Resources/128 (5).ico" Width="48" Height="48" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                </StackPanel>
-            </Button>
-            <Separator></Separator>
-
-        </ToolBar>
-        <DataGrid HorizontalAlignment="Center" Height="252" Margin="10,69,10,10" VerticalAlignment="Center" Width="694"/>
+        <ComboBox Style="{x:Null}" Margin="81,39,9,0" VerticalAlignment="Top" Height="24" FontFamily="Consolas" SelectedIndex="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="15,0,0,0">
+            <ComboBoxItem>PEDIDO</ComboBoxItem>
+            <ComboBoxItem>MODELO</ComboBoxItem>
+            <ComboBoxItem>PRODUCTO</ComboBoxItem>
+            <ComboBoxItem>ARTICULO</ComboBoxItem>
+            <ComboBoxItem>CANTIDAD</ComboBoxItem>
+            <ComboBoxItem>FECHA INGRESO</ComboBoxItem>
+            <ComboBoxItem>CAMBIO ESTADO</ComboBoxItem>
+            <ComboBoxItem>SUCESOR</ComboBoxItem>
+            <ComboBoxItem>ANTERIOR</ComboBoxItem>
+        </ComboBox>
+        <TextBox Name="tbKeyword" Height="24" Margin="81,10,9,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Consolas" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <DatePicker Margin="81,107,9,0" VerticalAlignment="Top" FontFamily="Consolas"/>
+        <DatePicker Margin="81,136,9,0" VerticalAlignment="Top" Height="24" FontFamily="Consolas"/>
+        <Button ToolTip="Buscar!" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,10" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}">
+            <Image Source="/IngresoPedidos;component/Resources/search.ico" Width="48" Height="48" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        </Button>
     </Grid>
 </Window>

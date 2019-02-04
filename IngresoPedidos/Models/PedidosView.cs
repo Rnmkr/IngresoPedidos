@@ -73,41 +73,53 @@ namespace IngresoPedidos.Models
             switch (filtro)
             {
 
-                case "INGRESADOS":
-                    return db.PedidosView.Where(w => w.EstadoPedido == "INGRESADO").OrderByDescending(o => o.IDPedido).Select(s => s).ToList();
+                case "INGRESADO":
+                    try
+                    {
+                        return db.PedidosView.Where(w => w.EstadoPedido == "INGRESADO").OrderByDescending(o => o.IDPedido).Select(s => s).ToList();
+                    }
+                    catch (Exception)
+                    {
 
-                case "COMPLETOS":
+                        throw;
+                    }
+
+
+                case "COMPLETO":
                     return db.PedidosView.Where(w => w.EstadoPedido == "COMPLETO").OrderByDescending(o => o.IDPedido).Select(s => s).ToList();
 
-                case "INCOMPLETOS":
+                case "INCOMPLETO":
                     return db.PedidosView.Where(w => w.EstadoPedido == "INCOMPLETO").OrderByDescending(o => o.IDPedido).OrderByDescending(o => o.IDPedido).Select(s => s).ToList();
 
-                case "AUTORIZADOS":
+                case "AUTORIZADO":
                     return db.PedidosView.Where(w => w.EstadoPedido == "AUTORIZADO").OrderByDescending(o => o.IDPedido).Select(s => s).ToList();
 
                 case "PRODUCCION":
                     return db.PedidosView.Where(w => w.EstadoPedido == "PRODUCCION").OrderByDescending(o => o.IDPedido).Select(s => s).ToList();
 
-                case "PAUSADOS":
+                case "PAUSADO":
                     return db.PedidosView.Where(w => w.EstadoPedido == "PAUSADO").OrderByDescending(o => o.IDPedido).Select(s => s).ToList();
 
-                case "CANCELADOS":
+                case "CANCELADO":
                     return db.PedidosView.Where(w => w.EstadoPedido == "CANCELADO").OrderByDescending(o => o.IDPedido).Select(s => s).ToList();
 
-                case "FINALIZADOS":
+                case "FINALIZADO":
                     return db.PedidosView.Where(w => w.EstadoPedido == "FINALIZADO").OrderByDescending(o => o.IDPedido).Select(s => s).ToList();
 
-                case "REPROCESADOS":
+                case "REPROCESADO":
                     return db.PedidosView.Where(w => w.EstadoPedido == "REPROCESADO").OrderByDescending(o => o.IDPedido).Select(s => s).ToList();
 
-                case "DESPACHADOS":
+                case "DESPACHADO":
                     return db.PedidosView.Where(w => w.EstadoPedido == "DESPACHADO").OrderByDescending(o => o.IDPedido).Take(10000).ToList();
 
                 case "SUCESORES":
                     return db.PedidosView.Where(w => w.NumeroOriginal != null).OrderByDescending(o => o.IDPedido).Select(s => s).ToList();
 
-                //case "PERSONALIZADA":
-                //    return db.PedidosView.Where(W => W.EstadoPedido == "DESPACHADO").OrderByDescending(o => o.FechaIngreso).Take(20000).ToList();
+                case "PERSONALIZADA":
+                    return null;
+
+                case "BUSQUEDA":
+                    return null;
 
                 default:
                     return db.PedidosView.OrderByDescending(o => o.IDPedido).Take(10000).ToList();

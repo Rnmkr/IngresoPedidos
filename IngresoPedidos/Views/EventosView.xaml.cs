@@ -7,9 +7,9 @@ namespace IngresoPedidos.Views
     /// <summary>
     /// Interaction logic for MovimientosView.xaml
     /// </summary>
-    public partial class MovimientosView : Window
+    public partial class EventosView : Window
     {
-        public MovimientosView()
+        public EventosView()
         {
             InitializeComponent();
 

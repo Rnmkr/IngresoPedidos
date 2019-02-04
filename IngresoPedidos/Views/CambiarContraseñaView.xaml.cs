@@ -5,9 +5,9 @@ namespace IngresoPedidos
     /// <summary>
     /// Interaction logic for NewPasswordWindow.xaml
     /// </summary>
-    public partial class NewPasswordWindow : Window
+    public partial class CambiarContraseñaView : Window
     {
-        public NewPasswordWindow()
+        public CambiarContraseñaView()
         {
             InitializeComponent();
         }

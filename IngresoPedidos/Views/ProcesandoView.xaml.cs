@@ -17,16 +17,12 @@ namespace IngresoPedidos
     /// <summary>
     /// Interaction logic for ProgressDialog.xaml
     /// </summary>
-    public partial class ProcessingDialog : Window
+    public partial class ProcesandoView : Window
     {
-        public ProcessingDialog()
+        public ProcesandoView()
         {
             InitializeComponent();
         }
 
-        private void CancelButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }

@@ -41,7 +41,8 @@
     </StartupObject>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>orderadd.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
@@ -73,16 +74,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Views\NuevoPasswordView.xaml.cs">
-      <DependentUpon>NuevoPasswordView.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="ViewModels\BusquedaViewModel.cs" />
+    <Compile Include="ViewModels\CambiarContraseñaViewModel.cs" />
+    <Compile Include="ViewModels\EventosViewModel.cs" />
+    <Compile Include="ViewModels\FormularioPedidoViewModel.cs" />
+    <Compile Include="ViewModels\ImagenViewModel.cs" />
+    <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="ViewModels\ProcesandoViewModel.cs" />
+    <Compile Include="ViewModels\SplashScreenViewModel.cs" />
     <Compile Include="Views\FormularioPedidoView.xaml.cs">
       <DependentUpon>FormularioPedidoView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\ObservacionView.xaml.cs">
-      <DependentUpon>ObservacionView.xaml</DependentUpon>
+    <Compile Include="Views\SplashScreenView.xaml.cs">
+      <DependentUpon>SplashScreenView.xaml</DependentUpon>
     </Compile>
-    <Page Include="ProcessingDialog.xaml">
+    <Page Include="Views\ProcesandoView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -90,15 +96,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\GridPagingWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Views\ImagenView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\MainWindow.xaml">
+    <Page Include="Views\LoginView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainWindowView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -121,32 +127,28 @@
     <Compile Include="Models\PedidosView.cs" />
     <Compile Include="Models\Productos.cs" />
     <Compile Include="Models\Usuarios.cs" />
-    <Compile Include="ProcessingDialog.xaml.cs">
-      <DependentUpon>ProcessingDialog.xaml</DependentUpon>
+    <Compile Include="Views\ProcesandoView.xaml.cs">
+      <DependentUpon>ProcesandoView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="Views\BusquedaView.xaml.cs">
       <DependentUpon>BusquedaView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\GridPagingWindow.xaml.cs">
-      <DependentUpon>GridPagingWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ImagenView.xaml.cs">
       <DependentUpon>ImagenView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="Views\LoginView.xaml.cs">
+      <DependentUpon>LoginView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainWindowView.xaml.cs">
+      <DependentUpon>MainWindowView.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Views\MovimientosView.xaml">
+    <Page Include="Views\EventosView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\CambiarPasswordView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\NuevoPasswordView.xaml">
+    <Page Include="Views\CambiarContraseñaView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -154,17 +156,17 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\ObservacionView.xaml">
+    <Page Include="Views\SplashScreenView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Views\MovimientosView.xaml.cs">
-      <DependentUpon>MovimientosView.xaml</DependentUpon>
+    <Compile Include="Views\EventosView.xaml.cs">
+      <DependentUpon>EventosView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\CambiarPasswordView.xaml.cs">
-      <DependentUpon>CambiarPasswordView.xaml</DependentUpon>
+    <Compile Include="Views\CambiarContraseñaView.xaml.cs">
+      <DependentUpon>CambiarContraseñaView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -191,13 +193,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <SplashScreen Include="SplashScreen.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\orderadd.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="orderadd.ico" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\NOT1422EXO.jpg" />
@@ -336,6 +332,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\128 %28511%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\configuration.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LOGIN.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SplashScreen.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -5,11 +5,11 @@ using System.Linq;
 
 namespace IngresoPedidos.Helpers
 {
-    class Busqueda
+    class Buscador
     {
         Context context;
 
-        public Busqueda(Context databasecontext)
+        public Buscador(Context databasecontext)
         {
             context = databasecontext;
         }
@@ -70,18 +70,24 @@ namespace IngresoPedidos.Helpers
             }
         }
 
-        public List<PedidosView> ObtenerPedidos(string keyword, string campo, string campofecha, DateTime fechaInicio, DateTime fechaFinal)
+        public List<PedidosView> ObtenerPedidos(string keyword, string campo, string campofecha, DateTime fechaInicial, DateTime fechaFinal)
         {
             List<PedidosView> result = new List<PedidosView>();
 
+            if (fechaInicial == fechaFinal)
+            {
+                fechaInicial = fechaInicial.AddDays(-1);
+                fechaFinal = fechaFinal.AddDays(1);
+            }
+
             switch (campofecha)
             {
-                case "FECHA INGRESO":
-                    result = context.PedidosView.Where(w => w.FechaIngreso >= fechaInicio && w.FechaIngreso <= fechaFinal).Select(s => s).ToList();
+                case "INGRESO":
+                    result = context.PedidosView.Where(w => w.FechaIngreso >= fechaInicial && w.FechaIngreso <= fechaFinal).Select(s => s).ToList();
                     break;
 
-                case "FECHA ESTADO":
-                    result = context.PedidosView.Where(w => w.FechaEstado >= fechaInicio && w.FechaEstado <= fechaFinal).Select(s => s).ToList();
+                case "ESTADO":
+                    result = context.PedidosView.Where(w => w.FechaEstado >= fechaInicial && w.FechaEstado <= fechaFinal).Select(s => s).ToList();
                     break;
 
                 default:

@@ -19,8 +19,10 @@ namespace IngresoPedidos
             tbKeyword.LostFocus += AddPlaceholder;
 
             List<string> campos = new List<string> { "PEDIDO", "MODELO", "PRODUCTO", "ARTICULO", "CANTIDAD", "ESTADO", "SUCESOR", "ANTERIOR" };
+            List<string> camposfecha = new List<string> { "INGRESO", "ESTADO" };
 
             cbCampo.ItemsSource = campos;
+            cbCampoFecha.ItemsSource = camposfecha;
         }
 
         private void AddPlaceholder(object sender, EventArgs e)
@@ -56,13 +58,31 @@ namespace IngresoPedidos
 
         private void BuscarRegistro()
         {
-            Busqueda busqueda = new Busqueda(StaticData.context);
+            string keyword = tbKeyword.Text;
+
+            if (string.IsNullOrWhiteSpace(keyword))
+            {
+                return;
+            }
+
+            if (keyword == "Buscar...")
+            {
+                return;
+            }
+
+
+            Buscador busqueda = new Buscador(StaticData.context);
             string campo = cbCampo.SelectedValue.ToString();
-            StaticData.SearchList = busqueda.ObtenerPedidos(tbKeyword.Text, campo);
+            string campofecha = cbCampoFecha.SelectedValue.ToString();
+            DateTime fechainicio = dpInicial.SelectedDate ?? DateTime.Now;
+            DateTime fechafinal= dpFinal.SelectedDate ?? DateTime.Now;
+            //MessageBox.Show(keyword + campo + campofecha + fechainicio + fechafinal );
+            //return;
+            StaticData.SearchList = busqueda.ObtenerPedidos(keyword, campo, campofecha, fechainicio, fechafinal);
             dgPedidos.ItemsSource = null;
             //cb.Filtros.SelectedValue = "BUSQUEDA";
             //ahi ya deberia poner el source en lista-busqueda solo...
-            dgPedidos.ItemsSource = StaticData.SearchList;
+            dgPedidos.ItemsSource = StaticData.SearchList.OrderByDescending(o => o.IDPedido);
         }
 
         private void Button_Click_6(object sender, RoutedEventArgs e)
@@ -99,6 +119,13 @@ namespace IngresoPedidos
 
             BuscarRegistro();
 
+        }
+
+        private void btnCambiarContraseña_Click(object sender, RoutedEventArgs e)
+        {
+            CambiarContraseñaWindow ccw = new CambiarContraseñaWindow("925");
+            ccw.Owner = this;
+            ccw.Show();
         }
     }
 }

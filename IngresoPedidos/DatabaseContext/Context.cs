@@ -11,7 +11,7 @@ namespace IngresoPedidos.DatabaseContext
         private static string exo = "data source=VM-FORREST;initial catalog=PRODUCCION;persist security info=True;user id=FORREST;password=12345678;MultipleActiveResultSets=True;App=EntityFramework";
 
         public Context()
-            : base(exo)
+            : base(casa)
         {
         }
 

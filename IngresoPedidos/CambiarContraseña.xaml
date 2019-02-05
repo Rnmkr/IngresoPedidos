@@ -1,4 +1,4 @@
-﻿<Window x:Class="IngresoPedidos.CambiarContraseñaView"
+﻿<Window x:Class="IngresoPedidos.CambiarContraseñaWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -7,17 +7,17 @@
         mc:Ignorable="d"
         Title="CAMBIAR CONTRASEÑA" Height="200" Width="320" ResizeMode="NoResize" WindowStartupLocation="CenterOwner" Icon="/IngresoPedidos;component/Resources/agregar.ico">
 
-    <Grid FocusManager.FocusedElement="{Binding ElementName=pbPasswordActual}" >
+    <Grid FocusManager.FocusedElement="{Binding ElementName=pbContraseñaActual}" >
 
         <Label Content="CONTRASEÑA ACTUAL" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" FontWeight="Bold" Padding="1" Height="26" HorizontalContentAlignment="Right" Background="{x:Null}" FontFamily="Consolas" Width="121"/>
         <Label Content="NUEVA CONTRASEÑA" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" FontWeight="Bold" Padding="1" Height="26" HorizontalContentAlignment="Right" Background="{x:Null}" FontFamily="Consolas" Width="121"/>
         <Label Content="REPETIR CONTRASEÑA" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" FontWeight="Bold" Padding="1" Height="26" HorizontalContentAlignment="Right" Background="{x:Null}" FontFamily="Consolas"/>
 
-        <PasswordBox Name="pbPasswordActual" Height="26" VerticalAlignment="Top" Margin="136,10,11,0" FontFamily="Consolas" FontSize="14" FontWeight="Bold" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" TabIndex="1"/>
-        <PasswordBox Height="26" Margin="136,41,11,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Consolas" FontSize="14" TabIndex="2"/>
-        <PasswordBox Height="26" Margin="136,72,11,0" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14" FontFamily="Consolas" TabIndex="3"/>
+        <PasswordBox Name="pbContraseñaActual" KeyDown="OnKeyDownHandler" Height="26" VerticalAlignment="Top" Margin="136,10,11,0" FontFamily="Consolas" FontSize="14" FontWeight="Bold" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" TabIndex="1"/>
+        <PasswordBox Name="pbContraseñaNueva1" KeyDown="OnKeyDownHandler" Height="26" Margin="136,41,11,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Consolas" FontSize="14" TabIndex="2"/>
+        <PasswordBox Name="pbContraseñaNueva2" KeyDown="OnKeyDownHandler" Height="26" Margin="136,72,11,0" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14" FontFamily="Consolas" TabIndex="3"/>
 
-        <Button ToolTip="Guardar contraseña nueva" HorizontalAlignment="Center" VerticalAlignment="Bottom" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="0,0,0,5" TabIndex="4">
+        <Button Name="btnGuardarContraseña" Click="btnGuardarContraseña_Click" ToolTip="Guardar contraseña nueva" HorizontalAlignment="Center" VerticalAlignment="Bottom" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="0,0,0,5" TabIndex="4">
             <Image Source="/IngresoPedidos;component/Resources/guardar.ico" Width="48" Height="48"  />
         </Button>
 

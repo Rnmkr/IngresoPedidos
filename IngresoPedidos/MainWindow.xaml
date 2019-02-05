@@ -26,7 +26,7 @@
                 <Image Source="/IngresoPedidos;component/Resources/exportar_a_excel.ico" Width="48" Height="48" HorizontalAlignment="Left" VerticalAlignment="Center" />
             </Button>
 
-            <Button x:Name="btnCambiarContraseña" ToolTip="Cambiar contraseña" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,10,41,0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" Width="26" Height="26">
+            <Button x:Name="btnCambiarContraseña" Click="btnCambiarContraseña_Click" ToolTip="Cambiar contraseña" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,10,41,0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" Width="26" Height="26">
                 <Image Source="/IngresoPedidos;component/Resources/configuracion.ico" Height="24" />
             </Button>
 
@@ -58,10 +58,7 @@
             <DatePicker Name="dpFinal" SelectedDateFormat="Short" HorizontalAlignment="Left" Margin="249,36,0,0" VerticalAlignment="Top" FontFamily="Consolas" FontWeight="Bold" Background="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="2" ScrollViewer.CanContentScroll="True"/>
             <ComboBox Name="cbCampo" Style="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="15,0,0,0" SelectedIndex="0" HorizontalAlignment="Left" Margin="123,11,0,0" VerticalAlignment="Top" Width="121" Height="20" FontFamily="Consolas" FontWeight="Bold"/>
 
-            <ComboBox Name="cbCampoFecha" Style="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="5,0,0,0" SelectedIndex="0" HorizontalAlignment="Left" Margin="374,36,0,0" VerticalAlignment="Top" Width="68" Height="24" FontFamily="Consolas" FontWeight="Bold">
-                <ComboBoxItem Content="INGRESO"/>
-                <ComboBoxItem Content="ESTADO"/>
-            </ComboBox>
+            <ComboBox Name="cbCampoFecha" Style="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="5,0,0,0" SelectedIndex="0" HorizontalAlignment="Left" Margin="374,36,0,0" VerticalAlignment="Top" Width="68" Height="24" FontFamily="Consolas" FontWeight="Bold"/>
 
         </Grid>
         <DataGrid x:Name="dgPedidos" Grid.Row="1" ColumnWidth="*" Margin="0,5,0,0">

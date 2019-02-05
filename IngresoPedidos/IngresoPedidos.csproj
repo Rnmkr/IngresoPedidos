@@ -90,8 +90,8 @@
     <Compile Include="FormularioPedido.xaml.cs">
       <DependentUpon>FormularioPedido.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SplashScreenView.xaml.cs">
-      <DependentUpon>SplashScreenView.xaml</DependentUpon>
+    <Compile Include="SplashScreen.xaml.cs">
+      <DependentUpon>SplashScreen.xaml</DependentUpon>
     </Compile>
     <Page Include="Procesando.xaml">
       <SubType>Designer</SubType>
@@ -152,7 +152,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SplashScreenView.xaml">
+    <Page Include="SplashScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

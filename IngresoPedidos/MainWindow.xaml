@@ -1,17 +1,12 @@
-﻿<Window x:Class="IngresoPedidos.MainWindowView"
+﻿<Window x:Class="IngresoPedidos.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:viewModels="clr-namespace:IngresoPedidos.ViewModels"
         mc:Ignorable="d"
         Title="ALTA DE PEDIDOS: PRODUCCION EXO" Height="768" Width="1366" WindowStartupLocation="CenterScreen" WindowState="Maximized" Icon="/IngresoPedidos;component/Resources/agregar.ico">
     
-    <Window.Resources>
-        <viewModels:MainWindowViewModel x:Key="ViewModel" />
-    </Window.Resources>
-
-    <Grid DataContext="{Binding Source={StaticResource ViewModel}}">
+    <Grid Name="mainGrid">
         <Grid.RowDefinitions>
             <RowDefinition Height="72"/>
             <RowDefinition Height="*"/>
@@ -23,19 +18,19 @@
                 <Image Source="/IngresoPedidos;component/Resources/nuevoregistro.ico" Width="48" Height="48" HorizontalAlignment="Left" VerticalAlignment="Center" />
             </Button>
             
-            <Button Click="Button_Click_2" ToolTip="Buscar un pedido en la Base de Datos" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="62,0,0,0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}">
+            <Button Name="btnBuscarPedido" ToolTip="Buscar un pedido en la Base de Datos" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="62,0,0,0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}">
                 <Image Source="/IngresoPedidos;component/Resources/buscar.ico" Width="48" Height="48" HorizontalAlignment="Left" VerticalAlignment="Center" />
             </Button>
 
-            <Button Click="Button_Click" ToolTip="Exportar lista a planilla de cálculos" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="119,0,0,0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}">
+            <Button Name="btnExportarPlanilla" ToolTip="Exportar lista a planilla de cálculos" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="119,0,0,0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}">
                 <Image Source="/IngresoPedidos;component/Resources/exportar_a_excel.ico" Width="48" Height="48" HorizontalAlignment="Left" VerticalAlignment="Center" />
             </Button>
 
-            <Button Click="Button_Click_4" ToolTip="Cambiar contraseña" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,10,41,0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" Width="26" Height="26">
+            <Button Name="btnCambiarContraseña" ToolTip="Cambiar contraseña" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,10,41,0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" Width="26" Height="26">
                 <Image Source="/IngresoPedidos;component/Resources/configuracion.ico" Height="24" />
             </Button>
 
-            <Button Click="Button_Click_6" ToolTip="Cerrar sesión" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,10,10,0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" Width="26" Height="26">
+            <Button Name="btnCerrarSesion" ToolTip="Cerrar sesión" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,10,10,0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" Width="26" Height="26">
                 <Image Source="/IngresoPedidos;component/Resources/logout.ico" Height="24" />
             </Button>
 
@@ -43,11 +38,11 @@
                 <Label Margin="0" Foreground="Black" VerticalContentAlignment="Center" TextOptions.TextFormattingMode="Display" Padding="5,0" HorizontalContentAlignment="Center" Content="SCHNEIDER NICOLAS" Background="{x:Null}" FontFamily="Consolas" Height="24" FontWeight="Bold" FontSize="14" BorderBrush="{x:Null}"/>
             </Border>
 
-            <ComboBox x:Name="cbFiltros" Margin="0,0,10,5" SelectedValue="INGRESADO" FontFamily="Consolas" ItemsSource="{Binding _listaFiltros}" SelectedItem="{Binding FiltroSeleccionado}" VerticalAlignment="Bottom" HorizontalAlignment="Right" FontSize="14" FontWeight="Bold"/>
+            <ComboBox x:Name="cbFiltros" Margin="0,0,10,5" SelectedValue="INGRESADO" FontFamily="Consolas" VerticalAlignment="Bottom" HorizontalAlignment="Right" FontSize="14" FontWeight="Bold"/>
 
         </Grid>
 
-        <DataGrid Name="dgPedidos" Grid.Row="1" ItemsSource="{Binding ListaPedidos, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" SelectedItem="{Binding PedidoSeleccionado, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" ColumnWidth="*" Margin="0,5,0,0">
+        <DataGrid Name="dgPedidos" Grid.Row="1" ColumnWidth="*" Margin="0,5,0,0">
             <DataGrid.ContextMenu>
                 <ContextMenu>
                     <MenuItem Name="ctxmnuEditar" Header="Editar registro" InputGestureText="Ctrl+E" Click="ctxmnuEditar_Click">
@@ -88,12 +83,12 @@
 
                     <Separator/>
 
-                    <MenuItem Header="Ver registro de eventos" InputGestureText="Ctrl+R" Click="Button_Click_3">
+                    <MenuItem Header="Ver registro de eventos" InputGestureText="Ctrl+R">
                         <MenuItem.Icon>
                             <Image Source="/IngresoPedidos;component/Resources/registro_eventos.ico"/>
                         </MenuItem.Icon>
                     </MenuItem>
-                    <MenuItem Header="Ver imagen del modelo" InputGestureText="Ctrl+I" Click="Button_Click_1">
+                    <MenuItem Header="Ver imagen del modelo" InputGestureText="Ctrl+I">
                         <MenuItem.Icon>
                             <Image Source="/IngresoPedidos;component/Resources/imagen.ico"/>
                         </MenuItem.Icon>
@@ -124,7 +119,7 @@
                 <DataGridTemplateColumn Header="SUCESOR" MaxWidth="110">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock><Hyperlink Command="{Binding SelectReprocesoCommand, Source={StaticResource ViewModel}}" CommandParameter="{Binding NumeroReproceso}">
+                            <TextBlock><Hyperlink>
                                     <InlineUIContainer>
                                         <TextBlock Text="{Binding NumeroReproceso}" />
                                     </InlineUIContainer></Hyperlink></TextBlock>
@@ -134,7 +129,7 @@
                 <DataGridTemplateColumn Header="ANTERIOR" MaxWidth="110">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock><Hyperlink Command="{Binding SelectOriginalCommand, Source={StaticResource ViewModel}}" CommandParameter="{Binding NumeroOriginal}">
+                            <TextBlock><Hyperlink>
                                     <InlineUIContainer>
                                         <TextBlock Text="{Binding NumeroOriginal}"/>
                                 </InlineUIContainer></Hyperlink></TextBlock>

@@ -1,7 +1,6 @@
-﻿using IngresoPedidos.Views;
-using System.Threading;
+﻿using System.Threading;
 using System.Windows;
-using static IngresoPedidos.Views.SplashScreenView;
+using static IngresoPedidos.SplashScreenCustom;
 
 namespace IngresoPedidos
 {
@@ -34,7 +33,7 @@ namespace IngresoPedidos
         private void ShowSplash()
         {
             // Create the window
-            SplashScreenView animatedSplashScreenWindow = new SplashScreenView();
+            SplashScreenCustom animatedSplashScreenWindow = new SplashScreenCustom();
             splashScreen = animatedSplashScreenWindow;
 
             // Show it

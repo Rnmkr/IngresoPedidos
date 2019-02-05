@@ -18,7 +18,7 @@ namespace IngresoPedidos.Models
 
         public virtual DbSet<Modelo> Modelos { get; set; }
         public virtual DbSet<Pedido> Pedidos { get; set; }
-        public virtual DbSet<Permiso> Permisos { get; set; }
+        public virtual DbSet<Permisos> Permisos { get; set; }
         public virtual DbSet<Producto> Productos { get; set; }
         public virtual DbSet<Usuario> Usuarios { get; set; }
         public virtual DbSet<Permisos_Usuarios> Permisos_Usuarios { get; set; }
@@ -48,11 +48,11 @@ namespace IngresoPedidos.Models
                 .Property(e => e.EstadoPedido)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Permiso>()
+            modelBuilder.Entity<Permisos>()
                 .Property(e => e.NombrePermiso)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Permiso>()
+            modelBuilder.Entity<Permisos>()
                 .HasMany(e => e.Permisos_Usuarios)
                 .WithRequired(e => e.Permisos)
                 .HasForeignKey(e => e.FK_IDPermiso)

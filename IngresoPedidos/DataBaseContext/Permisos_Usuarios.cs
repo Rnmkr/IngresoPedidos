@@ -23,7 +23,7 @@ namespace IngresoPedidos.Models
         [Column(Order = 2)]
         public bool Valor { get; set; }
 
-        public virtual Permiso Permisos { get; set; }
+        public virtual Permisos Permisos { get; set; }
 
         public virtual Usuario Usuarios { get; set; }
     }

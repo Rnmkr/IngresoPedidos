@@ -78,10 +78,11 @@
     <Compile Include="DataBaseContext\Modelo.cs" />
     <Compile Include="DataBaseContext\Pedido.cs" />
     <Compile Include="DataBaseContext\PedidoView.cs" />
-    <Compile Include="DataBaseContext\Permiso.cs" />
+    <Compile Include="DataBaseContext\Permisos.cs" />
     <Compile Include="DataBaseContext\Permisos_Usuarios.cs" />
     <Compile Include="DataBaseContext\Producto.cs" />
     <Compile Include="DataBaseContext\Usuario.cs" />
+    <Compile Include="Helpers\StaticData.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -90,8 +91,8 @@
     <Compile Include="FormularioPedido.xaml.cs">
       <DependentUpon>FormularioPedido.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SplashScreen.xaml.cs">
-      <DependentUpon>SplashScreen.xaml</DependentUpon>
+    <Compile Include="SplashScreenCustom.xaml.cs">
+      <DependentUpon>SplashScreenCustom.xaml</DependentUpon>
     </Compile>
     <Page Include="Procesando.xaml">
       <SubType>Designer</SubType>
@@ -152,7 +153,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SplashScreen.xaml">
+    <Page Include="SplashScreenCustom.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

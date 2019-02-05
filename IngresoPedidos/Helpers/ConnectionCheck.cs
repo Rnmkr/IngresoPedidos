@@ -6,15 +6,16 @@ namespace IngresoPedidos.Helpers
 {
     class ConnectionCheck
     {
-        public static bool IsServerOnline()
+        public static bool Success()
         {
-            string hostName = "VM-FORREST";
+            string hostName = StaticData.ServerName;
 
             try
             {
                 IPAddress[] ip = Dns.GetHostAddresses(hostName);
                 Ping pingSender = new Ping();
                 PingReply reply = pingSender.Send(ip[0]);
+
                 if (reply.Status == IPStatus.Success)
                 {
                     return true;
@@ -23,6 +24,7 @@ namespace IngresoPedidos.Helpers
                 {
                     return false;
                 }
+
             }
             catch (Exception)
             {

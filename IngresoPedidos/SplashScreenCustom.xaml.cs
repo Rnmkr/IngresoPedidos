@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Windows;
-using static IngresoPedidos.Views.SplashScreenView;
+using static IngresoPedidos.SplashScreenCustom;
 
-namespace IngresoPedidos.Views
+namespace IngresoPedidos
 {
-    public partial class SplashScreenView : Window, ISplashScreen
+    public partial class SplashScreenCustom : Window, ISplashScreen
     {
-        public SplashScreenView()
+        public SplashScreenCustom()
         {
             InitializeComponent();
         }

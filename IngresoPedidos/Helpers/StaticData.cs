@@ -1,24 +1,24 @@
-﻿using IngresoPedidos.Models;
+﻿using IngresoPedidos.DatabaseContext;
 using System.Collections.Generic;
 
 namespace IngresoPedidos
 {
     internal static class StaticData
     {
-        public static DataBaseContext context = new DataBaseContext(); 
+        public static Context context = new Context(); 
 
-        public static Usuario Usuario { get; internal set; }
-        public static List<Permisos> ListaPermisos { get; internal set; }
+        public static Usuarios Usuario { get; internal set; }
+        public static List<PermisosView> ListaPermisos { get; internal set; }
 
-        public static List<PedidoView> SearchList { get; internal set; }
-        public static List<PedidoView> CustomList { get; internal set; }
-        public static List<PedidoView> MainList { get; internal set; }
+        public static List<PedidosView> SearchList { get; internal set; }
+        public static List<PedidosView> CustomList { get; internal set; }
+        public static List<PedidosView> MainList { get; internal set; }
 
-        public static Pedido NewOrder { get; internal set; }
-        public static Pedido OldOrder { get; internal set; }
+        public static Pedidos NewOrder { get; internal set; }
+        public static Pedidos OldOrder { get; internal set; }
 
-        public static List<Modelo> ModelsList { get; internal set; }
-        public static List<Producto> ProductsList { get; internal set; }
+        public static List<Modelos> ModelsList { get; internal set; }
+        public static List<Productos> ProductsList { get; internal set; }
 
         public static int cbModelosSelectedIndex { get; internal set; }
         public static int cbProductosSelectedIndex { get; internal set; }

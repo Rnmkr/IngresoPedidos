@@ -15,19 +15,19 @@ namespace IngresoPedidos
         private Thread SplashThread;
         protected override void OnStartup(StartupEventArgs e)
         {
-            // ManualResetEvent acts as a block. It waits for a signal to be set.
-            ResetSplashCreated = new ManualResetEvent(false);
+            //// ManualResetEvent acts as a block. It waits for a signal to be set.
+            //ResetSplashCreated = new ManualResetEvent(false);
 
-            // Create a new thread for the splash screen to run on
-            SplashThread = new Thread(ShowSplash);
-            SplashThread.SetApartmentState(ApartmentState.STA);
-            SplashThread.IsBackground = true;
-            SplashThread.Name = "Splash Screen";
-            SplashThread.Start();
+            //// Create a new thread for the splash screen to run on
+            //SplashThread = new Thread(ShowSplash);
+            //SplashThread.SetApartmentState(ApartmentState.STA);
+            //SplashThread.IsBackground = true;
+            //SplashThread.Name = "Splash Screen";
+            //SplashThread.Start();
 
-            // Wait for the blocker to be signaled before continuing. This is essentially the same as: while(ResetSplashCreated.NotSet) {}
-            ResetSplashCreated.WaitOne();
-            base.OnStartup(e);
+            //// Wait for the blocker to be signaled before continuing. This is essentially the same as: while(ResetSplashCreated.NotSet) {}
+            //ResetSplashCreated.WaitOne();
+            //base.OnStartup(e);
         }
 
         private void ShowSplash()

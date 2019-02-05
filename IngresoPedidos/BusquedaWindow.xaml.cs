@@ -5,9 +5,9 @@ namespace IngresoPedidos
     /// <summary>
     /// Interaction logic for Busqueda.xaml
     /// </summary>
-    public partial class Busqueda : Window
+    public partial class BusquedaWindow : Window
     {
-        public Busqueda()
+        public BusquedaWindow()
         {
             InitializeComponent();
         }

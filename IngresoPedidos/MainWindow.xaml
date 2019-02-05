@@ -14,51 +14,63 @@
 
         <Grid Background="#FFA9D1F4" Grid.Row="0">
 
-            <Button Name="btnNuevoPedido" Click="btnNuevoPedido_Click" ToolTip="Ingresar un nuevo pedido a la Base de Datos" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" Margin="5,0,0,0">
+            <Button x:Name="btnNuevoPedido" Click="btnNuevoPedido_Click" ToolTip="Ingresar un nuevo pedido a la Base de Datos" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" Margin="5,0,0,0">
                 <Image Source="/IngresoPedidos;component/Resources/nuevoregistro.ico" Width="48" Height="48" HorizontalAlignment="Left" VerticalAlignment="Center" />
             </Button>
 
-            <Button Name="btnBuscarPedido" ToolTip="Buscar un pedido en la Base de Datos" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="369,10,0,10" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" Height="52" Width="52">
+            <Button x:Name="btnBuscarPedido" Click="BtnBuscarPedido_Click" ToolTip="Buscar un pedido en la Base de Datos" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="447,11,0,41" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" Height="20" Width="20">
                 <Image Source="/IngresoPedidos;component/Resources/buscar.ico" />
             </Button>
 
-            <Button Name="btnExportarPlanilla" ToolTip="Exportar lista a planilla de cálculos" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="62,10,0,10" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}">
+            <Button x:Name="btnExportarPlanilla" ToolTip="Exportar lista a planilla de cálculos" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="62,10,0,10" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}">
                 <Image Source="/IngresoPedidos;component/Resources/exportar_a_excel.ico" Width="48" Height="48" HorizontalAlignment="Left" VerticalAlignment="Center" />
             </Button>
 
-            <Button Name="btnCambiarContraseña" ToolTip="Cambiar contraseña" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,10,41,0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" Width="26" Height="26">
+            <Button x:Name="btnCambiarContraseña" ToolTip="Cambiar contraseña" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,10,41,0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" Width="26" Height="26">
                 <Image Source="/IngresoPedidos;component/Resources/configuracion.ico" Height="24" />
             </Button>
 
-            <Button Name="btnCerrarSesion" ToolTip="Cerrar sesión" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,10,10,0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" Width="26" Height="26">
+            <Button x:Name="btnCerrarSesion" ToolTip="Cerrar sesión" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,10,10,0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" Width="26" Height="26">
                 <Image Source="/IngresoPedidos;component/Resources/logout.ico" Height="24" />
             </Button>
 
             <Border BorderThickness="0"  CornerRadius="12" Background="#FF74B0E3" HorizontalAlignment="Right" Margin="0,10,72,0" VerticalAlignment="Top" Height="26">
-                <Label Margin="0" Foreground="Black" VerticalContentAlignment="Center" TextOptions.TextFormattingMode="Display" Padding="5,0" HorizontalContentAlignment="Center" Content="SCHNEIDER NICOLAS" Background="{x:Null}" FontFamily="Consolas" Height="24" FontWeight="Bold" FontSize="14" BorderBrush="{x:Null}"/>
+                <Label Margin="0" Foreground="White" VerticalContentAlignment="Center" TextOptions.TextFormattingMode="Display" Padding="5,0" HorizontalContentAlignment="Center" Content="SCHNEIDER NICOLAS" Background="{x:Null}" FontFamily="Consolas" Height="24" FontWeight="Bold" BorderBrush="{x:Null}"/>
             </Border>
 
-            <ComboBox x:Name="cbFiltros" Margin="0,0,10,5" SelectedValue="INGRESADO" FontFamily="Consolas" VerticalAlignment="Bottom" HorizontalAlignment="Right" FontSize="14" FontWeight="Bold"/>
-            <TextBox Name="tbKeyword" Height="24" Margin="244,38,0,0" TextWrapping="Wrap" Text="Busqueda..." VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalAlignment="Left" Width="120" FontFamily="Consolas" FontWeight="Bold"/>
-            <DatePicker HorizontalAlignment="Left" Margin="119,10,0,0" VerticalAlignment="Top" Width="120" Height="24" FontFamily="Consolas" FontWeight="Bold"/>
-            <DatePicker HorizontalAlignment="Left" Margin="119,38,0,0" VerticalAlignment="Top" Width="120" FontFamily="Consolas" FontWeight="Bold"/>
-            <ComboBox Style="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="15,0,0,0" SelectedIndex="0" HorizontalAlignment="Left" Margin="244,10,0,0" VerticalAlignment="Top" Width="120" Height="23" FontFamily="Consolas" FontWeight="Bold">
-                <ComboBoxItem>PEDIDO</ComboBoxItem>
-                <ComboBoxItem>MODELO</ComboBoxItem>
-                <ComboBoxItem>PRODUCTO</ComboBoxItem>
-                <ComboBoxItem>ARTICULO</ComboBoxItem>
-                <ComboBoxItem>CANTIDAD</ComboBoxItem>
-                <ComboBoxItem>SUCESOR</ComboBoxItem>
-                <ComboBoxItem>ANTERIOR</ComboBoxItem>
-                <ComboBoxItem>PEDIDO</ComboBoxItem>
+            <ComboBox x:Name="cbFiltros" Margin="0,0,10,5" SelectedValue="INGRESADO" FontFamily="Consolas" VerticalAlignment="Bottom" HorizontalAlignment="Right" FontSize="14" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                <ComboBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </ComboBox.Resources>
+            </ComboBox>
+
+            <TextBox x:Name="tbKeyword" Margin="249,11,0,41" KeyDown="TbKeyword_KeyDown" TextWrapping="Wrap" MaxLength="28" Text="Buscar..." VerticalContentAlignment="Center" FontFamily="Consolas" FontWeight="Bold"  Background="GhostWhite" Foreground="Gray" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Width="193"/>
+            <!--<TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </TextBox.Resources>-->
+
+
+            <DatePicker Name="dpInicial" Text="SARASAAAA" Grid.Row="0" SelectedDateFormat="Short" DisplayDateStart="2019/01/01" HorizontalAlignment="Left" Margin="123,36,0,0" VerticalAlignment="Top" FontFamily="Consolas" FontWeight="Bold" Padding="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="121"/>
+            <DatePicker Name="dpFinal" SelectedDateFormat="Short" HorizontalAlignment="Left" Margin="249,36,0,0" VerticalAlignment="Top" FontFamily="Consolas" FontWeight="Bold" Background="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="2" ScrollViewer.CanContentScroll="True"/>
+            <ComboBox Name="cbCampo" Style="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="15,0,0,0" SelectedIndex="0" HorizontalAlignment="Left" Margin="123,11,0,0" VerticalAlignment="Top" Width="121" Height="20" FontFamily="Consolas" FontWeight="Bold"/>
+
+            <ComboBox Name="cbCampoFecha" Style="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="5,0,0,0" SelectedIndex="0" HorizontalAlignment="Left" Margin="374,36,0,0" VerticalAlignment="Top" Width="68" Height="24" FontFamily="Consolas" FontWeight="Bold">
+                <ComboBoxItem Content="INGRESO"/>
+                <ComboBoxItem Content="ESTADO"/>
             </ComboBox>
 
         </Grid>
-
-        <DataGrid Name="dgPedidos" Grid.Row="1" ColumnWidth="*" Margin="0,5,0,0">
+        <DataGrid x:Name="dgPedidos" Grid.Row="1" ColumnWidth="*" Margin="0,5,0,0">
+            <DataGrid.Resources>
+                <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Color="DarkGray"/>
+            </DataGrid.Resources>
             <DataGrid.ContextMenu>
                 <ContextMenu>
-                    <MenuItem Name="ctxmnuEditar" Header="Editar registro" InputGestureText="Ctrl+E" Click="ctxmnuEditar_Click">
+                    <MenuItem x:Name="ctxmnuEditar" Header="Editar registro" InputGestureText="Ctrl+E" Click="ctxmnuEditar_Click">
                         <MenuItem.Icon>
                             <Image Source="/IngresoPedidos;component/Resources/editar.ico"/>
                         </MenuItem.Icon>
@@ -108,9 +120,6 @@
                     </MenuItem>
                 </ContextMenu>
             </DataGrid.ContextMenu>
-            <DataGrid.Resources>
-                <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Color="DarkGray"/>
-            </DataGrid.Resources>
             <DataGrid.ColumnHeaderStyle>
                 <StaticResource ResourceKey="ColumnHeaderStyle"/>
             </DataGrid.ColumnHeaderStyle>
@@ -132,8 +141,7 @@
                 <DataGridTemplateColumn Header="SUCESOR" MaxWidth="110">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock><Hyperlink>
-                                    <InlineUIContainer>
+                            <TextBlock><Hyperlink><InlineUIContainer>
                                         <TextBlock Text="{Binding NumeroReproceso}" />
                                     </InlineUIContainer></Hyperlink></TextBlock>
                         </DataTemplate>
@@ -142,8 +150,7 @@
                 <DataGridTemplateColumn Header="ANTERIOR" MaxWidth="110">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock><Hyperlink>
-                                    <InlineUIContainer>
+                            <TextBlock><Hyperlink><InlineUIContainer>
                                         <TextBlock Text="{Binding NumeroOriginal}"/>
                                 </InlineUIContainer></Hyperlink></TextBlock>
                         </DataTemplate>

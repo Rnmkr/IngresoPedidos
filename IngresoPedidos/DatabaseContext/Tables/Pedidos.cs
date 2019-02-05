@@ -1,4 +1,4 @@
-namespace IngresoPedidos.Models
+namespace IngresoPedidos.DatabaseContext
 {
     using System;
     using System.Collections.Generic;
@@ -6,7 +6,7 @@ namespace IngresoPedidos.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Pedido
+    public partial class Pedidos
     {
         [Key]
         public int IDPedido { get; set; }
@@ -33,10 +33,10 @@ namespace IngresoPedidos.Models
         [Column(TypeName = "smalldatetime")]
         public DateTime? FechaEstado { get; set; }
 
-        public int? FK_IDPedidoReproceso { get; set; }
+        public int? FK_IDPedidoSucesor { get; set; }
 
-        public int? FK_IDPedidoOriginal { get; set; }
+        public int? FK_IDPedidoAnterior { get; set; }
 
-        public virtual Modelo Modelos { get; set; }
+        public virtual Modelos Modelos { get; set; }
     }
 }

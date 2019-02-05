@@ -1,13 +1,14 @@
-namespace IngresoPedidos.Models
+namespace IngresoPedidos.DatabaseContext
 {
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using System.Linq;
 
     [Table("PedidosView")]
-    public partial class PedidoView
+    public partial class PedidosView
     {
         [Key]
         [Column(Order = 0)]
@@ -52,9 +53,9 @@ namespace IngresoPedidos.Models
         public DateTime? FechaEstado { get; set; }
 
         [StringLength(12)]
-        public string NumeroReproceso { get; set; }
+        public string PedidoSucesor { get; set; }
 
         [StringLength(12)]
-        public string NumeroOriginal { get; set; }
+        public string PedidoAnterior { get; set; }
     }
 }

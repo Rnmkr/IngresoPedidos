@@ -74,14 +74,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="DataBaseContext\DataBaseContext.cs" />
-    <Compile Include="DataBaseContext\Modelo.cs" />
-    <Compile Include="DataBaseContext\Pedido.cs" />
-    <Compile Include="DataBaseContext\PedidoView.cs" />
-    <Compile Include="DataBaseContext\Permisos.cs" />
-    <Compile Include="DataBaseContext\Permisos_Usuarios.cs" />
-    <Compile Include="DataBaseContext\Producto.cs" />
-    <Compile Include="DataBaseContext\Usuario.cs" />
+    <Compile Include="DatabaseContext\Context.cs" />
+    <Compile Include="DatabaseContext\Tables\Modelos.cs" />
+    <Compile Include="DatabaseContext\Tables\Pedidos.cs" />
+    <Compile Include="DatabaseContext\Views\PedidosView.cs" />
+    <Compile Include="DatabaseContext\Views\PermisosView.cs" />
+    <Compile Include="DatabaseContext\Tables\Productos.cs" />
+    <Compile Include="DatabaseContext\Tables\Usuarios.cs" />
+    <Compile Include="Helpers\Busqueda.cs" />
     <Compile Include="Helpers\StaticData.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -98,7 +98,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Busqueda.xaml">
+    <Page Include="BusquedaWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -128,8 +128,8 @@
       <DependentUpon>Procesando.xaml</DependentUpon>
     </Compile>
     <Compile Include="Helpers\MainWindowViewModel.cs" />
-    <Compile Include="Busqueda.xaml.cs">
-      <DependentUpon>Busqueda.xaml</DependentUpon>
+    <Compile Include="BusquedaWindow.xaml.cs">
+      <DependentUpon>BusquedaWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="MostrarImagen.xaml.cs">
       <DependentUpon>MostrarImagen.xaml</DependentUpon>

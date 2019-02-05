@@ -1,4 +1,4 @@
-namespace IngresoPedidos.Models
+namespace IngresoPedidos.DatabaseContext
 {
     using System;
     using System.Collections.Generic;
@@ -6,26 +6,22 @@ namespace IngresoPedidos.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Modelo
+    public partial class Productos
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Modelo()
+        public Productos()
         {
-            Pedidos = new HashSet<Pedido>();
+            Modelos = new HashSet<Modelos>();
         }
 
         [Key]
-        public int IDModelo { get; set; }
-
-        public int FK_IDProducto { get; set; }
+        public int IDProducto { get; set; }
 
         [Required]
         [StringLength(25)]
-        public string NombreModelo { get; set; }
-
-        public virtual Producto Productos { get; set; }
+        public string NombreProducto { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Pedido> Pedidos { get; set; }
+        public virtual ICollection<Modelos> Modelos { get; set; }
     }
 }

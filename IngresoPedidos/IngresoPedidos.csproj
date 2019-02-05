@@ -74,37 +74,42 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="ViewModels\BusquedaViewModel.cs" />
-    <Compile Include="ViewModels\CambiarContraseñaViewModel.cs" />
-    <Compile Include="ViewModels\EventosViewModel.cs" />
-    <Compile Include="ViewModels\FormularioPedidoViewModel.cs" />
-    <Compile Include="ViewModels\ImagenViewModel.cs" />
-    <Compile Include="ViewModels\LoginViewModel.cs" />
-    <Compile Include="ViewModels\ProcesandoViewModel.cs" />
-    <Compile Include="ViewModels\SplashScreenViewModel.cs" />
-    <Compile Include="Views\FormularioPedidoView.xaml.cs">
-      <DependentUpon>FormularioPedidoView.xaml</DependentUpon>
+    <Compile Include="DataBaseContext\DataBaseContext.cs" />
+    <Compile Include="DataBaseContext\Modelo.cs" />
+    <Compile Include="DataBaseContext\Pedido.cs" />
+    <Compile Include="DataBaseContext\PedidoView.cs" />
+    <Compile Include="DataBaseContext\Permiso.cs" />
+    <Compile Include="DataBaseContext\Permisos_Usuarios.cs" />
+    <Compile Include="DataBaseContext\Producto.cs" />
+    <Compile Include="DataBaseContext\Usuario.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Views\SplashScreenView.xaml.cs">
+    <Compile Include="FormularioPedido.xaml.cs">
+      <DependentUpon>FormularioPedido.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SplashScreenView.xaml.cs">
       <DependentUpon>SplashScreenView.xaml</DependentUpon>
     </Compile>
-    <Page Include="Views\ProcesandoView.xaml">
+    <Page Include="Procesando.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\BusquedaView.xaml">
+    <Page Include="Busqueda.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\ImagenView.xaml">
+    <Page Include="MostrarImagen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\LoginView.xaml">
+    <Page Include="Login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\MainWindowView.xaml">
+    <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -113,68 +118,54 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Helpers\ConnectionCheck.cs" />
-    <Compile Include="Helpers\AutoScrollBehavior.cs" />
     <Compile Include="Helpers\DataValidation.cs" />
     <Compile Include="Helpers\LogWriter.cs" />
-    <Compile Include="Helpers\MenuItemExtensions.cs" />
     <Compile Include="Helpers\PasswordHasher.cs" />
-    <Compile Include="Helpers\RelayCommand.cs" />
-    <Compile Include="Helpers\ViewModelBase.cs" />
     <Compile Include="Helpers\WaitCursor.cs" />
     <Compile Include="Helpers\WaitProgressBar.cs" />
-    <Compile Include="Models\DataBaseContext.cs" />
-    <Compile Include="Models\Modelos.cs" />
-    <Compile Include="Models\PedidosView.cs" />
-    <Compile Include="Models\Productos.cs" />
-    <Compile Include="Models\Usuarios.cs" />
-    <Compile Include="Views\ProcesandoView.xaml.cs">
-      <DependentUpon>ProcesandoView.xaml</DependentUpon>
+    <Compile Include="Procesando.xaml.cs">
+      <DependentUpon>Procesando.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModels\MainWindowViewModel.cs" />
-    <Compile Include="Views\BusquedaView.xaml.cs">
-      <DependentUpon>BusquedaView.xaml</DependentUpon>
+    <Compile Include="Helpers\MainWindowViewModel.cs" />
+    <Compile Include="Busqueda.xaml.cs">
+      <DependentUpon>Busqueda.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\ImagenView.xaml.cs">
-      <DependentUpon>ImagenView.xaml</DependentUpon>
+    <Compile Include="MostrarImagen.xaml.cs">
+      <DependentUpon>MostrarImagen.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\LoginView.xaml.cs">
-      <DependentUpon>LoginView.xaml</DependentUpon>
+    <Compile Include="Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\MainWindowView.xaml.cs">
-      <DependentUpon>MainWindowView.xaml</DependentUpon>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Views\EventosView.xaml">
+    <Page Include="RegistroEventos.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\CambiarContraseñaView.xaml">
+    <Page Include="CambiarContraseña.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\FormularioPedidoView.xaml">
+    <Page Include="FormularioPedido.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\SplashScreenView.xaml">
+    <Page Include="SplashScreenView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Views\EventosView.xaml.cs">
-      <DependentUpon>EventosView.xaml</DependentUpon>
+    <Compile Include="RegistroEventos.xaml.cs">
+      <DependentUpon>RegistroEventos.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\CambiarContraseñaView.xaml.cs">
-      <DependentUpon>CambiarContraseñaView.xaml</DependentUpon>
+    <Compile Include="CambiarContraseña.xaml.cs">
+      <DependentUpon>CambiarContraseña.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -193,166 +184,53 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\orderadd.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\NOT1422EXO.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\add.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\display.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\exit.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\refresh.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\registros.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\search.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\save.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\newpassword.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\delete.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\copy.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\cut.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\paste.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\128 %281%29.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\256.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\256 %281%29.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\64.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\128 %284%29.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\128 %285%29.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\128 %286%29.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\128 %287%29.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\128 %288%29.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\128 %289%29.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\48.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\48 %281%29.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\48 %282%29.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\128 %2810%29.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\128 %2811%29.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\48 %283%29.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\48 %284%29.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\48 %285%29.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\sello-entregado-2-1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\rubberstamp256.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\rubberstampwithinkpad256.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\20055.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\80 %281%29.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\80.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\128 %2812%29.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\128 %2813%29.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\128 %2814%29.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\128 %2815%29.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\128 %2816%29.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\128 %2817%29.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\128 %282%29.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\128 %28511%29.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\configuration.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\LOGIN.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\SplashScreen.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Check-48.png" />
+    <Resource Include="Resources\buscar.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Check-128.png" />
+    <Resource Include="Resources\configuracion.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Check-256.png" />
+    <Resource Include="Resources\guardar.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\128.ico" />
+    <Resource Include="Resources\login.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\128 s%281%29.ico" />
+    <Resource Include="Resources\logout.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\nuevoregistro.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\sample.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\exportar_a_excel.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\agregar.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\copiar.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\editar.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\imagen.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\planilla_egreso_ingreso.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\quitar.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\registro_eventos.ico" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -5,24 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         Title="ALTA DE PEDIDOS: PRODUCCION EXO" Height="768" Width="1366" WindowStartupLocation="CenterScreen" WindowState="Maximized" Icon="/IngresoPedidos;component/Resources/agregar.ico">
-    
+
     <Grid Name="mainGrid">
         <Grid.RowDefinitions>
             <RowDefinition Height="72"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        
+
         <Grid Background="#FFA9D1F4" Grid.Row="0">
 
             <Button Name="btnNuevoPedido" Click="btnNuevoPedido_Click" ToolTip="Ingresar un nuevo pedido a la Base de Datos" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" Margin="5,0,0,0">
                 <Image Source="/IngresoPedidos;component/Resources/nuevoregistro.ico" Width="48" Height="48" HorizontalAlignment="Left" VerticalAlignment="Center" />
             </Button>
-            
-            <Button Name="btnBuscarPedido" ToolTip="Buscar un pedido en la Base de Datos" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="62,0,0,0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}">
-                <Image Source="/IngresoPedidos;component/Resources/buscar.ico" Width="48" Height="48" HorizontalAlignment="Left" VerticalAlignment="Center" />
+
+            <Button Name="btnBuscarPedido" ToolTip="Buscar un pedido en la Base de Datos" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="369,10,0,10" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" Height="52" Width="52">
+                <Image Source="/IngresoPedidos;component/Resources/buscar.ico" />
             </Button>
 
-            <Button Name="btnExportarPlanilla" ToolTip="Exportar lista a planilla de cálculos" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="119,0,0,0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}">
+            <Button Name="btnExportarPlanilla" ToolTip="Exportar lista a planilla de cálculos" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="62,10,0,10" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}">
                 <Image Source="/IngresoPedidos;component/Resources/exportar_a_excel.ico" Width="48" Height="48" HorizontalAlignment="Left" VerticalAlignment="Center" />
             </Button>
 
@@ -39,6 +39,19 @@
             </Border>
 
             <ComboBox x:Name="cbFiltros" Margin="0,0,10,5" SelectedValue="INGRESADO" FontFamily="Consolas" VerticalAlignment="Bottom" HorizontalAlignment="Right" FontSize="14" FontWeight="Bold"/>
+            <TextBox Name="tbKeyword" Height="24" Margin="244,38,0,0" TextWrapping="Wrap" Text="Busqueda..." VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalAlignment="Left" Width="120" FontFamily="Consolas" FontWeight="Bold"/>
+            <DatePicker HorizontalAlignment="Left" Margin="119,10,0,0" VerticalAlignment="Top" Width="120" Height="24" FontFamily="Consolas" FontWeight="Bold"/>
+            <DatePicker HorizontalAlignment="Left" Margin="119,38,0,0" VerticalAlignment="Top" Width="120" FontFamily="Consolas" FontWeight="Bold"/>
+            <ComboBox Style="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="15,0,0,0" SelectedIndex="0" HorizontalAlignment="Left" Margin="244,10,0,0" VerticalAlignment="Top" Width="120" Height="23" FontFamily="Consolas" FontWeight="Bold">
+                <ComboBoxItem>PEDIDO</ComboBoxItem>
+                <ComboBoxItem>MODELO</ComboBoxItem>
+                <ComboBoxItem>PRODUCTO</ComboBoxItem>
+                <ComboBoxItem>ARTICULO</ComboBoxItem>
+                <ComboBoxItem>CANTIDAD</ComboBoxItem>
+                <ComboBoxItem>SUCESOR</ComboBoxItem>
+                <ComboBoxItem>ANTERIOR</ComboBoxItem>
+                <ComboBoxItem>PEDIDO</ComboBoxItem>
+            </ComboBox>
 
         </Grid>
 
@@ -50,17 +63,17 @@
                             <Image Source="/IngresoPedidos;component/Resources/editar.ico"/>
                         </MenuItem.Icon>
                     </MenuItem>
-                    
+
                     <Separator/>
-                    
+
                     <MenuItem Command="Copy" Header="Copiar Selección">
                         <MenuItem.Icon>
                             <Image Source="/IngresoPedidos;component/Resources/copiar.ico"/>
                         </MenuItem.Icon>
                     </MenuItem>
-                    
+
                     <Separator/>
-                    
+
                     <MenuItem Header="Añadir a lista personalizada" InputGestureText="Ctrl+A">
                         <MenuItem.Icon>
                             <Image Source="/IngresoPedidos;component/Resources/agregar.ico"/>
@@ -74,7 +87,7 @@
                     </MenuItem>
 
                     <Separator/>
-                    
+
                     <MenuItem Header="Generar planilla egreso / ingreso" InputGestureText="Ctrl+G">
                         <MenuItem.Icon>
                             <Image Source="/IngresoPedidos;component/Resources/planilla_egreso_ingreso.ico"/>
@@ -138,7 +151,7 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        
+
     </Grid>
-    
+
 </Window>

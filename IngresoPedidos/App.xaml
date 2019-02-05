@@ -15,7 +15,6 @@
         <Style x:Name="MainDataGridStyle" TargetType="{x:Type DataGrid}">
             <Setter Property="Height" Value="Auto" />
             <Setter Property="BorderThickness" Value="0"/>
-            <!--<Setter Property="BorderBrush" Value="#FFA9D1F4"/>-->
             <Setter Property="SelectionUnit" Value="FullRow"/>
             <Setter Property="HorizontalGridLinesBrush" Value="#FFA9D1F4"/>
             <Setter Property="GridLinesVisibility" Value="Horizontal"/>

@@ -19,8 +19,6 @@
             <ComboBoxItem>PRODUCTO</ComboBoxItem>
             <ComboBoxItem>ARTICULO</ComboBoxItem>
             <ComboBoxItem>CANTIDAD</ComboBoxItem>
-            <ComboBoxItem>FECHA INGRESO</ComboBoxItem>
-            <ComboBoxItem>CAMBIO ESTADO</ComboBoxItem>
             <ComboBoxItem>SUCESOR</ComboBoxItem>
             <ComboBoxItem>ANTERIOR</ComboBoxItem>
         </ComboBox>

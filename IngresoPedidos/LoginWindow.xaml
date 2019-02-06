@@ -4,15 +4,12 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="ALTA DE PEDIDOS: INGRESO" Height="124" Width="325" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="/IngresoPedidos;component/Resources/agregar.ico">
-    
-    <Grid FocusManager.FocusedElement="{Binding ElementName=tbLegajo}">
-        <Label Content="CONTRASEÑA" HorizontalAlignment="Left" Margin="10,45,0,0" VerticalContentAlignment="Center" FontWeight="Bold" Padding="1" HorizontalContentAlignment="Right" Background="{x:Null}" FontFamily="Consolas" Height="26" VerticalAlignment="Top"/>
-        <Label Content="LEGAJO" HorizontalAlignment="Left" Margin="10,12,0,0" VerticalContentAlignment="Center" FontWeight="Bold" Padding="1" HorizontalContentAlignment="Right" Background="{x:Null}" FontFamily="Consolas" Height="26" VerticalAlignment="Top" Width="68"/>
-        <TextBox Name="tbLegajo" KeyDown="OnKeyDownHandler" Margin="83,12,91,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14" FontFamily="Consolas" TabIndex="1" Height="26" VerticalAlignment="Top"/>
-        <PasswordBox Name="pbContraseña" KeyDown="OnKeyDownHandler" Margin="83,45,91,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Consolas" FontSize="14" TabIndex="2" Height="26" VerticalAlignment="Top"/>
-        <Button Name="btnLogin" Click="btnLogin_Click" ToolTip="Ingresar" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="0,12,15,0" TabIndex="3" Height="59" VerticalAlignment="Top" HorizontalAlignment="Right" Width="63">
-            <Image Source="/IngresoPedidos;component/Resources/login.ico"  />
-        </Button>
+        Title="LOGIN" Height="150" Width="150" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight" Icon="/IngresoPedidos;component/Resources/password.ico" KeyDown="OnKeyDownHandler">
+
+    <Grid FocusManager.FocusedElement="{Binding ElementName=tbLegajo}" Height="121" Width="144">
+        <TextBox x:Name="tbLegajo" Text="LEGAJO" Foreground="LightGray" KeyDown="OnKeyDownHandler" Margin="10,10,10,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14" FontFamily="Consolas" TabIndex="1" Height="26" VerticalAlignment="Top"/>
+        <PasswordBox x:Name="pbContraseña" KeyDown="OnKeyDownHandler" Margin="10,50,10,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Consolas" FontSize="14" TabIndex="2" Height="26" VerticalAlignment="Top" Background="White"/>
+        <TextBox Name="tbPlaceholderContraseña" Text="CONTRASEÑA" IsReadOnly="True" Foreground="LightGray" FontFamily="Consolas" FontSize="14" VerticalAlignment="Top" Margin="10,50,10,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Padding="0" Width="124" Height="26"/>
+        <Button x:Name="btnLogin" Click="btnLogin_Click" ToolTip="Ingresar" Content="Aceptar" Margin="0,0,0,10" TabIndex="3" Height="22" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="70"/>
     </Grid>
 </Window>

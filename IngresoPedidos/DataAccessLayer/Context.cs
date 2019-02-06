@@ -1,4 +1,4 @@
-namespace IngresoPedidos.DatabaseContext
+namespace IngresoPedidos.DataAccessLayer
 {
     using System;
     using System.Data.Entity;
@@ -11,11 +11,12 @@ namespace IngresoPedidos.DatabaseContext
         private static string exo = "data source=VM-FORREST;initial catalog=PRODUCCION;persist security info=True;user id=FORREST;password=12345678;MultipleActiveResultSets=True;App=EntityFramework";
 
         public Context()
-            : base(casa)
+            : base(exo)
         {
         }
 
         public virtual DbSet<Modelos> Modelos { get; set; }
+        public virtual DbSet<Passwords> Passwords { get; set; }
         public virtual DbSet<Pedidos> Pedidos { get; set; }
         public virtual DbSet<Productos> Productos { get; set; }
         public virtual DbSet<Usuarios> Usuarios { get; set; }
@@ -33,6 +34,14 @@ namespace IngresoPedidos.DatabaseContext
                 .WithRequired(e => e.Modelos)
                 .HasForeignKey(e => e.FK_IDModelo)
                 .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Passwords>()
+                .Property(e => e.HashedRFID)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Passwords>()
+                .Property(e => e.HashedPassword)
+                .IsUnicode(false);
 
             modelBuilder.Entity<Pedidos>()
                 .Property(e => e.NumeroPedido)
@@ -69,12 +78,8 @@ namespace IngresoPedidos.DatabaseContext
                 .IsUnicode(false);
 
             modelBuilder.Entity<Usuarios>()
-                .Property(e => e.HashedRFID)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Usuarios>()
-                .Property(e => e.HashedPassword)
-                .IsUnicode(false);
+                .HasOptional(e => e.Passwords)
+                .WithRequired(e => e.Usuarios);
 
             modelBuilder.Entity<PedidosView>()
                 .Property(e => e.NumeroPedido)

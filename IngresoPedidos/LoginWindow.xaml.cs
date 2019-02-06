@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Linq;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
-using IngresoPedidos.DatabaseContext;
+using IngresoPedidos.DataAccessLayer;
 
 namespace IngresoPedidos
 {
@@ -12,6 +13,40 @@ namespace IngresoPedidos
         public LoginWindow()
         {
             InitializeComponent();
+            tbLegajo.GotFocus += RemovePlaceholder;
+            tbLegajo.LostFocus += AddPlaceholder;
+            pbContraseña.LostFocus += AddPlaceholder;
+            tbPlaceholderContraseña.GotFocus += RemoveLabelPlaceholder;
+        }
+
+        private void AddPlaceholder(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(tbLegajo.Text))
+            {
+                tbLegajo.Foreground = System.Windows.Media.Brushes.LightGray;
+                tbLegajo.Text = "LEGAJO";
+            }
+
+            if (string.IsNullOrWhiteSpace(pbContraseña.Password))
+            {
+                tbPlaceholderContraseña.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void RemoveLabelPlaceholder(object sender, EventArgs e)
+        {
+            tbPlaceholderContraseña.Visibility = Visibility.Collapsed;
+            pbContraseña.Focus();
+        }
+
+        private void RemovePlaceholder(object sender, EventArgs e)
+        {
+            Label lblPlaceholder = sender as Label;
+            if (tbLegajo.Text == "LEGAJO")
+            {
+                tbLegajo.Foreground = System.Windows.Media.Brushes.Black;
+                tbLegajo.Text = "";
+            }
         }
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
@@ -25,6 +60,11 @@ namespace IngresoPedidos
 
             if (e.Key == Key.Return)
             {
+                if (!string.IsNullOrWhiteSpace(tbLegajo.Text))
+                {
+                    tbPlaceholderContraseña.Visibility = Visibility.Collapsed;
+                }
+
                 TryLogin();
             }
         }
@@ -80,12 +120,13 @@ namespace IngresoPedidos
 
 
             string apellido = userData[1];
-            string hashedPassword = userData[2];
+            int id = Convert.ToInt32(userData[2]);
+            string hashedPassword = StaticData.context.Passwords.First(w => w.FK_IDUsuario == id).HashedPassword;
 
             //if hashed password is null, show new password dialog
             if (string.IsNullOrWhiteSpace(hashedPassword))
             {
-                CambiarContraseñaWindow npw = new CambiarContraseñaWindow(legajo);
+                CambiarContraseñaWindow npw = new CambiarContraseñaWindow(StaticData.Usuario);
                 pbContraseña.Password = null;
                 Hide();
                 npw.ShowDialog();
@@ -126,7 +167,7 @@ namespace IngresoPedidos
                 //var accessLevel = database.Permisos.First(f => f.FK_Legajo == legajo);
 
                 //store and return all data in string array
-                string[] UserData = new string[] { user.NombreUsuario, user.ApellidoUsuario, user.HashedPassword };
+                string[] UserData = new string[] { user.NombreUsuario, user.ApellidoUsuario, user.IDUsuario.ToString() };
 
                 return UserData;
             }
@@ -148,6 +189,10 @@ namespace IngresoPedidos
 
             return false;
         }
+
+
+
+
     }
 }
 

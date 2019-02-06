@@ -1,12 +1,12 @@
 ﻿<Window x:Class="IngresoPedidos.ProcesandoWindow"
      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-     Height="100" Width="200" Title="Ingreso de Pedidos" FontFamily="Segoe UI" ResizeMode="NoResize" WindowStartupLocation="CenterOwner" Icon="/IngresoPedidos;component/Resources/agregar.ico" ShowInTaskbar="False" WindowStyle="None" BorderThickness="5" BorderBrush="#FFA9D1F4" KeyDown="OnKeyDown">
+     Height="100" Width="200" FontFamily="Segoe UI" ResizeMode="NoResize" WindowStartupLocation="CenterOwner" SizeToContent="WidthAndHeight" Icon="/IngresoPedidos;component/Resources/agregar.ico" ShowInTaskbar="False" WindowStyle="SingleBorderWindow" KeyDown="OnKeyDown">
 
-    <Grid>
-        <TextBlock x:Name="lblProcesando" Text="Cargando..." TextTrimming="CharacterEllipsis" DockPanel.Dock="Top" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,15,0,0" />
-        <ProgressBar x:Name="pbarProcesando" Grid.Column="0" IsIndeterminate="True" Margin="10,0" VerticalAlignment="Center" Height="5" Foreground="#FFA9D1F4" />
-        <Button x:Name="btnCancelar" Click="btnCancelar_Click" Grid.Column="1" Margin="0,0,10,10" Width="70" Height="22" Content="Cancelar" Visibility="Visible" HorizontalAlignment="Right" VerticalAlignment="Bottom" />
+    <Grid Width="194" Height="72">
+        <TextBlock x:Name="lblProcesando" Text="Cargando..." TextTrimming="CharacterEllipsis" DockPanel.Dock="Top" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,5,0,0" />
+        <ProgressBar x:Name="pbarProcesando" Grid.Column="0" IsIndeterminate="True" Margin="10,0,10,5" VerticalAlignment="Center" Height="10" Foreground="#FFA9D1F4" />
+        <Button x:Name="btnCancelar" Click="btnCancelar_Click" Grid.Column="1" Margin="0,0,10,5" Width="70" Height="22" Content="Cancelar" Visibility="Visible" HorizontalAlignment="Right" VerticalAlignment="Bottom" />
     </Grid>
 
     <!--<DockPanel Margin="10" VerticalAlignment="Top" HorizontalAlignment="Left">

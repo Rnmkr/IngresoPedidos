@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
-using IngresoPedidos.DatabaseContext;
+using IngresoPedidos.DataAccessLayer;
 
 namespace IngresoPedidos
 {
@@ -16,7 +16,7 @@ namespace IngresoPedidos
         {
             InitializeComponent();
             this.Title = "NUEVO PEDIDO";
-            cbEstado.SelectedIndex = 0;
+            cbEstado.SelectedValue= "INGRESADO";
             cbEstado.IsEnabled = false;
             cbEstado.Foreground = System.Windows.Media.Brushes.Gray;
             tbPedido.GotFocus += RemovePlaceholder;
@@ -25,18 +25,16 @@ namespace IngresoPedidos
             tbArticulo.LostFocus += AddPlaceholder;
             tbCantidad.GotFocus += RemovePlaceholder;
             tbCantidad.LostFocus += AddPlaceholder;
-            //cbEstado.GotFocus += RemovePlaceholder;
-            //cbEstado.LostFocus += AddPlaceholder;
             tbAnterior.GotFocus += RemovePlaceholder;
             tbAnterior.LostFocus += AddPlaceholder;
             tbObservacion.GotFocus += RemovePlaceholder;
             tbObservacion.LostFocus += AddPlaceholder;
         }
 
-        public FormularioPedido(PedidosView p)
+        public FormularioPedido(PedidosView pedidoseleccionado)
         {
             InitializeComponent();
-            
+            this.Title = "EDITAR PEDIDO";
             cbEstado.Foreground = System.Windows.Media.Brushes.Black;
             tbPedido.Foreground = System.Windows.Media.Brushes.Black;
             cbModelo.Foreground = System.Windows.Media.Brushes.Black;
@@ -44,10 +42,8 @@ namespace IngresoPedidos
             tbArticulo.Foreground = System.Windows.Media.Brushes.Black;
             tbCantidad.Foreground = System.Windows.Media.Brushes.Black;
             tbAnterior.Foreground = System.Windows.Media.Brushes.Black;
-
             tbObservacion.GotFocus += RemovePlaceholder;
             tbObservacion.LostFocus += AddPlaceholder;
-            this.Title = "EDITAR PEDIDO";
             PedidosView pedidoSeleccionado = new PedidosView {IDPedido = 0, Articulo = "2448", CantidadEquipos = 200, EstadoPedido = "AUTORIZADO", FechaEstado = DateTime.Now, FechaIngreso = DateTime.Now, NombreModelo = "H8", NombreProducto = "ALL-IN-ONE", NumeroPedido = "1234567A-00", PedidoAnterior = "1111111A-00", PedidoSucesor ="2222222A-00" };
             tbPedido.Text = pedidoSeleccionado.NumeroPedido;
             tbPedido.IsEnabled = false;
@@ -58,7 +54,7 @@ namespace IngresoPedidos
             tbCantidad.Text = pedidoSeleccionado.CantidadEquipos.ToString();
             cbEstado.SelectedValue = pedidoSeleccionado.EstadoPedido;
             tbAnterior.Text = pedidoSeleccionado.PedidoAnterior;
-            //tbObservacion.Focus();
+            tbObservacion.Focus();
 
         }
 

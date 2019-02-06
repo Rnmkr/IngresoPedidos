@@ -74,13 +74,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="DatabaseContext\Context.cs" />
-    <Compile Include="DatabaseContext\Tables\Modelos.cs" />
-    <Compile Include="DatabaseContext\Tables\Pedidos.cs" />
-    <Compile Include="DatabaseContext\Views\PedidosView.cs" />
-    <Compile Include="DatabaseContext\Views\PermisosView.cs" />
-    <Compile Include="DatabaseContext\Tables\Productos.cs" />
-    <Compile Include="DatabaseContext\Tables\Usuarios.cs" />
+    <Compile Include="DataAccessLayer\Context.cs" />
+    <Compile Include="DataAccessLayer\Tables\Modelos.cs" />
+    <Compile Include="DataAccessLayer\Tables\Passwords.cs" />
+    <Compile Include="DataAccessLayer\Tables\Pedidos.cs" />
+    <Compile Include="DataAccessLayer\Views\PedidosView.cs" />
+    <Compile Include="DataAccessLayer\Views\PermisosView.cs" />
+    <Compile Include="DataAccessLayer\Tables\Productos.cs" />
+    <Compile Include="DataAccessLayer\Tables\Usuarios.cs" />
     <Compile Include="FiltroListaWindow.xaml.cs">
       <DependentUpon>FiltroListaWindow.xaml</DependentUpon>
     </Compile>

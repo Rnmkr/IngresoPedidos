@@ -14,19 +14,19 @@
 
         <Grid Background="#FFA9D1F4" Grid.Row="0">
 
-            <Button x:Name="btnNuevoPedido" Click="btnNuevoPedido_Click" ToolTip="Ingresar un Nuevo Pedido a la Base de Datos" VerticalAlignment="Center" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" Margin="10,0,0,0" HorizontalAlignment="Left">
+            <Button x:Name="btnNuevoPedido" Click="btnNuevoPedido_Click" Style="{StaticResource roundButtonTemplate48}" ToolTip="Ingresar un Nuevo Pedido a la Base de Datos (CTRL+N)" VerticalAlignment="Center" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" Margin="10,0,0,0" HorizontalAlignment="Left">
                 <Image Source="/IngresoPedidos;component/Resources/plus.png" Width="48" Height="48" />
             </Button>
 
-            <Button x:Name="btnExportarPlanilla" ToolTip="Exportar lista a planilla de cálculos" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="119,0,0,0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}">
+            <Button x:Name="btnExportarPlanilla" Style="{StaticResource roundButtonTemplate48}" ToolTip="Exportar lista a planilla de cálculos (CTRL+X)" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="119,0,0,0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}">
                 <Image Source="/IngresoPedidos;component/Resources/xls (1).png" Width="48" Height="48" />
             </Button>
 
-            <Button x:Name="btnBuscarPedido" Click="btnBuscarPedido_Click" ToolTip="Buscar un pedido en la Base de Datos" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="67,0,0,0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}">
+            <Button x:Name="btnBuscarPedido" Click="btnBuscarPedido_Click" Style="{StaticResource roundButtonTemplate48}" ToolTip="Buscar un pedido en la Base de Datos (CTRL+B)" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="67,0,0,0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}">
                 <Image Source="/IngresoPedidos;component/Resources/search.png" VerticalAlignment="Center" HorizontalAlignment="Center" Width="48" Height="48" />
             </Button>
 
-            <Button x:Name="btnFiltrarLista" Click="btnFiltrarLista_Click" ToolTip="Filtrar la lista por Estado" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="176,0,0,0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}">
+            <Button x:Name="btnFiltrarLista" Click="btnFiltrarLista_Click" Style="{StaticResource roundButtonTemplate48}" ToolTip="Filtrar la lista por Estado (CTRL+F)" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="176,0,0,0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}">
                 <Image Source="/IngresoPedidos;component/Resources/list (1).png" VerticalAlignment="Center" HorizontalAlignment="Center" Width="48" Height="48" />
             </Button>
 
@@ -34,11 +34,11 @@
                 <Label Margin="0" Foreground="White" VerticalContentAlignment="Center" TextOptions.TextFormattingMode="Display" Padding="5,0" HorizontalContentAlignment="Center" Content="SCHNEIDER NICOLAS" Background="{x:Null}" FontFamily="Consolas" FontWeight="Bold" BorderBrush="{x:Null}"/>
             </Border>
 
-            <Button x:Name="btnCambiarContraseña" Click="btnCambiarContraseña_Click" ToolTip="Cambiar contraseña" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,12,51,12" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" Width="36" Height="36">
+            <Button x:Name="btnCambiarContraseña" Click="btnCambiarContraseña_Click" Style="{StaticResource roundButtonTemplate32}" ToolTip="Cambiar contraseña" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,12,51,12" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" Width="36" Height="36">
                 <Image Source="/IngresoPedidos;component/Resources/key (1).png" Width="32" Height="32" />
             </Button>
 
-            <Button x:Name="btnCerrarSesion" Click="btnCerrarSesion_Click" ToolTip="Cerrar sesión" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" Width="36" Height="36">
+            <Button x:Name="btnCerrarSesion" Click="btnCerrarSesion_Click" Style="{StaticResource roundButtonTemplate32}" ToolTip="Cerrar sesión" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" Width="36" Height="36">
                 <Image Source="/IngresoPedidos;component/Resources/door.png" Width="32" Height="32" />
             </Button>
 
@@ -55,6 +55,12 @@
                         </MenuItem.Icon>
                     </MenuItem>
 
+                    <MenuItem Header="Agregar una observación" InputGestureText="Ctrl+O">
+                        <MenuItem.Icon>
+                            <Image Source="/IngresoPedidos;component/Resources/add-file.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+
                     <Separator/>
 
                     <MenuItem Command="Copy" Header="Copiar Selección">
@@ -65,7 +71,7 @@
 
                     <Separator/>
 
-                    <MenuItem Header="Añadir a lista personalizada" InputGestureText="Ctrl+A">
+                    <MenuItem Header="Agregar a lista personalizada" InputGestureText="Ctrl+A">
                         <MenuItem.Icon>
                             <Image Source="/IngresoPedidos;component/Resources/agregar.ico"/>
                         </MenuItem.Icon>

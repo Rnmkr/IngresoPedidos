@@ -1,5 +1,5 @@
 ﻿using System.Windows;
-using IngresoPedidos.DatabaseContext;
+using IngresoPedidos.DataAccessLayer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,7 +42,7 @@ namespace IngresoPedidos
 
         private void btnCambiarContraseña_Click(object sender, RoutedEventArgs e)
         {
-            CambiarContraseñaWindow ccw = new CambiarContraseñaWindow("925");
+            CambiarContraseñaWindow ccw = new CambiarContraseñaWindow(StaticData.Usuario);
             ccw.Owner = this;
             ccw.ShowDialog();
         }

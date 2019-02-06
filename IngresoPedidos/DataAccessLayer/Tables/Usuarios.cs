@@ -1,4 +1,4 @@
-namespace IngresoPedidos.DatabaseContext
+namespace IngresoPedidos.DataAccessLayer
 {
     using System;
     using System.Collections.Generic;
@@ -23,10 +23,6 @@ namespace IngresoPedidos.DatabaseContext
         [StringLength(25)]
         public string NombreUsuario { get; set; }
 
-        [StringLength(11)]
-        public string HashedRFID { get; set; }
-
-        [StringLength(48)]
-        public string HashedPassword { get; set; }
+        public virtual Passwords Passwords { get; set; }
     }
 }

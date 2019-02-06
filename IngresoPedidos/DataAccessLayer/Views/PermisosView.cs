@@ -1,4 +1,4 @@
-namespace IngresoPedidos.DatabaseContext
+namespace IngresoPedidos.DataAccessLayer
 {
     using System;
     using System.Collections.Generic;

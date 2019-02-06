@@ -21,30 +21,20 @@ namespace IngresoPedidos
         }
 
 
-        private void OnKeyDownHandler(object sender, KeyEventArgs e)
+
+        private void OnKeyDown(object sender, System.Windows.Input.KeyEventArgs e)
         {
-            //TextBox tbs = sender as TextBox;
-
-            //if (tbs.Name == "pbContraseñaActual")
-            //{
-            //    pbContraseñaNueva1.Focus();
-            //}
-
-            //if (tbs.Name == "pbContraseñaNueva1")
-            //{
-            //    pbContraseñaNueva2.Focus();
-            //}
-
-            //if (tbs.Name == "pbContraseñaNueva2")
-            //{
-            //    pbContraseñaNueva2.Focus();
-            //}
-
-            if (e.Key == Key.Return)
+            if (e.Key == System.Windows.Input.Key.Enter)
             {
                 TryChangePassword();
             }
+
+            if (e.Key == System.Windows.Input.Key.Escape)
+            {
+                Close();
+            }
         }
+
 
         private void TryChangePassword()
         {

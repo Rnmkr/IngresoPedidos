@@ -81,6 +81,9 @@
     <Compile Include="DatabaseContext\Views\PermisosView.cs" />
     <Compile Include="DatabaseContext\Tables\Productos.cs" />
     <Compile Include="DatabaseContext\Tables\Usuarios.cs" />
+    <Compile Include="FiltroListaWindow.xaml.cs">
+      <DependentUpon>FiltroListaWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Helpers\Buscador.cs" />
     <Compile Include="Helpers\StaticData.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -94,7 +97,11 @@
     <Compile Include="SplashScreenCustom.xaml.cs">
       <DependentUpon>SplashScreenCustom.xaml</DependentUpon>
     </Compile>
-    <Page Include="Procesando.xaml">
+    <Page Include="FiltroListaWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProcesandoWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -124,8 +131,8 @@
     <Compile Include="Helpers\PasswordHasher.cs" />
     <Compile Include="Helpers\WaitCursor.cs" />
     <Compile Include="Helpers\WaitProgressBar.cs" />
-    <Compile Include="Procesando.xaml.cs">
-      <DependentUpon>Procesando.xaml</DependentUpon>
+    <Compile Include="ProcesandoWindow.xaml.cs">
+      <DependentUpon>ProcesandoWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Helpers\MainWindowViewModel.cs" />
     <Compile Include="BusquedaWindow.xaml.cs">
@@ -232,6 +239,65 @@
   <ItemGroup>
     <Resource Include="Resources\registro_eventos.ico" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\egresoingreso.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\filtro.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\password.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\list.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\binoculars.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\xls.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\add-file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\growth.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\exit %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\exit %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\exit %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\key.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\list %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\xls %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\door.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\key %281%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

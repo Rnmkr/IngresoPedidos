@@ -82,11 +82,11 @@ namespace IngresoPedidos.Helpers
 
             switch (campofecha)
             {
-                case "INGRESO":
+                case "FECHA INGRESO":
                     result = context.PedidosView.Where(w => w.FechaIngreso >= fechaInicial && w.FechaIngreso <= fechaFinal).Select(s => s).ToList();
                     break;
 
-                case "ESTADO":
+                case "FECHA ESTADO":
                     result = context.PedidosView.Where(w => w.FechaEstado >= fechaInicial && w.FechaEstado <= fechaFinal).Select(s => s).ToList();
                     break;
 

@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="BUSQUEDA" Height="220" Width="160" ResizeMode="NoResize" WindowStartupLocation="CenterOwner" SizeToContent="WidthAndHeight" Icon="/IngresoPedidos;component/Resources/buscar.ico" KeyDown="OnKeyDown">
+        Title="BUSQUEDA" Height="220" Width="160" ResizeMode="NoResize" WindowStartupLocation="CenterOwner" SizeToContent="WidthAndHeight" Icon="/IngresoPedidos;component/Resources/lista.png" KeyDown="OnKeyDown">
 
     <Grid FocusManager.FocusedElement="{Binding ElementName=tbKeyword}" Height="191" Width="154">
 

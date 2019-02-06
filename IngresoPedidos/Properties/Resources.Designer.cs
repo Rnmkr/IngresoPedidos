@@ -63,9 +63,9 @@ namespace IngresoPedidos.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap add {
+        internal static System.Drawing.Bitmap buscar1 {
             get {
-                object obj = ResourceManager.GetObject("add", resourceCulture);
+                object obj = ResourceManager.GetObject("buscar1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,99 +73,9 @@ namespace IngresoPedidos.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap add_file {
-            get {
-                object obj = ResourceManager.GetObject("add_file", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon agregar {
-            get {
-                object obj = ResourceManager.GetObject("agregar", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap binoculars {
-            get {
-                object obj = ResourceManager.GetObject("binoculars", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon buscar {
-            get {
-                object obj = ResourceManager.GetObject("buscar", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon configuracion {
-            get {
-                object obj = ResourceManager.GetObject("configuracion", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon copiar {
+        internal static System.Drawing.Bitmap copiar {
             get {
                 object obj = ResourceManager.GetObject("copiar", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap door {
-            get {
-                object obj = ResourceManager.GetObject("door", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon editar {
-            get {
-                object obj = ResourceManager.GetObject("editar", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon egresoingreso {
-            get {
-                object obj = ResourceManager.GetObject("egresoingreso", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap exit {
-            get {
-                object obj = ResourceManager.GetObject("exit", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -173,89 +83,9 @@ namespace IngresoPedidos.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap exit__1_ {
-            get {
-                object obj = ResourceManager.GetObject("exit__1_", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap exit__2_ {
-            get {
-                object obj = ResourceManager.GetObject("exit__2_", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap exit__3_ {
-            get {
-                object obj = ResourceManager.GetObject("exit__3_", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon exportar_a_excel {
-            get {
-                object obj = ResourceManager.GetObject("exportar_a_excel", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon filtro {
-            get {
-                object obj = ResourceManager.GetObject("filtro", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap growth {
-            get {
-                object obj = ResourceManager.GetObject("growth", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon guardar {
-            get {
-                object obj = ResourceManager.GetObject("guardar", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon imagen {
+        internal static System.Drawing.Bitmap imagen {
             get {
                 object obj = ResourceManager.GetObject("imagen", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap key {
-            get {
-                object obj = ResourceManager.GetObject("key", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -263,9 +93,9 @@ namespace IngresoPedidos.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap key__1_ {
+        internal static System.Drawing.Bitmap lapiz {
             get {
-                object obj = ResourceManager.GetObject("key__1_", resourceCulture);
+                object obj = ResourceManager.GetObject("lapiz", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -273,9 +103,9 @@ namespace IngresoPedidos.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap list {
+        internal static System.Drawing.Bitmap lista {
             get {
-                object obj = ResourceManager.GetObject("list", resourceCulture);
+                object obj = ResourceManager.GetObject("lista", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -283,60 +113,30 @@ namespace IngresoPedidos.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap list__1_ {
+        internal static System.Drawing.Bitmap llave {
             get {
-                object obj = ResourceManager.GetObject("list__1_", resourceCulture);
+                object obj = ResourceManager.GetObject("llave", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Icon LOGIN {
+        internal static System.Drawing.Bitmap log {
             get {
-                object obj = ResourceManager.GetObject("LOGIN", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
+                object obj = ResourceManager.GetObject("log", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Icon logout {
+        internal static System.Drawing.Bitmap observacion {
             get {
-                object obj = ResourceManager.GetObject("logout", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon nuevoregistro {
-            get {
-                object obj = ResourceManager.GetObject("nuevoregistro", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon password {
-            get {
-                object obj = ResourceManager.GetObject("password", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon planilla_egreso_ingreso {
-            get {
-                object obj = ResourceManager.GetObject("planilla_egreso_ingreso", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
+                object obj = ResourceManager.GetObject("observacion", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -351,22 +151,32 @@ namespace IngresoPedidos.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Icon quitar {
+        internal static System.Drawing.Bitmap puerta {
             get {
-                object obj = ResourceManager.GetObject("quitar", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
+                object obj = ResourceManager.GetObject("puerta", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Icon registro_eventos {
+        internal static System.Drawing.Bitmap quitar {
             get {
-                object obj = ResourceManager.GetObject("registro_eventos", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
+                object obj = ResourceManager.GetObject("quitar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap recibo {
+            get {
+                object obj = ResourceManager.GetObject("recibo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -376,16 +186,6 @@ namespace IngresoPedidos.Properties {
         internal static System.Drawing.Bitmap sample {
             get {
                 object obj = ResourceManager.GetObject("sample", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap search {
-            get {
-                object obj = ResourceManager.GetObject("search", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -406,16 +206,6 @@ namespace IngresoPedidos.Properties {
         internal static System.Drawing.Bitmap xls {
             get {
                 object obj = ResourceManager.GetObject("xls", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap xls__1_ {
-            get {
-                object obj = ResourceManager.GetObject("xls__1_", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

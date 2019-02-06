@@ -4,7 +4,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="ALTA DE PEDIDOS: PRODUCCION EXO" Height="768" Width="1366" WindowStartupLocation="CenterScreen" WindowState="Maximized" Icon="/IngresoPedidos;component/Resources/agregar.ico">
+        Title="INGRESO DE PEDIDOS: PRODUCCION EXO" Height="768" Width="1366" WindowStartupLocation="CenterScreen" WindowState="Maximized" Icon="/IngresoPedidos;component/Resources/lista.png">
 
     <Grid Name="mainGrid">
         <Grid.RowDefinitions>
@@ -19,15 +19,15 @@
             </Button>
 
             <Button x:Name="btnExportarPlanilla" Style="{StaticResource roundButtonTemplate48}" ToolTip="Exportar lista a planilla de cálculos (CTRL+X)" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="119,0,0,0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}">
-                <Image Source="/IngresoPedidos;component/Resources/xls (1).png" Width="48" Height="48" />
+                <Image Source="/IngresoPedidos;component/Resources/xls.png" Width="48" Height="48" />
             </Button>
 
             <Button x:Name="btnBuscarPedido" Click="btnBuscarPedido_Click" Style="{StaticResource roundButtonTemplate48}" ToolTip="Buscar un pedido en la Base de Datos (CTRL+B)" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="67,0,0,0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}">
-                <Image Source="/IngresoPedidos;component/Resources/search.png" VerticalAlignment="Center" HorizontalAlignment="Center" Width="48" Height="48" />
+                <Image Source="/IngresoPedidos;component/Resources/buscar.png" VerticalAlignment="Center" HorizontalAlignment="Center" Width="48" Height="48" />
             </Button>
 
             <Button x:Name="btnFiltrarLista" Click="btnFiltrarLista_Click" Style="{StaticResource roundButtonTemplate48}" ToolTip="Filtrar la lista por Estado (CTRL+F)" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="176,0,0,0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}">
-                <Image Source="/IngresoPedidos;component/Resources/list (1).png" VerticalAlignment="Center" HorizontalAlignment="Center" Width="48" Height="48" />
+                <Image Source="/IngresoPedidos;component/Resources/lista.png" VerticalAlignment="Center" HorizontalAlignment="Center" Width="48" Height="48" />
             </Button>
 
             <Border BorderThickness="0" MinWidth="200" CornerRadius="12" Background="#FF74B0E3" HorizontalAlignment="Right" Margin="0,12,92,12" VerticalAlignment="Center" Height="36" Width="36">
@@ -35,11 +35,11 @@
             </Border>
 
             <Button x:Name="btnCambiarContraseña" Click="btnCambiarContraseña_Click" Style="{StaticResource roundButtonTemplate32}" ToolTip="Cambiar contraseña" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,12,51,12" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" Width="36" Height="36">
-                <Image Source="/IngresoPedidos;component/Resources/key (1).png" Width="32" Height="32" />
+                <Image Source="/IngresoPedidos;component/Resources/llave.png" Width="32" Height="32" />
             </Button>
 
             <Button x:Name="btnCerrarSesion" Click="btnCerrarSesion_Click" Style="{StaticResource roundButtonTemplate32}" ToolTip="Cerrar sesión" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" Width="36" Height="36">
-                <Image Source="/IngresoPedidos;component/Resources/door.png" Width="32" Height="32" />
+                <Image Source="/IngresoPedidos;component/Resources/puerta.png" Width="32" Height="32" />
             </Button>
 
         </Grid>
@@ -51,13 +51,13 @@
                 <ContextMenu>
                     <MenuItem x:Name="ctxmnuEditar" Header="Editar registro" InputGestureText="Ctrl+E" Click="ctxmnuEditar_Click">
                         <MenuItem.Icon>
-                            <Image Source="/IngresoPedidos;component/Resources/editar.ico"/>
+                            <Image Source="/IngresoPedidos;component/Resources/lapiz.png"/>
                         </MenuItem.Icon>
                     </MenuItem>
 
                     <MenuItem Header="Agregar una observación" InputGestureText="Ctrl+O">
                         <MenuItem.Icon>
-                            <Image Source="/IngresoPedidos;component/Resources/add-file.png"/>
+                            <Image Source="/IngresoPedidos;component/Resources/observacion.png"/>
                         </MenuItem.Icon>
                     </MenuItem>
 
@@ -65,7 +65,7 @@
 
                     <MenuItem Command="Copy" Header="Copiar Selección">
                         <MenuItem.Icon>
-                            <Image Source="/IngresoPedidos;component/Resources/copiar.ico"/>
+                            <Image Source="/IngresoPedidos;component/Resources/copiar.png"/>
                         </MenuItem.Icon>
                     </MenuItem>
 
@@ -73,13 +73,13 @@
 
                     <MenuItem Header="Agregar a lista personalizada" InputGestureText="Ctrl+A">
                         <MenuItem.Icon>
-                            <Image Source="/IngresoPedidos;component/Resources/agregar.ico"/>
+                            <Image Source="/IngresoPedidos;component/Resources/plus.png"/>
                         </MenuItem.Icon>
                     </MenuItem>
 
                     <MenuItem Header="Quitar de lista personalizada" InputGestureText="Ctrl+Q">
                         <MenuItem.Icon>
-                            <Image Source="/IngresoPedidos;component/Resources/quitar.ico"/>
+                            <Image Source="/IngresoPedidos;component/Resources/quitar.png"/>
                         </MenuItem.Icon>
                     </MenuItem>
 
@@ -87,7 +87,7 @@
 
                     <MenuItem Header="Generar planilla Egreso / Ingreso" InputGestureText="Ctrl+G">
                         <MenuItem.Icon>
-                            <Image Source="/IngresoPedidos;component/Resources/egresoingreso.ico"/>
+                            <Image Source="/IngresoPedidos;component/Resources/recibo.png"/>
                         </MenuItem.Icon>
                     </MenuItem>
 
@@ -95,12 +95,12 @@
 
                     <MenuItem Header="Ver registro de eventos" InputGestureText="Ctrl+R">
                         <MenuItem.Icon>
-                            <Image Source="/IngresoPedidos;component/Resources/registro_eventos.ico"/>
+                            <Image Source="/IngresoPedidos;component/Resources/log.png"/>
                         </MenuItem.Icon>
                     </MenuItem>
                     <MenuItem Header="Ver imagen del modelo" InputGestureText="Ctrl+I">
                         <MenuItem.Icon>
-                            <Image Source="/IngresoPedidos;component/Resources/imagen.ico"/>
+                            <Image Source="/IngresoPedidos;component/Resources/imagen.png"/>
                         </MenuItem.Icon>
                     </MenuItem>
                 </ContextMenu>

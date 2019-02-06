@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IngresoPedidos.Views"
         mc:Ignorable="d"
-        Title="REGISTRO DE EVENTOS" Height="480" Width="720" ResizeMode="NoResize" WindowStartupLocation="CenterOwner" Icon="/IngresoPedidos;component/Resources/agregar.ico">
+        Title="REGISTRO DE EVENTOS" Height="480" Width="720" ResizeMode="NoResize" WindowStartupLocation="CenterOwner" Icon="/IngresoPedidos;component/Resources/lista.png">
     <Grid Margin="0">
         <!--<TextBox Name="tbMovimientos" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" TextWrapping="NoWrap" Margin="10,302,10,10" IsReadOnly="True" FontFamily="Consolas" FontSize="14" Padding="0" />-->
         <Label Margin="10,10,0,0" Content="FECHA" VerticalAlignment="Top" Background="#FFA9D1F4" FontWeight="Bold" Padding="0" HorizontalContentAlignment="Center" Height="26" VerticalContentAlignment="Center" HorizontalAlignment="Left" Width="84" FontFamily="Consolas" FontSize="14"/>

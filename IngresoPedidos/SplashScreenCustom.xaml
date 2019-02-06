@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="ALTA DE PEDIDOS: EXO PRODUCCION" Height="380" Width="718" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Cursor="Wait" Focusable="False" IsTabStop="False" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" ShowInTaskbar="False" Icon="/IngresoPedidos;component/Resources/agregar.ico">
+        Title="ALTA DE PEDIDOS: EXO PRODUCCION" Height="380" Width="718" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Cursor="Wait" Focusable="False" IsTabStop="False" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" ShowInTaskbar="False" Icon="/IngresoPedidos;component/Resources/lista.png">
 
     <Grid>
         <Image Source="/IngresoPedidos;component/Resources/SplashScreen.png" Margin="0"/>

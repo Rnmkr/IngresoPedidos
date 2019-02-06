@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Height="428" Width="226" ResizeMode="NoResize" WindowStartupLocation="CenterOwner" SizeToContent="WidthAndHeight" Icon="/IngresoPedidos;component/Resources/agregar.ico">
+        Height="428" Width="226" ResizeMode="NoResize" WindowStartupLocation="CenterOwner" SizeToContent="WidthAndHeight" Icon="/IngresoPedidos;component/Resources/lista.png">
 
     <Grid FocusManager.FocusedElement="{Binding ElementName=tbPedido}" Width="220" Height="399">
 

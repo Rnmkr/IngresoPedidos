@@ -87,13 +87,13 @@
     </Compile>
     <Compile Include="Helpers\Buscador.cs" />
     <Compile Include="Helpers\StaticData.cs" />
+    <Compile Include="FormularioPedido.xaml.cs">
+      <DependentUpon>FormularioPedido.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="FormularioPedido.xaml.cs">
-      <DependentUpon>FormularioPedido.xaml</DependentUpon>
     </Compile>
     <Compile Include="SplashScreenCustom.xaml.cs">
       <DependentUpon>SplashScreenCustom.xaml</DependentUpon>
@@ -196,109 +196,46 @@
     <Resource Include="Resources\SplashScreen.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\buscar.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\configuracion.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\guardar.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\login.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\logout.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\nuevoregistro.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\sample.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\exportar_a_excel.ico" />
+    <Resource Include="Resources\buscar.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\agregar.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\copiar.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\editar.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\imagen.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\planilla_egreso_ingreso.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\quitar.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\registro_eventos.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\egresoingreso.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\filtro.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\password.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\list.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\binoculars.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\xls.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\add.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\add-file.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\growth.png" />
+    <Resource Include="Resources\lista.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\plus.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\exit %281%29.png" />
+    <Resource Include="Resources\lapiz.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\exit %282%29.png" />
+    <Resource Include="Resources\observacion.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\exit %283%29.png" />
+    <Resource Include="Resources\quitar.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\exit.png" />
+    <Resource Include="Resources\recibo.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\key.png" />
+    <Resource Include="Resources\copiar.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\list %281%29.png" />
+    <Resource Include="Resources\log.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\search.png" />
+    <Resource Include="Resources\puerta.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\xls %281%29.png" />
+    <Resource Include="Resources\imagen.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\door.png" />
+    <Resource Include="Resources\llave.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\key %281%29.png" />
+    <Resource Include="Resources\xls.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

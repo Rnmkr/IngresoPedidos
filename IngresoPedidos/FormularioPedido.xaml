@@ -4,37 +4,30 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="FORMULARIO DE PEDIDOS" Height="450" Width="226" ResizeMode="NoResize" WindowStartupLocation="CenterOwner" SizeToContent="WidthAndHeight" Icon="/IngresoPedidos;component/Resources/agregar.ico">
+        Title="FORMULARIO DE PEDIDOS" Height="428" Width="226" ResizeMode="NoResize" WindowStartupLocation="CenterOwner" SizeToContent="WidthAndHeight" Icon="/IngresoPedidos;component/Resources/agregar.ico">
 
-    <Grid FocusManager.FocusedElement="{Binding ElementName=tbPedido}" Width="220" Height="421">
+    <Grid FocusManager.FocusedElement="{Binding ElementName=tbPedido}" Width="220" Height="399">
 
-        <Button Name="btnGuardar" Click="btnGuardar_Click" Content="Guardar" ToolTip="Guardar en Base de Datos" Margin="75,0,75,10" TabIndex="9" Height="22" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <Label Content="OBSERVACION" Margin="10,228,10,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontWeight="Bold" Padding="1" Background="{x:Null}" FontFamily="Consolas" VerticalAlignment="Top"/>
-        <TextBox Name="tbArticulo" Text="ARTICULO" Foreground="Gray" TextWrapping="Wrap" Margin="10,103,10,0" FontFamily="Consolas" FontSize="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" TabIndex="4" Height="26" VerticalAlignment="Top"/>
-        <ComboBox Name="cbModelo" IsEditable="True" IsReadOnly="True" Text="MODELO" Foreground="Gray" Style="{x:Null}" Margin="10,42,10,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14" FontFamily="Consolas" RenderTransformOrigin="0.515,-1.115" Padding="15,0,0,0" TabIndex="2" Height="26" VerticalAlignment="Top">
+        <Button Name="btnGuardar" Click="btnGuardar_Click" Content="Guardar" ToolTip="Guardar en Base de Datos" Margin="0,0,0,10" TabIndex="9" Height="22" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="70"/>
+        <!--<Label Content="OBSERVACION" Margin="10,228,10,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontWeight="Bold" Padding="1" Background="{x:Null}" FontFamily="Consolas" VerticalAlignment="Top"/>-->
+        <TextBox Name="tbArticulo" Text="ARTICULO" Foreground="LightGray" TextWrapping="Wrap" Margin="10,103,10,0" FontFamily="Consolas" FontSize="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" TabIndex="4" Height="26" VerticalAlignment="Top" FontWeight="Bold"/>
+        <ComboBox Name="cbModelo" IsEditable="True" DropDownOpened="cbModelo_DropDownOpened" DropDownClosed="cbModelo_DropDownClosed" IsReadOnly="True" Text="MODELO" Foreground="LightGray" Style="{x:Null}" Margin="10,42,10,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14" FontFamily="Consolas" RenderTransformOrigin="0.515,-1.115" Padding="15,0,0,0" TabIndex="2" Height="26" VerticalAlignment="Top" FontWeight="Bold">
             <ComboBoxItem>H8</ComboBoxItem>
             <ComboBoxItem>L6</ComboBoxItem>
             <ComboBoxItem>SPANKY</ComboBoxItem>
             <ComboBoxItem>WINGS</ComboBoxItem>
         </ComboBox>
-        <ComboBox Name="cbEstado" Style="{x:Null}" IsEnabled="True" SelectedIndex="0" Margin="10,165,10,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14" FontFamily="Consolas" Padding="15,0,0,0" TabIndex="6" Height="26" VerticalAlignment="Top">
-            <ComboBoxItem>INGRESADO</ComboBoxItem>
-            <ComboBoxItem>COMPLETO</ComboBoxItem>
-            <ComboBoxItem>INCOMPLETO</ComboBoxItem>
-            <ComboBoxItem>AUTORIZADO</ComboBoxItem>
-            <ComboBoxItem>CANCELADO</ComboBoxItem>
-            <ComboBoxItem>REPROCESADO</ComboBoxItem>
-            <ComboBoxItem>DESPACHADO</ComboBoxItem>
-        </ComboBox>
-        <TextBox Name="tbAnterior" Text="ANTERIOR" Foreground="Gray" Margin="10,196,10,0" TextWrapping="Wrap" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Consolas" FontSize="14" TabIndex="7" Height="26" VerticalAlignment="Top"/>
-        <TextBox Name="tbCantidad" Text="CANTIDAD" Foreground="Gray" Margin="10,134,10,0" TextWrapping="Wrap" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14" FontFamily="Consolas" TabIndex="5" Height="26" VerticalAlignment="Top"/>
-        <ComboBox Name="cbProducto" IsEditable="True" IsReadOnly="True" Text="PRODUCTO" Foreground="Gray" Margin="10,72,10,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14" FontFamily="Consolas" Padding="15,0,0,0" TabIndex="3" Height="26" VerticalAlignment="Top">
+        <ComboBox Name="cbEstado" DropDownOpened="cbEstado_DropDownOpened" DropDownClosed="cbEstado_DropDownClosed" IsEnabled="True" SelectedIndex="0" Margin="10,165,10,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14" FontFamily="Consolas" Padding="15,0,0,0" TabIndex="6" Height="26" VerticalAlignment="Top" FontWeight="Bold"/>
+
+        <TextBox Name="tbAnterior" Text="ANTERIOR" Foreground="LightGray" Margin="10,196,10,0" TextWrapping="Wrap" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Consolas" FontSize="14" TabIndex="7" Height="26" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBox Name="tbCantidad" Text="CANTIDAD" Foreground="LightGray" Margin="10,134,10,0" TextWrapping="Wrap" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14" FontFamily="Consolas" TabIndex="5" Height="26" VerticalAlignment="Top" FontWeight="Bold"/>
+        <ComboBox Name="cbProducto" IsEditable="True" DropDownOpened="cbProducto_DropDownOpened" DropDownClosed="cbProducto_DropDownClosed" IsReadOnly="True" Text="PRODUCTO" Foreground="LightGray" Margin="10,72,10,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14" FontFamily="Consolas" Padding="15,0,0,0" TabIndex="3" Height="26" VerticalAlignment="Top" FontWeight="Bold">
             <ComboBoxItem>ALL-IN-ONE</ComboBoxItem>
             <ComboBoxItem>2-EN-1</ComboBoxItem>
             <ComboBoxItem>NOTEBOOK</ComboBoxItem>
         </ComboBox>
-        <TextBox Name="tbPedido" Text="PEDIDO" Foreground="Gray" IsEnabled="True" Margin="10,10,10,0" TextWrapping="Wrap" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="20" FontFamily="Consolas" FontWeight="Bold" TabIndex="1" Height="26" VerticalAlignment="Top"/>
+        <TextBox Name="tbPedido" Text="PEDIDO" Foreground="LightGray" IsEnabled="True" Margin="10,10,10,0" TextWrapping="Wrap" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="20" FontFamily="Consolas" FontWeight="Bold" TabIndex="1" Height="26" VerticalAlignment="Top"/>
 
-        <TextBox Name="tbObservacion" Text="12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789A" TextWrapping="Wrap" MaxLength="240" Padding="3" FontFamily="Consolas" BorderBrush="#FFABADB3" TabIndex="8" Height="135" VerticalAlignment="Top" Margin="10,249,10,0"/>
+        <TextBox Name="tbObservacion" Text="OBSERVACION" Foreground="LightGray" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" MaxLength="240" Padding="3" FontFamily="Consolas" BorderBrush="#FFABADB3" TabIndex="8" Height="135" VerticalAlignment="Top" Margin="10,227,10,0" FontWeight="Bold"/>
     </Grid>
 </Window>

@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="LOGIN" Height="150" Width="150" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight" Icon="/IngresoPedidos;component/Resources/lista.png" KeyDown="OnKeyDownHandler">
+        Title="LOGIN" Height="150" Width="150" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight" Icon="/IngresoPedidos;component/Resources/lista_64x64.png" KeyDown="OnKeyDownHandler">
 
     <Grid FocusManager.FocusedElement="{Binding ElementName=tbLegajo}" Height="121" Width="144">
         <TextBox x:Name="tbLegajo" Text="LEGAJO" Foreground="LightGray" KeyDown="OnKeyDownHandler" Margin="10,10,10,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14" FontFamily="Consolas" TabIndex="1" Height="26" VerticalAlignment="Top"/>

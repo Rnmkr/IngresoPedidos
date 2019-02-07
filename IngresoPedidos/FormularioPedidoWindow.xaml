@@ -1,10 +1,10 @@
-﻿<Window x:Class="IngresoPedidos.FormularioPedido"
+﻿<Window x:Class="IngresoPedidos.FormularioPedidoWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Height="428" Width="226" ResizeMode="NoResize" WindowStartupLocation="CenterOwner" SizeToContent="WidthAndHeight" Icon="/IngresoPedidos;component/Resources/lista.png">
+        Height="428" Width="226" ResizeMode="NoResize" WindowStartupLocation="CenterOwner" SizeToContent="WidthAndHeight" Icon="/IngresoPedidos;component/Resources/lista_64x64.png">
 
     <Grid FocusManager.FocusedElement="{Binding ElementName=tbPedido}" Width="220" Height="399">
 

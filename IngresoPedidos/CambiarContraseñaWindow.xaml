@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="RENOVAR" Height="165" Width="150" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight" Icon="/IngresoPedidos;component/Resources/lista.png" KeyDown="OnKeyDown">
+        Title="RENOVAR" Height="165" Width="150" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight" Icon="/IngresoPedidos;component/Resources/llave_64x64.png" KeyDown="OnKeyDown">
 
     <Grid FocusManager.FocusedElement="{Binding ElementName=tbLegajo}" Height="136" Width="144">
         <PasswordBox Name="pbContraseñaActual" KeyDown="OnKeyDown" Margin="10,10,10,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Consolas" FontSize="14" TabIndex="2" Height="26" VerticalAlignment="Top"/>

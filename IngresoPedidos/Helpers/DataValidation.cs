@@ -5,7 +5,7 @@ namespace IngresoPedidos.Helpers
 {
     class DataValidation
     {
-        public bool ValidarPedido(PedidosView pedido)
+        public bool ValidarPedido(PedidoView pedido)
         {
 
             Regex regexPedido = new Regex(@"^\d{7}[a-cA-C]-\d{2}$");
@@ -13,7 +13,7 @@ namespace IngresoPedidos.Helpers
             Regex regexCantidad = new Regex("^[0-9]+$");
 
         bool pedidoValido = regexPedido.IsMatch(pedido.NumeroPedido);
-            bool articuloValido = regexSoloNumeros.IsMatch(pedido.Articulo);
+            bool articuloValido = regexSoloNumeros.IsMatch(pedido.NumeroArticulo);
             bool anteriorValido = regexPedido.IsMatch(pedido.PedidoAnterior);
             bool cantidadValida = regexSoloNumeros.IsMatch(pedido.CantidadEquipos.ToString());
 

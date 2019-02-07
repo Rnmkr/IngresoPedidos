@@ -12,14 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace IngresoPedidos.Views
+namespace IngresoPedidos
 {
     /// <summary>
     /// Interaction logic for ImagenModeloView.xaml
     /// </summary>
-    public partial class ImagenView : Window
+    public partial class MostrarImagenWindow : Window
     {
-        public ImagenView()
+        public MostrarImagenWindow()
         {
             InitializeComponent();
         }

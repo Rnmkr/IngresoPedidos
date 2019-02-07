@@ -28,7 +28,7 @@ namespace IngresoPedidos
 
         private void btnNuevoPedido_Click(object sender, RoutedEventArgs e)
         {
-            FormularioPedido fpv = new FormularioPedido();
+            FormularioPedidoWindow fpv = new FormularioPedidoWindow();
             fpv.Owner = this;
             fpv.ShowDialog();
         }
@@ -63,8 +63,8 @@ namespace IngresoPedidos
 
         private void ctxmnuEditar_Click(object sender, RoutedEventArgs e)
         {
-            PedidosView pedidoSeleccionado = (PedidosView)dgPedidos.SelectedItem;
-            FormularioPedido fpv = new FormularioPedido(pedidoSeleccionado);
+            PedidoView pedidoSeleccionado = (PedidoView)dgPedidos.SelectedItem;
+            FormularioPedidoWindow fpv = new FormularioPedidoWindow(pedidoSeleccionado);
             fpv.Owner = this;
             fpv.ShowDialog();
         }

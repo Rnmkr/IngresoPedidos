@@ -121,7 +121,7 @@ namespace IngresoPedidos
 
             string apellido = userData[1];
             int id = Convert.ToInt32(userData[2]);
-            string hashedPassword = StaticData.context.Passwords.First(w => w.FK_IDUsuario == id).HashedPassword;
+            string hashedPassword = StaticData.context.Password.First(w => w.FK_IDUsuario == id).HashedPassword;
 
             //if hashed password is null, show new password dialog
             if (string.IsNullOrWhiteSpace(hashedPassword))
@@ -152,13 +152,13 @@ namespace IngresoPedidos
         private string[] GetUserData(string legajo)
         {
             //***implement if ping successful***
-            Context context = new Context();
+            DBContext context = new DBContext();
 
             try
             {
                 //get Nombre and Apellido from Usuarios table
                 string leg = legajo;
-                var user = context.Usuarios.First(f => f.LegajoUsuario == leg);
+                var user = context.Usuario.First(f => f.LegajoUsuario == leg);
 
                 ////get HashedPassword from Passwords table
                 //var hashedPassword = database.Usuarios.First(f => f.FK_Legajo == legajo);

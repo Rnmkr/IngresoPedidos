@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace IngresoPedidos.Properties {
+namespace IngresoPedido.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

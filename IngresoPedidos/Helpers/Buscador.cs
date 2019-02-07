@@ -7,20 +7,20 @@ namespace IngresoPedidos.Helpers
 {
     class Buscador
     {
-        Context context;
+        DBContext context;
 
-        public Buscador(Context databasecontext)
+        public Buscador(DBContext databasecontext)
         {
             context = databasecontext;
         }
 
-        public List<PedidosView> ObtenerPedidos(string keyword, string campo)
+        public List<PedidoView> ObtenerPedidos(string keyword, string campo)
         {
-            List<PedidosView> result = new List<PedidosView>();
+            List<PedidoView> result = new List<PedidoView>();
 
             if (keyword == "*")
             {
-                result = context.PedidosView.Select(s => s).ToList();
+                result = context.PedidoView.Select(s => s).ToList();
                 return result;
             }
 
@@ -28,40 +28,40 @@ namespace IngresoPedidos.Helpers
             {
                 case "ID":
                     int id = Convert.ToInt32(keyword);
-                    result = context.PedidosView.Where(w => w.IDPedido == id).Select(s => s).ToList();
+                    result = context.PedidoView.Where(w => w.IDPedido == id).Select(s => s).ToList();
                     return result;
 
                 case "PEDIDO":
-                    result = context.PedidosView.Where(w => w.NumeroPedido.Contains(keyword)).Select(s => s).ToList();
+                    result = context.PedidoView.Where(w => w.NumeroPedido.Contains(keyword)).Select(s => s).ToList();
                     return result;
 
                 case "MODELO":
-                    result = context.PedidosView.Where(w => w.NombreModelo.Contains(keyword)).Select(s => s).ToList();
+                    result = context.PedidoView.Where(w => w.NombreModelo.Contains(keyword)).Select(s => s).ToList();
                     return result;
 
                 case "PRODUCTO":
-                    result = context.PedidosView.Where(w => w.NombreProducto.Contains(keyword)).Select(s => s).ToList();
+                    result = context.PedidoView.Where(w => w.NombreProducto.Contains(keyword)).Select(s => s).ToList();
                     return result;
 
                 case "ARTICULO":
-                    result = context.PedidosView.Where(w => w.Articulo.Contains(keyword)).Select(s => s).ToList();
+                    result = context.PedidoView.Where(w => w.NumeroArticulo.Contains(keyword)).Select(s => s).ToList();
                     return result;
 
                 case "CANTIDAD":
                     int cantidad = Convert.ToInt32(keyword);
-                    result = context.PedidosView.Where(w => w.CantidadEquipos == cantidad).Select(s => s).ToList();
+                    result = context.PedidoView.Where(w => w.CantidadEquipos == cantidad).Select(s => s).ToList();
                     return result;
 
                 case "ESTADO":
-                    result = context.PedidosView.Where(w => w.EstadoPedido.Contains(keyword)).Select(s => s).ToList();
+                    result = context.PedidoView.Where(w => w.NombreEstado.Contains(keyword)).Select(s => s).ToList();
                     return result;
 
                 case "ANTERIOR":
-                    result = context.PedidosView.Where(w => w.PedidoAnterior.Contains(keyword)).Select(s => s).ToList();
+                    result = context.PedidoView.Where(w => w.PedidoAnterior.Contains(keyword)).Select(s => s).ToList();
                     return result;
 
                 case "SUCESOR":
-                    result = context.PedidosView.Where(w => w.PedidoSucesor.Contains(keyword)).Select(s => s).ToList();
+                    result = context.PedidoView.Where(w => w.PedidoSucesor.Contains(keyword)).Select(s => s).ToList();
                     return result;
 
                 default:
@@ -70,9 +70,9 @@ namespace IngresoPedidos.Helpers
             }
         }
 
-        public List<PedidosView> ObtenerPedidos(string keyword, string campo, string campofecha, DateTime fechaInicial, DateTime fechaFinal)
+        public List<PedidoView> ObtenerPedidos(string keyword, string campo, string campofecha, DateTime fechaInicial, DateTime fechaFinal)
         {
-            List<PedidosView> result = new List<PedidosView>();
+            List<PedidoView> result = new List<PedidoView>();
 
             if (fechaInicial == fechaFinal)
             {
@@ -83,11 +83,11 @@ namespace IngresoPedidos.Helpers
             switch (campofecha)
             {
                 case "FECHA INGRESO":
-                    result = context.PedidosView.Where(w => w.FechaIngreso >= fechaInicial && w.FechaIngreso <= fechaFinal).Select(s => s).ToList();
+                    result = context.PedidoView.Where(w => w.FechaIngreso >= fechaInicial && w.FechaIngreso <= fechaFinal).Select(s => s).ToList();
                     break;
 
                 case "FECHA ESTADO":
-                    result = context.PedidosView.Where(w => w.FechaEstado >= fechaInicial && w.FechaEstado <= fechaFinal).Select(s => s).ToList();
+                    result = context.PedidoView.Where(w => w.FechaEstado >= fechaInicial && w.FechaEstado <= fechaFinal).Select(s => s).ToList();
                     break;
 
                 default:
@@ -120,7 +120,7 @@ namespace IngresoPedidos.Helpers
                     return result;
 
                 case "ARTICULO":
-                    result = result.Where(w => w.Articulo.Contains(keyword)).Select(s => s).ToList();
+                    result = result.Where(w => w.NumeroArticulo.Contains(keyword)).Select(s => s).ToList();
                     return result;
 
                 case "CANTIDAD":
@@ -129,7 +129,7 @@ namespace IngresoPedidos.Helpers
                     return result;
 
                 case "ESTADO":
-                    result = result.Where(w => w.EstadoPedido.Contains(keyword)).Select(s => s).ToList();
+                    result = result.Where(w => w.NombreEstado.Contains(keyword)).Select(s => s).ToList();
                     return result;
 
                 case "ANTERIOR":
@@ -146,15 +146,15 @@ namespace IngresoPedidos.Helpers
             }
         }
 
-        public List<Modelos> ObtenerModelos()
+        public List<Modelo> ObtenerModelos()
         {
-            List<Modelos> result = context.Modelos.Select(s => s).ToList();
+            List<Modelo> result = context.Modelo.Select(s => s).ToList();
             return result;
         }
 
-        public List<Modelos> ObtenerModelos(string producto)
+        public List<Modelo> ObtenerModelos(string producto)
         {
-            int? idproducto = context.Productos.Where(w => w.NombreProducto == producto).Select(s => s.IDProducto).SingleOrDefault();
+            int? idproducto = context.Producto.Where(w => w.NombreProducto == producto).Select(s => s.IDProducto).SingleOrDefault();
 
             if (idproducto == null)
             {
@@ -162,19 +162,19 @@ namespace IngresoPedidos.Helpers
                 throw e;
             }
 
-            List<Modelos> result = context.Modelos.Where(w => w.FK_IDProducto == idproducto).Select(s => s).ToList();
+            List<Modelo> result = context.Modelo.Where(w => w.FK_IDProducto == idproducto).Select(s => s).ToList();
             return result;
         }
 
-        public List<Productos> ObtenerProductos()
+        public List<Producto> ObtenerProductos()
         {
-            List<Productos> result = context.Productos.Select(s => s).ToList();
+            List<Producto> result = context.Producto.Select(s => s).ToList();
             return result;
         }
 
-        public List<Productos> ObtenerProductos(string modelo)
+        public List<Producto> ObtenerProductos(string modelo)
         {
-            int? fkidproducto = context.Modelos.Where(w => w.NombreModelo == modelo).Select(s => s.FK_IDProducto).SingleOrDefault();
+            int? fkidproducto = context.Modelo.Where(w => w.NombreModelo == modelo).Select(s => s.FK_IDProducto).SingleOrDefault();
 
             if (fkidproducto == null)
             {
@@ -182,13 +182,13 @@ namespace IngresoPedidos.Helpers
                 throw e;
             }
 
-            List<Productos> result = context.Productos.Where(w => w.IDProducto == fkidproducto).Select(s => s).ToList();
+            List<Producto> result = context.Producto.Where(w => w.IDProducto == fkidproducto).Select(s => s).ToList();
             return result;
         }
 
-        public Usuarios ObtenerUsuario(string legajo)
+        public Usuario ObtenerUsuario(string legajo)
         {
-            Usuarios result = context.Usuarios.Where(w => w.LegajoUsuario == legajo).SingleOrDefault();
+            Usuario result = context.Usuario.Where(w => w.LegajoUsuario == legajo).SingleOrDefault();
             return result;
         }
     }

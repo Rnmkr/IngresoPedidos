@@ -74,18 +74,33 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DataAccessLayer\DBContext.cs" />
+    <Compile Include="DataAccessLayer\Tables\Estado.cs" />
+    <Compile Include="DataAccessLayer\Tables\Modelo.cs" />
+    <Compile Include="DataAccessLayer\Tables\Password.cs" />
+    <Compile Include="DataAccessLayer\Tables\Pedido.cs" />
+    <Compile Include="DataAccessLayer\Views\PedidoView.cs" />
+    <Compile Include="DataAccessLayer\Tables\Permiso.cs" />
+    <Compile Include="DataAccessLayer\Views\PermisosView.cs" />
+    <Compile Include="DataAccessLayer\Tables\PermisoUsuario.cs" />
+    <Compile Include="DataAccessLayer\Tables\Producto.cs" />
+    <Compile Include="DataAccessLayer\Tables\ReprocesoPedidos.cs" />
+    <Compile Include="DataAccessLayer\Tables\Usuario.cs" />
     <Compile Include="FiltroListaWindow.xaml.cs">
       <DependentUpon>FiltroListaWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Helpers\Buscador.cs" />
     <Compile Include="Helpers\StaticData.cs" />
-    <Compile Include="FormularioPedido.xaml.cs">
-      <DependentUpon>FormularioPedido.xaml</DependentUpon>
+    <Compile Include="FormularioPedidoWindow.xaml.cs">
+      <DependentUpon>FormularioPedidoWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RegistroEventosWindow.xaml.cs">
+      <DependentUpon>RegistroEventosWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="SplashScreenCustom.xaml.cs">
       <DependentUpon>SplashScreenCustom.xaml</DependentUpon>
@@ -102,7 +117,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MostrarImagen.xaml">
+    <Page Include="MostrarImagenWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -131,8 +146,8 @@
     <Compile Include="BusquedaWindow.xaml.cs">
       <DependentUpon>BusquedaWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MostrarImagen.xaml.cs">
-      <DependentUpon>MostrarImagen.xaml</DependentUpon>
+    <Compile Include="MostrarImagenWindow.xaml.cs">
+      <DependentUpon>MostrarImagenWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
@@ -141,15 +156,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="RegistroEventos.xaml">
+    <Page Include="RegistroEventosWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="CambiarContraseña.xaml">
+    <Page Include="CambiarContraseñaWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="FormularioPedido.xaml">
+    <Page Include="FormularioPedidoWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -159,11 +174,8 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="RegistroEventos.xaml.cs">
-      <DependentUpon>RegistroEventos.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="CambiarContraseña.xaml.cs">
-      <DependentUpon>CambiarContraseña.xaml</DependentUpon>
+    <Compile Include="CambiarContraseñaWindow.xaml.cs">
+      <DependentUpon>CambiarContraseñaWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -190,48 +202,75 @@
   <ItemGroup>
     <Resource Include="Resources\sample.jpg" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="DataAccessLayer\Tables\" />
-    <Folder Include="DataAccessLayer\Views\" />
+    <Resource Include="Resources\agregar_16x16.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\puerta.png" />
+    <Resource Include="Resources\comentario_16x16.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\xls.png" />
+    <Resource Include="Resources\copiar_16x16.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\log.png" />
+    <Resource Include="Resources\imagen_16x16.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\copiar.png" />
+    <Resource Include="Resources\lapiz_16x16.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\recibo.png" />
+    <Resource Include="Resources\log_16x16.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\quitar.png" />
+    <Resource Include="Resources\quitar_16x16.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\imagen.png" />
+    <Resource Include="Resources\recibo_16x16.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\lupa.png" />
+    <Resource Include="Resources\comentario_64x64.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\agregar.png" />
+    <Resource Include="Resources\copiar_64x64.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\lapiz.png" />
+    <Resource Include="Resources\diskette_64x64.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\comentario.png" />
+    <Resource Include="Resources\gabinete_64x64.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\lista.png" />
+    <Resource Include="Resources\imagen_64x64.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\llave.png" />
+    <Resource Include="Resources\lapiz_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\lista_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\llave_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\log_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\lupa_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\nuevo_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\puerta_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\quitar_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\recibo_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\xls_64x64.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

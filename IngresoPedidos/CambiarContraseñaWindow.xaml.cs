@@ -12,9 +12,9 @@ namespace IngresoPedidos
     /// </summary>
     public partial class CambiarContraseñaWindow : Window
     {
-        private Usuarios Usuario;
+        private Usuario Usuario;
 
-        public CambiarContraseñaWindow(Usuarios usuario)
+        public CambiarContraseñaWindow(Usuario usuario)
         {
             InitializeComponent();
             this.Usuario = usuario;

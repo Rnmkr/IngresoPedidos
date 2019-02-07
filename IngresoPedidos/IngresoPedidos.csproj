@@ -191,47 +191,47 @@
     <Resource Include="Resources\sample.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\buscar.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\lista.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\plus.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\lapiz.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\observacion.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\quitar.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\recibo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\copiar.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\log.png" />
+    <Folder Include="DataAccessLayer\Tables\" />
+    <Folder Include="DataAccessLayer\Views\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\puerta.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\imagen.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\llave.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\xls.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DataAccessLayer\Tables\" />
-    <Folder Include="DataAccessLayer\Views\" />
+    <Resource Include="Resources\log.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\copiar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\recibo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\quitar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\imagen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\lupa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\agregar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\lapiz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\comentario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\lista.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\llave.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

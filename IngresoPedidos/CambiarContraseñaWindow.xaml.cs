@@ -55,29 +55,30 @@ namespace IngresoPedidos
                 MessageBox.Show("Las contraseñas nuevas no coinciden!", "Cambiar Contraseña", MessageBoxButton.OK, MessageBoxImage.Exclamation);
             }
 
-        //        if (pbContraseñaNueva1.Password == pbContraseñaNueva2.Password)
-        //    {
-        //        string hashedPassword = PasswordHasher.Hash(pbContraseñaNueva1.Password);
-        //        Context context = new Context();
-        //        var updatedRecord = context.Usuarios.First(w => w.LegajoUsuario == Legajo).HashedPassword;
+            if (pbContraseñaNueva1.Password == pbContraseñaNueva2.Password)
+            {
+                DBContext context = new DBContext();
+                //int userid = context.Usuario.First(w => w.LegajoUsuario == StaticData.Usuario.LegajoUsuario).IDUsuario;
+                string hashedPassword = PasswordHasher.Hash(pbContraseñaNueva1.Password);
+                Password userPassword = context.Password.Where(w => w.FK_IDUsuario == 18).Select(s => s).SingleOrDefault();
 
-        //        if (PasswordHasher.Verify(pbContraseñaActual.Password, updatedRecord))
-        //        {
-        //            updatedRecord = hashedPassword;
-        //            context.SaveChanges();
-        //            MessageBox.Show("La contraseña se cambió exitosamente!", "Cambiar Contraseña", MessageBoxButton.OK, MessageBoxImage.Information);
-        //            Close();
-        //        }
-        //        else
-        //        {
-        //            MessageBox.Show("La contraseña actual no es correcta!", "Cambiar Contraseña", MessageBoxButton.OK, MessageBoxImage.Warning);
-        //        }
+                if (PasswordHasher.Verify(pbContraseñaActual.Password, userPassword.HashedPassword))
+                {
+                    userPassword.HashedPassword = hashedPassword;
+                    context.SaveChanges();
+                    MessageBox.Show("La contraseña se cambió exitosamente!", "Cambiar Contraseña", MessageBoxButton.OK, MessageBoxImage.Information);
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("La contraseña actual no es correcta!", "Cambiar Contraseña", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
 
-        //    }
-        //    else
-        //    {
-                
-        //    }
+            }
+            else
+            {
+
+            }
         }
 
         private void btnGuardarContraseña_Click(object sender, RoutedEventArgs e)

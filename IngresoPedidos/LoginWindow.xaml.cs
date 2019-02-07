@@ -171,8 +171,9 @@ namespace IngresoPedidos
 
                 return UserData;
             }
-            catch (System.InvalidOperationException)
+            catch (System.InvalidOperationException io)
             {
+                MessageBox.Show(io.ToString());
                 //if Legajo not found in database
                 MessageBox.Show("No se encontro el usuario en la base de datos o no esta habilitado para este tipo de operaciones." + Environment.NewLine + Environment.NewLine + "Si le fue asignado el puesto, solicite al Administrador que habilite su legajo para Ingreso de Pedidos.", "Ingreso de Usuario", MessageBoxButton.OK, MessageBoxImage.Warning);
                 tbLegajo.Text = null;

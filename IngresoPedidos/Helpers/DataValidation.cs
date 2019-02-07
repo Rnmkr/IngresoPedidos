@@ -12,7 +12,7 @@ namespace IngresoPedidos.Helpers
             Regex regexSoloNumeros = new Regex("^[0-9]+$");
             Regex regexCantidad = new Regex("^[0-9]+$");
 
-            bool pedidoValido = regexPedido.IsMatch(pedido.NumeroPedido);
+        bool pedidoValido = regexPedido.IsMatch(pedido.NumeroPedido);
             bool articuloValido = regexSoloNumeros.IsMatch(pedido.Articulo);
             bool anteriorValido = regexPedido.IsMatch(pedido.PedidoAnterior);
             bool cantidadValida = regexSoloNumeros.IsMatch(pedido.CantidadEquipos.ToString());

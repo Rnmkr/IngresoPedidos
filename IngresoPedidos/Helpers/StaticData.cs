@@ -26,5 +26,8 @@ namespace IngresoPedidos
         public static int cbFiltrosIndex { get; internal set; }
         public static string ServerName { get ; internal set; }
 
+        public static string casa = "data source=DESKTOP;initial catalog=PRODUCCION;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework";
+        public static string exo = "data source=VM-FORREST;initial catalog=PRODUCCION;persist security info=True;user id=FORREST;password=12345678;MultipleActiveResultSets=True;App=EntityFramework";
+
     }
 }

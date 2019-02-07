@@ -74,14 +74,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="DataAccessLayer\Context.cs" />
-    <Compile Include="DataAccessLayer\Tables\Modelos.cs" />
-    <Compile Include="DataAccessLayer\Tables\Passwords.cs" />
-    <Compile Include="DataAccessLayer\Tables\Pedidos.cs" />
-    <Compile Include="DataAccessLayer\Views\PedidosView.cs" />
-    <Compile Include="DataAccessLayer\Views\PermisosView.cs" />
-    <Compile Include="DataAccessLayer\Tables\Productos.cs" />
-    <Compile Include="DataAccessLayer\Tables\Usuarios.cs" />
     <Compile Include="FiltroListaWindow.xaml.cs">
       <DependentUpon>FiltroListaWindow.xaml</DependentUpon>
     </Compile>
@@ -236,6 +228,10 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\xls.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DataAccessLayer\Tables\" />
+    <Folder Include="DataAccessLayer\Views\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

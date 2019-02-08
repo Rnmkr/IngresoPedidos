@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -12,12 +13,12 @@ namespace IngresoPedidos
     /// </summary>
     public partial class CambiarContraseñaWindow : Window
     {
-        private Usuario Usuario;
+        private UsuarioView usuarioLogin;
 
-        public CambiarContraseñaWindow(Usuario usuario)
+        public CambiarContraseñaWindow(bool renovarPassword, UsuarioView usuario)
         {
             InitializeComponent();
-            this.Usuario = usuario;
+            this.usuarioLogin = usuario;
         }
 
         private void OnKeyDown(object sender, System.Windows.Input.KeyEventArgs e)
@@ -60,7 +61,7 @@ namespace IngresoPedidos
                 DBContext context = new DBContext();
                 //int userid = context.Usuario.First(w => w.LegajoUsuario == StaticData.Usuario.LegajoUsuario).IDUsuario;
                 string hashedPassword = PasswordHasher.Hash(pbContraseñaNueva1.Password);
-                Password userPassword = context.Password.Where(w => w.FK_IDUsuario == 18).Select(s => s).SingleOrDefault();
+                Contraseña userPassword = context.Contraseña.Where(w => w.FK_IDUsuario == 18).Select(s => s).SingleOrDefault();
 
                 if (PasswordHasher.Verify(pbContraseñaActual.Password, userPassword.HashedPassword))
                 {
@@ -83,7 +84,14 @@ namespace IngresoPedidos
 
         private void btnGuardarContraseña_Click(object sender, RoutedEventArgs e)
         {
-            TryChangePassword();
+            DBContext dbc = new DBContext();
+            IQueryable<PermisoView> lpv = dbc.PermisoView.Where(w => w.FK_IDUsuario == 18).Select(s => s);
+            //List<string> lp = lpv.Where(w => w.EstadoPermiso == true).Select(s => s.NombrePermiso).ToList();
+            foreach (var v in lpv)
+            {
+                MessageBox.Show(v.FK_IDUsuario.ToString() + " " + v.NombrePermiso.ToString() + " " + v.EstadoPermiso.ToString());
+            }
+
         }
     }
 }

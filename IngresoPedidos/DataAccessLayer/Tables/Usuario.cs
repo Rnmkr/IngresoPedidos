@@ -30,7 +30,7 @@ namespace IngresoPedidos.DataAccessLayer
         [StringLength(25)]
         public string NombreUsuario { get; set; }
 
-        public virtual Password Password { get; set; }
+        public virtual Contraseña Contraseña { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PermisoUsuario> PermisoUsuario { get; set; }

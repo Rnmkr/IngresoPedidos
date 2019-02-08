@@ -42,7 +42,7 @@ namespace IngresoPedidos
 
         private void btnCambiarContraseña_Click(object sender, RoutedEventArgs e)
         {
-            CambiarContraseñaWindow ccw = new CambiarContraseñaWindow(StaticData.Usuario);
+            CambiarContraseñaWindow ccw = new CambiarContraseñaWindow(true, StaticData.Usuario);
             ccw.Owner = this;
             ccw.ShowDialog();
         }

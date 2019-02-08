@@ -35,7 +35,5 @@ namespace IngresoPedidos.DataAccessLayer
         public virtual Estado Estado { get; set; }
 
         public virtual Modelo Modelo { get; set; }
-
-        public virtual ReprocesoPedidos ReprocesoPedidos { get; set; }
     }
 }

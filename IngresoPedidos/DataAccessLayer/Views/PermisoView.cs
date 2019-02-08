@@ -6,8 +6,8 @@ namespace IngresoPedidos.DataAccessLayer
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("PermisosView")]
-    public partial class PermisosView
+    [Table("PermisoView")]
+    public partial class PermisoView
     {
         [Key]
         [Column(Order = 0)]

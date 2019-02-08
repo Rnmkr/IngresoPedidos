@@ -7,8 +7,8 @@ namespace IngresoPedidos
     {
         public static DBContext context = new DBContext(); 
 
-        public static Usuario Usuario { get; internal set; }
-        public static List<PermisosView> ListaPermisos { get; internal set; }
+        public static UsuarioView Usuario { get; internal set; }
+        public static List<PermisoView> ListaPermisos { get; internal set; }
 
         public static List<PedidoView> SearchList { get; internal set; }
         public static List<PedidoView> CustomList { get; internal set; }

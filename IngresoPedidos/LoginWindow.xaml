@@ -4,12 +4,12 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="LOGIN" Height="150" Width="150" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight" Icon="/IngresoPedidos;component/Resources/lista_64x64.png" KeyDown="OnKeyDownHandler">
+        Title="LOGIN" Height="150" Width="150" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight" Icon="/IngresoPedidos;component/Resources/lista_64x64.png">
 
     <Grid FocusManager.FocusedElement="{Binding ElementName=tbLegajo}" Height="121" Width="144">
-        <TextBox x:Name="tbLegajo" Text="LEGAJO" Foreground="LightGray" KeyDown="OnKeyDownHandler" Margin="10,10,10,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14" FontFamily="Consolas" TabIndex="1" Height="26" VerticalAlignment="Top"/>
-        <PasswordBox x:Name="pbContraseña" KeyDown="OnKeyDownHandler" Margin="10,50,10,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Consolas" FontSize="14" TabIndex="2" Height="26" VerticalAlignment="Top" Background="White"/>
-        <TextBox Name="tbPlaceholderContraseña" Text="CONTRASEÑA" IsReadOnly="True" Foreground="LightGray" FontFamily="Consolas" FontSize="14" VerticalAlignment="Top" Margin="10,50,10,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Padding="0" Width="124" Height="26"/>
+        <TextBox x:Name="tbLegajo" Text="LEGAJO" Foreground="LightGray" Margin="10,10,10,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14" FontFamily="Consolas" TabIndex="1" Height="26" VerticalAlignment="Top"/>
+        <PasswordBox x:Name="pbContraseña" Margin="10,50,10,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Consolas" FontSize="14" TabIndex="2" Height="26" VerticalAlignment="Top" Background="White"/>
+        <!--<TextBox Name="tbPlaceholderContraseña" Text="CONTRASEÑA" IsReadOnly="True" Foreground="LightGray" FontFamily="Consolas" FontSize="14" VerticalAlignment="Top" Margin="10,50,10,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Padding="0" Width="124" Height="26"/>-->
         <Button x:Name="btnLogin" Click="btnLogin_Click" ToolTip="Ingresar" Content="Aceptar" Margin="0,0,0,10" TabIndex="3" Height="22" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="70"/>
     </Grid>
 </Window>

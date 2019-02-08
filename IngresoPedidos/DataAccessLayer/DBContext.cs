@@ -1,4 +1,4 @@
-namespace IngresoPedidos.DataAccessLayer
+﻿namespace IngresoPedidos.DataAccessLayer
 {
     using System;
     using System.Data.Entity;
@@ -9,26 +9,33 @@ namespace IngresoPedidos.DataAccessLayer
     {
         public static string casa = "data source=DESKTOP;initial catalog=PRODUCCION;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework";
         public static string exo = "data source=VM-FORREST;initial catalog=PRODUCCION;persist security info=True;user id=FORREST;password=12345678;MultipleActiveResultSets=True;App=EntityFramework";
-
         public DBContext()
             : base(casa)
         {
         }
 
+        public virtual DbSet<Contraseña> Contraseña { get; set; }
         public virtual DbSet<Estado> Estado { get; set; }
         public virtual DbSet<Modelo> Modelo { get; set; }
-        public virtual DbSet<Password> Password { get; set; }
         public virtual DbSet<Pedido> Pedido { get; set; }
         public virtual DbSet<Permiso> Permiso { get; set; }
         public virtual DbSet<Producto> Producto { get; set; }
-        public virtual DbSet<ReprocesoPedidos> ReprocesoPedidos { get; set; }
         public virtual DbSet<Usuario> Usuario { get; set; }
         public virtual DbSet<PermisoUsuario> PermisoUsuario { get; set; }
         public virtual DbSet<PedidoView> PedidoView { get; set; }
-        public virtual DbSet<PermisosView> PermisosView { get; set; }
+        public virtual DbSet<PermisoView> PermisoView { get; set; }
+        public virtual DbSet<UsuarioView> UsuarioView { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Contraseña>()
+                .Property(e => e.HashedRFID)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Contraseña>()
+                .Property(e => e.HashedPassword)
+                .IsUnicode(false);
+
             modelBuilder.Entity<Estado>()
                 .Property(e => e.NombreEstado)
                 .IsUnicode(false);
@@ -48,14 +55,6 @@ namespace IngresoPedidos.DataAccessLayer
                 .HasForeignKey(e => e.FK_IDModelo)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<Password>()
-                .Property(e => e.HashedRFID)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Password>()
-                .Property(e => e.HashedPassword)
-                .IsUnicode(false);
-
             modelBuilder.Entity<Pedido>()
                 .Property(e => e.NumeroPedido)
                 .IsUnicode(false);
@@ -63,10 +62,6 @@ namespace IngresoPedidos.DataAccessLayer
             modelBuilder.Entity<Pedido>()
                 .Property(e => e.NumeroArticulo)
                 .IsUnicode(false);
-
-            modelBuilder.Entity<Pedido>()
-                .HasOptional(e => e.ReprocesoPedidos)
-                .WithRequired(e => e.Pedido);
 
             modelBuilder.Entity<Permiso>()
                 .Property(e => e.NombrePermiso)
@@ -101,7 +96,7 @@ namespace IngresoPedidos.DataAccessLayer
                 .IsUnicode(false);
 
             modelBuilder.Entity<Usuario>()
-                .HasOptional(e => e.Password)
+                .HasOptional(e => e.Contraseña)
                 .WithRequired(e => e.Usuario);
 
             modelBuilder.Entity<Usuario>()
@@ -138,8 +133,28 @@ namespace IngresoPedidos.DataAccessLayer
                 .Property(e => e.PedidoSucesor)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<PermisosView>()
+            modelBuilder.Entity<PermisoView>()
                 .Property(e => e.NombrePermiso)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<UsuarioView>()
+                .Property(e => e.LegajoUsuario)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<UsuarioView>()
+                .Property(e => e.NombreUsuario)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<UsuarioView>()
+                .Property(e => e.ApellidoUsuario)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<UsuarioView>()
+                .Property(e => e.HashedPassword)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<UsuarioView>()
+                .Property(e => e.HashedRFID)
                 .IsUnicode(false);
         }
     }

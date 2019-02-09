@@ -74,6 +74,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AgregarObservacion.xaml.cs">
+      <DependentUpon>AgregarObservacion.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DataAccessLayer\Tables\Contraseña.cs" />
     <Compile Include="DataAccessLayer\DBContext.cs" />
     <Compile Include="DataAccessLayer\Tables\Estado.cs" />
@@ -107,6 +110,10 @@
     <Compile Include="SplashScreenCustom.xaml.cs">
       <DependentUpon>SplashScreenCustom.xaml</DependentUpon>
     </Compile>
+    <Page Include="AgregarObservacion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="FiltroListaWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -204,7 +211,9 @@
   <ItemGroup>
     <Resource Include="Resources\sample.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\add_t.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\agregar_16x16.ico" />
   </ItemGroup>
@@ -273,6 +282,42 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\xls_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\comment_t.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\contract_t.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\copy_t.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\door_t.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\image_t.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\key_t.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\list_t.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\log_t.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\pencil_t.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\remove_t.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\search_t.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\xls_t.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -57,11 +57,11 @@ namespace IngresoPedidos.Helpers
                     return result;
 
                 case "ANTERIOR":
-                    result = context.PedidoView.Where(w => w.PedidoAnterior.Contains(keyword)).Select(s => s).ToList();
+                    result = context.PedidoView.Where(w => w.NumeroPedidoAnterior.Contains(keyword)).Select(s => s).ToList();
                     return result;
 
                 case "SUCESOR":
-                    result = context.PedidoView.Where(w => w.PedidoSucesor.Contains(keyword)).Select(s => s).ToList();
+                    result = context.PedidoView.Where(w => w.NumeroPedidoSucesor.Contains(keyword)).Select(s => s).ToList();
                     return result;
 
                 default:
@@ -133,11 +133,11 @@ namespace IngresoPedidos.Helpers
                     return result;
 
                 case "ANTERIOR":
-                    result = result.Where(w => w.PedidoAnterior.Contains(keyword)).Select(s => s).ToList();
+                    result = result.Where(w => w.NumeroPedidoAnterior.Contains(keyword)).Select(s => s).ToList();
                     return result;
 
                 case "SUCESOR":
-                    result = result.Where(w => w.PedidoSucesor.Contains(keyword)).Select(s => s).ToList();
+                    result = result.Where(w => w.NumeroPedidoSucesor.Contains(keyword)).Select(s => s).ToList();
                     return result;
 
                 default:

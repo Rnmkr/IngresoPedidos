@@ -15,6 +15,10 @@ namespace IngresoPedidos
         public MainWindow()
         {
             InitializeComponent();
+
+            DBContext cb = new DBContext();
+            StaticData.MainList = cb.PedidoView.Take(15).ToList();
+            dgPedidos.ItemsSource = StaticData.MainList;
         }
 
         //private void Button_Click_6(object sender, RoutedEventArgs e)
@@ -67,6 +71,59 @@ namespace IngresoPedidos
             FormularioPedidoWindow fpv = new FormularioPedidoWindow(pedidoSeleccionado);
             fpv.Owner = this;
             fpv.ShowDialog();
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            AgregarObservacion ao = new AgregarObservacion();
+            ao.Owner = this;
+            ao.ShowDialog();
+        }
+
+        private void Hyperlink_Click(object sender, RoutedEventArgs e)
+        {
+            var pedidoSeleccionado = dgPedidos.SelectedItem as PedidoView;
+            var pedidoAnterior = StaticData.MainList.Where(w => w.NumeroPedido == pedidoSeleccionado.NumeroPedidoAnterior).SingleOrDefault();
+
+            if (pedidoAnterior == null)
+            {
+                pedidoAnterior = StaticData.context.PedidoView.Where(w => w.NumeroPedido == pedidoSeleccionado.NumeroPedidoAnterior).SingleOrDefault();
+                StaticData.MainList.Add(pedidoAnterior);
+                dgPedidos.ItemsSource = null;
+                dgPedidos.ItemsSource = StaticData.MainList;
+                dgPedidos.SelectedItem = pedidoAnterior;
+                dgPedidos.UpdateLayout();
+                dgPedidos.ScrollIntoView(dgPedidos.SelectedItem);
+            }
+            else
+            {
+                dgPedidos.SelectedItem = pedidoAnterior;
+                dgPedidos.UpdateLayout();
+                dgPedidos.ScrollIntoView(dgPedidos.SelectedItem);
+            }
+        }
+
+        private void Hyperlink_Click_1(object sender, RoutedEventArgs e)
+        {
+            var pedidoSeleccionado = dgPedidos.SelectedItem as PedidoView;
+            var pedidoSucesor = StaticData.MainList.Where(w => w.NumeroPedido == pedidoSeleccionado.NumeroPedidoSucesor).SingleOrDefault();
+
+            if (pedidoSucesor == null)
+            {
+                pedidoSucesor = StaticData.context.PedidoView.Where(w => w.NumeroPedido == pedidoSeleccionado.NumeroPedidoSucesor).SingleOrDefault();
+                StaticData.MainList.Add(pedidoSucesor);
+                dgPedidos.ItemsSource = null;
+                dgPedidos.ItemsSource = StaticData.MainList;
+                dgPedidos.SelectedItem = pedidoSucesor;
+                dgPedidos.UpdateLayout();
+                dgPedidos.ScrollIntoView(dgPedidos.SelectedItem);
+            }
+            else
+            {
+                dgPedidos.SelectedItem = pedidoSucesor;
+                dgPedidos.UpdateLayout();
+                dgPedidos.ScrollIntoView(dgPedidos.SelectedItem);
+            }
         }
     }
 }

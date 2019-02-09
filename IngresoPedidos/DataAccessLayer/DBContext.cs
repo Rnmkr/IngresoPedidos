@@ -126,11 +126,11 @@
                 .IsUnicode(false);
 
             modelBuilder.Entity<PedidoView>()
-                .Property(e => e.PedidoAnterior)
+                .Property(e => e.NumeroPedidoAnterior)
                 .IsUnicode(false);
 
             modelBuilder.Entity<PedidoView>()
-                .Property(e => e.PedidoSucesor)
+                .Property(e => e.NumeroPedidoSucesor)
                 .IsUnicode(false);
 
             modelBuilder.Entity<PermisoView>()

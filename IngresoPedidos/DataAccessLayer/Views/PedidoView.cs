@@ -52,9 +52,9 @@ namespace IngresoPedidos.DataAccessLayer
         public DateTime? FechaEstado { get; set; }
 
         [StringLength(12)]
-        public string PedidoAnterior { get; set; }
+        public string NumeroPedidoAnterior { get; set; }
 
         [StringLength(12)]
-        public string PedidoSucesor { get; set; }
+        public string NumeroPedidoSucesor { get; set; }
     }
 }

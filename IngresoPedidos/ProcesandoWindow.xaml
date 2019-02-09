@@ -5,7 +5,7 @@
 
     <Grid Width="194" Height="72">
         <TextBlock x:Name="lblProcesando" Text="Cargando..." TextTrimming="CharacterEllipsis" DockPanel.Dock="Top" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,5,0,0" />
-        <ProgressBar x:Name="pbarProcesando" Grid.Column="0" IsIndeterminate="True" Margin="10,0,10,5" VerticalAlignment="Center" Height="10" Foreground="#FFA9D1F4" />
+        <ProgressBar x:Name="pbarProcesando" Grid.Column="0" IsIndeterminate="True" Margin="10,0,10,5" VerticalAlignment="Center" Height="10" Foreground="#2C3E50" />
         <Button x:Name="btnCancelar" Click="btnCancelar_Click" Grid.Column="1" Margin="0,0,10,5" Width="70" Height="22" Content="Cancelar" Visibility="Visible" HorizontalAlignment="Right" VerticalAlignment="Bottom" />
     </Grid>
 

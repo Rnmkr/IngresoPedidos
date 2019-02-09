@@ -14,7 +14,7 @@ namespace IngresoPedidos.Helpers
 
         bool pedidoValido = regexPedido.IsMatch(pedido.NumeroPedido);
             bool articuloValido = regexSoloNumeros.IsMatch(pedido.NumeroArticulo);
-            bool anteriorValido = regexPedido.IsMatch(pedido.PedidoAnterior);
+            bool anteriorValido = regexPedido.IsMatch(pedido.NumeroPedidoAnterior);
             bool cantidadValida = regexSoloNumeros.IsMatch(pedido.CantidadEquipos.ToString());
 
             if (!pedidoValido)

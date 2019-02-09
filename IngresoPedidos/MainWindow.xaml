@@ -11,45 +11,80 @@
             <RowDefinition Height="60"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Grid Background="#FFA9D1F4" Grid.Row="0">
+        <Grid Background="#2C3E50" Grid.Row="0">
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
 
-            <Button x:Name="btnNuevoPedido" Click="btnNuevoPedido_Click" Style="{StaticResource roundButtonTemplate48}" ToolTip="Ingresar un Nuevo Pedido a la Base de Datos (CTRL+N)" VerticalAlignment="Center" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" Margin="10,0,0,0" HorizontalAlignment="Left">
-                <Image Source="/IngresoPedidos;component/Resources/nuevo_64x64.png" Width="48" Height="48" />
+                <Button x:Name="btnNuevoPedido" Click="btnNuevoPedido_Click" Style="{StaticResource roundButtonTemplateGreen}" ToolTip="Ingresar un Nuevo Pedido a la Base de Datos (CTRL+N)" VerticalAlignment="Center" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" Margin="10,0,0,0" HorizontalAlignment="Left">
+                <Image Source="/IngresoPedidos;component/Resources/add_t.png" Width="48" Height="48" />
             </Button>
 
             <Button x:Name="btnExportarPlanilla" Style="{StaticResource roundButtonTemplate48}" ToolTip="Exportar lista a planilla de cálculos (CTRL+X)" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}">
-                <Image Source="/IngresoPedidos;component/Resources/xls_64x64.png" Width="48" Height="48" />
+                <Image Source="/IngresoPedidos;component/Resources/xls_t.png" Width="48" Height="48" />
             </Button>
 
             <Button x:Name="btnBuscarPedido" Click="btnBuscarPedido_Click" Style="{StaticResource roundButtonTemplate48}" ToolTip="Buscar un pedido en la Base de Datos (CTRL+B)" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}">
-                <Image Source="/IngresoPedidos;component/Resources/lupa_64x64.png" VerticalAlignment="Center" HorizontalAlignment="Center" Width="48" Height="48" />
+                <Image Source="/IngresoPedidos;component/Resources/search_t.png" VerticalAlignment="Center" HorizontalAlignment="Center" Width="48" Height="48" />
             </Button>
 
             <Button x:Name="btnFiltrarLista" Click="btnFiltrarLista_Click" Style="{StaticResource roundButtonTemplate48}" ToolTip="Filtrar la lista por Estado (CTRL+F)" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}">
-                <Image Source="/IngresoPedidos;component/Resources/lista_64x64.png" VerticalAlignment="Center" HorizontalAlignment="Center" Width="48" Height="48" />
+                <Image Source="/IngresoPedidos;component/Resources/list_t.png" VerticalAlignment="Center" HorizontalAlignment="Center" Width="48" Height="48" />
             </Button>
-        </StackPanel>
+
+                <!--<Button x:Name="a1" Click="btnFiltrarLista_Click" Style="{StaticResource roundButtonTemplate48}" ToolTip="Filtrar la lista por Estado (CTRL+F)" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}">
+                    <Image Source="/IngresoPedidos;component/Resources/image_t.png" VerticalAlignment="Center" HorizontalAlignment="Center" Width="48" Height="48" />
+                </Button>
+
+                <Button x:Name="a2" Click="btnFiltrarLista_Click" Style="{StaticResource roundButtonTemplate48}" ToolTip="Filtrar la lista por Estado (CTRL+F)" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}">
+                    <Image Source="/IngresoPedidos;component/Resources/log_t.png" VerticalAlignment="Center" HorizontalAlignment="Center" Width="48" Height="48" />
+                </Button>
+
+                <Button x:Name="a3" Click="btnFiltrarLista_Click" Style="{StaticResource roundButtonTemplate48}" ToolTip="Filtrar la lista por Estado (CTRL+F)" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}">
+                    <Image Source="/IngresoPedidos;component/Resources/add_t.png" VerticalAlignment="Center" HorizontalAlignment="Center" Width="48" Height="48" />
+                </Button>
+
+                <Button x:Name="a4" Click="btnFiltrarLista_Click" Style="{StaticResource roundButtonTemplate48}" ToolTip="Filtrar la lista por Estado (CTRL+F)" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}">
+                    <Image Source="/IngresoPedidos;component/Resources/remove_t.png" VerticalAlignment="Center" HorizontalAlignment="Center" Width="48" Height="48" />
+                </Button>
+
+                <Button x:Name="a5" Click="btnFiltrarLista_Click" Style="{StaticResource roundButtonTemplate48}" ToolTip="Filtrar la lista por Estado (CTRL+F)" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}">
+                    <Image Source="/IngresoPedidos;component/Resources/contract_t.png" VerticalAlignment="Center" HorizontalAlignment="Center" Width="48" Height="48" />
+                </Button>
+
+                <Button x:Name="a6" Click="btnFiltrarLista_Click" Style="{StaticResource roundButtonTemplate48}" ToolTip="Filtrar la lista por Estado (CTRL+F)" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}">
+                    <Image Source="/IngresoPedidos;component/Resources/copy_t.png" VerticalAlignment="Center" HorizontalAlignment="Center" Width="48" Height="48" />
+                </Button>
+
+                <Button x:Name="a7" Click="btnFiltrarLista_Click" Style="{StaticResource roundButtonTemplate48}" ToolTip="Filtrar la lista por Estado (CTRL+F)" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}">
+                    <Image Source="/IngresoPedidos;component/Resources/pencil_t.png" VerticalAlignment="Center" HorizontalAlignment="Center" Width="48" Height="48" />
+                </Button>
+
+                <Button x:Name="a8" Click="btnFiltrarLista_Click" Style="{StaticResource roundButtonTemplate48}" ToolTip="Filtrar la lista por Estado (CTRL+F)" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}">
+                    <Image Source="/IngresoPedidos;component/Resources/comment_t.png" VerticalAlignment="Center" HorizontalAlignment="Center" Width="48" Height="48" />
+                </Button>-->
+
+
+            </StackPanel>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-            <Border BorderThickness="0" MinWidth="200" CornerRadius="12" Background="#FF74B0E3" HorizontalAlignment="Right" Margin="0,0,5,0" VerticalAlignment="Center" Height="36" Width="36">
-                <Label Margin="0" Foreground="White" VerticalContentAlignment="Center" TextOptions.TextFormattingMode="Display" Padding="5,0" HorizontalContentAlignment="Center" Content="SCHNEIDER NICOLAS" Background="{x:Null}" FontFamily="Consolas" FontWeight="Bold" BorderBrush="{x:Null}"/>
+                <Border BorderThickness="0"  CornerRadius="12" Background="#225378" HorizontalAlignment="Right" Margin="0,0,5,0" VerticalAlignment="Center" Height="36">
+                <Label Margin="0" Foreground="#ECF0F1" VerticalContentAlignment="Center" TextOptions.TextFormattingMode="Display" Padding="5,0" HorizontalContentAlignment="Center" Content="SCHNEIDER NICOLAS" Background="{x:Null}" FontFamily="Consolas" FontWeight="Bold" BorderBrush="{x:Null}"/>
             </Border>
 
-            <Button x:Name="btnCambiarContraseña" Click="btnCambiarContraseña_Click" Style="{StaticResource roundButtonTemplate32}" ToolTip="Cambiar contraseña" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" Width="36" Height="36">
-                <Image Source="/IngresoPedidos;component/Resources/llave_64x64.png" Width="32" Height="32" />
+            <Button x:Name="btnCambiarContraseña" Click="btnCambiarContraseña_Click" Style="{StaticResource roundButtonTemplate32}" ToolTip="Cambiar contraseña" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{DynamicResource {x:Static SystemColors.ControlDarkBrushKey}}" Width="36" Height="36">
+                <Image Source="/IngresoPedidos;component/Resources/key_t.png" Width="32" Height="32" />
             </Button>
 
             <Button x:Name="btnCerrarSesion" Click="btnCerrarSesion_Click" Style="{StaticResource roundButtonTemplate32}" ToolTip="Cerrar sesión" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" Width="36" Height="36">
-                <Image Source="/IngresoPedidos;component/Resources/puerta_64x64.png" Width="32" Height="32" />
+                <Image Source="/IngresoPedidos;component/Resources/door_t.png" Width="32" Height="32" />
             </Button>
 
         </StackPanel>
         </Grid>
 
-        <DataGrid x:Name="dgPedidos" Grid.Row="1" ColumnWidth="*" Margin="0,5,0,0">
+        <DataGrid x:Name="dgPedidos" Grid.Row="1" ColumnWidth="*" Margin="0,0,0,0" Padding="0,0,0,0">
             <DataGrid.Resources>
                 <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Color="DarkGray"/>
             </DataGrid.Resources>
+            
             <DataGrid.ContextMenu>
                 <ContextMenu>
                     <MenuItem x:Name="ctxmnuEditar" Header="Editar registro" InputGestureText="Ctrl+E" Click="ctxmnuEditar_Click">
@@ -58,7 +93,7 @@
                         </MenuItem.Icon>
                     </MenuItem>
 
-                    <MenuItem Header="Agregar una observación" InputGestureText="Ctrl+O">
+                    <MenuItem Header="Agregar una observación" InputGestureText="Ctrl+O" Click="MenuItem_Click">
                         <MenuItem.Icon>
                             <Image Source="/IngresoPedidos;component/Resources/comentario_16x16.ico"/>
                         </MenuItem.Icon>
@@ -119,27 +154,27 @@
             </DataGrid.RowStyle>
             <DataGrid.Columns>
                 <DataGridTextColumn Header="PEDIDO" Binding="{Binding NumeroPedido}" MaxWidth="110"  />
-                <DataGridTextColumn Header="MODELO" Binding="{Binding NombreModelo}"/>
+                <DataGridTextColumn Header="ARTICULO" Binding="{Binding NumeroArticulo}"/>
                 <DataGridTextColumn Header="PRODUCTO" Binding="{Binding NombreProducto}"/>
-                <DataGridTextColumn Header="ARTICULO" Binding="{Binding Articulo}"/>
+                <DataGridTextColumn Header="MODELO" Binding="{Binding NombreModelo}"/>
                 <DataGridTextColumn Header="CANTIDAD" Binding="{Binding CantidadEquipos}"/>
                 <DataGridTextColumn Header="INGRESO A SISTEMA" Binding="{Binding FechaIngreso}" MinWidth="196"/>
-                <DataGridTextColumn Header="ESTADO" Binding="{Binding EstadoPedido}" MaxWidth="96"/>
+                <DataGridTextColumn Header="ESTADO" Binding="{Binding NombreEstado}" MaxWidth="96"/>
                 <DataGridTextColumn Header="CAMBIO DE ESTADO" Binding="{Binding FechaEstado}" MinWidth="196"/>
-                <DataGridTemplateColumn Header="SUCESOR" MaxWidth="110">
+                <DataGridTemplateColumn Header="ANTERIOR" MaxWidth="110">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock><Hyperlink><InlineUIContainer>
-                                        <TextBlock Text="{Binding NumeroReproceso}" />
+                            <TextBlock><Hyperlink Click="Hyperlink_Click"><InlineUIContainer>
+                                        <TextBlock Text="{Binding NumeroPedidoAnterior}" />
                                     </InlineUIContainer></Hyperlink></TextBlock>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="ANTERIOR" MaxWidth="110">
+                <DataGridTemplateColumn Header="SUCESOR" MaxWidth="110">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock><Hyperlink><InlineUIContainer>
-                                        <TextBlock Text="{Binding NumeroOriginal}"/>
+                            <TextBlock><Hyperlink Click="Hyperlink_Click_1"><InlineUIContainer>
+                                        <TextBlock Text="{Binding NumeroPedidoSucesor}"/>
                                 </InlineUIContainer></Hyperlink></TextBlock>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>

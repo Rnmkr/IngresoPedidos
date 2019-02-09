@@ -42,7 +42,7 @@ namespace IngresoPedidos
             tbAnterior.Foreground = System.Windows.Media.Brushes.Black;
             tbObservacion.GotFocus += RemovePlaceholder;
             tbObservacion.LostFocus += AddPlaceholder;
-            PedidoView pedidoSeleccionado = new PedidoView {IDPedido = 0, NumeroArticulo = "2448", CantidadEquipos = 200, NombreEstado = "AUTORIZADO", FechaEstado = DateTime.Now, FechaIngreso = DateTime.Now, NombreModelo = "H8", NombreProducto = "ALL-IN-ONE", NumeroPedido = "1234567A-00", PedidoAnterior = "1111111A-00", PedidoSucesor ="2222222A-00" };
+            PedidoView pedidoSeleccionado = new PedidoView {IDPedido = 0, NumeroArticulo = "2448", CantidadEquipos = 200, NombreEstado = "AUTORIZADO", FechaEstado = DateTime.Now, FechaIngreso = DateTime.Now, NombreModelo = "H8", NombreProducto = "ALL-IN-ONE", NumeroPedido = "1234567A-00", NumeroPedidoAnterior = "1111111A-00", NumeroPedidoSucesor ="2222222A-00" };
             tbPedido.Text = pedidoSeleccionado.NumeroPedido;
             tbPedido.IsEnabled = false;
             cbEstado.ItemsSource = listaestados;
@@ -51,7 +51,7 @@ namespace IngresoPedidos
             tbArticulo.Text = pedidoSeleccionado.NumeroArticulo;
             tbCantidad.Text = pedidoSeleccionado.CantidadEquipos.ToString();
             cbEstado.SelectedValue = pedidoSeleccionado.NombreEstado;
-            tbAnterior.Text = pedidoSeleccionado.PedidoAnterior;
+            tbAnterior.Text = pedidoSeleccionado.NumeroPedidoAnterior;
             tbObservacion.Focus();
 
         }

@@ -130,106 +130,40 @@
   <data name="comentario_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\comentario_16x16.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="comentario_64x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\comentario_64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="copiar_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\copiar_16x16.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="copiar_64x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\copiar_64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="diskette_64x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\diskette_64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="gabinete_64x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\gabinete_64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="imagen_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imagen_16x16.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="imagen_64x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\imagen_64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="lapiz_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\lapiz_16x16.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="lapiz_64x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\lapiz_64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="lista_64x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\lista_64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="llave_64x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\llave_64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="log_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\log_16x16.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="log_64x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\log_64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="lupa_64x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\lupa_64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="nuevo_64x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\nuevo_64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="puerta_64x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\puerta_64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="quitar_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\quitar_16x16.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="quitar_64x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\quitar_64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="recibo_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\recibo_16x16.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="recibo_64x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\recibo_64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="xls_64x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\xls_64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="door" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\door.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="add_t" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\add_t.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="key" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\key.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="comment_t" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\comment_t.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="list" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\list.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="contract_t" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\contract_t.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="search" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="copy_t" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\copy_t.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="door_t" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\door_t.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="image_t" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\image_t.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="key_t" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\key_t.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="list_t" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\list_t.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="log_t" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\log_t.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pencil_t" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pencil_t.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="remove_t" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\remove_t.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="search_t" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\search_t.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="xls_t" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\xls_t.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="XLS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\XLS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

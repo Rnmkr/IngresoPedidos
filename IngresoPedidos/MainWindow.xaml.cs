@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using IngresoPedidos.Helpers;
+using System.Windows.Input;
 
 namespace IngresoPedidos
 {
@@ -12,6 +13,8 @@ namespace IngresoPedidos
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static readonly RoutedCommand NuevoPedidoCommand = new RoutedCommand(null, RoutedEvent, null);
+
         public MainWindow()
         {
             InitializeComponent();
@@ -19,8 +22,17 @@ namespace IngresoPedidos
             DBContext cb = new DBContext();
             StaticData.MainList = cb.PedidoView.Take(15).ToList();
             dgPedidos.ItemsSource = StaticData.MainList;
+            OcultarMenu();
+            //NuevoPedidoCommand.InputGestures.Add(new KeyGesture(Key.N, ModifierKeys.Control));
         }
 
+
+        private void NuevoPedidoCommandExecuted(object sender, ExecutedRoutedEventArgs e)
+        {
+            FormularioPedidoWindow fpv = new FormularioPedidoWindow();
+            fpv.Owner = this;
+            fpv.ShowDialog();
+        }
         //private void Button_Click_6(object sender, RoutedEventArgs e)
         //{
         //    MessageBoxResult exitApp = MessageBox.Show("¿Desea cerrar sesión?", "Cerrar sesión", MessageBoxButton.YesNo, MessageBoxImage.Question);
@@ -29,6 +41,15 @@ namespace IngresoPedidos
         //        Application.Current.Shutdown();
         //    }
         //}
+
+        private void OpenCommandBinding_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            MessageBox.Show("Open();//Implementation of open file");
+        }
+        private void SaveAsCommandBinding_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            MessageBox.Show("SaveAs();//Implementation of saveAs");
+        }
 
         private void btnNuevoPedido_Click(object sender, RoutedEventArgs e)
         {
@@ -125,5 +146,27 @@ namespace IngresoPedidos
                 dgPedidos.ScrollIntoView(dgPedidos.SelectedItem);
             }
         }
+
+        private void OcultarMenu()
+        {
+            if (StaticData.FiltroSeleccionado == "PERSONALIZADA")
+            {
+                miAgregarPersonalizada.Visibility = Visibility.Collapsed;
+                miAgregarPersonalizada.IsEnabled = false;
+                miQuitarPersonalizada.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                miQuitarPersonalizada.Visibility = Visibility.Collapsed;
+                miQuitarPersonalizada.IsEnabled = false;
+                miAgregarPersonalizada.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void ContextMenu_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            OcultarMenu();
+        }
+
     }
 }

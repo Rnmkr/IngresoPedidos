@@ -89,7 +89,14 @@
     <Compile Include="DataAccessLayer\Tables\Producto.cs" />
     <Compile Include="DataAccessLayer\Tables\Usuario.cs" />
     <Compile Include="DataAccessLayer\Views\UsuarioView.cs" />
+    <Compile Include="Helpers\CustomCommand.cs" />
+    <Compile Include="Helpers\CustomCommands.cs" />
     <Compile Include="Helpers\LoginValidator.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="_COSASCOMENTADAS.cs" />
     <Compile Include="FiltroListaWindow.xaml.cs">
       <DependentUpon>FiltroListaWindow.xaml</DependentUpon>
@@ -98,11 +105,6 @@
     <Compile Include="Helpers\StaticData.cs" />
     <Compile Include="FormularioPedidoWindow.xaml.cs">
       <DependentUpon>FormularioPedidoWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="RegistroEventosWindow.xaml.cs">
       <DependentUpon>RegistroEventosWindow.xaml</DependentUpon>
@@ -212,9 +214,6 @@
     <Resource Include="Resources\sample.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\add_t.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\agregar_16x16.ico" />
   </ItemGroup>
   <ItemGroup>
@@ -239,85 +238,25 @@
     <Resource Include="Resources\recibo_16x16.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\comentario_64x64.png" />
+    <Resource Include="Resources\list.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\copiar_64x64.png" />
+    <Resource Include="Resources\key.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\diskette_64x64.png" />
+    <Resource Include="Resources\list.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\gabinete_64x64.png" />
+    <Resource Include="Resources\search.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\imagen_64x64.png" />
+    <Resource Include="Resources\door.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\lapiz_64x64.png" />
+    <Resource Include="Resources\add.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\lista_64x64.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\llave_64x64.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\log_64x64.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\lupa_64x64.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\nuevo_64x64.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\puerta_64x64.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\quitar_64x64.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\recibo_64x64.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\xls_64x64.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\comment_t.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\contract_t.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\copy_t.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\door_t.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\image_t.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\key_t.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\list_t.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\log_t.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\pencil_t.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\remove_t.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\search_t.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\xls_t.png" />
+    <Resource Include="Resources\XLS.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

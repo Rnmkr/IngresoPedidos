@@ -94,6 +94,7 @@ namespace IngresoPedidos
             FormularioPedidoWindow fpv = new FormularioPedidoWindow(pedidoSeleccionado);
             fpv.Owner = this;
             fpv.ShowDialog();
+            //sasa
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)

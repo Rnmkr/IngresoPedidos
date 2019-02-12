@@ -7,6 +7,10 @@ using IngresoPedidos.Helpers;
 using System.Windows.Input;
 using System.Threading;
 using static IngresoPedidos.SplashScreenCustom;
+using System.Reflection;
+using System.Data;
+using ClosedXML.Excel;
+using System.Windows.Controls;
 
 namespace IngresoPedidos
 {
@@ -112,6 +116,10 @@ namespace IngresoPedidos
             if (pedidoAnterior == null)
             {
                 pedidoAnterior = StaticData.DataBaseContext.PedidoView.Where(w => w.NumeroPedido == pedidoSeleccionado.NumeroPedidoAnterior).SingleOrDefault();
+                MostrarPedidoPopupWindow mostrarPedidoPopUp = new MostrarPedidoPopupWindow("anterior",  pedidoSeleccionado, pedidoAnterior);
+                mostrarPedidoPopUp.Owner = this;
+                mostrarPedidoPopUp.ShowDialog();
+                return;
                 StaticData.ListaPrincipal.Add(pedidoAnterior);
                 dgPedidos.ItemsSource = null;
                 dgPedidos.ItemsSource = StaticData.ListaPrincipal;
@@ -122,6 +130,10 @@ namespace IngresoPedidos
             }
             else
             {
+                MostrarPedidoPopupWindow mostrarPedidoPopUp = new MostrarPedidoPopupWindow("anterior", pedidoSeleccionado, pedidoAnterior);
+                mostrarPedidoPopUp.Owner = this;
+                mostrarPedidoPopUp.ShowDialog();
+                return;
                 dgPedidos.SelectedItem = pedidoAnterior;
                 dgPedidos.UpdateLayout();
                 dgPedidos.ScrollIntoView(dgPedidos.SelectedItem);
@@ -137,6 +149,10 @@ namespace IngresoPedidos
             if (pedidoSucesor == null)
             {
                 pedidoSucesor = StaticData.DataBaseContext.PedidoView.Where(w => w.NumeroPedido == pedidoSeleccionado.NumeroPedidoSucesor).SingleOrDefault();
+                MostrarPedidoPopupWindow mostrarPedidoPopUp = new MostrarPedidoPopupWindow("sucesor", pedidoSeleccionado, pedidoSucesor);
+                mostrarPedidoPopUp.Owner = this;
+                mostrarPedidoPopUp.ShowDialog();
+                return;
                 StaticData.ListaPrincipal.Add(pedidoSucesor);
                 dgPedidos.ItemsSource = null;
                 dgPedidos.ItemsSource = StaticData.ListaPrincipal;
@@ -147,6 +163,10 @@ namespace IngresoPedidos
             }
             else
             {
+                MostrarPedidoPopupWindow mostrarPedidoPopUp = new MostrarPedidoPopupWindow("sucesor", pedidoSeleccionado, pedidoSucesor);
+                mostrarPedidoPopUp.Owner = this;
+                mostrarPedidoPopUp.ShowDialog();
+                return;
                 dgPedidos.SelectedItem = pedidoSucesor;
                 dgPedidos.UpdateLayout();
                 dgPedidos.ScrollIntoView(dgPedidos.SelectedItem);
@@ -168,6 +188,91 @@ namespace IngresoPedidos
                 miQuitarPersonalizada.IsEnabled = false;
                 miAgregarPersonalizada.Visibility = Visibility.Visible;
             }
+        }
+
+        private void BtnExportarPlanilla_Click(object sender, RoutedEventArgs e)
+        {
+            Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog();
+            dlg.FileName = "Lista de Pedidos"; // Default file name
+            dlg.DefaultExt = ".xslx"; // Default file extension
+            dlg.Filter = "Documentos Excel (.xlsx)|*.xlsx"; // Filter files by extension
+
+            Nullable<bool> result = dlg.ShowDialog();
+
+            if (result == true)
+            {
+                // Save document
+                string filename = dlg.FileName;
+
+                try
+                {
+                    ExportDataSet(filename);
+                    MessageBox.Show("El archivo se guardó en: " + Environment.NewLine + filename, "Exportando a Excel", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                    MessageBox.Show("Error guardando el archivo: " + Environment.NewLine + filename, "Exportando a Excel", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+            }
+        }
+
+        private void ExportDataSet(string destination)
+        {
+            var workbook = new XLWorkbook();
+            DataTable dt;
+
+
+            dt = LINQToDataTable(StaticData.ListaPrincipal.AsQueryable());
+
+
+            var worksheet = workbook.Worksheets.Add("Lista Personalizada");
+            worksheet.Cell(1, 1).InsertTable(dt);
+            worksheet.Columns().AdjustToContents();
+            worksheet.Columns(1, 1).Delete();
+            workbook.SaveAs(destination);
+            workbook.Dispose();
+        }
+
+        private DataTable LINQToDataTable<T>(IQueryable<T> varlist)
+        {
+            DataTable dtReturn = new DataTable();
+
+            // column names
+            PropertyInfo[] oProps = null;
+
+            if (varlist == null) return dtReturn;
+
+            foreach (T rec in varlist)
+            {
+                // Use reflection to get property names, to create table, Only first time, others will follow
+                if (oProps == null)
+                {
+                    oProps = ((Type)rec.GetType()).GetProperties();
+                    foreach (PropertyInfo pi in oProps)
+                    {
+                        Type colType = pi.PropertyType;
+
+                        if ((colType.IsGenericType) && (colType.GetGenericTypeDefinition() == typeof(Nullable<>)))
+                        {
+                            colType = colType.GetGenericArguments()[0];
+                        }
+
+                        dtReturn.Columns.Add(new DataColumn(pi.Name, colType));
+
+                    }
+                }
+                DataRow dr = dtReturn.NewRow();
+
+                foreach (PropertyInfo pi in oProps)
+                {
+                    dr[pi.Name] = pi.GetValue(rec, null) == null ? DBNull.Value : pi.GetValue(rec, null);
+                }
+
+                dtReturn.Rows.Add(dr);
+            }
+            return dtReturn;
         }
     }
 }

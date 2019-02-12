@@ -27,7 +27,7 @@
                 <Image Source="/IngresoPedidos;component/Resources/add.png" Width="48" Height="48" />
             </Button>
 
-                <Button x:Name="btnExportarPlanilla" Style="{StaticResource roundButtonTemplate48}" ToolTip="Exportar lista a planilla de cálculos (CTRL+X)"  HorizontalAlignment="Left" VerticalAlignment="Center"  Margin="2,5,5,5" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}">
+                <Button x:Name="btnExportarPlanilla" Click="BtnExportarPlanilla_Click" Style="{StaticResource roundButtonTemplate48}" ToolTip="Exportar lista a planilla de cálculos (CTRL+X)"  HorizontalAlignment="Left" VerticalAlignment="Center"  Margin="2,5,5,5" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}">
                 <Image Source="/IngresoPedidos;component/Resources/xls.png" Width="48" Height="48" />
             </Button>
 

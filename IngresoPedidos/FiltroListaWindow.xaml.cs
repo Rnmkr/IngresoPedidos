@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows;
 using IngresoPedidos.Helpers;
 
@@ -12,6 +13,7 @@ namespace IngresoPedidos
             InitializeComponent();
             List<string> listafiltros = new List<string> { "AUTORIZADO", "CANCELADO", "COMPLETO", "DESPACHADO", "FINALIZADO", "INCOMPLETO", "INGRESADO", "PAUSADO", "PRODUCCION", "REPROCESADO", "SUCESORES", "ULTIMOS 10000", "PERSONALIZADA", "BUSQUEDA" };
             cbFiltros.ItemsSource = listafiltros;
+            cbFiltros.SelectedValue = StaticData.FiltroSeleccionado;
 
         }
 
@@ -36,6 +38,7 @@ namespace IngresoPedidos
         private void AplicarFiltro()
         {
             StaticData.FiltroSeleccionado = cbFiltros.SelectedValue.ToString();
+            StaticData.ListaPrincipal = StaticData.DataBaseContext.PedidoView.Where(w => w.NombreEstado == StaticData.FiltroSeleccionado).Select(s => s).ToList();
             Close();
         }
     }

@@ -36,7 +36,7 @@ namespace IngresoPedidos.Helpers
                 }
                 catch (SocketException)
                 {
-                    MessageBox.Show("No se encontró el servidor " + hostNameOrIPAddress + ".", "Conexión a sevidor", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("No se encontró el servidor.", "Conexión a sevidor", MessageBoxButton.OK, MessageBoxImage.Error);
                     return false;
                 }
 

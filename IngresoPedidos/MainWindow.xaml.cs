@@ -25,30 +25,11 @@ namespace IngresoPedidos
         {
             InitializeComponent();
             lblNombreUsuario.Content = StaticData.Usuario.ApellidoUsuario + " " + StaticData.Usuario.NombreUsuario;
-            //Action that takes time here
 
-            DBContext cb = new DBContext();
-            StaticData.ListaPrincipal = cb.PedidoView.Take(15).ToList();
+            StaticData.FiltroSeleccionado = "INGRESADO";
+            StaticData.ListaPrincipal = StaticData.DataBaseContext.PedidoView.Where(w => w.NombreEstado == StaticData.FiltroSeleccionado).Select(s => s).ToList();
             dgPedidos.ItemsSource = StaticData.ListaPrincipal;
-
-            //App.splashScreen.LoadComplete();
         }
-
-
-
-        //private void ShowSplash()
-        //{
-        //    // Create the window
-        //    SplashScreenCustom animatedSplashScreenWindow = new SplashScreenCustom();
-        //    splashScreen = animatedSplashScreenWindow;
-
-        //    // Show it
-        //    animatedSplashScreenWindow.Show();
-
-        //    // Now that the window is created, allow the rest of the startup to run
-        //    ResetSplashCreated.Set();
-        //    System.Windows.Threading.Dispatcher.Run();
-        //}
 
         private void NuevoPedidoCommandExecuted(object sender, ExecutedRoutedEventArgs e)
         {
@@ -56,14 +37,15 @@ namespace IngresoPedidos
             fpv.Owner = this;
             fpv.ShowDialog();
         }
-        //private void Button_Click_6(object sender, RoutedEventArgs e)
-        //{
-        //    MessageBoxResult exitApp = MessageBox.Show("¿Desea cerrar sesión?", "Cerrar sesión", MessageBoxButton.YesNo, MessageBoxImage.Question);
-        //    if (exitApp == MessageBoxResult.Yes)
-        //    {
-        //        Application.Current.Shutdown();
-        //    }
-        //}
+
+        private void btnCerrarSesion_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult exitApp = MessageBox.Show("¿Desea cerrar sesión?", "Cerrar sesión", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (exitApp == MessageBoxResult.Yes)
+            {
+                Application.Current.Shutdown();
+            }
+        }
 
         private void OpenCommandBinding_Executed(object sender, ExecutedRoutedEventArgs e)
         {
@@ -86,6 +68,8 @@ namespace IngresoPedidos
             BusquedaWindow bw = new BusquedaWindow();
             bw.Owner = this;
             bw.ShowDialog();
+            dgPedidos.ItemsSource = null;
+            dgPedidos.ItemsSource = StaticData.ListaPrincipal;
         }
 
         private void btnCambiarContraseña_Click(object sender, RoutedEventArgs e)
@@ -95,21 +79,16 @@ namespace IngresoPedidos
             ccw.ShowDialog();
         }
 
-        private void btnCerrarSesion_Click(object sender, RoutedEventArgs e)
-        {
-            ProcesandoWindow ccw = new ProcesandoWindow();
-            ccw.Owner = this;
-            ccw.ShowDialog();
-        }
-
         private void btnFiltrarLista_Click(object sender, RoutedEventArgs e)
         {
             FiltroListaWindow flw = new FiltroListaWindow();
             flw.Owner = this;
             flw.ShowDialog();
+            dgPedidos.ItemsSource = null;
+            dgPedidos.ItemsSource = StaticData.ListaPrincipal;
         }
 
-        private void ctxmnuEditar_Click(object sender, RoutedEventArgs e)
+        private void CtxmnuEditar_Click(object sender, RoutedEventArgs e)
         {
             PedidoView pedidoSeleccionado = (PedidoView)dgPedidos.SelectedItem;
             FormularioPedidoWindow fpv = new FormularioPedidoWindow(pedidoSeleccionado);
@@ -124,7 +103,7 @@ namespace IngresoPedidos
             ao.ShowDialog();
         }
 
-        private void Hyperlink_Click(object sender, RoutedEventArgs e)
+        private void HyperlinkAnterior_Click(object sender, RoutedEventArgs e)
         {
             var pedidoSeleccionado = dgPedidos.SelectedItem as PedidoView;
             var pedidoAnterior = StaticData.ListaPrincipal.Where(w => w.NumeroPedido == pedidoSeleccionado.NumeroPedidoAnterior).SingleOrDefault();
@@ -149,7 +128,7 @@ namespace IngresoPedidos
             }
         }
 
-        private void Hyperlink_Click_1(object sender, RoutedEventArgs e)
+        private void HyperlinkSucesor_Click(object sender, RoutedEventArgs e)
         {
             var pedidoSeleccionado = dgPedidos.SelectedItem as PedidoView;
             var pedidoSucesor = StaticData.ListaPrincipal.Where(w => w.NumeroPedido == pedidoSeleccionado.NumeroPedidoSucesor).SingleOrDefault();

@@ -145,51 +145,7 @@ namespace IngresoPedidos.Helpers
                     throw e;
             }
         }
-
-        public List<Modelo> ObtenerModelos()
-        {
-            List<Modelo> result = context.Modelo.Select(s => s).ToList();
-            return result;
-        }
-
-        public List<Modelo> ObtenerModelos(string producto)
-        {
-            int? idproducto = context.Producto.Where(w => w.NombreProducto == producto).Select(s => s.IDProducto).SingleOrDefault();
-
-            if (idproducto == null)
-            {
-                Exception e = new Exception();
-                throw e;
-            }
-
-            List<Modelo> result = context.Modelo.Where(w => w.FK_IDProducto == idproducto).Select(s => s).ToList();
-            return result;
-        }
-
-        public List<Producto> ObtenerProductos()
-        {
-            List<Producto> result = context.Producto.Select(s => s).ToList();
-            return result;
-        }
-
-        public List<Producto> ObtenerProductos(string modelo)
-        {
-            int? fkidproducto = context.Modelo.Where(w => w.NombreModelo == modelo).Select(s => s.FK_IDProducto).SingleOrDefault();
-
-            if (fkidproducto == null)
-            {
-                Exception e = new Exception();
-                throw e;
-            }
-
-            List<Producto> result = context.Producto.Where(w => w.IDProducto == fkidproducto).Select(s => s).ToList();
-            return result;
-        }
-
-        public Usuario ObtenerUsuario(string legajo)
-        {
-            Usuario result = context.Usuario.Where(w => w.LegajoUsuario == legajo).SingleOrDefault();
-            return result;
-        }
     }
 }
+
+

@@ -76,6 +76,7 @@ namespace IngresoPedidos
             string campofecha = cbCampoFecha.SelectedValue.ToString();
             DateTime fechainicio = dpFechaInicial.SelectedDate ?? DateTime.Now;
             DateTime fechafinal = dpFechaFinal.SelectedDate ?? DateTime.Now;
+            StaticData.FiltroSeleccionado = "BUSQUEDA";
             StaticData.ListaBusqueda = busqueda.ObtenerPedidos(keyword, campo, campofecha, fechainicio, fechafinal);
         }
     }

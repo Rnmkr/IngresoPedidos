@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Security.Cryptography;
 
-namespace IngresoPedidos
+namespace IngresoPedidos.Helpers
 {
     ///<summary>
     /// PasswordHasher modified by Rnmkr

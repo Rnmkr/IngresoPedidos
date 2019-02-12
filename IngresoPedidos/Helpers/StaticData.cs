@@ -1,14 +1,14 @@
 ﻿using IngresoPedidos.DataAccessLayer;
 using System.Collections.Generic;
 
-namespace IngresoPedidos
+namespace IngresoPedidos.Helpers
 {
     internal static class StaticData
     {
-        public static DBContext context = new DBContext(); 
-
+        public static string ServerHostName { get; } = "localhost";
+        public static DBContext context { get; internal set; }
+        public static List<PermisoView> ListaPermisosUsuario { get; internal set; }
         public static UsuarioView Usuario { get; internal set; }
-        public static List<PermisoView> ListaPermisos { get; internal set; }
 
         public static List<PedidoView> SearchList { get; internal set; }
         public static List<PedidoView> CustomList { get; internal set; }
@@ -24,8 +24,8 @@ namespace IngresoPedidos
         public static int cbProductosSelectedIndex { get; internal set; }
         public static int dgPedidosSelectedIndex { get; internal set; }
         public static int cbFiltrosIndex { get; internal set; }
-        public static string ServerName { get ; internal set; }
-        public static string FiltroSeleccionado { get; internal set; } = "PERSONALIZADA";
+
+        public static string FiltroSeleccionado { get; internal set; } = "INGRESADO";
 
 
 

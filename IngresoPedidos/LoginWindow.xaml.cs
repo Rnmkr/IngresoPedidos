@@ -1,10 +1,8 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
+using System.Reflection;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Input;
-using System.Windows.Media;
 using IngresoPedidos.DataAccessLayer;
+using IngresoPedidos.Helpers;
 
 namespace IngresoPedidos
 {
@@ -12,70 +10,81 @@ namespace IngresoPedidos
     {
         public LoginWindow()
         {
-            StaticData.context = new DBContext();
+            InitializeComponent();
         }
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            TryLoginAsync(tbLegajo.Text, pbContraseña.Password);
+            if (!string.IsNullOrWhiteSpace(tbLegajo.Text) && !string.IsNullOrWhiteSpace(pbContraseña.Password))
+            {
+                TryLogin(tbLegajo.Text, pbContraseña.Password);
+            }
         }
 
-        private void TryLoginAsync(string legajo, string contraseña)
+        private void TryLogin(string legajo, string password)
         {
-            LoginValidator loginValidator = new LoginValidator();
-            if (loginValidator.Validate(legajo, contraseña))
+            if (ConnectionCheck.Success())
             {
+                StaticData.context = new DBContext();
 
-            }
-            
-
-            StaticData.Usuario = ObtenerUsuario(legajo);
-            if (StaticData.Usuario == null)
-            {
-                this.Hide();
-                MessageBox.Show("No se encontró el usuario con legajo " + legajo + " en la base de datos", "Login", MessageBoxButton.OK, MessageBoxImage.Error);
-                this.Show();
-            }
-            else
-            {
-                if (ContraseñaValida())
+                UserValidation userValidation = new UserValidation();
+                if (userValidation.CanLogin(legajo, password, "IngresoPedidos"))
                 {
-                    if (PuedeOperar())
-                    {
-                        MainWindow mainWindow = new MainWindow();
-                        mainWindow.Show();
-                        Close();
-                    }
-                    else
-                    {
-                        this.Hide();
-                        MessageBox.Show("No tiene permisos para operar pedidos", "Login", MessageBoxButton.OK, MessageBoxImage.Stop);
-                        this.Show();
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Contraseña incorrecta", "Login", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MainWindow mainWindow = new MainWindow();
+                    mainWindow.Show();
+                    Close();
                 }
             }
         }
 
 
-        private UsuarioView ObtenerUsuario(string legajo)
-        {
-            UsuarioView u = StaticData.context.UsuarioView.Where(w => w.LegajoUsuario == legajo).SingleOrDefault();
-            return u;
-        }
+        //    StaticData.Usuario = ObtenerUsuario(legajo);
+        //    if (StaticData.Usuario == null)
+        //    {
+        //        this.Hide();
+        //        MessageBox.Show("No se encontró el usuario con legajo " + legajo + " en la base de datos", "Login", MessageBoxButton.OK, MessageBoxImage.Error);
+        //        this.Show();
+        //    }
+        //    else
+        //    {
+        //        if (ContraseñaValida())
+        //        {
+        //            if (PuedeOperar())
+        //            {
+        //                MainWindow mainWindow = new MainWindow();
+        //                mainWindow.Show();
+        //                Close();
+        //            }
+        //            else
+        //            {
+        //                this.Hide();
+        //                MessageBox.Show("No tiene permisos para operar pedidos", "Login", MessageBoxButton.OK, MessageBoxImage.Stop);
+        //                this.Show();
+        //            }
+        //        }
+        //        else
+        //        {
+        //            MessageBox.Show("Contraseña incorrecta", "Login", MessageBoxButton.OK, MessageBoxImage.Error);
+        //        }
+        //    }
+        //}
 
-        private bool ContraseñaValida()
-        {
-            return false;
-        }
 
-        private bool PuedeOperar()
-        {
-            return false;
-        }
+        //private UsuarioView ObtenerUsuario(string legajo)
+        //{
+        //    UsuarioView u = StaticData.context.UsuarioView.Where(w => w.LegajoUsuario == legajo).SingleOrDefault();
+        //    return u;
+        //}
+
+        //private bool ContraseñaValida()
+        //{
+        //    return false;
+        //}
+
+        //private bool PuedeOperar()
+        //{
+        //    return false;
+        //}
 
 
         //private void TryLogin(string legajo, string password)

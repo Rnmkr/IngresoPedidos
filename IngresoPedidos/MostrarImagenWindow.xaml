@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="NOTEBOOK EF21" Height="480" Width="720" ResizeMode="NoResize" WindowStartupLocation="CenterOwner" Icon="/IngresoPedidos;component/Resources/imagen_64x64.png">
+        Title="NOTEBOOK EF21" Height="480" Width="720" ResizeMode="NoResize" WindowStartupLocation="CenterOwner" Icon="/IngresoPedidos;component/Resources/list.png">
     <Grid>
         <!--<Border BorderThickness="2" BorderBrush="#FFA9D1F4" Margin="10">-->
         <Image Source="/IngresoPedidos;component/Resources/sample.jpg" Margin="10"/>

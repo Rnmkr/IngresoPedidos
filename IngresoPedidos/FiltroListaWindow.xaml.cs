@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows;
+using IngresoPedidos.Helpers;
 
 namespace IngresoPedidos
 {
@@ -11,6 +12,7 @@ namespace IngresoPedidos
             InitializeComponent();
             List<string> listafiltros = new List<string> { "AUTORIZADO", "CANCELADO", "COMPLETO", "DESPACHADO", "FINALIZADO", "INCOMPLETO", "INGRESADO", "PAUSADO", "PRODUCCION", "REPROCESADO", "SUCESORES", "ULTIMOS 10000", "PERSONALIZADA", "BUSQUEDA" };
             cbFiltros.ItemsSource = listafiltros;
+
         }
 
         private void btnAplicarFiltro_Click(object sender, RoutedEventArgs e)
@@ -33,6 +35,7 @@ namespace IngresoPedidos
 
         private void AplicarFiltro()
         {
+            StaticData.FiltroSeleccionado = cbFiltros.SelectedValue.ToString();
             Close();
         }
     }

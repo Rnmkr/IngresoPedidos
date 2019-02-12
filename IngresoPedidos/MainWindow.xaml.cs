@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using IngresoPedidos.Helpers;
 using System.Windows.Input;
+using System.Threading;
+using static IngresoPedidos.SplashScreenCustom;
 
 namespace IngresoPedidos
 {
@@ -13,19 +15,40 @@ namespace IngresoPedidos
     /// </summary>
     public partial class MainWindow : Window
     {
-        public static readonly RoutedCommand NuevoPedidoCommand = new RoutedCommand(null, RoutedEvent, null);
+        public static readonly RoutedCommand NuevoPedidoCommand = new RoutedCommand();
+
+        //public static ISplashScreen splashScreen;
+        //private ManualResetEvent ResetSplashCreated;
+        //private Thread SplashThread;
 
         public MainWindow()
         {
             InitializeComponent();
+            lblNombreUsuario.Content = StaticData.Usuario.ApellidoUsuario + " " + StaticData.Usuario.NombreUsuario;
+            //Action that takes time here
 
             DBContext cb = new DBContext();
             StaticData.MainList = cb.PedidoView.Take(15).ToList();
             dgPedidos.ItemsSource = StaticData.MainList;
-            OcultarMenu();
-            //NuevoPedidoCommand.InputGestures.Add(new KeyGesture(Key.N, ModifierKeys.Control));
+
+            //App.splashScreen.LoadComplete();
         }
 
+
+
+        //private void ShowSplash()
+        //{
+        //    // Create the window
+        //    SplashScreenCustom animatedSplashScreenWindow = new SplashScreenCustom();
+        //    splashScreen = animatedSplashScreenWindow;
+
+        //    // Show it
+        //    animatedSplashScreenWindow.Show();
+
+        //    // Now that the window is created, allow the rest of the startup to run
+        //    ResetSplashCreated.Set();
+        //    System.Windows.Threading.Dispatcher.Run();
+        //}
 
         private void NuevoPedidoCommandExecuted(object sender, ExecutedRoutedEventArgs e)
         {
@@ -67,7 +90,7 @@ namespace IngresoPedidos
 
         private void btnCambiarContraseña_Click(object sender, RoutedEventArgs e)
         {
-            CambiarContraseñaWindow ccw = new CambiarContraseñaWindow(true, StaticData.Usuario);
+            CambiarContraseñaWindow ccw = new CambiarContraseñaWindow();
             ccw.Owner = this;
             ccw.ShowDialog();
         }
@@ -115,12 +138,14 @@ namespace IngresoPedidos
                 dgPedidos.SelectedItem = pedidoAnterior;
                 dgPedidos.UpdateLayout();
                 dgPedidos.ScrollIntoView(dgPedidos.SelectedItem);
+                dgPedidos.Focus();
             }
             else
             {
                 dgPedidos.SelectedItem = pedidoAnterior;
                 dgPedidos.UpdateLayout();
                 dgPedidos.ScrollIntoView(dgPedidos.SelectedItem);
+                dgPedidos.Focus();
             }
         }
 
@@ -138,12 +163,14 @@ namespace IngresoPedidos
                 dgPedidos.SelectedItem = pedidoSucesor;
                 dgPedidos.UpdateLayout();
                 dgPedidos.ScrollIntoView(dgPedidos.SelectedItem);
+                dgPedidos.Focus();
             }
             else
             {
                 dgPedidos.SelectedItem = pedidoSucesor;
                 dgPedidos.UpdateLayout();
                 dgPedidos.ScrollIntoView(dgPedidos.SelectedItem);
+                dgPedidos.Focus();
             }
         }
 
@@ -161,11 +188,6 @@ namespace IngresoPedidos
                 miQuitarPersonalizada.IsEnabled = false;
                 miAgregarPersonalizada.Visibility = Visibility.Visible;
             }
-        }
-
-        private void ContextMenu_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            OcultarMenu();
         }
 
     }

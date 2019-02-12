@@ -91,7 +91,7 @@
     <Compile Include="DataAccessLayer\Views\UsuarioView.cs" />
     <Compile Include="Helpers\CustomCommand.cs" />
     <Compile Include="Helpers\CustomCommands.cs" />
-    <Compile Include="Helpers\LoginValidator.cs" />
+    <Compile Include="Helpers\UserValidation.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

@@ -9,10 +9,10 @@
         Title="INGRESO DE PEDIDOS: PRODUCCION EXO" Height="768" Width="1366" WindowStartupLocation="CenterScreen" WindowState="Maximized" Icon="/IngresoPedidos;component/Resources/list.png">
 
     <Window.CommandBindings>
-        <CommandBinding Command="{x:Static local:MainWindow.NuevoPedidoCommand}" Executed="NuevoPedidoCommandExecuted"/>
+        <!--<CommandBinding Command="{x:Static local:MainWindow.NuevoPedidoCommand}" Executed="NuevoPedidoCommandExecuted"/>-->
     </Window.CommandBindings>
     <Window.InputBindings>
-        <KeyBinding Key="E" Modifiers="Control" Command="NuevoPedidoCommand"/>
+        <!--<KeyBinding Key="E" Modifiers="Control" Command="NuevoPedidoCommand"/>-->
     </Window.InputBindings>
 
     <Grid Name="mainGrid">
@@ -76,7 +76,7 @@
             </StackPanel>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                 <Border BorderThickness="0"  CornerRadius="12" Background="#225378" HorizontalAlignment="Right" Margin="0,0,5,0" VerticalAlignment="Center" Height="36">
-                <Label Margin="0" Foreground="#ECF0F1" VerticalContentAlignment="Center" TextOptions.TextFormattingMode="Display" Padding="5,0" HorizontalContentAlignment="Center" Content="SCHNEIDER NICOLAS" Background="{x:Null}" FontFamily="Consolas" FontWeight="Bold" BorderBrush="{x:Null}"/>
+                <Label Name="lblNombreUsuario" Margin="0" Foreground="#ECF0F1" VerticalContentAlignment="Center" TextOptions.TextFormattingMode="Display" Padding="5,0" HorizontalContentAlignment="Center"  Background="{x:Null}" FontFamily="Consolas" BorderBrush="{x:Null}" FontWeight="Bold"/>
             </Border>
 
                 <Button x:Name="btnCambiarContraseña"  Style="{StaticResource roundButtonTemplate32}" ToolTip="Cambiar contraseña" HorizontalAlignment="Right" VerticalAlignment="Center"  Margin="5,5,2,5" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{DynamicResource {x:Static SystemColors.ControlDarkBrushKey}}" Width="36" Height="36">
@@ -96,9 +96,9 @@
             </DataGrid.Resources>
             
             <DataGrid.ContextMenu>
-                <ContextMenu PreviewMouseLeftButtonDown="ContextMenu_PreviewMouseLeftButtonDown">
+                <ContextMenu>
                     
-                    <MenuItem x:Name="ctxmnuEditar" Header="Editar registro" InputGestureText="Ctrl+E" Command="NuevoPedidoCommand">
+                    <MenuItem x:Name="ctxmnuEditar" Header="Editar registro" InputGestureText="Ctrl+E">
                         <MenuItem.Icon>
                             <Image Source="/IngresoPedidos;component/Resources/lapiz_16x16.ico"/>
                         </MenuItem.Icon>

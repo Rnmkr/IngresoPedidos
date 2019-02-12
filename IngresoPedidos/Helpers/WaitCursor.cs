@@ -5,11 +5,11 @@ namespace IngresoPedidos.Helpers
 {
     public class WaitCursor : IDisposable
     {
-        private Cursor _previousCursor;
+        private Cursor previousCursor;
 
         public WaitCursor()
         {
-            _previousCursor = Mouse.OverrideCursor;
+            previousCursor = Mouse.OverrideCursor;
 
             Mouse.OverrideCursor = Cursors.Wait;
         }
@@ -18,7 +18,7 @@ namespace IngresoPedidos.Helpers
 
         public void Dispose()
         {
-            Mouse.OverrideCursor = _previousCursor;
+            Mouse.OverrideCursor = previousCursor;
         }
         #endregion
     }

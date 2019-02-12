@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="FILTRAR" Height="105" ResizeMode="NoResize" WindowStartupLocation="CenterOwner" SizeToContent="WidthAndHeight" Icon="/IngresoPedidos;component/Resources/lista_64x64.png" KeyDown="OnKeyDown" Width="180">
+        Title="FILTRAR" Height="105" ResizeMode="NoResize" WindowStartupLocation="CenterOwner" SizeToContent="WidthAndHeight" Icon="/IngresoPedidos;component/Resources/list.png" KeyDown="OnKeyDown" Width="180">
 
     <Grid Height="75" Width="174">
         <ComboBox Name="cbFiltros" SelectedValue="INGRESADO" Margin="10,10,10,0" VerticalAlignment="Top" Height="24" FontFamily="Consolas" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="15,0,0,0"/>

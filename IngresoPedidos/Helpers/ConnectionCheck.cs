@@ -8,35 +8,38 @@ namespace IngresoPedidos.Helpers
 {
     public static class ConnectionCheck
     {
-        static string serverHostName = StaticData.ServerHostName;
-
-        public static bool Success()
+        public static bool Success(string hostNameOrIPAddress)
         {
-            try
+            using (new WaitCursor())
             {
-                IPAddress[] ip = Dns.GetHostAddresses(serverHostName);
-                Ping pingSender = new Ping();
-                PingReply reply = pingSender.Send(ip[0]);
+                try
+                {
+                    Ping pingSender = new Ping();
+                    PingReply reply;
+                    IPAddress[] ip = Dns.GetHostAddresses(hostNameOrIPAddress);
+                    reply = pingSender.Send(ip[0]);
 
-                if (reply.Status == IPStatus.Success)
-                {
-                    return true;
+                    if (reply.Status == IPStatus.Success)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo contactar al servidor.", "Conexión a sevidor", MessageBoxButton.OK, MessageBoxImage.Error);
+                        return false;
+                    }
                 }
-                else
+                catch (ArgumentNullException)
                 {
-                    MessageBox.Show("No se pudo contactar al servidor");
+                    MessageBox.Show("No se especificó un nombre ó direccion IP de servidor", "Conexión a sevidor", MessageBoxButton.OK, MessageBoxImage.Error);
                     return false;
                 }
-            }
-            catch (ArgumentNullException)
-            {
-                MessageBox.Show("No se especificó un nombre de servidor.", "INGRESO DE PEDIDOS", MessageBoxButton.OK, MessageBoxImage.Error);
-                return false;
-            }
-            catch (SocketException)
-            {
-                MessageBox.Show("No se encontró un servidor con nombre " + serverHostName + ".", "INGRESO DE PEDIDOS", MessageBoxButton.OK, MessageBoxImage.Error);
-                return false;
+                catch (SocketException)
+                {
+                    MessageBox.Show("No se encontró el servidor " + hostNameOrIPAddress + ".", "Conexión a sevidor", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return false;
+                }
+
             }
 
         }

@@ -28,8 +28,8 @@ namespace IngresoPedidos
             //Action that takes time here
 
             DBContext cb = new DBContext();
-            StaticData.MainList = cb.PedidoView.Take(15).ToList();
-            dgPedidos.ItemsSource = StaticData.MainList;
+            StaticData.ListaPrincipal = cb.PedidoView.Take(15).ToList();
+            dgPedidos.ItemsSource = StaticData.ListaPrincipal;
 
             //App.splashScreen.LoadComplete();
         }
@@ -127,14 +127,14 @@ namespace IngresoPedidos
         private void Hyperlink_Click(object sender, RoutedEventArgs e)
         {
             var pedidoSeleccionado = dgPedidos.SelectedItem as PedidoView;
-            var pedidoAnterior = StaticData.MainList.Where(w => w.NumeroPedido == pedidoSeleccionado.NumeroPedidoAnterior).SingleOrDefault();
+            var pedidoAnterior = StaticData.ListaPrincipal.Where(w => w.NumeroPedido == pedidoSeleccionado.NumeroPedidoAnterior).SingleOrDefault();
 
             if (pedidoAnterior == null)
             {
-                pedidoAnterior = StaticData.context.PedidoView.Where(w => w.NumeroPedido == pedidoSeleccionado.NumeroPedidoAnterior).SingleOrDefault();
-                StaticData.MainList.Add(pedidoAnterior);
+                pedidoAnterior = StaticData.DataBaseContext.PedidoView.Where(w => w.NumeroPedido == pedidoSeleccionado.NumeroPedidoAnterior).SingleOrDefault();
+                StaticData.ListaPrincipal.Add(pedidoAnterior);
                 dgPedidos.ItemsSource = null;
-                dgPedidos.ItemsSource = StaticData.MainList;
+                dgPedidos.ItemsSource = StaticData.ListaPrincipal;
                 dgPedidos.SelectedItem = pedidoAnterior;
                 dgPedidos.UpdateLayout();
                 dgPedidos.ScrollIntoView(dgPedidos.SelectedItem);
@@ -152,14 +152,14 @@ namespace IngresoPedidos
         private void Hyperlink_Click_1(object sender, RoutedEventArgs e)
         {
             var pedidoSeleccionado = dgPedidos.SelectedItem as PedidoView;
-            var pedidoSucesor = StaticData.MainList.Where(w => w.NumeroPedido == pedidoSeleccionado.NumeroPedidoSucesor).SingleOrDefault();
+            var pedidoSucesor = StaticData.ListaPrincipal.Where(w => w.NumeroPedido == pedidoSeleccionado.NumeroPedidoSucesor).SingleOrDefault();
 
             if (pedidoSucesor == null)
             {
-                pedidoSucesor = StaticData.context.PedidoView.Where(w => w.NumeroPedido == pedidoSeleccionado.NumeroPedidoSucesor).SingleOrDefault();
-                StaticData.MainList.Add(pedidoSucesor);
+                pedidoSucesor = StaticData.DataBaseContext.PedidoView.Where(w => w.NumeroPedido == pedidoSeleccionado.NumeroPedidoSucesor).SingleOrDefault();
+                StaticData.ListaPrincipal.Add(pedidoSucesor);
                 dgPedidos.ItemsSource = null;
-                dgPedidos.ItemsSource = StaticData.MainList;
+                dgPedidos.ItemsSource = StaticData.ListaPrincipal;
                 dgPedidos.SelectedItem = pedidoSucesor;
                 dgPedidos.UpdateLayout();
                 dgPedidos.ScrollIntoView(dgPedidos.SelectedItem);
@@ -189,6 +189,5 @@ namespace IngresoPedidos
                 miAgregarPersonalizada.Visibility = Visibility.Visible;
             }
         }
-
     }
 }

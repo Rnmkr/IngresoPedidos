@@ -71,12 +71,12 @@ namespace IngresoPedidos
             }
 
 
-            Buscador busqueda = new Buscador(StaticData.context);
+            Buscador busqueda = new Buscador(StaticData.DataBaseContext);
             string campo = cbCampo.SelectedValue.ToString();
             string campofecha = cbCampoFecha.SelectedValue.ToString();
             DateTime fechainicio = dpFechaInicial.SelectedDate ?? DateTime.Now;
             DateTime fechafinal = dpFechaFinal.SelectedDate ?? DateTime.Now;
-            StaticData.SearchList = busqueda.ObtenerPedidos(keyword, campo, campofecha, fechainicio, fechafinal);
+            StaticData.ListaBusqueda = busqueda.ObtenerPedidos(keyword, campo, campofecha, fechainicio, fechafinal);
         }
     }
 }

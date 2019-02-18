@@ -1,17 +1,5 @@
 ﻿using IngresoPedidos.DataAccessLayer;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace IngresoPedidos
 {
@@ -23,8 +11,20 @@ namespace IngresoPedidos
         public MostrarPedidoPopupWindow(string tipo, PedidoView pedidoSeleccionado, PedidoView pedido)
         {
             InitializeComponent();
-            dgPedidoPopup.Items.Add(pedido);
-            Title = "Pedido " + tipo + " a " + pedidoSeleccionado.NumeroPedido;
+            Title = tipo + " DE " + pedidoSeleccionado.NumeroPedido;
+            lblPedido.Content = pedido.NumeroPedido;
+            lblArticulo.Content = pedido.NumeroArticulo;
+            lblModelo.Content = pedido.NombreModelo;
+            lblProducto.Content = pedido.NombreProducto;
+            lblCantidad.Content = pedido.CantidadEquipos;
+            lblEstado.Content = pedido.NombreEstado;
+            lblIngreso.Content = "INGRESADO " + pedido.FechaIngreso;
+            lblEstado.Content = pedido.NombreEstado + " " + pedido.FechaEstado;
+        }
+
+        private void BtnSeleccionar_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

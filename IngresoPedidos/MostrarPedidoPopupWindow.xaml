@@ -5,23 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IngresoPedidos"
         mc:Ignorable="d"
-        Title="Pedido Reprocesado" Height="148" SizeToContent="WidthAndHeight" ResizeMode="NoResize" WindowStartupLocation="CenterOwner" Width="830">
-    <Grid Height="119" Width="814">
-        <DataGrid Name="dgPedidoPopup" Margin="10,10,10,35" FontSize="14" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" SelectionMode="Single" SelectionUnit="FullRow" IsReadOnly="True" CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserSortColumns="False" >
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="PEDIDO" Binding="{Binding NumeroPedido}" />
-                <DataGridTextColumn Header="ARTICULO" Binding="{Binding NumeroArticulo}"/>
-                <DataGridTextColumn Header="PRODUCTO" Binding="{Binding NombreProducto}"/>
-                <DataGridTextColumn Header="MODELO" Binding="{Binding NombreModelo}"/>
-                <DataGridTextColumn Header="CANTIDAD" Binding="{Binding CantidadEquipos}"/>
-                <DataGridTextColumn Header="INGRESO A SISTEMA" Binding="{Binding FechaIngreso}"/>
-                <DataGridTextColumn Header="ESTADO" Binding="{Binding NombreEstado}"/>
-                <DataGridTextColumn Header="CAMBIO DE ESTADO" Binding="{Binding FechaEstado}"/>
-                <!--<DataGridTextColumn Header="ANTERIOR" Binding="{Binding NumeroPedidoAnterior}"/>
-                <DataGridTextColumn Header="SUCESOR" Binding="{Binding NumeroPedidoSucesor}"/>-->
-            </DataGrid.Columns>
-        </DataGrid>
-        <Button Content="Seleccionar" Margin="0,0,0,10" Height="22" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="74"/>
-
+         Height="290" Width="220" ResizeMode="NoResize" WindowStartupLocation="CenterOwner" SizeToContent="WidthAndHeight" Icon="/IngresoPedidos;component/Resources/add.png">
+    <Grid Height="261" Width="214">
+        <Label Name="lblPedido" Content="PEDIDO"  Margin="10,10,10,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Consolas" FontWeight="Bold" TabIndex="1" Height="26" VerticalAlignment="Top" Padding="1" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" BorderThickness="1"/>
+        <Label Name="lblArticulo" Content="ARTICULO"  Margin="10,41,10,0" FontFamily="Consolas" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" TabIndex="4" Height="26" VerticalAlignment="Top" FontWeight="Bold" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" BorderThickness="1"/>
+        <Label Name="lblProducto" Content="PRODUCTO" Margin="10,73,10,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Consolas" Padding="5" TabIndex="3" Height="26" VerticalAlignment="Top" FontWeight="Bold" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" BorderThickness="1"/>
+        <Label Name="lblModelo" Content="MODELO" Margin="10,104,10,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Consolas" RenderTransformOrigin="0.515,-1.115" Padding="5" TabIndex="2" Height="26" VerticalAlignment="Top" FontWeight="Bold" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" BorderThickness="1"/>
+        <Label Name="lblCantidad" Content="CANTIDAD" Margin="10,135,10,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Consolas" TabIndex="5" Height="26" VerticalAlignment="Top" FontWeight="Bold" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" BorderThickness="1"/>
+        <Label Name="lblIngreso" Content="INGRESO" Margin="10,166,10,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Consolas" TabIndex="7" Height="26" VerticalAlignment="Top" FontWeight="Bold" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" BorderThickness="1"/>
+        <Label Name="lblEstado" Content="ESTADO" Background="#FFFFF0F0" Margin="10,197,10,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Consolas" Padding="5" TabIndex="6" Height="26" VerticalAlignment="Top" FontWeight="Bold" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" BorderThickness="1"/>
+        <Button Name="btnSeleccionar" Click="BtnSeleccionar_Click" Content="Seleccionar" ToolTip="Seleccionar y mostrar el pedido en la lista" Margin="0,0,0,10" TabIndex="9" Height="22" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="70"/>
     </Grid>
 </Window>

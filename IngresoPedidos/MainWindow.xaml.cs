@@ -116,7 +116,7 @@ namespace IngresoPedidos
             if (pedidoAnterior == null)
             {
                 pedidoAnterior = StaticData.DataBaseContext.PedidoView.Where(w => w.NumeroPedido == pedidoSeleccionado.NumeroPedidoAnterior).SingleOrDefault();
-                MostrarPedidoPopupWindow mostrarPedidoPopUp = new MostrarPedidoPopupWindow("anterior",  pedidoSeleccionado, pedidoAnterior);
+                MostrarPedidoPopupWindow mostrarPedidoPopUp = new MostrarPedidoPopupWindow("ANTERIOR",  pedidoSeleccionado, pedidoAnterior);
                 mostrarPedidoPopUp.Owner = this;
                 mostrarPedidoPopUp.ShowDialog();
                 return;
@@ -130,7 +130,7 @@ namespace IngresoPedidos
             }
             else
             {
-                MostrarPedidoPopupWindow mostrarPedidoPopUp = new MostrarPedidoPopupWindow("anterior", pedidoSeleccionado, pedidoAnterior);
+                MostrarPedidoPopupWindow mostrarPedidoPopUp = new MostrarPedidoPopupWindow("ANTERIOR", pedidoSeleccionado, pedidoAnterior);
                 mostrarPedidoPopUp.Owner = this;
                 mostrarPedidoPopUp.ShowDialog();
                 return;
@@ -149,7 +149,7 @@ namespace IngresoPedidos
             if (pedidoSucesor == null)
             {
                 pedidoSucesor = StaticData.DataBaseContext.PedidoView.Where(w => w.NumeroPedido == pedidoSeleccionado.NumeroPedidoSucesor).SingleOrDefault();
-                MostrarPedidoPopupWindow mostrarPedidoPopUp = new MostrarPedidoPopupWindow("sucesor", pedidoSeleccionado, pedidoSucesor);
+                MostrarPedidoPopupWindow mostrarPedidoPopUp = new MostrarPedidoPopupWindow("SUCESOR", pedidoSeleccionado, pedidoSucesor);
                 mostrarPedidoPopUp.Owner = this;
                 mostrarPedidoPopUp.ShowDialog();
                 return;
@@ -163,7 +163,7 @@ namespace IngresoPedidos
             }
             else
             {
-                MostrarPedidoPopupWindow mostrarPedidoPopUp = new MostrarPedidoPopupWindow("sucesor", pedidoSeleccionado, pedidoSucesor);
+                MostrarPedidoPopupWindow mostrarPedidoPopUp = new MostrarPedidoPopupWindow("SUCESOR", pedidoSeleccionado, pedidoSucesor);
                 mostrarPedidoPopUp.Owner = this;
                 mostrarPedidoPopUp.ShowDialog();
                 return;

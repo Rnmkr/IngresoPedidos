@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IngresoPedidos"
         mc:Ignorable="d"
-         Height="290" Width="220" ResizeMode="NoResize" WindowStartupLocation="CenterOwner" SizeToContent="WidthAndHeight" Icon="/IngresoPedidos;component/Resources/add.png">
-    <Grid Height="261" Width="214">
+         Height="290" Width="240" ResizeMode="NoResize" WindowStartupLocation="CenterOwner" SizeToContent="WidthAndHeight" Icon="/IngresoPedidos;component/Resources/add.png">
+    <Grid Height="261" Width="234">
         <Label Name="lblPedido" Content="PEDIDO"  Margin="10,10,10,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Consolas" FontWeight="Bold" TabIndex="1" Height="26" VerticalAlignment="Top" Padding="1" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" BorderThickness="1"/>
         <Label Name="lblArticulo" Content="ARTICULO"  Margin="10,41,10,0" FontFamily="Consolas" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" TabIndex="4" Height="26" VerticalAlignment="Top" FontWeight="Bold" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" BorderThickness="1"/>
         <Label Name="lblProducto" Content="PRODUCTO" Margin="10,73,10,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Consolas" Padding="5" TabIndex="3" Height="26" VerticalAlignment="Top" FontWeight="Bold" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" BorderThickness="1"/>

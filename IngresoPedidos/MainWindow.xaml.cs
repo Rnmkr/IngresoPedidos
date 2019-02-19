@@ -116,28 +116,32 @@ namespace IngresoPedidos
             if (pedidoAnterior == null)
             {
                 pedidoAnterior = StaticData.DataBaseContext.PedidoView.Where(w => w.NumeroPedido == pedidoSeleccionado.NumeroPedidoAnterior).SingleOrDefault();
-                MostrarPedidoPopupWindow mostrarPedidoPopUp = new MostrarPedidoPopupWindow("ANTERIOR",  pedidoSeleccionado, pedidoAnterior);
+                MostrarPedidoPopupWindow mostrarPedidoPopUp = new MostrarPedidoPopupWindow("ANTERIOR", pedidoSeleccionado, pedidoAnterior);
                 mostrarPedidoPopUp.Owner = this;
                 mostrarPedidoPopUp.ShowDialog();
-                return;
-                StaticData.ListaPrincipal.Add(pedidoAnterior);
-                dgPedidos.ItemsSource = null;
-                dgPedidos.ItemsSource = StaticData.ListaPrincipal;
-                dgPedidos.SelectedItem = pedidoAnterior;
-                dgPedidos.UpdateLayout();
-                dgPedidos.ScrollIntoView(dgPedidos.SelectedItem);
-                dgPedidos.Focus();
+                if (mostrarPedidoPopUp.DialogResult == true)
+                {
+                    StaticData.ListaPrincipal.Add(pedidoAnterior);
+                    dgPedidos.ItemsSource = null;
+                    dgPedidos.ItemsSource = StaticData.ListaPrincipal;
+                    dgPedidos.SelectedItem = pedidoAnterior;
+                    dgPedidos.UpdateLayout();
+                    dgPedidos.ScrollIntoView(dgPedidos.SelectedItem);
+                    dgPedidos.Focus();
+                }
             }
             else
             {
                 MostrarPedidoPopupWindow mostrarPedidoPopUp = new MostrarPedidoPopupWindow("ANTERIOR", pedidoSeleccionado, pedidoAnterior);
                 mostrarPedidoPopUp.Owner = this;
                 mostrarPedidoPopUp.ShowDialog();
-                return;
-                dgPedidos.SelectedItem = pedidoAnterior;
-                dgPedidos.UpdateLayout();
-                dgPedidos.ScrollIntoView(dgPedidos.SelectedItem);
-                dgPedidos.Focus();
+                if (mostrarPedidoPopUp.DialogResult == true)
+                {
+                    dgPedidos.SelectedItem = pedidoAnterior;
+                    dgPedidos.UpdateLayout();
+                    dgPedidos.ScrollIntoView(dgPedidos.SelectedItem);
+                    dgPedidos.Focus();
+                }
             }
         }
 
@@ -152,25 +156,29 @@ namespace IngresoPedidos
                 MostrarPedidoPopupWindow mostrarPedidoPopUp = new MostrarPedidoPopupWindow("SUCESOR", pedidoSeleccionado, pedidoSucesor);
                 mostrarPedidoPopUp.Owner = this;
                 mostrarPedidoPopUp.ShowDialog();
-                return;
-                StaticData.ListaPrincipal.Add(pedidoSucesor);
-                dgPedidos.ItemsSource = null;
-                dgPedidos.ItemsSource = StaticData.ListaPrincipal;
-                dgPedidos.SelectedItem = pedidoSucesor;
-                dgPedidos.UpdateLayout();
-                dgPedidos.ScrollIntoView(dgPedidos.SelectedItem);
-                dgPedidos.Focus();
+                if (mostrarPedidoPopUp.DialogResult == true)
+                {
+                    StaticData.ListaPrincipal.Add(pedidoSucesor);
+                    dgPedidos.ItemsSource = null;
+                    dgPedidos.ItemsSource = StaticData.ListaPrincipal;
+                    dgPedidos.SelectedItem = pedidoSucesor;
+                    dgPedidos.UpdateLayout();
+                    dgPedidos.ScrollIntoView(dgPedidos.SelectedItem);
+                    dgPedidos.Focus();
+                }
             }
             else
             {
                 MostrarPedidoPopupWindow mostrarPedidoPopUp = new MostrarPedidoPopupWindow("SUCESOR", pedidoSeleccionado, pedidoSucesor);
                 mostrarPedidoPopUp.Owner = this;
                 mostrarPedidoPopUp.ShowDialog();
-                return;
-                dgPedidos.SelectedItem = pedidoSucesor;
-                dgPedidos.UpdateLayout();
-                dgPedidos.ScrollIntoView(dgPedidos.SelectedItem);
-                dgPedidos.Focus();
+                if (mostrarPedidoPopUp.DialogResult == true)
+                {
+                    dgPedidos.SelectedItem = pedidoSucesor;
+                    dgPedidos.UpdateLayout();
+                    dgPedidos.ScrollIntoView(dgPedidos.SelectedItem);
+                    dgPedidos.Focus();
+                }
             }
         }
 

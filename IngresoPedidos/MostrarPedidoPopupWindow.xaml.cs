@@ -13,18 +13,14 @@ namespace IngresoPedidos
             InitializeComponent();
             Title = tipo + " DE " + pedidoSeleccionado.NumeroPedido;
             lblPedido.Content = pedido.NumeroPedido;
-            lblArticulo.Content = pedido.NumeroArticulo;
-            lblModelo.Content = pedido.NombreModelo;
-            lblProducto.Content = pedido.NombreProducto;
-            lblCantidad.Content = pedido.CantidadEquipos;
-            lblEstado.Content = pedido.NombreEstado;
+            lblDescripcion.Content = pedido.NumeroArticulo + " " + pedido.NombreProducto + " " + pedido.NombreModelo + " (x" + pedido.CantidadEquipos + ")";
             lblIngreso.Content = "INGRESADO " + pedido.FechaIngreso;
             lblEstado.Content = pedido.NombreEstado + " " + pedido.FechaEstado;
         }
 
         private void BtnSeleccionar_Click(object sender, RoutedEventArgs e)
         {
-
+            DialogResult = true;
         }
     }
 }

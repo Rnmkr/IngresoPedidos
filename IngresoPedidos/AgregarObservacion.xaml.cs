@@ -22,6 +22,7 @@ namespace IngresoPedidos
         public AgregarObservacion()
         {
             InitializeComponent();
+            tbObservacion.SelectAll();
         }
     }
 }

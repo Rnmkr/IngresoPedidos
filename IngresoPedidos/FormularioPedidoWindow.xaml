@@ -25,7 +25,7 @@
             <ComboBoxItem>2-EN-1</ComboBoxItem>
             <ComboBoxItem>NOTEBOOK</ComboBoxItem>
         </ComboBox>
-        <TextBox Name="tbPedido" Text="PEDIDO" Background="#2C3E50" Foreground="LightGray" IsEnabled="True" Margin="10,10,10,0" TextWrapping="Wrap" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="20" FontFamily="Consolas" FontWeight="Bold" TabIndex="1" Height="26" VerticalAlignment="Top"/>
+        <TextBox Name="tbPedido" Text="PEDIDO" Foreground="LightGray" IsEnabled="True" Margin="10,10,10,0" TextWrapping="Wrap" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="20" FontFamily="Consolas" FontWeight="Bold" TabIndex="1" Height="26" VerticalAlignment="Top"/>
 
         <TextBox Name="tbObservacion" Text="OBSERVACION" Foreground="LightGray" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" MaxLength="240" Padding="3" FontFamily="Consolas" BorderBrush="#FFABADB3" TabIndex="8" Height="135" VerticalAlignment="Top" Margin="10,227,10,0" FontWeight="Bold"/>
         <Button Name="btnGuardar" Click="btnGuardar_Click" Content="Guardar" ToolTip="Guardar en Base de Datos" Margin="0,0,0,10" TabIndex="9" Height="22" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="70"/>

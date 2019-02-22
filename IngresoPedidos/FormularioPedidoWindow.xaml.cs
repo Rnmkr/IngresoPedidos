@@ -35,7 +35,6 @@ namespace IngresoPedidos
             InitializeComponent();
             this.Title = "EDITAR PEDIDO";
             cbEstado.Foreground = System.Windows.Media.Brushes.Black;
-            tbPedido.Foreground = System.Windows.Media.Brushes.GhostWhite;
             cbModelo.Foreground = System.Windows.Media.Brushes.Black;
             cbProducto.Foreground = System.Windows.Media.Brushes.Black;
             tbArticulo.Foreground = System.Windows.Media.Brushes.Black;

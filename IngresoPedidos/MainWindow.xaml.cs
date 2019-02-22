@@ -28,7 +28,7 @@ namespace IngresoPedidos
         public MainWindow()
         {
             InitializeComponent();
-            lblNombreUsuario.Content = StaticData.Usuario.ApellidoUsuario + " " + StaticData.Usuario.NombreUsuario;
+            lblNombreUsuario.Content = "USUARIO: " + StaticData.Usuario.ApellidoUsuario + " " + StaticData.Usuario.NombreUsuario;
 
             StaticData.FiltroSeleccionado = "INGRESADO";
             StaticData.ListaPrincipal = StaticData.DataBaseContext.PedidoView.Where(w => w.NombreEstado == StaticData.FiltroSeleccionado).Select(s => s).ToList();

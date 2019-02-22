@@ -14,6 +14,7 @@ namespace IngresoPedidos
         {
             InitializeComponent();
             this.Title = "NUEVO PEDIDO";
+            tbPedido.Background = System.Windows.Media.Brushes.Transparent;
             cbEstado.SelectedValue= "INGRESADO";
             cbEstado.IsEnabled = false;
             cbEstado.Foreground = System.Windows.Media.Brushes.Gray;
@@ -34,7 +35,7 @@ namespace IngresoPedidos
             InitializeComponent();
             this.Title = "EDITAR PEDIDO";
             cbEstado.Foreground = System.Windows.Media.Brushes.Black;
-            tbPedido.Foreground = System.Windows.Media.Brushes.Black;
+            tbPedido.Foreground = System.Windows.Media.Brushes.GhostWhite;
             cbModelo.Foreground = System.Windows.Media.Brushes.Black;
             cbProducto.Foreground = System.Windows.Media.Brushes.Black;
             tbArticulo.Foreground = System.Windows.Media.Brushes.Black;

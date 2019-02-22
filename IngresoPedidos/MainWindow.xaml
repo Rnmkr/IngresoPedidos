@@ -105,7 +105,7 @@
                         </MenuItem.Icon>
                     </MenuItem>
 
-                    <MenuItem Header="Agregar una observación" InputGestureText="Ctrl+O">
+                    <MenuItem Header="Agregar una observación" Click="MenuItem_Click_1" InputGestureText="Ctrl+O">
                         <MenuItem.Icon>
                             <Image Source="/IngresoPedidos;component/Resources/comentario_16x16.ico"/>
                         </MenuItem.Icon>
@@ -143,12 +143,12 @@
 
                     <Separator/>
 
-                    <MenuItem Header="Ver registro de eventos" InputGestureText="Ctrl+R">
+                    <MenuItem Header="Ver registro de eventos" Click="MenuItem_Click_2" InputGestureText="Ctrl+R">
                         <MenuItem.Icon>
                             <Image Source="/IngresoPedidos;component/Resources/log_16x16.ico"/>
                         </MenuItem.Icon>
                     </MenuItem>
-                    <MenuItem Header="Ver imagen del modelo" InputGestureText="Ctrl+I">
+                    <MenuItem Header="Ver imagen del modelo" Click="MenuItem_Click_3" InputGestureText="Ctrl+I">
                         <MenuItem.Icon>
                             <Image Source="/IngresoPedidos;component/Resources/imagen_16x16.ico"/>
                         </MenuItem.Icon>

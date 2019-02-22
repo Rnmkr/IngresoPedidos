@@ -282,5 +282,26 @@ namespace IngresoPedidos
             }
             return dtReturn;
         }
+
+        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        {
+            AgregarObservacion ao = new AgregarObservacion();
+            ao.Owner = this;
+            ao.ShowDialog();
+        }
+
+        private void MenuItem_Click_2(object sender, RoutedEventArgs e)
+        {
+            RegistroEventosWindow re = new RegistroEventosWindow();
+            re.Owner = this;
+            re.ShowDialog();
+        }
+
+        private void MenuItem_Click_3(object sender, RoutedEventArgs e)
+        {
+            MostrarImagenWindow mi = new MostrarImagenWindow();
+            mi.Owner = this;
+            mi.ShowDialog();
+        }
     }
 }

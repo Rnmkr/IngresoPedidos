@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows;
 using IngresoPedidos.Helpers;
 
@@ -8,90 +9,64 @@ namespace IngresoPedidos
     {
         internal bool CanLogin(string legajo, string password, string nombreAplicacion)
         {
-            using (new WaitCursor())
+            //Compruebo que el legajo este compuesto solo de numeros
+            Regex regex = new Regex(@"^\d+$");
+            if (!regex.IsMatch(legajo))
             {
-                // Obteniendo usuario
-                StaticData.Usuario = StaticData.DataBaseContext.UsuarioView.Where(w => w.LegajoUsuario == legajo).Select(s => s).SingleOrDefault();
+                MessageBox.Show("Formato incorrecto en Legajo.", "Login", MessageBoxButton.OK, MessageBoxImage.Error);
+                return false;
+            }
 
-                // Comprobando si existe (no uso el método "Any()" para no hacer dos querys)
-                if (StaticData.Usuario == null)
-                {
-                    MessageBox.Show("No se encontró el usuario con legajo " + legajo + ".", "Login", MessageBoxButton.OK, MessageBoxImage.Exclamation);
-                    return false;
-                }
-                else
-                {
-                    // Obtengo la lista de permisos del usuario
-                    StaticData.ListaPermisosUsuario = StaticData.DataBaseContext.PermisoView.Where(w => w.FK_IDUsuario == StaticData.Usuario.IDUsuario).Select(s => s).ToList();
-                    bool? userCanUseThisApp;
+            //Obteniendo usuario
+            StaticData.Usuario = StaticData.DataBaseContext.UsuarioView.Where(w => w.LegajoUsuario == legajo).Select(s => s).SingleOrDefault();
 
-                    // Si tiene permisos asignados, obtengo el permiso para ejecutar esta aplicación
-                    if (StaticData.ListaPermisosUsuario != null)
-                    {
-                        userCanUseThisApp = StaticData.ListaPermisosUsuario.Where(f => f.NombrePermiso == nombreAplicacion).Select(s => s.EstadoPermiso).SingleOrDefault();
-                    }
-                    else
-                    {
-                        MessageBox.Show("El usuario con legajo " + legajo + " no tiene asignado permisos.", "Login", MessageBoxButton.OK, MessageBoxImage.Exclamation);
-                        return false;
-                    }
+            //Comprobando si existe (no uso el método "Any()" para no hacer dos querys)
+            if (StaticData.Usuario == null)
+            {
+                MessageBox.Show("No se encontró el usuario con legajo " + legajo + ".", "Login", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                return false;
+            }
 
-                    // Si el usuario no tiene el permiso asignado en la base de datos
-                    if (userCanUseThisApp == null)
-                    {
-                        MessageBox.Show("El usuario con legajo " + legajo + " no tiene asignado el correspondiente permiso a esta aplicación.", "Login", MessageBoxButton.OK, MessageBoxImage.Exclamation);
-                        return false;
-                    }
-                    else
-                    {
-                        // Pregunto el estado del permiso
-                        if ((bool)userCanUseThisApp)
-                        {
-                            // si es válido (True), compruebo la contraseña
-                            var hashedPassword = StaticData.Usuario.HashedPassword;
+            // Si la contraseña en la base de datos es "NULL", muestro la ventana para generar una nueva contraseña
+            if (StaticData.Usuario.HashedPassword == null)
+            {
+                CambiarContraseñaWindow cambiarContraseñaWindow = new CambiarContraseñaWindow();
+                cambiarContraseñaWindow.ShowDialog();
+                return false;
+            }
 
-                            // Si la contraseña en la base de datos es "NULL", muestro la ventana para generar una nueva contraseña
-                            if (hashedPassword == null)
-                            {
-                                CambiarContraseñaWindow cambiarContraseñaWindow = new CambiarContraseñaWindow();
-                                cambiarContraseñaWindow.ShowDialog();
-                                return false;
-                            }
-                            else
-                            {
-                                // Si la contraseña es correcta termino la comprobación y devuelvo True
-                                if (PasswordHasher.Verify(password, hashedPassword))
-                                {
-                                    return true;
-                                }
-                                else
-                                {
-                                    MessageBox.Show("Contraseña incorrecta.", "Login", MessageBoxButton.OK, MessageBoxImage.Exclamation);
-                                    return false;
-                                }
-                            }
-                        }
-                        else
-                        {
-                            // Si el permiso existe en la base de datos pero no esta habilitado para usar esta aplicación (False)
-                            StaticData.Usuario = null;
-                            StaticData.ListaPermisosUsuario = null;
-                            MessageBox.Show("El usuario con legajo " + legajo + " no está habilitado para usar esta aplicación.", "Login", MessageBoxButton.OK, MessageBoxImage.Exclamation);
-                            return false;
-                        }
-                    }
-                }
+            //Compruebo que la contraseña sea correcta y obtengo la lista de permisos del usuario
+            if (PasswordHasher.Verify(password, StaticData.Usuario.HashedPassword))
+            {
+                StaticData.ListaPermisosUsuario = StaticData.DataBaseContext.PermisoView.Where(w => w.FK_IDUsuario == StaticData.Usuario.IDUsuario).Select(s => s).ToList();
+            }
+            else
+            {
+                MessageBox.Show("Contraseña incorrecta.", "Login", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                return false;
+            }
+
+            //Compruebo si el usuario tiene permiso para usar la aplicación
+            //Al dar de alta un usuario en la Base de Datos, es necesario inicializar TODOS
+            //los permisos existentes, o se obtendria una excepción en este punto
+            if (StaticData.ListaPermisosUsuario.Where(f => f.NombrePermiso == nombreAplicacion).Select(s => s.EstadoPermiso).Single())
+            {
+                return true;
+            }
+            else
+            {
+                StaticData.Usuario = null;
+                StaticData.ListaPermisosUsuario = null;
+                MessageBox.Show("No tiene permiso para usar esta aplicación.", "Login", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                return false;
             }
         }
 
-        internal bool GetRightStatus(string nombrePermiso)
+        //Obtener el estado de un permiso particular
+        internal bool HasPermission(string nombrePermiso)
         {
-            using (new WaitCursor())
-            {
-                bool rightStatus = StaticData.ListaPermisosUsuario.First(f => f.NombrePermiso == nombrePermiso).EstadoPermiso;
-                return rightStatus;
-            }
-
+            bool rightStatus = StaticData.ListaPermisosUsuario.First(f => f.NombrePermiso == nombrePermiso).EstadoPermiso;
+            return rightStatus;
         }
     }
 }

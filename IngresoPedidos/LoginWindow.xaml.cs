@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using System.Reflection;
+﻿using System.Threading.Tasks;
 using System.Windows;
 using IngresoPedidos.DataAccessLayer;
 using IngresoPedidos.Helpers;
@@ -15,29 +14,47 @@ namespace IngresoPedidos
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            TryLogin();
+            btnLogin.IsEnabled = false;
+            using (new WaitCursor())
+            {
+                var _legajo = tbLegajo.Text;
+                var _password = pbContraseña.Password;
+                Task.Run(() => { TryLoginAsync(_legajo, _password); });
+
+                //mal todo mal eh, aprende de una vez que tenes que hacer la ventanita...
+            }
+
+            btnLogin.IsEnabled = true;
         }
 
-        private void TryLogin()
+        private void TryLoginAsync(string legajo, string password)
         {
-            if (!string.IsNullOrWhiteSpace(tbLegajo.Text) && !string.IsNullOrWhiteSpace(pbContraseña.Password))
-            {
-                if (tbLegajo.Text != "LEGAJO" && pbContraseña.Password != "--------")
-                {
-                    if (ConnectionCheck.Success(StaticData.ServerHostName))
-                    {
-                        StaticData.DataBaseContext = new DBContext();
-                        UserValidation userValidation = new UserValidation();
 
-                        if (userValidation.CanLogin(tbLegajo.Text, pbContraseña.Password, "IngresoPedidos"))
-                        {
-                            MainWindow mainWindow = new MainWindow();
-                            mainWindow.Show();
-                            Close();
-                        }
-                    }
+
+
+            if (string.IsNullOrWhiteSpace(legajo) || string.IsNullOrWhiteSpace(password))
+            {
+                return;
+            }
+
+            if (legajo == "LEGAJO" || password == "--------")
+            {
+                return;
+            }
+
+            if (ConnectionCheck.Success(StaticData.ServerHostName))
+            {
+                StaticData.DataBaseContext = new DBContext();
+                UserValidation userValidation = new UserValidation();
+
+                if (userValidation.CanLogin(legajo, password, "IngresoPedidos"))
+                {
+                    MainWindow mainWindow = new MainWindow();
+                    mainWindow.Show();
+                    Close();
                 }
             }
+
         }
 
         private void TbLegajo_GotFocus(object sender, RoutedEventArgs e)
@@ -54,7 +71,7 @@ namespace IngresoPedidos
         {
             if (e.Key == System.Windows.Input.Key.Enter)
             {
-                TryLogin();
+                return;
             }
 
             if (e.Key == System.Windows.Input.Key.Escape)
@@ -64,6 +81,12 @@ namespace IngresoPedidos
         }
     }
 }
+
+//
+//            var _legajo = tbLegajo.Text;
+//var _password = pbContraseña.Password;
+//await Task.Run(() => TryLogin(_legajo, _password));
+//
 
 
 

@@ -38,7 +38,7 @@ namespace IngresoPedidos
             //Compruebo que la contraseña sea correcta y obtengo la lista de permisos del usuario
             if (PasswordHasher.Verify(password, StaticData.Usuario.HashedPassword))
             {
-                StaticData.ListaPermisosUsuario = StaticData.DataBaseContext.PermisoView.Where(w => w.FK_IDUsuario == StaticData.Usuario.IDUsuario).Select(s => s).ToList();
+                StaticData.ListaPermisos = StaticData.DataBaseContext.PermisoView.Where(w => w.FK_IDUsuario == StaticData.Usuario.IDUsuario).Select(s => s).ToList();
             }
             else
             {
@@ -49,24 +49,17 @@ namespace IngresoPedidos
             //Compruebo si el usuario tiene permiso para usar la aplicación
             //Al dar de alta un usuario en la Base de Datos, es necesario inicializar TODOS
             //los permisos existentes, o se obtendria una excepción en este punto
-            if (StaticData.ListaPermisosUsuario.Where(f => f.NombrePermiso == nombreAplicacion).Select(s => s.EstadoPermiso).Single())
+            if (StaticData.ListaPermisos.Where(f => f.NombrePermiso == nombreAplicacion).Select(s => s.EstadoPermiso).Single())
             {
                 return true;
             }
             else
             {
                 StaticData.Usuario = null;
-                StaticData.ListaPermisosUsuario = null;
+                StaticData.ListaPermisos = null;
                 MessageBox.Show("No tiene permiso para usar esta aplicación.", "Login", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                 return false;
             }
-        }
-
-        //Obtener el estado de un permiso particular
-        internal bool HasPermission(string nombrePermiso)
-        {
-            bool rightStatus = StaticData.ListaPermisosUsuario.First(f => f.NombrePermiso == nombrePermiso).EstadoPermiso;
-            return rightStatus;
         }
     }
 }

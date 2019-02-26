@@ -19,7 +19,7 @@ namespace IngresoPedidos.Helpers
         public static UsuarioView Usuario { get; internal set; }
 
         // Lista de permisos del usuario activo, se inicializa al loguear exitosamente (UserValidation)
-        public static List<PermisoView> ListaPermisosUsuario { get; internal set; }
+        public static List<PermisoView> ListaPermisos { get; internal set; }
 
         // Lista principal con el contenido filtrado por "Estado"
         public static List<PedidoView> ListaPrincipal { get; internal set; }

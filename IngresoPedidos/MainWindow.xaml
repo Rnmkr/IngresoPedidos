@@ -155,6 +155,7 @@
                     </MenuItem>
                 </ContextMenu>
             </DataGrid.ContextMenu>
+            
             <DataGrid.ColumnHeaderStyle>
                 <StaticResource ResourceKey="ColumnHeaderStyle"/>
             </DataGrid.ColumnHeaderStyle>
@@ -164,6 +165,7 @@
             <DataGrid.RowStyle>
                 <StaticResource ResourceKey="DataGridRowZebra"/>
             </DataGrid.RowStyle>
+            
             <DataGrid.Columns>
                 <DataGridTextColumn Header="PEDIDO" Binding="{Binding NumeroPedido}" MaxWidth="110"  />
                 <DataGridTextColumn Header="ARTICULO" Binding="{Binding NumeroArticulo}"/>

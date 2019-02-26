@@ -111,7 +111,8 @@
     <Compile Include="DataAccessLayer\Views\UsuarioView.cs" />
     <Compile Include="Helpers\CustomCommand.cs" />
     <Compile Include="Helpers\CustomCommands.cs" />
-    <Compile Include="Helpers\UserValidation.cs" />
+    <Compile Include="Helpers\LoginValidation.cs" />
+    <Compile Include="Helpers\UserRightValidation.cs" />
     <Compile Include="MostrarPedidoPopupWindow.xaml.cs">
       <DependentUpon>MostrarPedidoPopupWindow.xaml</DependentUpon>
     </Compile>

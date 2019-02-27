@@ -99,15 +99,12 @@
     </Compile>
     <Compile Include="DataAccessLayer\Tables\Contraseña.cs" />
     <Compile Include="DataAccessLayer\DBContext.cs" />
-    <Compile Include="DataAccessLayer\Tables\Estado.cs" />
     <Compile Include="DataAccessLayer\Tables\Modelo.cs" />
     <Compile Include="DataAccessLayer\Tables\Pedido.cs" />
     <Compile Include="DataAccessLayer\Views\PedidoView.cs" />
-    <Compile Include="DataAccessLayer\Tables\Permiso.cs" />
-    <Compile Include="DataAccessLayer\Tables\PermisoUsuario.cs" />
     <Compile Include="DataAccessLayer\Views\PermisoView.cs" />
     <Compile Include="DataAccessLayer\Tables\Producto.cs" />
-    <Compile Include="DataAccessLayer\Tables\Usuario.cs" />
+    <Compile Include="DataAccessLayer\Tables\ReprocesoPedido.cs" />
     <Compile Include="DataAccessLayer\Views\UsuarioView.cs" />
     <Compile Include="Helpers\CustomCommand.cs" />
     <Compile Include="Helpers\CustomCommands.cs" />
@@ -289,5 +286,6 @@
   <ItemGroup>
     <Resource Include="orderadd.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

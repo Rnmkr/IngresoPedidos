@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 using IngresoPedidos.DataAccessLayer;
+using IngresoPedidos.Helpers;
 
 namespace IngresoPedidos
 {
@@ -15,7 +16,7 @@ namespace IngresoPedidos
             InitializeComponent();
             this.Title = "NUEVO PEDIDO";
             tbPedido.Background = System.Windows.Media.Brushes.Transparent;
-            cbEstado.SelectedValue= "INGRESADO";
+            cbEstado.SelectedValue = "INGRESADO";
             cbEstado.IsEnabled = false;
             cbEstado.Foreground = System.Windows.Media.Brushes.Gray;
             tbPedido.GotFocus += RemovePlaceholder;
@@ -42,7 +43,7 @@ namespace IngresoPedidos
             tbAnterior.Foreground = System.Windows.Media.Brushes.Black;
             tbObservacion.GotFocus += RemovePlaceholder;
             tbObservacion.LostFocus += AddPlaceholder;
-            PedidoView pedidoSeleccionado = new PedidoView {IDPedido = 0, NumeroArticulo = "2448", CantidadEquipos = 200, NombreEstado = "AUTORIZADO", FechaEstado = DateTime.Now, FechaIngreso = DateTime.Now, NombreModelo = "H8", NombreProducto = "ALL-IN-ONE", NumeroPedido = "1234567A-00", NumeroPedidoAnterior = "1111111A-00", NumeroPedidoSucesor ="2222222A-00" };
+            PedidoView pedidoSeleccionado = new PedidoView { IDPedido = 0, NumeroArticulo = "2448", CantidadEquipos = 200, NombreEstado = "AUTORIZADO", FechaEstado = DateTime.Now, FechaIngreso = DateTime.Now, NombreModelo = "H8", NombreProducto = "ALL-IN-ONE", NumeroPedido = "1234567A-00", NumeroPedidoAnterior = "1111111A-00", NumeroPedidoSucesor = "2222222A-00" };
             tbPedido.Text = pedidoSeleccionado.NumeroPedido;
             tbPedido.IsEnabled = false;
             cbEstado.ItemsSource = listaestados;
@@ -197,6 +198,26 @@ namespace IngresoPedidos
             {
                 cbEstado.Foreground = System.Windows.Media.Brushes.LightGray;
             }
+        }
+
+        private void cbEstado_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (cbEstado.SelectedIndex == -1)
+            {
+                return;
+            }
+                if (cbEstado.SelectedValue.ToString() == "AUTORIZADO")
+                {
+                    if (UserRightValidation.CanExecute("Autorizar Pedido"))
+                    {
+                        return;
+                    }
+                    else
+                    {
+                        cbEstado.SelectedValue = null;
+                    }
+                }
+
         }
     }
 }

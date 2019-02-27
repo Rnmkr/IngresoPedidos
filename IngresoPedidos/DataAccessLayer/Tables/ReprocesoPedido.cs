@@ -6,16 +6,17 @@ namespace IngresoPedidos.DataAccessLayer
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Contraseña
+    [Table("ReprocesoPedido")]
+    public partial class ReprocesoPedido
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int FK_IDUsuario { get; set; }
+        public int FK_IDPedido { get; set; }
 
-        [StringLength(48)]
-        public string HashedRFID { get; set; }
+        public int? FK_IDPedidoAnterior { get; set; }
 
-        [StringLength(48)]
-        public string HashedPassword { get; set; }
+        public int? FK_IDPedidoSucesor { get; set; }
+
+        public virtual Pedido Pedido { get; set; }
     }
 }

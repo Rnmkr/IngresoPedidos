@@ -16,7 +16,7 @@
             <ComboBoxItem>SPANKY</ComboBoxItem>
             <ComboBoxItem>WINGS</ComboBoxItem>
         </ComboBox>
-        <ComboBox Name="cbEstado" DropDownOpened="cbEstado_DropDownOpened" DropDownClosed="cbEstado_DropDownClosed" IsEnabled="True" SelectedIndex="0" Margin="10,165,10,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14" FontFamily="Consolas" Padding="15,0,0,0" TabIndex="6" Height="26" VerticalAlignment="Top" FontWeight="Bold"/>
+        <ComboBox Name="cbEstado" SelectionChanged="cbEstado_SelectionChanged" DropDownOpened="cbEstado_DropDownOpened" DropDownClosed="cbEstado_DropDownClosed" IsEnabled="True" SelectedIndex="-1" Margin="10,165,10,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14" FontFamily="Consolas" Padding="15,0,0,0" TabIndex="6" Height="26" VerticalAlignment="Top" FontWeight="Bold"/>
 
         <TextBox Name="tbAnterior" Text="ANTERIOR" Foreground="LightGray" Margin="10,196,10,0" TextWrapping="Wrap" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Consolas" FontSize="14" TabIndex="7" Height="26" VerticalAlignment="Top" FontWeight="Bold"/>
         <TextBox Name="tbCantidad" Text="CANTIDAD" Foreground="LightGray" Margin="10,134,10,0" TextWrapping="Wrap" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14" FontFamily="Consolas" TabIndex="5" Height="26" VerticalAlignment="Top" FontWeight="Bold"/>

@@ -19,7 +19,7 @@ namespace IngresoPedidos
             {
                 var _legajo = tbLegajo.Text;
                 var _password = pbContraseña.Password;
-                Task.Run(() => { TryLoginAsync(_legajo, _password); });
+                TryLoginAsync(_legajo, _password);
 
                 //mal todo mal eh, aprende de una vez que tenes que hacer la ventanita...
             }
@@ -45,9 +45,9 @@ namespace IngresoPedidos
             if (ConnectionCheck.Success(StaticData.ServerHostName))
             {
                 StaticData.DataBaseContext = new DBContext();
-                UserValidation userValidation = new UserValidation();
+                LoginValidation userValidation = new LoginValidation();
 
-                if (userValidation.CanLogin(legajo, password, "IngresoPedidos"))
+                if (userValidation.CanLogin(legajo, password, "Ingreso al Sistema de Pedidos"))
                 {
                     MainWindow mainWindow = new MainWindow();
                     mainWindow.Show();

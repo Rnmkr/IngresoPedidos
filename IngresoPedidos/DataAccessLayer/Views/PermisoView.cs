@@ -17,10 +17,15 @@ namespace IngresoPedidos.DataAccessLayer
         [Key]
         [Column(Order = 1)]
         [StringLength(20)]
-        public string NombrePermiso { get; set; }
+        public string NombreAplicacion { get; set; }
 
         [Key]
         [Column(Order = 2)]
+        [StringLength(50)]
+        public string NombrePermiso { get; set; }
+
+        [Key]
+        [Column(Order = 3)]
         public bool EstadoPermiso { get; set; }
     }
 }

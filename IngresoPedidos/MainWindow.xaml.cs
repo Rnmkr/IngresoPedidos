@@ -24,7 +24,6 @@ namespace IngresoPedidos
         //public static ISplashScreen splashScreen;
         //private ManualResetEvent ResetSplashCreated;
         //private Thread SplashThread;
-
         public MainWindow()
         {
             InitializeComponent();
@@ -37,10 +36,15 @@ namespace IngresoPedidos
 
         private void NuevoPedidoCommandExecuted(object sender, ExecutedRoutedEventArgs e)
         {
-            FormularioPedidoWindow fpv = new FormularioPedidoWindow();
-            fpv.Owner = this;
-            fpv.ShowDialog();
+            if (UserRightValidation.CanExecute("IngresarPedido"))
+            {
+                FormularioPedidoWindow fpv = new FormularioPedidoWindow();
+                fpv.Owner = this;
+                fpv.ShowDialog();
+
+            }
         }
+            
 
         private void btnCerrarSesion_Click(object sender, RoutedEventArgs e)
         {
@@ -55,6 +59,7 @@ namespace IngresoPedidos
         {
             MessageBox.Show("Open();//Implementation of open file");
         }
+
         private void SaveAsCommandBinding_Executed(object sender, ExecutedRoutedEventArgs e)
         {
             MessageBox.Show("SaveAs();//Implementation of saveAs");
@@ -62,9 +67,13 @@ namespace IngresoPedidos
 
         private void btnNuevoPedido_Click(object sender, RoutedEventArgs e)
         {
-            FormularioPedidoWindow fpv = new FormularioPedidoWindow();
-            fpv.Owner = this;
-            fpv.ShowDialog();
+            if (UserRightValidation.CanExecute("Ingresar Nuevo Pedido"))
+            {
+                FormularioPedidoWindow fpv = new FormularioPedidoWindow();
+                fpv.Owner = this;
+                fpv.ShowDialog();
+
+            }
         }
 
         private void btnBuscarPedido_Click(object sender, RoutedEventArgs e)
@@ -94,11 +103,13 @@ namespace IngresoPedidos
 
         private void CtxmnuEditar_Click(object sender, RoutedEventArgs e)
         {
-            PedidoView pedidoSeleccionado = (PedidoView)dgPedidos.SelectedItem;
-            FormularioPedidoWindow fpv = new FormularioPedidoWindow(pedidoSeleccionado);
-            fpv.Owner = this;
-            fpv.ShowDialog();
-            //sasa
+            if (UserRightValidation.CanExecute("Editar Pedido"))
+            {
+                PedidoView pedidoSeleccionado = (PedidoView)dgPedidos.SelectedItem;
+                FormularioPedidoWindow fpv = new FormularioPedidoWindow(pedidoSeleccionado);
+                fpv.Owner = this;
+                fpv.ShowDialog();
+            }
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
@@ -285,16 +296,24 @@ namespace IngresoPedidos
 
         private void MenuItem_Click_1(object sender, RoutedEventArgs e)
         {
-            AgregarObservacion ao = new AgregarObservacion();
-            ao.Owner = this;
-            ao.ShowDialog();
+            if (UserRightValidation.CanExecute("Agregar Observacion"))
+            {
+                AgregarObservacion ao = new AgregarObservacion();
+                ao.Owner = this;
+                ao.ShowDialog();
+
+            }
         }
 
         private void MenuItem_Click_2(object sender, RoutedEventArgs e)
         {
-            RegistroEventosWindow re = new RegistroEventosWindow();
-            re.Owner = this;
-            re.ShowDialog();
+            if (UserRightValidation.CanExecute("Ver Registro de Eventos"))
+            {
+                RegistroEventosWindow re = new RegistroEventosWindow();
+                re.Owner = this;
+                re.ShowDialog();
+
+            }
         }
 
         private void MenuItem_Click_3(object sender, RoutedEventArgs e)

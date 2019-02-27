@@ -2,12 +2,13 @@
 using System.Text.RegularExpressions;
 using System.Windows;
 using IngresoPedidos.Helpers;
+using System.Reflection;
 
 namespace IngresoPedidos
 {
-    internal class UserValidation
+    internal class LoginValidation
     {
-        internal bool CanLogin(string legajo, string password, string nombreAplicacion)
+        internal bool CanLogin(string legajo, string password, string nombrePermiso)
         {
             //Compruebo que el legajo este compuesto solo de numeros
             Regex regex = new Regex(@"^\d+$");
@@ -17,17 +18,17 @@ namespace IngresoPedidos
                 return false;
             }
 
-            //Obteniendo usuario
+            //Intento obtener el usuario desde la base de datos
             StaticData.Usuario = StaticData.DataBaseContext.UsuarioView.Where(w => w.LegajoUsuario == legajo).Select(s => s).SingleOrDefault();
 
-            //Comprobando si existe (no uso el método "Any()" para no hacer dos querys)
+            //Compruebo si existe el usuario (no uso el método "Any()" para no hacer dos querys a la BD)
             if (StaticData.Usuario == null)
             {
                 MessageBox.Show("No se encontró el usuario con legajo " + legajo + ".", "Login", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                 return false;
             }
 
-            // Si la contraseña en la base de datos es "NULL", muestro la ventana para generar una nueva contraseña
+            //Si la contraseña en la base de datos es "NULL", muestro la ventana para generar una nueva contraseña
             if (StaticData.Usuario.HashedPassword == null)
             {
                 CambiarContraseñaWindow cambiarContraseñaWindow = new CambiarContraseñaWindow();
@@ -38,26 +39,16 @@ namespace IngresoPedidos
             //Compruebo que la contraseña sea correcta y obtengo la lista de permisos del usuario
             if (PasswordHasher.Verify(password, StaticData.Usuario.HashedPassword))
             {
-                StaticData.ListaPermisos = StaticData.DataBaseContext.PermisoView.Where(w => w.FK_IDUsuario == StaticData.Usuario.IDUsuario).Select(s => s).ToList();
+                string appName = Assembly.GetExecutingAssembly().GetName().Name;
+                var listaPermisosUsuario = StaticData.DataBaseContext.PermisoView.Where(f => f.FK_IDUsuario == StaticData.Usuario.IDUsuario).Select(s => s);
+                StaticData.ListaPermisos = listaPermisosUsuario.Where(w => w.NombreAplicacion == appName).Select(s => s).ToList();
+
+                //Compruebo si el usuario tiene permiso para usar la aplicación
+                return UserRightValidation.CanExecute(nombrePermiso);
             }
             else
             {
                 MessageBox.Show("Contraseña incorrecta.", "Login", MessageBoxButton.OK, MessageBoxImage.Exclamation);
-                return false;
-            }
-
-            //Compruebo si el usuario tiene permiso para usar la aplicación
-            //Al dar de alta un usuario en la Base de Datos, es necesario inicializar TODOS
-            //los permisos existentes, o se obtendria una excepción en este punto
-            if (StaticData.ListaPermisos.Where(f => f.NombrePermiso == nombreAplicacion).Select(s => s.EstadoPermiso).Single())
-            {
-                return true;
-            }
-            else
-            {
-                StaticData.Usuario = null;
-                StaticData.ListaPermisos = null;
-                MessageBox.Show("No tiene permiso para usar esta aplicación.", "Login", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                 return false;
             }
         }

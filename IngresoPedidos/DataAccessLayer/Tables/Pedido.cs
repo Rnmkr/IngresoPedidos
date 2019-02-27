@@ -32,8 +32,8 @@ namespace IngresoPedidos.DataAccessLayer
         [Column(TypeName = "smalldatetime")]
         public DateTime? FechaEstado { get; set; }
 
-        public virtual Estado Estado { get; set; }
-
         public virtual Modelo Modelo { get; set; }
+
+        public virtual ReprocesoPedido ReprocesoPedido { get; set; }
     }
 }

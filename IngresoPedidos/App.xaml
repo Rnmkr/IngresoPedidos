@@ -7,7 +7,8 @@
         <!--#region DataGrid-->
         <Style x:Name="MainDataGridStyle" TargetType="{x:Type DataGrid}">
             <Setter Property="Height" Value="Auto" />
-            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <!--<Setter Property="BorderBrush" Value="#FFA9D1F4"/>-->
             <Setter Property="SelectionUnit" Value="FullRow"/>
             <Setter Property="HorizontalGridLinesBrush" Value="#FFA9D1F4"/>
             <Setter Property="GridLinesVisibility" Value="Horizontal"/>
@@ -88,9 +89,9 @@
 
         <!--#region  DataGrid Column Header-->
         <Style x:Key="ColumnHeaderStyle" TargetType="{x:Type DataGridColumnHeader}">
-            <Setter Property="FontFamily" Value="Consolas"/>
+            <Setter Property="FontFamily" Value="Segoe UI"/>
             <Setter Property="SnapsToDevicePixels" Value="True" />
-            <Setter Property="Background" Value="#2C3E50"/>
+            <Setter Property="Background" Value="#FF1885A1"/>
             <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="ContextMenu" Value="{x:Null}"/>
             <Setter Property="BorderThickness" Value="0" />
@@ -98,7 +99,8 @@
             <Setter Property="Foreground" Value="#ECF0F1" />
             <Setter Property="FontSize" Value="14" />
             <Setter Property="Padding" Value="5,0,0,0"/>
-            <Setter Property="Margin" Value="0,1,0,1"/>
+            <Setter Property="Margin" Value="0,0,0,0"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
         </Style>
         <!--#endregion-->
 

@@ -47,7 +47,7 @@ namespace IngresoPedidos
                 StaticData.DataBaseContext = new DBContext();
                 LoginValidation userValidation = new LoginValidation();
 
-                if (userValidation.CanLogin(legajo, password, "Ingreso al Sistema de Pedidos"))
+                if (userValidation.CanLogin(legajo, password, "LOGIN"))
                 {
                     MainWindow mainWindow = new MainWindow();
                     mainWindow.Show();

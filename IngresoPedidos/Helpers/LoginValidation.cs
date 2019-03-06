@@ -45,7 +45,7 @@ namespace IngresoPedidos.Helpers
                 StaticData.ListaPermisos = listaPermisosUsuario.Where(w => w.NombreAplicacion == appName).Select(s => s).ToList();
 
                 //Compruebo si el usuario tiene permiso para usar la aplicación
-                return UserRightValidation.CanExecute(nombrePermiso);
+                return UserRightValidation.CanExecute(nombrePermiso, false);
             }
             else
             {

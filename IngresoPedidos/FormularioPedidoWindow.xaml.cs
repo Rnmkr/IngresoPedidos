@@ -206,17 +206,17 @@ namespace IngresoPedidos
             {
                 return;
             }
-                if (cbEstado.SelectedValue.ToString() == "AUTORIZADO")
-                {
-                    if (UserRightValidation.CanExecute("Autorizar Pedido"))
-                    {
-                        return;
-                    }
-                    else
-                    {
-                        cbEstado.SelectedValue = null;
-                    }
-                }
+                //if (cbEstado.SelectedValue.ToString() == "AUTORIZADO")
+                //{
+                //    if (UserRightValidation.CanExecute("Autorizar Pedido"))
+                //    {
+                //        return;
+                //    }
+                //    else
+                //    {
+                //        cbEstado.SelectedValue = null;
+                //    }
+                //}
 
         }
     }

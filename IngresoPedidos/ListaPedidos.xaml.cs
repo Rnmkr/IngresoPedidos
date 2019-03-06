@@ -31,11 +31,16 @@ namespace IngresoPedidos
             StaticData.FiltroSeleccionado = "INGRESADO";
             StaticData.ListaPrincipal = StaticData.DataBaseContext.PedidoView.Where(w => w.NombreEstado == StaticData.FiltroSeleccionado).Select(s => s).ToList();
             dgPedidos.ItemsSource = StaticData.ListaPrincipal;
+
+            if (!UserRightValidation.CanExecute("INGRESAR_NUEVO_PEDIDO", false))
+            {
+                btnNuevoPedido.Visibility = Visibility.Collapsed;
+            }
         }
 
         private void NuevoPedidoCommandExecuted(object sender, ExecutedRoutedEventArgs e)
         {
-            if (UserRightValidation.CanExecute("INGRESAR_NUEVO_PEDIDO"))
+            if (UserRightValidation.CanExecute("INGRESAR_NUEVO_PEDIDO", false))
             {
                 FormularioPedidoWindow fpv = new FormularioPedidoWindow();
                 fpv.Owner = Window.GetWindow(this.Parent);
@@ -66,7 +71,7 @@ namespace IngresoPedidos
 
         private void btnNuevoPedido_Click(object sender, RoutedEventArgs e)
         {
-            if (UserRightValidation.CanExecute("INGRESAR_NUEVO_PEDIDO"))
+            if (UserRightValidation.CanExecute("INGRESAR_NUEVO_PEDIDO", false))
             {
                 FormularioPedidoWindow fpv = new FormularioPedidoWindow();
                 fpv.Owner = Window.GetWindow(this.Parent);
@@ -105,7 +110,7 @@ namespace IngresoPedidos
 
         private void CtxmnuEditar_Click(object sender, RoutedEventArgs e)
         {
-            if (UserRightValidation.CanExecute("EDITAR_PEDIDO"))
+            if (UserRightValidation.CanExecute("EDITAR_PEDIDO", true))
             {
                 PedidoView pedidoSeleccionado = (PedidoView)dgPedidos.SelectedItem;
                 FormularioPedidoWindow fpv = new FormularioPedidoWindow(pedidoSeleccionado);
@@ -298,7 +303,7 @@ namespace IngresoPedidos
 
         private void MenuItem_Click_1(object sender, RoutedEventArgs e)
         {
-            if (UserRightValidation.CanExecute("AGREGAR_OBSERVACION"))
+            if (UserRightValidation.CanExecute("AGREGAR_OBSERVACION", true))
             {
                 AgregarObservacion ao = new AgregarObservacion();
                 ao.Owner = Window.GetWindow(this.Parent);
@@ -309,7 +314,7 @@ namespace IngresoPedidos
 
         private void MenuItem_Click_2(object sender, RoutedEventArgs e)
         {
-            if (UserRightValidation.CanExecute("VER_REGISTRO_EVENTOS"))
+            if (UserRightValidation.CanExecute("VER_REGISTRO_EVENTOS", true))
             {
                 RegistroEventosWindow re = new RegistroEventosWindow();
                 re.Owner = Window.GetWindow(this.Parent);

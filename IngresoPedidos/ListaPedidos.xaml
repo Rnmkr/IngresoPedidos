@@ -11,7 +11,7 @@
             <RowDefinition Height="38"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Grid Background="#FF1885A1" Grid.Row="0" Margin="5,0,5,0">
+        <Grid Background="#FF1885A1" Grid.Row="0" Margin="1,0,0,0">
             <Rectangle Grid.Column="0" Stroke="#FFABADB3" >
                 <!--<Rectangle.Fill>
                     <SolidColorBrush Color="#FF1885A1"/>
@@ -87,7 +87,7 @@
             </StackPanel>
         </Grid>
 
-        <DataGrid x:Name="dgPedidos" Grid.Row="1" ColumnWidth="*" Margin="5,5,5,0" Padding="0,0,0,0" VerticalScrollBarVisibility="Visible" FontFamily="Consolas" RowHeaderWidth="0">
+        <DataGrid x:Name="dgPedidos" Grid.Row="1" ColumnWidth="*" Margin="1,1,0,0" Padding="0,0,0,0" VerticalScrollBarVisibility="Visible" FontFamily="Consolas" RowHeaderWidth="0">
             <!--ItemsSource="{Binding Source={x:Static local:StaticData.ListaPrincipal}}"-->
             <DataGrid.Resources>
                 <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Color="DarkGray"/>

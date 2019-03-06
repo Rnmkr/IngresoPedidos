@@ -3,14 +3,14 @@ using System.Collections.Generic;
 
 namespace IngresoPedidos.Helpers
 {
-    internal static class StaticData
+    public static class StaticData
     {
         // Variable para realizar comprobacion de conexión (ConnectionCheck)
         public static string ServerHostName { get; } = "localhost";
 
         // ConnectionString para DBContext de EntityFramework (DataAccessLayer)
-        //internal static readonly string ConnectionString = "data source=VM-FORREST;initial catalog=PRODUCCION;persist security info=True;user id=FORREST;password=12345678;MultipleActiveResultSets=True;App=EntityFramework";
-        internal static readonly string ConnectionString = "data source=DESKTOP;initial catalog=PRODUCCION;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework";
+        internal static readonly string ConnectionString = "data source=VM-FORREST;initial catalog=PRODUCCION;persist security info=True;user id=FORREST;password=12345678;MultipleActiveResultSets=True;App=EntityFramework";
+        //internal static readonly string ConnectionString = "data source=DESKTOP;initial catalog=PRODUCCION;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework";
 
         // Contexto de base de datos para toda la aplicación, se inicializa al intentar loguear con datos válidos
         public static DBContext DataBaseContext { get; internal set; }

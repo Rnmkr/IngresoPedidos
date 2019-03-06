@@ -11,9 +11,9 @@
             <!--<Setter Property="BorderBrush" Value="#FFA9D1F4"/>-->
             <Setter Property="SelectionUnit" Value="FullRow"/>
             <Setter Property="HorizontalGridLinesBrush" Value="#FFA9D1F4"/>
-            <Setter Property="GridLinesVisibility" Value="Horizontal"/>
+            <Setter Property="GridLinesVisibility" Value="None"/>
             <Setter Property="AlternationCount" Value="2"/>
-            <Setter Property="ColumnHeaderHeight" Value="39"/>
+            <Setter Property="ColumnHeaderHeight" Value="28"/>
             <Setter Property="IsSynchronizedWithCurrentItem" Value="False"/>
             <Setter Property="EnableColumnVirtualization" Value="True"/>
             <Setter Property="CanUserAddRows" Value="False"/>

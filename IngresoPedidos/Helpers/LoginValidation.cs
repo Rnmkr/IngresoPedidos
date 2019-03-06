@@ -4,12 +4,13 @@ using System.Windows;
 using IngresoPedidos.Helpers;
 using System.Reflection;
 
-namespace IngresoPedidos
+namespace IngresoPedidos.Helpers
 {
-    internal class LoginValidation
+    public class LoginValidation
     {
-        internal bool CanLogin(string legajo, string password, string nombrePermiso)
+        public bool CanLogin(string legajo, string password, string nombrePermiso)
         {
+            StaticData.DataBaseContext = new DataAccessLayer.DBContext();
             //Compruebo que el legajo este compuesto solo de numeros
             Regex regex = new Regex(@"^\d+$");
             if (!regex.IsMatch(legajo))

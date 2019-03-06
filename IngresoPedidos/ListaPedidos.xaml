@@ -5,30 +5,36 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:IngresoPedidos"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800" Background="LightGray">
     <Grid Name="mainGrid">
         <Grid.RowDefinitions>
-            <RowDefinition Height="42"/>
+            <RowDefinition Height="38"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid Background="#FF1885A1" Grid.Row="0" Margin="5,0,5,0">
+            <Rectangle Grid.Column="0" Stroke="#FFABADB3" >
+                <!--<Rectangle.Fill>
+                    <SolidColorBrush Color="#FF1885A1"/>
+                </Rectangle.Fill>-->
+            </Rectangle>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
 
-                <Button x:Name="btnNuevoPedido" Click="btnNuevoPedido_Click" Style="{StaticResource roundButtonTemplate32}" ToolTip="Ingresar un Nuevo Pedido a la Base de Datos (CTRL+N)" VerticalAlignment="Center" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" Margin="0" HorizontalAlignment="Left">
-                    <Image Source="/IngresoPedidos;component/Resources/add.png" Width="28" Height="28" />
+                <Button x:Name="btnNuevoPedido" Click="btnNuevoPedido_Click" Style="{StaticResource roundButtonTemplate32}" ToolTip="Ingresar un Nuevo Pedido a la Base de Datos (CTRL+N)" VerticalAlignment="Center" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" Margin="2" HorizontalAlignment="Left">
+                    <Image Source="/IngresoPedidos;component/Resources/nuevo_64x64.png" Width="32" Height="32" />
+                </Button>
+                
+                <Button x:Name="btnBuscarPedido" Click="btnBuscarPedido_Click" Style="{StaticResource roundButtonTemplate32}" ToolTip="Buscar un pedido en la Base de Datos (CTRL+B)" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="2" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}">
+                    <Image Source="/IngresoPedidos;component/Resources/search.png" VerticalAlignment="Center" HorizontalAlignment="Center" Width="28" Height="28" />
+                </Button>
+                
+                <Button x:Name="btnFiltrarLista" Click="btnFiltrarLista_Click" Style="{StaticResource roundButtonTemplate32}" ToolTip="Filtrar la lista por Estado (CTRL+F)" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="2" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}">
+                    <Image Source="/IngresoPedidos;component/Resources/list.png" VerticalAlignment="Center" HorizontalAlignment="Center" Width="28" Height="28" />
                 </Button>
 
-                <Button x:Name="btnExportarPlanilla" Click="BtnExportarPlanilla_Click" Style="{StaticResource roundButtonTemplate32}" ToolTip="Exportar lista a planilla de cálculos (CTRL+X)"  HorizontalAlignment="Left" VerticalAlignment="Center"  Margin="0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}">
+                <Button x:Name="btnExportarPlanilla" Click="BtnExportarPlanilla_Click" Style="{StaticResource roundButtonTemplate32}" ToolTip="Exportar lista a planilla de cálculos (CTRL+X)"  HorizontalAlignment="Left" VerticalAlignment="Center"  Margin="2" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}">
                     <Image Source="/IngresoPedidos;component/Resources/xls.png" Width="28" Height="28" />
                 </Button>
 
-                <Button x:Name="btnBuscarPedido" Click="btnBuscarPedido_Click" Style="{StaticResource roundButtonTemplate32}" ToolTip="Buscar un pedido en la Base de Datos (CTRL+B)" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}">
-                    <Image Source="/IngresoPedidos;component/Resources/search.png" VerticalAlignment="Center" HorizontalAlignment="Center" Width="28" Height="28" />
-                </Button>
-
-                <Button x:Name="btnFiltrarLista" Click="btnFiltrarLista_Click" Style="{StaticResource roundButtonTemplate32}" ToolTip="Filtrar la lista por Estado (CTRL+F)" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}">
-                    <Image Source="/IngresoPedidos;component/Resources/list.png" VerticalAlignment="Center" HorizontalAlignment="Center" Width="28" Height="28" />
-                </Button>
 
                 <!--#region botones del contextmenulist-->
                 <!--<Button x:Name="a1" Click="btnFiltrarLista_Click" Style="{StaticResource roundButtonTemplate48}" ToolTip="Filtrar la lista por Estado (CTRL+F)" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}">
@@ -81,7 +87,7 @@
             </StackPanel>
         </Grid>
 
-        <DataGrid x:Name="dgPedidos" Grid.Row="1" ColumnWidth="*" Margin="5,1,5,5" Padding="0,0,0,0" VerticalScrollBarVisibility="Visible" FontFamily="Consolas" RowHeaderWidth="0">
+        <DataGrid x:Name="dgPedidos" Grid.Row="1" ColumnWidth="*" Margin="5,5,5,0" Padding="0,0,0,0" VerticalScrollBarVisibility="Visible" FontFamily="Consolas" RowHeaderWidth="0">
             <!--ItemsSource="{Binding Source={x:Static local:StaticData.ListaPrincipal}}"-->
             <DataGrid.Resources>
                 <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Color="DarkGray"/>
@@ -164,7 +170,7 @@
                 <DataGridTextColumn Header="MODELO" Binding="{Binding NombreModelo}"/>
                 <DataGridTextColumn Header="CANTIDAD" Binding="{Binding CantidadEquipos}"/>
                 <DataGridTextColumn Header="INGRESO A SISTEMA" Binding="{Binding FechaIngreso,StringFormat=\{0:dd/MM/yy HH:mm:ss\}}"/>
-                <DataGridTextColumn Header="ESTADO" Binding="{Binding NombreEstado}" MaxWidth="136"/>
+                <DataGridTextColumn Header="ESTADO" Binding="{Binding NombreEstado}"/>
                 <DataGridTextColumn Header="FECHA DE ESTADO" Binding="{Binding FechaEstado, StringFormat=\{0:dd/MM/yy HH:mm:ss\}}" />
                 <DataGridTemplateColumn Header="ANTERIOR" >
                     <DataGridTemplateColumn.CellTemplate>

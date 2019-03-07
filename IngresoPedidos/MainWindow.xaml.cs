@@ -78,9 +78,7 @@ namespace IngresoPedidos
 
         private void btnBuscarPedido_Click(object sender, RoutedEventArgs e)
         {
-            dgw ddddddd = new dgw();
-            ddddddd.ShowDialog();
-            return;
+
             BusquedaWindow bw = new BusquedaWindow();
             bw.Owner = this;
             bw.ShowDialog();

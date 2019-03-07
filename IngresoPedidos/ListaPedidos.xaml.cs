@@ -32,15 +32,17 @@ namespace IngresoPedidos
             StaticData.ListaPrincipal = StaticData.DataBaseContext.PedidoView.Where(w => w.NombreEstado == StaticData.FiltroSeleccionado).Select(s => s).ToList();
             dgPedidos.ItemsSource = StaticData.ListaPrincipal;
 
-            if (!UserRightValidation.CanExecute("INGRESAR_NUEVO_PEDIDO", false))
-            {
-                btnNuevoPedido.Visibility = Visibility.Collapsed;
-            }
+            //if (!UserRightValidation.CanExecute("INGRESAR_NUEVO_PEDIDO", false))
+            //{
+            //    btnNuevoPedido.Visibility = Visibility.Collapsed;
+            //}
+            //ESTE TIPODE COSAS NOOOOOO ES PREFERIBLE QUE DIGA "NO TIENE PERMISOS"
+
         }
 
         private void NuevoPedidoCommandExecuted(object sender, ExecutedRoutedEventArgs e)
         {
-            if (UserRightValidation.CanExecute("INGRESAR_NUEVO_PEDIDO", false))
+            if (UserRightValidation.CanExecute("INGRESAR_NUEVO_PEDIDO", true))
             {
                 FormularioPedidoWindow fpv = new FormularioPedidoWindow();
                 fpv.Owner = Window.GetWindow(this.Parent);
@@ -71,7 +73,7 @@ namespace IngresoPedidos
 
         private void btnNuevoPedido_Click(object sender, RoutedEventArgs e)
         {
-            if (UserRightValidation.CanExecute("INGRESAR_NUEVO_PEDIDO", false))
+            if (UserRightValidation.CanExecute("INGRESAR_NUEVO_PEDIDO", true))
             {
                 FormularioPedidoWindow fpv = new FormularioPedidoWindow();
                 fpv.Owner = Window.GetWindow(this.Parent);
@@ -82,14 +84,12 @@ namespace IngresoPedidos
 
         private void btnBuscarPedido_Click(object sender, RoutedEventArgs e)
         {
-            dgw ddddddd = new dgw();
-            ddddddd.ShowDialog();
-            return;
-            //BusquedaWindow bw = new BusquedaWindow();
-            //bw.Owner = Window.GetWindow(this.Parent);
-            //bw.ShowDialog();
-            //dgPedidos.ItemsSource = null;
-            //dgPedidos.ItemsSource = StaticData.ListaPrincipal;
+
+            BusquedaWindow bw = new BusquedaWindow();
+            bw.Owner = Window.GetWindow(this.Parent);
+            bw.ShowDialog();
+            dgPedidos.ItemsSource = null;
+            dgPedidos.ItemsSource = StaticData.ListaPrincipal;
         }
 
         private void btnCambiarContraseña_Click(object sender, RoutedEventArgs e)

@@ -106,9 +106,6 @@
     <Compile Include="DataAccessLayer\Tables\Producto.cs" />
     <Compile Include="DataAccessLayer\Tables\ReprocesoPedido.cs" />
     <Compile Include="DataAccessLayer\Views\UsuarioView.cs" />
-    <Compile Include="dgw.xaml.cs">
-      <DependentUpon>dgw.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Helpers\CustomCommand.cs" />
     <Compile Include="Helpers\CustomCommands.cs" />
     <Compile Include="Helpers\LoginValidation.cs" />
@@ -140,10 +137,6 @@
       <DependentUpon>SplashScreenCustom.xaml</DependentUpon>
     </Compile>
     <Page Include="AgregarObservacion.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="dgw.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

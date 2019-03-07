@@ -8,10 +8,10 @@
              d:DesignHeight="450" d:DesignWidth="800" Background="LightGray">
     <Grid Name="mainGrid">
         <Grid.RowDefinitions>
-            <RowDefinition Height="38"/>
+            <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Grid Background="#FF1885A1" Grid.Row="0" Margin="1,0,0,0">
+        <Grid Background="#FF1885A1" Grid.Row="0" Margin="0">
             <Rectangle Grid.Column="0" Stroke="#FFABADB3" >
                 <!--<Rectangle.Fill>
                     <SolidColorBrush Color="#FF1885A1"/>
@@ -19,20 +19,20 @@
             </Rectangle>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
 
-                <Button x:Name="btnNuevoPedido" Click="btnNuevoPedido_Click" Style="{StaticResource roundButtonTemplate32}" ToolTip="Ingresar un Nuevo Pedido a la Base de Datos (CTRL+N)" VerticalAlignment="Center" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" Margin="2" HorizontalAlignment="Left">
+                <Button x:Name="btnNuevoPedido" Click="btnNuevoPedido_Click" Style="{StaticResource roundButtonTemplate32gray}" ToolTip="Ingresar un Nuevo Pedido a la Base de Datos (CTRL+N)" VerticalAlignment="Center" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}"  Margin="3,0,0,0" HorizontalAlignment="Left" Width="44" Height="44">
                     <Image Source="/IngresoPedidos;component/Resources/nuevo_64x64.png" Width="32" Height="32" />
                 </Button>
-                
-                <Button x:Name="btnBuscarPedido" Click="btnBuscarPedido_Click" Style="{StaticResource roundButtonTemplate32}" ToolTip="Buscar un pedido en la Base de Datos (CTRL+B)" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="2" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}">
-                    <Image Source="/IngresoPedidos;component/Resources/search.png" VerticalAlignment="Center" HorizontalAlignment="Center" Width="28" Height="28" />
-                </Button>
-                
-                <Button x:Name="btnFiltrarLista" Click="btnFiltrarLista_Click" Style="{StaticResource roundButtonTemplate32}" ToolTip="Filtrar la lista por Estado (CTRL+F)" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="2" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}">
-                    <Image Source="/IngresoPedidos;component/Resources/list.png" VerticalAlignment="Center" HorizontalAlignment="Center" Width="28" Height="28" />
+
+                <Button x:Name="btnBuscarPedido" Click="btnBuscarPedido_Click" Style="{StaticResource roundButtonTemplate32gray}" ToolTip="Buscar un pedido en la Base de Datos (CTRL+B)" VerticalAlignment="Center" HorizontalAlignment="Left"  Margin="2,0,0,0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" Width="44" Height="44">
+                    <Image Source="/IngresoPedidos;component/Resources/search.png" VerticalAlignment="Center" HorizontalAlignment="Center" Width="32" Height="32" />
                 </Button>
 
-                <Button x:Name="btnExportarPlanilla" Click="BtnExportarPlanilla_Click" Style="{StaticResource roundButtonTemplate32}" ToolTip="Exportar lista a planilla de cálculos (CTRL+X)"  HorizontalAlignment="Left" VerticalAlignment="Center"  Margin="2" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}">
-                    <Image Source="/IngresoPedidos;component/Resources/xls.png" Width="28" Height="28" />
+                <Button x:Name="btnFiltrarLista" Click="btnFiltrarLista_Click" Style="{StaticResource roundButtonTemplate32gray}" ToolTip="Filtrar la lista por Estado (CTRL+F)" VerticalAlignment="Center" HorizontalAlignment="Left"  Margin="2,0,0,0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" Width="44" Height="44">
+                    <Image Source="/IngresoPedidos;component/Resources/list.png" VerticalAlignment="Center" HorizontalAlignment="Center" Width="32" Height="32" />
+                </Button>
+
+                <Button x:Name="btnExportarPlanilla" Click="BtnExportarPlanilla_Click" Style="{StaticResource roundButtonTemplate32gray}" ToolTip="Exportar lista a planilla de cálculos (CTRL+X)"  HorizontalAlignment="Left" VerticalAlignment="Center"   Margin="2,0,0,0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" Width="44" Height="44">
+                    <Image Source="/IngresoPedidos;component/Resources/xls.png" Width="32" Height="32" />
                 </Button>
 
 
@@ -87,7 +87,7 @@
             </StackPanel>
         </Grid>
 
-        <DataGrid x:Name="dgPedidos" Grid.Row="1" ColumnWidth="*" Margin="1,1,0,0" Padding="0,0,0,0" VerticalScrollBarVisibility="Visible" FontFamily="Consolas" RowHeaderWidth="0">
+        <DataGrid x:Name="dgPedidos" Grid.Row="1" ColumnWidth="*" Margin="0" Padding="0,0,0,0" VerticalScrollBarVisibility="Visible" FontFamily="Consolas" RowHeaderWidth="0">
             <!--ItemsSource="{Binding Source={x:Static local:StaticData.ListaPrincipal}}"-->
             <DataGrid.Resources>
                 <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Color="DarkGray"/>

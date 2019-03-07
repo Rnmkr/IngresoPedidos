@@ -8,9 +8,9 @@
         <Style x:Name="MainDataGridStyle" TargetType="{x:Type DataGrid}">
             <Setter Property="Height" Value="Auto" />
             <Setter Property="BorderThickness" Value="1"/>
-            <!--<Setter Property="BorderBrush" Value="#FFA9D1F4"/>-->
+            <Setter Property="BorderBrush" Value="#FFABADB3"/>
             <Setter Property="SelectionUnit" Value="FullRow"/>
-            <Setter Property="HorizontalGridLinesBrush" Value="#FFA9D1F4"/>
+            <!--<Setter Property="HorizontalGridLinesBrush" Value="#FFA9D1F4"/>-->
             <Setter Property="GridLinesVisibility" Value="None"/>
             <Setter Property="AlternationCount" Value="2"/>
             <Setter Property="ColumnHeaderHeight" Value="28"/>
@@ -328,6 +328,34 @@
                 </Setter.Value>
             </Setter>
         </Style>
+
+        <!--#region Rounded Button 32-->
+
+        <Style x:Key ="roundButtonTemplate32gray" TargetType ="{x:Type Button}">
+            <Setter Property ="Foreground" Value ="Black"/>
+            <Setter Property ="FontWeight" Value ="Bold"/>
+            <Setter Property ="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType ="{x:Type Button}">
+                        <Grid>
+                            <Ellipse Name ="OuterRing" Width ="44" Height ="44" Fill ="Transparent"/>
+                            <Ellipse Name ="InnerRing" Width ="42" Height ="42" Fill ="#225378"/>
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property ="IsMouseOver" Value ="True">
+                                <Setter TargetName ="OuterRing" Property ="Fill" Value ="LightCyan"/>
+                            </Trigger>
+                            <Trigger Property ="IsPressed" Value ="True">
+                                <Setter TargetName="OuterRing" Property="Fill" Value="Cyan"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!--#endregion-->
 
         <!--#endregion-->
 

@@ -164,15 +164,15 @@
             </DataGrid.RowStyle>
 
             <DataGrid.Columns>
-                <DataGridTextColumn Header="PEDIDO" Binding="{Binding NumeroPedido}" />
-                <DataGridTextColumn Header="ARTICULO" Binding="{Binding NumeroArticulo}"/>
-                <DataGridTextColumn Header="PRODUCTO" Binding="{Binding NombreProducto}"/>
-                <DataGridTextColumn Header="MODELO" Binding="{Binding NombreModelo}"/>
-                <DataGridTextColumn Header="CANTIDAD" Binding="{Binding CantidadEquipos}"/>
-                <DataGridTextColumn Header="INGRESO A SISTEMA" Binding="{Binding FechaIngreso,StringFormat=\{0:dd/MM/yy HH:mm:ss\}}"/>
-                <DataGridTextColumn Header="ESTADO" Binding="{Binding NombreEstado}"/>
-                <DataGridTextColumn Header="FECHA DE ESTADO" Binding="{Binding FechaEstado, StringFormat=\{0:dd/MM/yy HH:mm:ss\}}" />
-                <DataGridTemplateColumn Header="ANTERIOR" >
+                <DataGridTextColumn Header="PEDIDO" Binding="{Binding NumeroPedido}" MinWidth="100" />
+                <DataGridTextColumn Header="ARTICULO" Binding="{Binding NumeroArticulo}"  MinWidth="80"/>
+                <DataGridTextColumn Header="PRODUCTO" Binding="{Binding NombreProducto}"  MinWidth="100"/>
+                <DataGridTextColumn Header="MODELO" Binding="{Binding NombreModelo}"  MinWidth="100"/>
+                <DataGridTextColumn Header="CANTIDAD" Binding="{Binding CantidadEquipos}"  MinWidth="100"/>
+                <DataGridTextColumn Header="INGRESO A SISTEMA" Binding="{Binding FechaIngreso,StringFormat=\{0:dd/MM/yy HH:mm:ss\}}"   MinWidth="140"/>
+                <DataGridTextColumn Header="ESTADO" Binding="{Binding NombreEstado}"   MinWidth="100"/>
+                <DataGridTextColumn Header="FECHA DE ESTADO" Binding="{Binding FechaEstado, StringFormat=\{0:dd/MM/yy HH:mm:ss\}}"  MinWidth="140"/>
+                <DataGridTemplateColumn Header="ANTERIOR"  MinWidth="100" >
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock><Hyperlink Click="HyperlinkAnterior_Click"><InlineUIContainer>
@@ -181,7 +181,7 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="SUCESOR">
+                <DataGridTemplateColumn Header="SUCESOR"  MinWidth="100">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock><Hyperlink Click="HyperlinkSucesor_Click"><InlineUIContainer>

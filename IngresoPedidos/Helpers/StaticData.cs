@@ -13,7 +13,7 @@ namespace IngresoPedidos.Helpers
         //internal static readonly string ConnectionString = "data source=DESKTOP;initial catalog=PRODUCCION;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework";
 
         // Contexto de base de datos para toda la aplicación, se inicializa al intentar loguear con datos válidos
-        public static DBContext DataBaseContext { get; internal set; }
+        public static DBContext DataBaseContext { get; set; }
 
         // Usuario activo se inicializa al loguear exitosamente (UserValidation)
         public static UsuarioView Usuario { get; internal set; }

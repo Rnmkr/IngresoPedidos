@@ -38,6 +38,12 @@ namespace IngresoPedidos
         private void AplicarFiltro()
         {
             StaticData.FiltroSeleccionado = cbFiltros.SelectedValue.ToString();
+            if (StaticData.FiltroSeleccionado == "PERSONALIZADA")
+            {
+                StaticData.ListaPrincipal = StaticData.ListaPersonalizada;
+                Close();
+                return;
+            }
             StaticData.ListaPrincipal = StaticData.DataBaseContext.PedidoView.Where(w => w.NombreEstado == StaticData.FiltroSeleccionado).Select(s => s).ToList();
             Close();
         }

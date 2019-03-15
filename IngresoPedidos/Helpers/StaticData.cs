@@ -29,7 +29,7 @@ namespace IngresoPedidos.Helpers
         public static List<PedidoView> ListaBusqueda { get; internal set; }
 
         // Lista de registros "Personalizada" del usuario
-        public static List<PedidoView> ListaPersonalizada { get; internal set; }
+        public static List<PedidoView> ListaPersonalizada { get; set; }
 
         // Lista completa de Modelos
         public static List<Modelo> ListaModelos { get; internal set; }

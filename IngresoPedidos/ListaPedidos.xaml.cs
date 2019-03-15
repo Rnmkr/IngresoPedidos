@@ -27,7 +27,7 @@ namespace IngresoPedidos
         {
             InitializeComponent();
             //lblNombreUsuario.Content = StaticData.Usuario.ApellidoUsuario + " " + StaticData.Usuario.NombreUsuario;
-
+            StaticData.ListaPersonalizada = new List<PedidoView>();
             StaticData.FiltroSeleccionado = "INGRESADO";
             StaticData.ListaPrincipal = StaticData.DataBaseContext.PedidoView.Where(w => w.NombreEstado == StaticData.FiltroSeleccionado).Select(s => s).ToList();
             dgPedidos.ItemsSource = StaticData.ListaPrincipal;
@@ -355,6 +355,18 @@ namespace IngresoPedidos
         private void MiAgregarPersonalizada_Click(object sender, RoutedEventArgs e)
         {
             var pv = (PedidoView)dgPedidos.SelectedItem;
+            //PedidoView npv = new PedidoView();
+            //npv.IDPedido = pv.IDPedido;
+            //npv.NumeroPedido = pv.NumeroPedido;
+            //npv.NumeroArticulo = pv.NumeroArticulo;
+            //npv.NombreProducto = pv.NombreProducto;
+            //npv.NombreModelo = pv.NombreModelo;
+            //npv.CantidadEquipos = pv.CantidadEquipos;
+            //npv.FechaIngreso = pv.FechaIngreso;
+            //npv.NombreEstado = pv.NombreEstado;
+            //npv.FechaEstado = pv.FechaEstado;
+            //npv.NumeroPedidoAnterior = pv.NumeroPedidoAnterior;
+            //npv.NumeroPedidoSucesor = pv.NumeroPedidoSucesor;
             StaticData.ListaPersonalizada.Add(pv);
         }
     }

@@ -329,5 +329,33 @@ namespace IngresoPedidos
             mi.Owner = Window.GetWindow(this.Parent);
             mi.ShowDialog();
         }
+
+        private void DgPedidos_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            PedidoView pv = new PedidoView();
+            pv = dgPedidos.SelectedItem as PedidoView;
+            if (pv == null)
+            {
+                return;
+
+            }
+
+            if (StaticData.ListaPersonalizada == null || !StaticData.ListaPersonalizada.Where(w => w.IDPedido == pv.IDPedido).Any())
+            {
+                miQuitarPersonalizada.Visibility = Visibility.Collapsed;
+                miAgregarPersonalizada.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                miQuitarPersonalizada.Visibility = Visibility.Visible;
+                miAgregarPersonalizada.Visibility = Visibility.Collapsed;
+            }
+        }
+
+        private void MiAgregarPersonalizada_Click(object sender, RoutedEventArgs e)
+        {
+            var pv = (PedidoView)dgPedidos.SelectedItem;
+            StaticData.ListaPersonalizada.Add(pv);
+        }
     }
 }

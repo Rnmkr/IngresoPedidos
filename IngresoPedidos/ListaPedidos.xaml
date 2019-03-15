@@ -87,7 +87,7 @@
             </StackPanel>
         </Grid>
 
-        <DataGrid x:Name="dgPedidos" Grid.Row="1" ColumnWidth="*" Margin="0" Padding="0,0,0,0" VerticalScrollBarVisibility="Visible" FontFamily="Consolas" RowHeaderWidth="0">
+        <DataGrid x:Name="dgPedidos" Grid.Row="1" ColumnWidth="*" Margin="0" Padding="0,0,0,0" VerticalScrollBarVisibility="Visible" FontFamily="Consolas" RowHeaderWidth="0" SelectionChanged="DgPedidos_SelectionChanged">
             <!--ItemsSource="{Binding Source={x:Static local:StaticData.ListaPrincipal}}"-->
             <DataGrid.Resources>
                 <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Color="DarkGray"/>
@@ -118,7 +118,7 @@
 
                     <Separator/>
 
-                    <MenuItem Name="miAgregarPersonalizada" Header="Agregar a lista personalizada" InputGestureText="Ctrl+A">
+                    <MenuItem Name="miAgregarPersonalizada" Click="MiAgregarPersonalizada_Click" Header="Agregar/Quitar de lista personalizada" InputGestureText="Ctrl+A">
                         <MenuItem.Icon>
                             <Image Source="/IngresoPedidos;component/Resources/agregar_16x16.ico"/>
                         </MenuItem.Icon>
@@ -167,8 +167,8 @@
                 <DataGridTextColumn Header="PEDIDO" Binding="{Binding NumeroPedido}" MinWidth="100" />
                 <DataGridTextColumn Header="ARTICULO" Binding="{Binding NumeroArticulo}"  MinWidth="80"/>
                 <DataGridTextColumn Header="PRODUCTO" Binding="{Binding NombreProducto}"  MinWidth="100"/>
-                <DataGridTextColumn Header="MODELO" Binding="{Binding NombreModelo}"  MinWidth="100"/>
-                <DataGridTextColumn Header="CANTIDAD" Binding="{Binding CantidadEquipos}"  MinWidth="100"/>
+                <DataGridTextColumn Header="MODELO" Binding="{Binding NombreModelo}"  MinWidth="80"/>
+                <DataGridTextColumn Header="CANTIDAD" Binding="{Binding CantidadEquipos}"  MinWidth="80"/>
                 <DataGridTextColumn Header="INGRESO A SISTEMA" Binding="{Binding FechaIngreso,StringFormat=\{0:dd/MM/yy HH:mm:ss\}}"   MinWidth="140"/>
                 <DataGridTextColumn Header="ESTADO" Binding="{Binding NombreEstado}"   MinWidth="100"/>
                 <DataGridTextColumn Header="FECHA DE ESTADO" Binding="{Binding FechaEstado, StringFormat=\{0:dd/MM/yy HH:mm:ss\}}"  MinWidth="140"/>

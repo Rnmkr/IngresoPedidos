@@ -63,7 +63,7 @@ namespace IngresoPedidos
                 {
                     using (new WaitCursor())
                     {
-                        Contraseña contraseña = StaticData.DataBaseContext.Contraseña.Where(w => w.FK_IDUsuario == StaticData.Usuario.IDUsuario).Select(s => s).SingleOrDefault();
+                        Password contraseña = StaticData.DataBaseContext.Password.Where(w => w.FK_IDUsuario == StaticData.Usuario.IDUsuario).Select(s => s).SingleOrDefault();
                         var newPassword = PasswordHasher.Hash(pbContraseñaNueva1.Password);
                         try
                         {
@@ -71,10 +71,10 @@ namespace IngresoPedidos
                         }
                         catch (NullReferenceException)
                         {
-                            Contraseña contraseñaNueva = new Contraseña();
+                            Password contraseñaNueva = new Password();
                             contraseñaNueva.FK_IDUsuario = StaticData.Usuario.IDUsuario;
                             contraseñaNueva.HashedPassword = newPassword;
-                            StaticData.DataBaseContext.Contraseña.Add(contraseñaNueva);
+                            StaticData.DataBaseContext.Password.Add(contraseñaNueva);
                         }
 
                         StaticData.DataBaseContext.SaveChanges();

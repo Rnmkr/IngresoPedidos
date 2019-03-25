@@ -9,6 +9,12 @@ namespace IngresoPedidos.DataAccessLayer
     [Table("Pedido")]
     public partial class Pedido
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Pedido()
+        {
+            Autorizacion = new HashSet<Autorizacion>();
+        }
+
         [Key]
         public int IDPedido { get; set; }
 
@@ -22,15 +28,20 @@ namespace IngresoPedidos.DataAccessLayer
 
         public int FK_IDModelo { get; set; }
 
-        public int CantidadEquipos { get; set; }
+        public short CantidadEquipos { get; set; }
 
         [Column(TypeName = "smalldatetime")]
         public DateTime FechaIngreso { get; set; }
 
-        public int? FK_IDEstadoPedido { get; set; }
+        public byte? FK_IDEstadoPedido { get; set; }
 
         [Column(TypeName = "smalldatetime")]
         public DateTime? FechaEstado { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Autorizacion> Autorizacion { get; set; }
+
+        public virtual Estado Estado { get; set; }
 
         public virtual Modelo Modelo { get; set; }
 

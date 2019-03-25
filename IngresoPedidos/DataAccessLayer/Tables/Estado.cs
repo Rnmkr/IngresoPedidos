@@ -6,31 +6,24 @@ namespace IngresoPedidos.DataAccessLayer
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Modelo")]
-    public partial class Modelo
+    [Table("Estado")]
+    public partial class Estado
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Modelo()
+        public Estado()
         {
             Pedido = new HashSet<Pedido>();
-            Componente = new HashSet<Componente>();
         }
 
         [Key]
-        public int IDModelo { get; set; }
-
-        public int FK_IDProducto { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public byte IDEstado { get; set; }
 
         [Required]
-        [StringLength(25)]
-        public string NombreModelo { get; set; }
-
-        public virtual Producto Producto { get; set; }
+        [StringLength(11)]
+        public string NombreEstado { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Pedido> Pedido { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Componente> Componente { get; set; }
     }
 }

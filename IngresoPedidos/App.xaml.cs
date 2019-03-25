@@ -13,9 +13,9 @@ namespace IngresoPedidos
     {
         #region SplashScreen fields
 
-        public static ISplashScreen splashScreen;
-        private ManualResetEvent ResetSplashCreated;
-        private Thread SplashThread;
+        //public static ISplashScreen splashScreen;
+        //private ManualResetEvent ResetSplashCreated;
+        //private Thread SplashThread;
 
         #endregion
 

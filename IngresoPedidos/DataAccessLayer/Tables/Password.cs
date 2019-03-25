@@ -6,7 +6,8 @@ namespace IngresoPedidos.DataAccessLayer
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Contraseña
+    [Table("Password")]
+    public partial class Password
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
@@ -17,5 +18,10 @@ namespace IngresoPedidos.DataAccessLayer
 
         [StringLength(48)]
         public string HashedPassword { get; set; }
+
+        [StringLength(24)]
+        public string HashSalt { get; set; }
+
+        public virtual Usuario Usuario { get; set; }
     }
 }

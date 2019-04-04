@@ -17,16 +17,16 @@ namespace IngresoPedidos.Helpers
         public static DBContext DataBaseContext { get; set; }
 
         // Usuario activo se inicializa al loguear exitosamente (UserValidation)
-        public static UsuarioView Usuario { get; internal set; }
+        public static UsuarioView Usuario { get; set; }
 
         // Lista de permisos del usuario activo, se inicializa al loguear exitosamente (UserValidation)
-        public static List<PermisoView> ListaPermisos { get; internal set; }
+        public static List<PermisoView> ListaPermisos { get; set; }
 
         // Lista principal con el contenido filtrado por "Estado"
-        public static List<PedidoView> ListaPrincipal { get; internal set; }
+        public static List<PedidoView> ListaPrincipal { get; set; }
 
         // Lista resultado de una búsqueda
-        public static List<PedidoView> ListaBusqueda { get; internal set; }
+        public static List<PedidoView> ListaBusqueda { get; set; }
 
         // Lista de registros "Personalizada" del usuario
         public static List<PedidoView> ListaPersonalizada { get; set; }
@@ -35,20 +35,20 @@ namespace IngresoPedidos.Helpers
         public static List<Modelo> ListaModelos { get; internal set; }
 
         // Lista completa de Productos
-        public static List<Producto> ListaProductos { get; internal set; }
+        public static List<Producto> ListaProductos { get; set; }
 
 
 
         // indices de combobox y selecciones? / revisar
-        public static int cbModelosSelectedIndex { get; internal set; }
-        public static int cbProductosSelectedIndex { get; internal set; }
-        public static int dgPedidosSelectedIndex { get; internal set; }
-        public static int cbFiltrosIndex { get; internal set; }
+        public static int cbModelosSelectedIndex { get; set; }
+        public static int cbProductosSelectedIndex { get;  set; }
+        public static int dgPedidosSelectedIndex { get; set; }
+        public static int cbFiltrosIndex { get; set; }
 
-        public static string FiltroSeleccionado { get; internal set; } = "INGRESADO";
+        public static string FiltroSeleccionado { get; set; } = "INGRESADO";
 
-        public static Pedido NewOrder { get; internal set; }
-        public static Pedido OldOrder { get; internal set; }
+        public static Pedido NewOrder { get; set; }
+        public static Pedido OldOrder { get; set; }
 
     }
 }

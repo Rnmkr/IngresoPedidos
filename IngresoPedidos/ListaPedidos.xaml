@@ -87,7 +87,7 @@
             </StackPanel>
         </Grid>
 
-        <DataGrid x:Name="dgPedidos" Grid.Row="1" ColumnWidth="*" Margin="0" Padding="0,0,0,0" VerticalScrollBarVisibility="Visible" FontFamily="Consolas" RowHeaderWidth="0">
+        <DataGrid x:Name="dgPedidos" Grid.Row="1" AutoGenerateColumns="False" ColumnWidth="*" FontSize="14" Margin="0" Padding="0,0,0,0" VerticalScrollBarVisibility="Visible" FontFamily="Consolas" RowHeaderWidth="0">
             <!--ItemsSource="{Binding Source={x:Static local:StaticData.ListaPrincipal}}"-->
             <DataGrid.Resources>
                 <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Color="DarkGray"/>
@@ -153,7 +153,7 @@
                 </ContextMenu>
             </DataGrid.ContextMenu>
 
-            <DataGrid.ColumnHeaderStyle>
+            <!--<DataGrid.ColumnHeaderStyle>
                 <StaticResource ResourceKey="ColumnHeaderStyle"/>
             </DataGrid.ColumnHeaderStyle>
             <DataGrid.CellStyle>
@@ -161,7 +161,7 @@
             </DataGrid.CellStyle>
             <DataGrid.RowStyle>
                 <StaticResource ResourceKey="DataGridRowZebra"/>
-            </DataGrid.RowStyle>
+            </DataGrid.RowStyle>-->
 
             <DataGrid.Columns>
                 <DataGridTextColumn Header="PEDIDO" Binding="{Binding NumeroPedido}" />

@@ -73,8 +73,72 @@
                 <DataGrid x:Name="dgPedidos" Grid.Row="1" AutoGenerateColumns="False" ColumnWidth="*" FontSize="14" Margin="0" Padding="0,0,0,0" VerticalScrollBarVisibility="Visible" FontFamily="Consolas" RowHeaderWidth="0">
                     <!--ItemsSource="{Binding Source={x:Static local:StaticData.ListaPrincipal}}"-->
                     <DataGrid.Resources>
+                        
                         <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Color="DarkGray"/>
+
+                        <Style TargetType="{x:Type Hyperlink}" x:Key="AHLStyle">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding NumeroPedidoAnterior}" Value="{x:Null}">
+                                    <Setter Property="IsEnabled" Value="False" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+
+                        <Style TargetType="{x:Type Hyperlink}" x:Key="SHLStyle">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding NumeroPedidoSucesor}" Value="{x:Null}">
+                                    <Setter Property="IsEnabled" Value="False" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
                     </DataGrid.Resources>
+
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="PEDIDO" Binding="{Binding NumeroPedido}" />
+                        <DataGridTextColumn Header="ARTICULO" Binding="{Binding NumeroArticulo}"/>
+                        <DataGridTextColumn Header="PRODUCTO" Binding="{Binding NombreProducto}"/>
+                        <DataGridTextColumn Header="MODELO" Binding="{Binding NombreModelo}"/>
+                        <DataGridTextColumn Header="CANTIDAD" Binding="{Binding CantidadEquipos}"/>
+                        <DataGridTextColumn Header="INGRESO A SISTEMA" Binding="{Binding FechaIngreso,StringFormat=\{0:dd/MM/yy HH:mm:ss\}}"/>
+                        <DataGridTextColumn Header="ESTADO" Binding="{Binding NombreEstado}"/>
+                        <DataGridTextColumn Header="FECHA DE ESTADO" Binding="{Binding FechaEstado, StringFormat=\{0:dd/MM/yy HH:mm:ss\}}" />
+                        
+                        <DataGridTemplateColumn Header="ANTERIOR" >
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock>
+                                        <Hyperlink Click="HyperlinkAnterior_Click" Style="{StaticResource AHLStyle}" >
+                                            <InlineUIContainer>
+                                                <TextBlock Text="{Binding NumeroPedidoAnterior, TargetNullValue=N/A}"  >
+                                                </TextBlock>
+                                            </InlineUIContainer>
+                                        </Hyperlink>
+                                    </TextBlock>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+
+                        <DataGridTemplateColumn Header="SUCESOR" >
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock>
+                                        <Hyperlink Click="HyperlinkAnterior_Click" Style="{StaticResource SHLStyle}" >
+                                            <InlineUIContainer>
+                                                <TextBlock Text="{Binding NumeroPedidoSucesor, TargetNullValue=N/A}"  >
+                                                </TextBlock>
+                                            </InlineUIContainer>
+                                        </Hyperlink>
+                                    </TextBlock>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                    </DataGrid.Columns>
+
+                    
+                    
+                    <!--MENU CONTEXTUAL-->
 
                     <DataGrid.ContextMenu>
                         <ContextMenu>
@@ -146,48 +210,8 @@
                 <StaticResource ResourceKey="DataGridRowZebra"/>
             </DataGrid.RowStyle>-->
 
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Header="PEDIDO" Binding="{Binding NumeroPedido}" />
-                        <DataGridTextColumn Header="ARTICULO" Binding="{Binding NumeroArticulo}"/>
-                        <DataGridTextColumn Header="PRODUCTO" Binding="{Binding NombreProducto}"/>
-                        <DataGridTextColumn Header="MODELO" Binding="{Binding NombreModelo}"/>
-                        <DataGridTextColumn Header="CANTIDAD" Binding="{Binding CantidadEquipos}"/>
-                        <DataGridTextColumn Header="INGRESO A SISTEMA" Binding="{Binding FechaIngreso,StringFormat=\{0:dd/MM/yy HH:mm:ss\}}"/>
-                        <DataGridTextColumn Header="ESTADO" Binding="{Binding NombreEstado}"/>
-                        <DataGridTextColumn Header="FECHA DE ESTADO" Binding="{Binding FechaEstado, StringFormat=\{0:dd/MM/yy HH:mm:ss\}}" />
-                        <DataGridTemplateColumn Header="ANTERIOR" >
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <TextBlock>
-                                        <TextBlock.Style>
-                                            <Style TargetType="TextBlock">
-                                                <Style.Triggers>
-                                                    <DataTrigger Binding="{Binding NumeroPedidoAnterior, TargetNullValue=NULL}">
-                                                        <Setter Property="Text" Value="N/A" />
-                                                    </DataTrigger>
-                                                </Style.Triggers>
-                                            </Style>
-                                        </TextBlock.Style>
-                                            
-                                        <Hyperlink Click="HyperlinkAnterior_Click">
-                                            <InlineUIContainer>
-                                                <TextBlock Text="{Binding NumeroPedidoAnterior}" />
-                                            </InlineUIContainer>
-                                        </Hyperlink>
-                                    </TextBlock>
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                        <DataGridTemplateColumn Header="SUCESOR">
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <TextBlock><Hyperlink Click="HyperlinkSucesor_Click"><InlineUIContainer>
-                                        <TextBlock Text="{Binding NumeroPedidoSucesor}"/>
-                                </InlineUIContainer></Hyperlink></TextBlock>
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                    </DataGrid.Columns>
+
+
                 </DataGrid>
             </Grid>
         </materialDesign:TransitioningContent>

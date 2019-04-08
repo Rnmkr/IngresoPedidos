@@ -129,6 +129,10 @@ namespace IngresoPedidos
         private void HyperlinkAnterior_Click(object sender, RoutedEventArgs e)
         {
             var pedidoSeleccionado = dgPedidos.SelectedItem as PedidoView;
+            if (pedidoSeleccionado == null)
+            {
+                return;
+            }
             var pedidoAnterior = StaticData.ListaPrincipal.Where(w => w.NumeroPedido == pedidoSeleccionado.NumeroPedidoAnterior).SingleOrDefault();
 
             if (pedidoAnterior == null)

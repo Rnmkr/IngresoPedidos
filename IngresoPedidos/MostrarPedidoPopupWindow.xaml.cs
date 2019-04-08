@@ -12,6 +12,11 @@ namespace IngresoPedidos
         {
             InitializeComponent();
             Title = tipo + " DE " + pedidoSeleccionado.NumeroPedido;
+            if (pedido == null)
+            {
+                Close();
+                return;
+            }
             lblPedido.Content = pedido.NumeroPedido;
             lblDescripcion.Content = pedido.NumeroArticulo + " " + pedido.NombreProducto + " " + pedido.NombreModelo + " (x" + pedido.CantidadEquipos + ")";
             lblIngreso.Content = "INGRESADO " + pedido.FechaIngreso;

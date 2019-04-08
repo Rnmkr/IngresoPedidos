@@ -17,80 +17,57 @@
                     <RowDefinition Height="50"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <Grid Background="#FF1885A1" Grid.Row="0" Margin="0">
-                    <Rectangle Grid.Column="0" Stroke="#FFABADB3" >
-                        <!--<Rectangle.Fill>
-                    <SolidColorBrush Color="#FF1885A1"/>
-                </Rectangle.Fill>-->
-                    </Rectangle>
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                <Grid Background="#FF31577E" Grid.Row="0" Margin="0">
 
-                        <Button x:Name="btnNuevoPedido" Click="btnNuevoPedido_Click" Style="{StaticResource roundButtonTemplate32gray}" ToolTip="Ingresar un Nuevo Pedido a la Base de Datos (CTRL+N)" VerticalAlignment="Center" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}"  Margin="3,0,0,0" HorizontalAlignment="Left" Width="44" Height="44">
-                            <Image Source="/IngresoPedidos;component/Resources/nuevo_64x64.png" Width="32" Height="32" />
+                    <ListView x:Name="ListViewMenu"  Height="{Binding ElementName=SupaWindows, Path=Height}" Foreground="#FF5C99D6" Background="Transparent" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" Padding="1" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" HorizontalAlignment="Left">
+                        <StackPanel Orientation="Horizontal" Height="40">
+                            <ListViewItem x:Name="ItemConfiguration" Height="50" Padding="0" Width="50">
+
+                                    <materialDesign:PackIcon Kind="Add" Height="25" Width="25" Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    <!--<TextBlock Text="Nuevo Usuario" VerticalAlignment="Center" Margin="25 10"/>-->
+
+                            </ListViewItem>
+                            <ListViewItem x:Name="ItemHome" Height="50" Padding="0">
+                                <StackPanel Orientation="Horizontal" Width="50" Height="50">
+                                    <materialDesign:PackIcon Kind="Search" Height="25" Width="25" Margin="5"/>
+                                    <!--<TextBlock Text="Búsuqeda" VerticalAlignment="Center" Margin="25 10"/>-->
+                                </StackPanel>
+                            </ListViewItem>
+                            <ListViewItem x:Name="ItemCreate" Height="50" Padding="0">
+                                <StackPanel Orientation="Horizontal" Width="50" Height="50">
+                                    <materialDesign:PackIcon Kind="FilterList" Height="25" Width="25" Margin="5"/>
+                                    <!--<TextBlock Text="Pedidos" VerticalAlignment="Center" Margin="25 10"/>-->
+                                </StackPanel>
+                            </ListViewItem>
+                            <ListViewItem x:Name="ItemCreate2" Padding="0" Width="50" Height="50">
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <materialDesign:PackIcon Kind="FileExcel" Height="25" Width="25" Margin="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                                    <!--<TextBlock Text="Pedidos" VerticalAlignment="Center" Margin="25 10"/>-->
+                                </StackPanel>
+                            </ListViewItem>
+                        </StackPanel>
+
+                    </ListView>
+
+
+                    <!--<ToolBar Style="{DynamicResource MaterialDesignToolBar}" ClipToBounds="False" Background="#FF31577E">
+
+                        <Button x:Name="btnNuevoPedido" Click="btnNuevoPedido_Click"  ToolTip="Ingresar un Nuevo Pedido a la Base de Datos (CTRL+N)" VerticalAlignment="Center" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}"  Margin="3,0,0,0" HorizontalAlignment="Left" Width="44" Height="44">
+                            <materialDesign:PackIcon Kind="NoteAdd" Foreground="#FF5C99D6"   HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
                         </Button>
 
-                        <Button x:Name="btnBuscarPedido" Click="btnBuscarPedido_Click" Style="{StaticResource roundButtonTemplate32gray}" ToolTip="Buscar un pedido en la Base de Datos (CTRL+B)" VerticalAlignment="Center" HorizontalAlignment="Left"  Margin="2,0,0,0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" Width="44" Height="44">
-                            <Image Source="/IngresoPedidos;component/Resources/search.png" VerticalAlignment="Center" HorizontalAlignment="Center" Width="32" Height="32" />
+                        <Button x:Name="btnBuscarPedido" Click="btnBuscarPedido_Click" ToolTip="Buscar un pedido en la Base de Datos (CTRL+B)" VerticalAlignment="Center" HorizontalAlignment="Left"  Margin="2,0,0,0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" Width="44" Height="44">
+                            <materialDesign:PackIcon Kind="Search" Foreground="#FF5C99D6"   HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
                         </Button>
 
-                        <Button x:Name="btnFiltrarLista" Click="btnFiltrarLista_Click" Style="{StaticResource roundButtonTemplate32gray}" ToolTip="Filtrar la lista por Estado (CTRL+F)" VerticalAlignment="Center" HorizontalAlignment="Left"  Margin="2,0,0,0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" Width="44" Height="44">
-                            <Image Source="/IngresoPedidos;component/Resources/list.png" VerticalAlignment="Center" HorizontalAlignment="Center" Width="32" Height="32" />
+                        <Button x:Name="btnFiltrarLista" Click="btnFiltrarLista_Click"  ToolTip="Filtrar la lista por Estado (CTRL+F)" VerticalAlignment="Center" HorizontalAlignment="Left"  Margin="2,0,0,0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" Width="44" Height="44">
+                            <materialDesign:PackIcon Kind="FilterList" Foreground="#FF5C99D6"   HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
                         </Button>
 
-                        <Button x:Name="btnExportarPlanilla" Click="BtnExportarPlanilla_Click" Style="{StaticResource roundButtonTemplate32gray}" ToolTip="Exportar lista a planilla de cálculos (CTRL+X)"  HorizontalAlignment="Left" VerticalAlignment="Center"   Margin="2,0,0,0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" Width="44" Height="44">
-                            <Image Source="/IngresoPedidos;component/Resources/xls.png" Width="32" Height="32" />
+                        <Button x:Name="btnExportarPlanilla" Click="BtnExportarPlanilla_Click"  ToolTip="Exportar lista a planilla de cálculos (CTRL+X)"  HorizontalAlignment="Left" VerticalAlignment="Center"   Margin="2,0,0,0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" Width="44" Height="44">
+                            <materialDesign:PackIcon Kind="FileExcel" Foreground="#FF5C99D6"   HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
                         </Button>
-
-
-                        <!--#region botones del contextmenulist-->
-                        <!--<Button x:Name="a1" Click="btnFiltrarLista_Click" Style="{StaticResource roundButtonTemplate48}" ToolTip="Filtrar la lista por Estado (CTRL+F)" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}">
-                    <Image Source="/IngresoPedidos;component/Resources/image_t.png" VerticalAlignment="Center" HorizontalAlignment="Center" Width="48" Height="48" />
-                </Button>
-
-                <Button x:Name="a2" Click="btnFiltrarLista_Click" Style="{StaticResource roundButtonTemplate48}" ToolTip="Filtrar la lista por Estado (CTRL+F)" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}">
-                    <Image Source="/IngresoPedidos;component/Resources/log_t.png" VerticalAlignment="Center" HorizontalAlignment="Center" Width="48" Height="48" />
-                </Button>
-
-                <Button x:Name="a3" Click="btnFiltrarLista_Click" Style="{StaticResource roundButtonTemplate48}" ToolTip="Filtrar la lista por Estado (CTRL+F)" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}">
-                    <Image Source="/IngresoPedidos;component/Resources/add_t.png" VerticalAlignment="Center" HorizontalAlignment="Center" Width="48" Height="48" />
-                </Button>
-
-                <Button x:Name="a4" Click="btnFiltrarLista_Click" Style="{StaticResource roundButtonTemplate48}" ToolTip="Filtrar la lista por Estado (CTRL+F)" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}">
-                    <Image Source="/IngresoPedidos;component/Resources/remove_t.png" VerticalAlignment="Center" HorizontalAlignment="Center" Width="48" Height="48" />
-                </Button>
-
-                <Button x:Name="a5" Click="btnFiltrarLista_Click" Style="{StaticResource roundButtonTemplate48}" ToolTip="Filtrar la lista por Estado (CTRL+F)" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}">
-                    <Image Source="/IngresoPedidos;component/Resources/contract_t.png" VerticalAlignment="Center" HorizontalAlignment="Center" Width="48" Height="48" />
-                </Button>
-
-                <Button x:Name="a6" Click="btnFiltrarLista_Click" Style="{StaticResource roundButtonTemplate48}" ToolTip="Filtrar la lista por Estado (CTRL+F)" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}">
-                    <Image Source="/IngresoPedidos;component/Resources/copy_t.png" VerticalAlignment="Center" HorizontalAlignment="Center" Width="48" Height="48" />
-                </Button>
-
-                <Button x:Name="a7" Click="btnFiltrarLista_Click" Style="{StaticResource roundButtonTemplate48}" ToolTip="Filtrar la lista por Estado (CTRL+F)" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}">
-                    <Image Source="/IngresoPedidos;component/Resources/pencil_t.png" VerticalAlignment="Center" HorizontalAlignment="Center" Width="48" Height="48" />
-                </Button>
-
-                <Button x:Name="a8" Click="btnFiltrarLista_Click" Style="{StaticResource roundButtonTemplate48}" ToolTip="Filtrar la lista por Estado (CTRL+F)" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}">
-                    <Image Source="/IngresoPedidos;component/Resources/comment_t.png" VerticalAlignment="Center" HorizontalAlignment="Center" Width="48" Height="48" />
-                </Button>-->
-                        <!--#endregion-->
-
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                        <!--<Border BorderThickness="0"  CornerRadius="12" Background="#225378" HorizontalAlignment="Right" Margin="0,0,5,0" VerticalAlignment="Center" Height="36">
-                    <Label Name="lblNombreUsuario" Margin="0" Foreground="#ECF0F1" VerticalContentAlignment="Center" TextOptions.TextFormattingMode="Display" Padding="5,0" HorizontalContentAlignment="Center"  Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold"/>
-                </Border>-->
-
-                        <!--<Button x:Name="btnCambiarContraseña" Click="btnCambiarContraseña_Click" Style="{StaticResource roundButtonTemplate32}" ToolTip="Cambiar contraseña" HorizontalAlignment="Right" VerticalAlignment="Center"  Margin="5,5,2,5" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{DynamicResource {x:Static SystemColors.ControlDarkBrushKey}}" Width="36" Height="36">
-                <Image Source="/IngresoPedidos;component/Resources/key.png" Width="32" Height="32" />
-            </Button>-->
-
-                        <Button x:Name="btnCerrarSesion" Click="btnCerrarSesion_Click" Style="{StaticResource roundButtonTemplate32}" ToolTip="Cerrar sesión" HorizontalAlignment="Right" VerticalAlignment="Center"  Margin="0,0,5,0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" Width="36" Height="36">
-                            <Image Source="/IngresoPedidos;component/Resources/door.png" Width="32" Height="32" />
-                        </Button>
-
-                    </StackPanel>
+                    </ToolBar>-->
                 </Grid>
 
                 <DataGrid x:Name="dgPedidos" Grid.Row="1" AutoGenerateColumns="False" ColumnWidth="*" FontSize="14" Margin="0" Padding="0,0,0,0" VerticalScrollBarVisibility="Visible" FontFamily="Consolas" RowHeaderWidth="0">
@@ -181,9 +158,23 @@
                         <DataGridTemplateColumn Header="ANTERIOR" >
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock><Hyperlink Click="HyperlinkAnterior_Click"><InlineUIContainer>
-                                        <TextBlock Text="{Binding NumeroPedidoAnterior}" />
-                                    </InlineUIContainer></Hyperlink></TextBlock>
+                                    <TextBlock>
+                                        <TextBlock.Style>
+                                            <Style TargetType="TextBlock">
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding NumeroPedidoAnterior, TargetNullValue=NULL}">
+                                                        <Setter Property="Text" Value="N/A" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </TextBlock.Style>
+                                            
+                                        <Hyperlink Click="HyperlinkAnterior_Click">
+                                            <InlineUIContainer>
+                                                <TextBlock Text="{Binding NumeroPedidoAnterior}" />
+                                            </InlineUIContainer>
+                                        </Hyperlink>
+                                    </TextBlock>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>

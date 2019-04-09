@@ -1,11 +1,12 @@
 ﻿using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 using IngresoPedidos.DataAccessLayer;
 using IngresoPedidos.Helpers;
 
 namespace IngresoPedidos
 {
-    public partial class LoginWindow : Window
+    public partial class LoginWindow : UserControl
     {
         public LoginWindow()
         {
@@ -51,7 +52,6 @@ namespace IngresoPedidos
                 {
                     MainWindow mainWindow = new MainWindow();
                     mainWindow.Show();
-                    Close();
                 }
             }
 
@@ -76,7 +76,7 @@ namespace IngresoPedidos
 
             if (e.Key == System.Windows.Input.Key.Escape)
             {
-                Close();
+                //Close();
             }
         }
     }

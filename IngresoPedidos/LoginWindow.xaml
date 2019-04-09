@@ -1,14 +1,14 @@
-﻿<Window x:Class="IngresoPedidos.LoginWindow"
+﻿<UserControl x:Class="IngresoPedidos.LoginWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="Login" Height="150" Width="150" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight" KeyDown="Window_KeyDown" Icon="/IngresoPedidos;component/Resources/list.png">
+        Height="150" Width="150"  KeyDown="Window_KeyDown" >
 
     <Grid FocusManager.FocusedElement="{Binding ElementName=tbLegajo}" Height="121" Width="144">
         <TextBox x:Name="tbLegajo" MaxLength="4" MaxLines="1" Text="LEGAJO" Margin="10,10,10,0" VerticalContentAlignment="Center" GotFocus="TbLegajo_GotFocus" HorizontalContentAlignment="Center" FontSize="14" FontFamily="Consolas" TabIndex="1" Height="26" VerticalAlignment="Top"/>
         <PasswordBox x:Name="pbContraseña" MaxLength="8" Margin="10,50,10,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" GotFocus="PbContraseña_GotFocus" Password="--------" FontFamily="Consolas" FontSize="14" TabIndex="2" Height="26" VerticalAlignment="Top"/>
         <Button x:Name="btnLogin" Click="btnLogin_Click" ToolTip="Ingresar" Content="Aceptar" Margin="0,0,0,10" TabIndex="3" Height="22" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="70"/>
     </Grid>
-</Window>
+</UserControl>

@@ -37,7 +37,7 @@ namespace IngresoPedidos.DataAccessLayer
         [Key]
         [Column(Order = 5)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public Int16 CantidadEquipos { get; set; }
+        public short CantidadEquipos { get; set; }
 
         [Key]
         [Column(Order = 6, TypeName = "smalldatetime")]

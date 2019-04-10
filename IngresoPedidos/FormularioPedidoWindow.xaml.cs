@@ -53,7 +53,7 @@ namespace IngresoPedidos
             tbCantidad.Text = pedidoSeleccionado.CantidadEquipos.ToString();
             cbEstado.SelectedValue = pedidoSeleccionado.NombreEstado;
             tbAnterior.Text = pedidoSeleccionado.NumeroPedidoAnterior;
-            tbObservacion.Focus();
+            //tbObservacion.Focus();
 
         }
 

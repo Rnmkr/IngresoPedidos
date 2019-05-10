@@ -70,7 +70,7 @@
                     </ToolBar>-->
                 </Grid>
 
-                <DataGrid x:Name="dgPedidos" Grid.Row="1" AutoGenerateColumns="False" ColumnWidth="*" FontSize="14" Margin="0" Padding="0,0,0,0" VerticalScrollBarVisibility="Visible" FontFamily="Consolas" RowHeaderWidth="0">
+                <DataGrid x:Name="dgPedidos" Grid.Row="1" IsReadOnly="True" AutoGenerateColumns="False" ColumnWidth="*" FontSize="14" Margin="0" Padding="0,0,0,0" VerticalScrollBarVisibility="Visible" FontFamily="Consolas" RowHeaderWidth="0">
                     <!--ItemsSource="{Binding Source={x:Static local:StaticData.ListaPrincipal}}"-->
                     <DataGrid.Resources>
                         
